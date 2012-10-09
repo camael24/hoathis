@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-stylesheet href="hoa://Application/Public/Css/bootstrap.css" ?>
+<?xyl-stylesheet href="hoa://Application/Public/Css/bootstrap-responsive.css" ?>
+<?xyl-stylesheet href="hoa://Application/Public/Css/style.css" ?>
+
+<?xyl-meta       name="viewport" content="width=device-width, initial-scale=1.0" ?>
+
+<document xmlns="http://hoa-project.net/xyl/xylophone">
+    <title>Hoathis.net</title>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a class="brand" href="#">Hoathis.net</a>
+                <div class="btn-group pull-right">
+
+                    <a class="btn btn-success">Register an Hoathis module</a>
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="icon-user"></i>Camael24 (Thehawk_)
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">Profil</a>
+                        </li>
+                        <li>
+                            <a href="#">My Hoathis</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">Disconnect</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+
+        <script src="hoa://Application/Public/Js/jquery.min.js"/>
+        <script src="hoa://Application/Public/Js/bootstrap-dropdown.js"/>
+        <script src="hoa://Application/Public/Js/bootstrap-typeahead.js"/>
+
+        <article id="content"/>
+
+
+        <footer>
+            <p>
+                <a href="http://www.hoaproject.net">Hoa</a>
+                est la création de <a href="http://mnt.io/">Ivan Enderlin</a>, tous droits réservés.
+            </p>
+        </footer>
+
+    </div>
+
+
+</document>

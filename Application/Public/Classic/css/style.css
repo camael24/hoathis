@@ -1,0 +1,9 @@
+.input-auto {
+    width: 70%;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
