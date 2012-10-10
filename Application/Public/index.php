@@ -23,6 +23,7 @@ namespace {
 
 
         $router
+            ->get('h', '/l/(?<page>.*?).html', 'Hoathis', 'Index')
             ->get_post('c', '/(?<action>.*?).html', 'Main', 'Index')
             ->get('i', '/', 'Main', 'Index');
 

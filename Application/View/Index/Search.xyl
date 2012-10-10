@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xyl-stylesheet href="hoa://Application/Public/Css/jquery.ui.1.8.16.ie.css" ?>
 <?xyl-stylesheet href="hoa://Application/Public/Css/jquery-ui-1.8.16.custom.css" ?>
+<?xyl-fragment href="hoa://Application/View/Index/Fragment/List.xyl" as="handle"?>
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
     <article id="content">
         <div class="hero-unit">
@@ -9,10 +10,13 @@
                 <div class="input-append">
                     <input class="input-auto" id="searchBar" type="text" placeholder="Search ..."/>
                     <span class="add-on">
-                        <i class="icon-search"/>
+                        <i id="searchButton" class="icon-search"/>
                     </span>
                 </div>
             </p>
+        </div>
+        <div id="result">
+            <yield select="?f=handle#main_list" />
         </div>
         <script src="hoa://Application/Public/Js/jquery-ui-1.9.0.custom.js"/>
         <script src="hoa://Application/Public/Js/hoathis-autocomplete.js"/>

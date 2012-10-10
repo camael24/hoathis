@@ -1,3 +1,13 @@
+@media (min-width: 979px) {
+    body {
+        padding-top: 60px;
+    }
+}
+
+body {
+    padding-bottom: 30px;
+}
+
 .input-auto {
     width: 70%;
 }
@@ -6,4 +16,31 @@ footer {
     position: fixed;
     bottom: 0px;
     width: 100%;
+    background-color: #ffffff;
 }
+
+.emphase {
+    color: green;
+}
+
+#result > ul > li >h2:first-letter {
+    text-transform: uppercase;
+}
+
+#result > ul > li {
+    list-style: none;
+    display: block;
+    background-color: #eeeeee;
+    padding: 4px;
+    margin: 5px;
+    line-height: 1;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+
+}
+

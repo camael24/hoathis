@@ -13,14 +13,14 @@
                 <a class="brand" href="#">Hoathis.net</a>
                 <div class="btn-group pull-right">
 
-                    <a class="btn btn-success">Register an Hoathis module</a>
+                    <a class="btn btn-success" title="Send an hoathis"><i class="icon-arrow-up" /> </a>
                     <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="icon-user"></i>Camael24 (Thehawk_)
+                        <i class="icon-user"></i>
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#">Profil</a>
+                            <a href="#">Camael24 (Thehawk_)</a>
                         </li>
                         <li>
                             <a href="#">My Hoathis</a>

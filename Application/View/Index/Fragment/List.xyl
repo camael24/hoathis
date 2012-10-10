@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<fragment xmlns="http://hoa-project.net/xyl/xylophone">
+    <snippet id="main_list">
+
+        <p class="lead" bind="?label"/>
+        <ul>
+            <li bind="?search">
+
+                <div class="row">
+                    <h2 class="span6"><value bind="?author"/>/<span class="emphase" bind="?library"/>
+                    </h2>
+                    <a href="@h:page=(?uri)" class="btn btn-primary">
+                        <i class="icon-white icon-chevron-right"/>
+                    </a>
+                </div>
+                <p bind="?description"/>
+            </li>
+        </ul>
+    </snippet>
+</fragment>
