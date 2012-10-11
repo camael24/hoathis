@@ -38,7 +38,7 @@ namespace {
         'connection.autoload'              => 'default'
     ));
 
- // TODO : ici c'est un vrai boxons idem dans
+    // TODO : ici c'est un vrai boxons idem dans les fonctions des controleurs
     $router
         ->get('h', '/m/(?<page>.*?)', 'Hoathis', 'Index')
         ->get_post('a', '/admin/(?<_able>.*?)/(?<page>.*?)', 'admin', 'index')
