@@ -9,6 +9,7 @@ namespace {
     from('Hoa')
         ->import('Database.Dal')
         ->import('Dispatcher.Basic')
+        ->import('Dispatcher.Kit')
         ->import('Router.Http')
         ->import('Session.~')
         ->import('Session.QNamespace')

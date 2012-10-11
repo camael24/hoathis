@@ -1,5 +1,4 @@
 <?php
-
 namespace Application\Controller {
     class Generic extends \Hoa\Dispatcher\Kit {
         public function construct() {
