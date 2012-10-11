@@ -4,16 +4,13 @@
  * Generated the 2010-11-19T18:11:06.000000Z
  */
 
-return array (
-  'keywords' => 
-  array (
-  ),
-  'parameters' => 
-  array (
-    'prefix' => NULL,
-    'rules.public' => array(
+return array(
+    'keywords'   =>
+    array(),
+    'parameters' =>
+    array(
+        'prefix'        => NULL,
+        'rules.public'  => array(),
+        'rules.private' => array(),
     ),
-    'rules.private' => array(
-    ),
-  ),
 );

@@ -4,14 +4,12 @@
  * Generated the …
  */
 
-return array (
-  'keywords' => 
-  array (
-  ),
-  'parameters' => 
-  array (
-    array (
+return array(
+    'keywords'   =>
+    array(),
+    'parameters' =>
+    array(
+        array(),
+        'connection.autoload' => NULL,
     ),
-    'connection.autoload' => NULL,
-  ),
 );

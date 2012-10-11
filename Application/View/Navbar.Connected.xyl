@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definition xmlns="http://hoa-project.net/xyl/xylophone">
+    <yield name="navbar">
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="brand" href="/">Hoathis.net</a>
+                    <div class="btn-group pull-right">
+
+                        <a href="@c:action=create" class="btn btn-success" title="Send an hoathis">
+                            <i class="icon-arrow-up"/>
+                        </a>
+                        <icon/>
+                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="icon-user"></i>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li bind="?username"/>
+                            <li>
+                                <a href="@c:action=profil">My Profil</a>
+                            </li>
+                            <li>
+                                <a href="@c:action=list">My Hoathis</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="@f:action=disconnect">Disconnect</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="btn-group pull-right">
+                        <menu />
+                        <menuadm     />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </yield>
+</definition>

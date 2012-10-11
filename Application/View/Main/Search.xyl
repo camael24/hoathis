@@ -16,7 +16,6 @@
             </p>
         </div>
         <div id="result">
-            <yield select="?f=handle#main_list" />
         </div>
         <script src="hoa://Application/Public/Js/jquery-ui-1.9.0.custom.js"/>
         <script src="hoa://Application/Public/Js/hoathis-autocomplete.js"/>

@@ -1,27 +1,27 @@
 {
-    /**
-     * Keywords.
-     */
-    "keywords": { },
+/**
+ * Keywords.
+ */
+"keywords": { },
 
-    /**
-     * Parameters.
-     */
-    "parameters": {
-        "prefix"       : null,
+/**
+ * Parameters.
+ */
+"parameters": {
+"prefix"       : null,
 
-        /**
-         * Schema:
-         *     rules.public: {
-         *         "id": [[methods], pattern, call, able, {variables}]
-         *     }
-         */
-        "rules.public" : {},
+/**
+ * Schema:
+ *     rules.public: {
+ *         "id": [[methods], pattern, call, able, {variables}]
+ *     }
+ */
+"rules.public" : {},
 
-        /**
-         * Schema:
-         *     Same as rules.public.
-         */
-        "rules.private": {}
-    }
+/**
+ * Schema:
+ *     Same as rules.public.
+ */
+"rules.private": {}
+}
 }

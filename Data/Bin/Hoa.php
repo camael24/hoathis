@@ -36,19 +36,19 @@
 
 namespace {
 
-/**
- * @author     Ivan Enderlin <ivan.enderlin@hoa-project.net>
- * @copyright  Copyright © 2007-2012 Ivan Enderlin.
- */
+    /**
+     * @author     Ivan Enderlin <ivan.enderlin@hoa-project.net>
+     * @copyright  Copyright © 2007-2012 Ivan Enderlin.
+     */
 
-/**
- * \Hoa\Core
- */
-require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Core.link.php';
+    /**
+     * \Hoa\Core
+     */
+    require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Core.link.php';
 
-/**
- * Call the real Hoa.php ;-).
- */
-require 'hoa://Library/Core/Bin/Hoa.php';
+    /**
+     * Call the real Hoa.php ;-).
+     */
+    require 'hoa://Library/Core/Bin/Hoa.php';
 
 }

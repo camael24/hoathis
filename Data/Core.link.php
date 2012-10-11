@@ -36,13 +36,13 @@
 
 namespace {
 
-/**
- * @author     Ivan Enderlin <ivan.enderlin@hoa-project.net>
- * @copyright  Copyright © 2007-2012 Ivan Enderlin.
- */
+    /**
+     * @author     Ivan Enderlin <ivan.enderlin@hoa-project.net>
+     * @copyright  Copyright © 2007-2012 Ivan Enderlin.
+     */
 
 // If your system does not support symlink:
-require_once '/usr/local/lib/Hoa/Hoa/Core/Core.php';
+    require_once '/usr/local/lib/Hoa/Hoa/Core/Core.php';
 
 // Else, this file will be deleted and replaced by a symlink.
 

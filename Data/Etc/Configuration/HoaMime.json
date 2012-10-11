@@ -1,13 +1,13 @@
 {
-    /**
-     * Keywords.
-     */
-    "keywords": {},
+/**
+ * Keywords.
+ */
+"keywords": {},
 
-    /**
-     * Parameters.
-     */
-    "parameters": {
-        "magaic": null
-    }
+/**
+ * Parameters.
+ */
+"parameters": {
+"magaic": null
+}
 }

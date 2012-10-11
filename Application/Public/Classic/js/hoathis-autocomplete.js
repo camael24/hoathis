@@ -2,7 +2,7 @@ $(function () {
     $("#searchBar").autocomplete({
         source:function (request, response) {
             $.ajax({
-                url:"/search.html",
+                url:"/a/search.html",
                 data:request,
                 dataType:"json",
                 type:"POST",
@@ -13,7 +13,7 @@ $(function () {
     $("#searchButton").click(function () {
         var search = $('#searchBar').val();
         $.ajax({
-            url:"/search.html",
+            url:"/a/search.html",
             data:"search=" + search,
             dataType:"html",
             type:"POST",

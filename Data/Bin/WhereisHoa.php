@@ -36,220 +36,220 @@
 
 namespace {
 
-/**
- * @author     Ivan Enderlin <ivan.enderlin@hoa-project.net>
- * @copyright  Copyright © 2007-2012 Ivan Enderlin.
- */
+    /**
+     * @author     Ivan Enderlin <ivan.enderlin@hoa-project.net>
+     * @copyright  Copyright © 2007-2012 Ivan Enderlin.
+     */
 
-function _define ( $name, $value, $case = false ) {
+    function _define($name, $value, $case = false) {
 
-    if(!defined($name))
-        return define($name, $value, $case);
+        if (!defined($name))
+            return define($name, $value, $case);
 
-    return false;
-}
-
-function cin ( $out = null ) {
-
-    if(null !== $out)
-        cout($out);
-
-    return trim(fgets(STDIN));
-}
-
-function cinq ( $out = null ) {
-
-    $in = strtolower(cin($out));
-
-    switch($in) {
-
-        case 'y':
-        case 'ye':
-        case 'yes':
-        case 'yeah': // hihi
-            return true;
-          break;
-
-        default:
-            return false;
-    }
-}
-
-function cout ( $out ) {
-
-    return fwrite(STDOUT, $out);
-}
-
-function check ( $out, $test, $die = true ) {
-
-    if(false === $test) {
-
-        cout('✖  ' . $out);
-
-        if(true === $die)
-            exit;
-        else
-            return;
+        return false;
     }
 
-    cout('✔  ' . $out);
+    function cin($out = null) {
 
-    return;
-}
+        if (null !== $out)
+            cout($out);
 
-_define('STDIN',  fopen('php://stdin',  'rb'));
-_define('STDOUT', fopen('php://stdout', 'wb'));
-_define('STDERR', fopen('php://stderr', 'wb'));
-_define('DS',     DIRECTORY_SEPARATOR);
+        return trim(fgets(STDIN));
+    }
 
-cout('** Where is Hoa **' . "\n\n");
-cout('Ready to redefine the path to Hoa?' . "\n");
-cout('We need to redefine it in:' . "\n" .
-     '  • the Core.link.php file;' . "\n" .
-     '  • the configuration file;' . "\n" .
-     '  • the configuration cache file.' . "\n");
+    function cinq($out = null) {
 
-$go = cinq("\n" . 'There we go [y/n]? ');
+        $in = strtolower(cin($out));
 
-if(false === $go) {
+        switch ($in) {
 
-    cout('Ok, bye bye!' . "\n");
+            case 'y':
+            case 'ye':
+            case 'yes':
+            case 'yeah': // hihi
+                return true;
+                break;
 
-    exit;
-}
+            default:
+                return false;
+        }
+    }
 
-$whereis = cin("\n" . 'A very simple question: where is Hoa so?' .
-               "\n" . '> ') . DS . 'Core' . DS . 'Core.php';
+    function cout($out) {
 
-cout("\n" . 'Assuming ' . $whereis . '.' . "\n\n");
+        return fwrite(STDOUT, $out);
+    }
 
-check(
-    'Check if the given file exists' . "\n",
-    !is_dir($whereis) && file_exists($whereis)
-);
+    function check($out, $test, $die = true) {
 
-require $whereis;
+        if (false === $test) {
 
-check(
-    'Check if it is Hoa\'s core' . "\n",
-    defined('HOA')
-);
-check(
-    'Check if Core.link.php is accessible' . "\n",
-       file_exists($link = dirname(__DIR__) . DS . 'Core.link.php')
-    || is_link($link)
-);
-check(
-    'Check if the configuration file is accessible' . "\n",
-    file_exists($json = __DIR__ . DS . '..' . DS . 'Etc' . DS .
-                       'Configuration' . DS . 'HoaCoreCore.json')
-);
-check(
-    'Check if the configuration cache file is accessible' . "\n",
-    file_exists($cache = __DIR__ . DS . '..' . DS . 'Etc' . DS .
-                        'Configuration' . DS . '.Cache' . DS .
-                        'HoaCoreCore.php')
-);
+            cout('✖  ' . $out);
 
-$goo = cinq("\n" . 'Are you to continue [y/n]? ');
+            if (true === $die)
+                exit;
+            else
+                return;
+        }
 
-if(false === $goo) {
+        cout('✔  ' . $out);
 
-    cout('Ok, bye bye!' . "\n");
+        return;
+    }
 
-    exit;
-}
+    _define('STDIN', fopen('php://stdin', 'rb'));
+    _define('STDOUT', fopen('php://stdout', 'wb'));
+    _define('STDERR', fopen('php://stderr', 'wb'));
+    _define('DS', DIRECTORY_SEPARATOR);
 
-cout("\n");
+    cout('** Where is Hoa **' . "\n\n");
+    cout('Ready to redefine the path to Hoa?' . "\n");
+    cout('We need to redefine it in:' . "\n" .
+        '  • the Core.link.php file;' . "\n" .
+        '  • the configuration file;' . "\n" .
+        '  • the configuration cache file.' . "\n");
 
-check(
-    'Backup for the Core.link.php file (Core.link.php.orig)' . "\n",
-    (!is_link($link) && copy($link, $link . '.orig')) || true
-);
-check(
-    'Backup for the configuration file (HoaCoreCore.json.orig)' . "\n",
-    copy($json, $json . '.orig')
-);
-check(
-    'Backup for the configuration cache file (HoaCoreCore.php.orig)' . "\n",
-    copy($cache, $cache . '.orig')
-);
+    $go = cinq("\n" . 'There we go [y/n]? ');
 
-cout("\n");
+    if (false === $go) {
 
-check(
-    'Unset Core.link.php.' . "\n",
-    unlink($link)
-);
+        cout('Ok, bye bye!' . "\n");
 
-try {
+        exit;
+    }
 
-    if(true === function_exists('symlink'))
-        throw new Hoa\Core\Exception\Idle('** goto-like **');
+    $whereis = cin("\n" . 'A very simple question: where is Hoa so?' .
+        "\n" . '> ') . DS . 'Core' . DS . 'Core.php';
+
+    cout("\n" . 'Assuming ' . $whereis . '.' . "\n\n");
 
     check(
-        'Redefine the Core.link.php symbolic link.' . "\n",
-        symlink($whereis, $link)
+        'Check if the given file exists' . "\n",
+        !is_dir($whereis) && file_exists($whereis)
     );
-}
-catch ( Hoa\Core\Exception\Idle $e ) {
+
+    require $whereis;
 
     check(
-        'Redefine the Core.link.php symbolic link.' . "\n",
-        false,
-        false
+        'Check if it is Hoa\'s core' . "\n",
+        defined('HOA')
     );
     check(
-        'Redefine the Core.link.php file' . "\n",
-        file_put_contents(
-            $link,
-            implode('', array_slice(file(__FILE__), 0, 42)) . "\n" .
-            'require_once \'' . str_replace('\'', '\\\'', $whereis) . '\';' .
-            "\n\n" . '}'
-        )
+        'Check if Core.link.php is accessible' . "\n",
+        file_exists($link = dirname(__DIR__) . DS . 'Core.link.php')
+            || is_link($link)
     );
-}
+    check(
+        'Check if the configuration file is accessible' . "\n",
+        file_exists($json = __DIR__ . DS . '..' . DS . 'Etc' . DS .
+            'Configuration' . DS . 'HoaCoreCore.json')
+    );
+    check(
+        'Check if the configuration cache file is accessible' . "\n",
+        file_exists($cache = __DIR__ . DS . '..' . DS . 'Etc' . DS .
+            'Configuration' . DS . '.Cache' . DS .
+            'HoaCoreCore.php')
+    );
+
+    $goo = cinq("\n" . 'Are you to continue [y/n]? ');
+
+    if (false === $goo) {
+
+        cout('Ok, bye bye!' . "\n");
+
+        exit;
+    }
+
+    cout("\n");
+
+    check(
+        'Backup for the Core.link.php file (Core.link.php.orig)' . "\n",
+        (!is_link($link) && copy($link, $link . '.orig')) || true
+    );
+    check(
+        'Backup for the configuration file (HoaCoreCore.json.orig)' . "\n",
+        copy($json, $json . '.orig')
+    );
+    check(
+        'Backup for the configuration cache file (HoaCoreCore.php.orig)' . "\n",
+        copy($cache, $cache . '.orig')
+    );
+
+    cout("\n");
+
+    check(
+        'Unset Core.link.php.' . "\n",
+        unlink($link)
+    );
+
+    try {
+
+        if (true === function_exists('symlink'))
+            throw new Hoa\Core\Exception\Idle('** goto-like **');
+
+        check(
+            'Redefine the Core.link.php symbolic link.' . "\n",
+            symlink($whereis, $link)
+        );
+    }
+    catch (Hoa\Core\Exception\Idle $e) {
+
+        check(
+            'Redefine the Core.link.php symbolic link.' . "\n",
+            false,
+            false
+        );
+        check(
+            'Redefine the Core.link.php file' . "\n",
+            file_put_contents(
+                $link,
+                implode('', array_slice(file(__FILE__), 0, 42)) . "\n" .
+                    'require_once \'' . str_replace('\'', '\\\'', $whereis) . '\';' .
+                    "\n\n" . '}'
+            )
+        );
+    }
 
 
-$jsoni = file_get_contents($json);
-$jhoa  = '("root.hoa"\s*:\s*)"(.*?)(?<!\\\)"';
-check(
-    'Check if the configuration file is not corrupted' . "\n",
-    0 !== preg_match('`' . $jhoa . '`s', $jsoni)
-);
-check(
-    'Redefine the configuration file' . "\n",
-    ($jsono = preg_replace(
-        '`' . $jhoa . '`s',
-        '\1"' . str_replace('"', '\"', dirname(dirname($whereis))) . '"',
-        $jsoni,
-        1
-    )) &&
-    file_put_contents($json, $jsono)
-);
+    $jsoni = file_get_contents($json);
+    $jhoa  = '("root.hoa"\s*:\s*)"(.*?)(?<!\\\)"';
+    check(
+        'Check if the configuration file is not corrupted' . "\n",
+        0 !== preg_match('`' . $jhoa . '`s', $jsoni)
+    );
+    check(
+        'Redefine the configuration file' . "\n",
+        ($jsono = preg_replace(
+            '`' . $jhoa . '`s',
+            '\1"' . str_replace('"', '\"', dirname(dirname($whereis))) . '"',
+            $jsoni,
+            1
+        )) &&
+            file_put_contents($json, $jsono)
+    );
 
-$cachei = file_get_contents($cache);
-$choa  = '(\'root.hoa\'\s*=>\s*)\'(.*?)(?<!\\\)\'';
+    $cachei = file_get_contents($cache);
+    $choa   = '(\'root.hoa\'\s*=>\s*)\'(.*?)(?<!\\\)\'';
 
-check(
-    'Check if the configuration cache file is not corrupted' . "\n",
-    0 !== preg_match('`' . $choa . '`s', $cachei)
-);
-check(
-    'Redefine the configuration cache file' . "\n",
-    ($cacheo = preg_replace(
-        '`' . $choa . '`s',
-        '\1\'' . str_replace('\'', '\\\'', dirname(dirname($whereis))) . '\'',
-        $cachei,
-        1
-    )) &&
-    file_put_contents($cache, $cacheo)
-);
+    check(
+        'Check if the configuration cache file is not corrupted' . "\n",
+        0 !== preg_match('`' . $choa . '`s', $cachei)
+    );
+    check(
+        'Redefine the configuration cache file' . "\n",
+        ($cacheo = preg_replace(
+            '`' . $choa . '`s',
+            '\1\'' . str_replace('\'', '\\\'', dirname(dirname($whereis))) . '\'',
+            $cachei,
+            1
+        )) &&
+            file_put_contents($cache, $cacheo)
+    );
 
-cout("\n");
-cout('\o/' . "\n");
-cout('Path to Hoa is redefined!' . "\n");
-cout('(You may delete backups (*.orig) after ' .
-     'beeing sure that all works fine).' . "\n");
+    cout("\n");
+    cout('\o/' . "\n");
+    cout('Path to Hoa is redefined!' . "\n");
+    cout('(You may delete backups (*.orig) after ' .
+        'beeing sure that all works fine).' . "\n");
 
 }

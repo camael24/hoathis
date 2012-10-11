@@ -8,9 +8,10 @@
             <li bind="?search">
 
                 <div class="row">
-                    <h2 class="span6"><value bind="?author"/>/<span class="emphase" bind="?library"/>
+                    <h2 class="span6"><value bind="?author"/>/
+                        <span class="emphase" bind="?name"/>
                     </h2>
-                    <a href="@h:page=(?uri)" class="btn btn-primary">
+                    <a href="@h:page=(?idLibrary)" class="btn btn-primary">
                         <i class="icon-white icon-chevron-right"/>
                     </a>
                 </div>

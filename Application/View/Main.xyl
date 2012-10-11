@@ -2,41 +2,12 @@
 <?xyl-stylesheet href="hoa://Application/Public/Css/bootstrap.css" ?>
 <?xyl-stylesheet href="hoa://Application/Public/Css/bootstrap-responsive.css" ?>
 <?xyl-stylesheet href="hoa://Application/Public/Css/style.css" ?>
-
 <?xyl-meta       name="viewport" content="width=device-width, initial-scale=1.0" ?>
+<?xyl-fragment   href="hoa://Application/View/Main/Fragment/List.xyl" as="handle"?>
 
 <document xmlns="http://hoa-project.net/xyl/xylophone">
     <title>Hoathis.net</title>
-    <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container-fluid">
-                <a class="brand" href="#">Hoathis.net</a>
-                <div class="btn-group pull-right">
-
-                    <a class="btn btn-success" title="Send an hoathis"><i class="icon-arrow-up" /> </a>
-                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="icon-user"></i>
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#">Camael24 (Thehawk_)</a>
-                        </li>
-                        <li>
-                            <a href="#">My Hoathis</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">Disconnect</a>
-                        </li>
-                    </ul>
-
-                </div>
-
-
-            </div>
-        </div>
-    </div>
+    <navbar/>
 
     <div class="container-fluid">
 
@@ -50,7 +21,7 @@
         <footer>
             <p>
                 <a href="http://www.hoaproject.net">Hoa</a>
-                est la création de <a href="http://mnt.io/">Ivan Enderlin</a>, tous droits réservés.
+                est la création de&amp;amp;nbsp;<a href="http://mnt.io/">Ivan Enderlin</a>, tous droits réservés.
             </p>
         </footer>
 
