@@ -209,10 +209,6 @@ namespace Application\Controller {
         }
 
         public function UserAction($user) {
-            if (!\Hoa\Session\Session::isNamespaceSet('user'))
-                return;
-
-
             $user = intval($user);
             if (is_int($user) && $user > 0) {
                 $model = new \Application\Model\User();
