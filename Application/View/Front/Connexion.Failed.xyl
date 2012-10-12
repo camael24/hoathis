@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+    <article id="content">
+        <div class="alert alert-error" bind="?error"/>
+        <div class="well">
+            <a href="@f:action=connexion" class="btn btn-success">Return</a>
+        </div>
+    </article>
+</overlay>

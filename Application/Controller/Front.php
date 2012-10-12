@@ -6,7 +6,7 @@ namespace {
 namespace Application\Controller {
     class Front extends Generic {
 
-        public function ConnexionAction() {
+        public function ConnexionAction($_this) {
             $error = array();
 
             $check = function ($id) use (&$error) {
@@ -34,18 +34,17 @@ namespace Application\Controller {
                         if ($model->rang == 2) {
                             new \Hoa\Session\QNamespace('admin'); // TODO : not really an ACL
                         }
+                        $_this->getKit('Redirector')->redirect('i', array());
 
-                        $this->data->message = 'Connexion success';
-                        $this->view->addOverlay('hoa://Application/View/Front/Success.xyl');
 
                     } else {
                         $this->data->error = 'This credentials are not reconized here, your are might be banned or unactived';
-                        $this->view->addOverlay('hoa://Application/View/Front/Failed.xyl');
+                        $this->view->addOverlay('hoa://Application/View/Front/Connexion.Failed.xyl');
                     }
 
                 } else {
                     $this->data->error = 'This input are empty ' . implode(',', $error);
-                    $this->view->addOverlay('hoa://Application/View/Front/Failed.xyl');
+                    $this->view->addOverlay('hoa://Application/View/Front/Connexion.Failed.xyl');
                 }
 
 
@@ -57,13 +56,12 @@ namespace Application\Controller {
 
         }
 
-        public function DisconnectAction() {
+        public function DisconnectAction($_this) {
             \Hoa\Session\Session::unsetAllFlashes();
             \Hoa\Session\Session::unsetAllNamespaces();
             \Hoa\Session\Session::forgetMe();
             \Hoa\Session\Session::destroy();
-            $this->view->addOverlay('hoa://Application/View/Front/Disconnect.xyl');
-            $this->view->render();
+            $_this->getKit('Redirector')->redirect('i', array());
         }
 
         public function RegisterAction() {

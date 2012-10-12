@@ -12,19 +12,19 @@ namespace Application\Controller {
                 $this->view->addOverlay('hoa://Application/View/Hoathis/404.xyl');
             } else {
 
-                $model       = new \Application\Model\Library();
+                $model = new \Application\Model\Library();
 
                 $all = false;
-                if(\Hoa\Session\Session::isNamespaceSet('admin')){
+                if (\Hoa\Session\Session::isNamespaceSet('admin')) {
                     $all = true;
                 }
 
-                $information = $model->getInformation($page , $all);
+                $information = $model->getInformation($page, $all);
 
                 if (\Hoa\Session\Session::isNamespaceSet('user')) {
                     $session = new \Hoa\Session\QNamespace('user');
                     if (intval($information['refUser']) === $session->idUser or \Hoa\Session\Session::isNamespaceSet('admin')) {
-                        $information['editing'] = '<a href="/e/' . $page . '" class="btn btn-danger btn-mini pull-right"><i class="icon-white icon-pencil"></i></a>';     //TODO its for ... emulate an flag
+                        $information['editing'] = '<a href="/e/' . $page . '" class="btn btn-danger btn-mini pull-right"><i class="icon-white icon-pencil"></i></a>'; //TODO its for ... emulate an flag
                     }
 
                 }
@@ -43,6 +43,7 @@ namespace Application\Controller {
             if (!\Hoa\Session\Session::isNamespaceSet('user')) {
                 $this->view->addOverlay('hoa://Application/View/Error.Auth.xyl');
                 $this->view->render();
+
                 return;
             }
 
