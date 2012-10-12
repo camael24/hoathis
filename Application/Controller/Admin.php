@@ -56,8 +56,13 @@ namespace Application\Controller {
         }
 
         public function EdituserAction($user) {
-            if (!\Hoa\Session\Session::isNamespaceSet('admin'))
+            if (!\Hoa\Session\Session::isNamespaceSet('admin')) {
+                $this->view->addOverlay('hoa://Application/View/Error.Auth.xyl');
+                $this->view->render();
+
                 return;
+            }
+
 
             $user = intval($user);
             if (!is_int($user) || $user == 0) {

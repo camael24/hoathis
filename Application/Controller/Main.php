@@ -6,8 +6,12 @@ namespace {
 namespace Application\Controller {
     class Main extends Generic {
         public function ProfilAction() {
-            if (!\Hoa\Session\Session::isNamespaceSet('user'))
+            if (!\Hoa\Session\Session::isNamespaceSet('user')) {
+                $this->view->addOverlay('hoa://Application/View/Error.Auth.xyl');
+                $this->view->render();
+
                 return;
+            }
             $error   = array();
             $session = new \Hoa\Session\QNamespace('user');
             $model   = new \Application\Model\User();
@@ -142,8 +146,12 @@ namespace Application\Controller {
         }
 
         public function CreateAction() {
-            if (!\Hoa\Session\Session::isNamespaceSet('user'))
+            if (!\Hoa\Session\Session::isNamespaceSet('user')) {
+                $this->view->addOverlay('hoa://Application/View/Error.Auth.xyl');
+                $this->view->render();
+
                 return;
+            }
 
             $session = new \Hoa\Session\QNamespace('user');
             $model   = new \Application\Model\User();
@@ -195,8 +203,12 @@ namespace Application\Controller {
 
         public function ListAction() {
 
-            if (!\Hoa\Session\Session::isNamespaceSet('user'))
+            if (!\Hoa\Session\Session::isNamespaceSet('user')) {
+                $this->view->addOverlay('hoa://Application/View/Error.Auth.xyl');
+                $this->view->render();
+
                 return;
+            }
 
             $session            = new \Hoa\Session\QNamespace('user');
             $model              = new \Application\Model\Library();

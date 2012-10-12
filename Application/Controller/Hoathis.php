@@ -41,6 +41,8 @@ namespace Application\Controller {
 
         public function EditAction($page) {
             if (!\Hoa\Session\Session::isNamespaceSet('user')) {
+                $this->view->addOverlay('hoa://Application/View/Error.Auth.xyl');
+                $this->view->render();
                 return;
             }
 
