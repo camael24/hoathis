@@ -9,9 +9,9 @@
                 <h2>Search in database:</h2>
                 <div class="input-append">
                     <input class="input-auto" id="searchBar" type="text" placeholder="Search ..."/>
-                    <span class="add-on">
-                        <i id="searchButton" class="icon-search"/>
-                    </span>
+                    <a id="searchButton" class="btn btn-mini add-on">
+                        <i class="icon-search"/>
+                    </a>
                 </div>
             </p>
         </div>

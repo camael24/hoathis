@@ -10,6 +10,16 @@ $(function () {
             });
         }
     });
+    $('#searchBar').keypress(function (e) {
+        var code = (e.keyCode ? e.keyCode : e.which);
+        if (code == 13) {
+            $('#searchButton').trigger('click');
+            e.preventDefault();
+        }
+
+
+    });
+
     $("#searchButton").click(function () {
         var search = $('#searchBar').val();
         $.ajax({
