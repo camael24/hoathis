@@ -60,7 +60,6 @@ namespace Application\Controller {
         public function DisconnectAction() {
             \Hoa\Session\Session::unsetAllFlashes();
             \Hoa\Session\Session::unsetAllNamespaces();
-            \Hoa\Session\Session::regenerateId();
             \Hoa\Session\Session::forgetMe();
             \Hoa\Session\Session::destroy();
             $this->view->addOverlay('hoa://Application/View/Front/Disconnect.xyl');

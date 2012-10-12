@@ -32,6 +32,8 @@ namespace Application\Controller {
                 if (empty($error)) {
                     if ($pass === $rpass) {
                         $model->update($model->idUser, $pass, $mail);
+                        $this->data->message = 'Modification success';
+                        $this->view->addOverlay('hoa://Application/View/Front/Success.xyl');
                     } else {
                         $this->data->error = 'Your field "Password" and "Retype Password" are not equal';
                         $this->view->addOverlay('hoa://Application/View/Front/Failed.xyl');
@@ -66,15 +68,29 @@ namespace Application\Controller {
 
         public function SearchAction() {
             $model = new \Application\Model\Library();
+            $user  = new \Application\Model\User();
             if (array_key_exists('term', $_POST)) {
-                $s = $model->search($_POST['term']);
-
-                $elmt = array();
-                foreach ($s as $i)
-                    $elmt[] = $i['name'];
+                if (strpos($_POST['term'], '@') === 0) {
+                    $term = substr($_POST['term'], 1);
+                    $s    = $user->search($term);
 
 
-                echo json_encode($elmt);
+                    $elmt = array();
+                    foreach ($s as $i)
+                        $elmt[] = '@' . $i['username'];
+
+                    echo json_encode($elmt);
+                } else {
+
+                    $s = $model->search($_POST['term']);
+
+                    $elmt = array();
+                    foreach ($s as $i)
+                        $elmt[] = $i['name'];
+
+
+                    echo json_encode($elmt);
+                }
             } else if (array_key_exists('search', $_POST)) {
                 $main = 'hoa://Application/View/Main/Fragment/List.xyl';
 
@@ -88,12 +104,21 @@ namespace Application\Controller {
                 $this->data = $xyl->getData();
 
 
-                $this->data->label  = 'Search of : ' . $_POST['search'];
-                $this->data->search = $model->search($_POST['search']);
+                if (strpos($_POST['search'], '@') === 0) {
+                    $term               = substr($_POST['search'], 1);
+                    $this->data->label  = 'Search of Author : ' . $term;
+                    $this->data->search = $user->search($term);
+                    $this->view->interprete();
+                    $this->view->render($this->view->getSnippet('author_list'));
+
+                } else {
+                    $this->data->label  = 'Search of : ' . $_POST['search'];
+                    $this->data->search = $model->search($_POST['search']);
+                    $this->view->interprete();
+                    $this->view->render($this->view->getSnippet('main_list'));
+                }
 
 
-                $this->view->interprete();
-                $this->view->render($this->view->getSnippet('main_list'));
             }
 
 
@@ -164,6 +189,44 @@ namespace Application\Controller {
             $this->view->addOverlay('hoa://Application/View/Main/List.xyl');
             $this->view->render();
 
+        }
+
+        public function UserAction($user) {
+            if (!\Hoa\Session\Session::isNamespaceSet('user'))
+                return;
+
+
+            $user = intval($user);
+            if (is_int($user) && $user > 0) {
+                $model = new \Application\Model\User();
+                $model->open(array('id' => $user));
+
+
+                $rang = null;
+                switch ($model->rang) {
+                    case 2:
+                        $rang = '<span class="label label-important">Administrator</span>';
+                        break;
+                    case 1:
+                        $rang = '<span class="label label-success">User</span>';
+                        break;
+                    case 0:
+                    default:
+                        $rang = '<span class="label label-inverse">Banned or Unactivate</span>';
+                }
+
+
+                if (\Hoa\Session\Session::isNamespaceSet('admin'))
+                    $this->data->editing = '<a href="/u/' . $user . '/edit" class="btn btn-danger btn-mini pull-right"><i class="icon-white icon-pencil"></i></a>'; //TODO its for ... emulate an flag
+
+                $this->data->login = $model->username;
+                $this->data->mail  = $model->email;
+                $this->data->rang  = $rang;
+
+                $this->view->addOverlay('hoa://Application/View/Main/Profil.xyl');
+
+                $this->view->render();
+            }
         }
     }
 }

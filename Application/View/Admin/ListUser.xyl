@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+    <article id="content">
+        <div id="result">
+            <yield select="?f:handle#author_list"/>
+        </div>
+    </article>
+</overlay>

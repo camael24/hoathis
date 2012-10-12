@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+    <article id="content">
+        <div class="hero-unit">
+            <form action="#" method="post" class="form-horizontal">
+                <legend>Admin profil editing -
+                    <span class="emphase" bind="?login"/>
+                </legend>
+                <div class="control-group">
+                    <label class="control-label" for="user">Username :</label>
+                    <div class="controls">
+                        <input type="text" id="user" name="user" placeholder="Login" value='(?login)'/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="pass">New Password</label>
+                    <div class="controls">
+                        <input type="password" id="pass" name="pass" placeholder="Password"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="rpass">Retype new password</label>
+                    <div class="controls">
+                        <input type="password" id="rpass" name="rpass" placeholder="Re-Password"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="mail">Email</label>
+                    <div class="controls">
+                        <input type="text" id="mail" name="mail" placeholder="Email" value="(?mail)"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="rang">Rang</label>
+                    <div class="controls">
+                        <value bind="?rang"/>
+                    </div>
+                </div>
+                <legend></legend>
+                <div class="control-group">
+                    <label class="control-label" for="send"></label>
+                    <div class="controls">
+                        <input type="hidden" name="idelmt" value="(?idUser)"/>
+                        <input type="submit" id="send" class="btn btn-primary"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </article>
+</overlay>

@@ -19,4 +19,21 @@
             </li>
         </ul>
     </snippet>
+    <snippet id="author_list">
+
+        <p class="lead" bind="?label"/>
+        <ul>
+            <li bind="?search">
+
+                <div class="row">
+                    <h2 class="span6">
+                        <value bind="?username"/>
+                    </h2>
+                    <a href="@u:user=(?idUser)" class="btn btn-primary">
+                        <i class="icon-white icon-chevron-right"/>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </snippet>
 </fragment>

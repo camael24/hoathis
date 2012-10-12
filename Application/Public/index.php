@@ -45,7 +45,8 @@ namespace {
         ->get_post('a', '/admin/(?<_able>.*?)/(?<page>.*?)', 'admin', 'index')
         ->get_post('ai', '/admin/(?<_able>.*?)', 'admin', 'index')
         ->get_post('e', '/e/(?<page>.*?)', 'Hoathis', 'Edit')
-        ->get_post('u', '/u/(?<user>.*?).html', 'Main', 'User')
+        ->get_post('ue', '/u/(?<user>.*?)/edit', 'admin', 'Edituser')
+        ->get_post('u', '/u/(?<user>.*?)', 'Main', 'User')
         ->get_post('c', '/a/(?<action>.*?).html', 'Main', 'Index')
         ->get_post('f', '/(?<action>.*?).html', 'Front', 'Connexion')
         ->get('i', '/', 'Main', 'Index');
