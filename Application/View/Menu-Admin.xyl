@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <definition xmlns="http://hoa-project.net/xyl/xylophone">
     <yield name="menuadm">
-        <ul class="nav">
-            <li>
-                <a href="@ai:_able=index">Libraries</a>
-            </li>
-            <li>
-                <a href="@ai:_able=users">Users</a>
-            </li>
-        </ul>
+        <li>
+            <a href="@ai:_able=index" class="dropdown-toggle"><i class="icon-white icon-tasks"/>Libraries
+            </a>
+        </li>
+        <li>
+            <a href="@ai:_able=users" class="dropdown-toggle"><i class="icon-white icon-eye-open"/>Users
+            </a>
+        </li>
     </yield>
 </definition>

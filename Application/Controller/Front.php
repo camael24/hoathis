@@ -63,6 +63,7 @@ namespace Application\Controller {
             \Hoa\Session\Session::unsetAllNamespaces();
             \Hoa\Session\Session::forgetMe();
             \Hoa\Session\Session::destroy();
+//            $this->flash('success', 'Disconnect success');
             $_this->getKit('Redirector')->redirect('i', array());
         }
 
