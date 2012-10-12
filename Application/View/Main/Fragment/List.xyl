@@ -28,6 +28,7 @@
                 <div class="row">
                     <h2 class="span6">
                         <value bind="?username"/>
+                        <value bind="?rang"/>
                     </h2>
                     <a href="@u:user=(?idUser)" class="btn btn-primary">
                         <i class="icon-white icon-chevron-right"/>

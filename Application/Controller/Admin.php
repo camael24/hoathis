@@ -28,9 +28,29 @@ namespace Application\Controller {
 
         public function UsersAction() {
             // List de tous le monde + boutton admin ?
-            $user = new \Application\Model\User();
-            $this->data->label  = 'All users in da world';
-            $this->data->search = $user->all();
+            $user              = new \Application\Model\User();
+            $this->data->label = 'All users in da world';
+
+            $searchs = $user->all();
+
+            foreach ($searchs as $id => $search) {
+                $rang = null;
+                switch ($search['rang']) {
+                    case 2:
+                        $rang = '<span class="label label-important">Administrator</span>';
+                        break;
+                    case 1:
+                        $rang = '<span class="label label-success">User</span>';
+                        break;
+                    case 0:
+                    default:
+                        $rang = '<span class="label label-inverse">Banned or Unactivate</span>';
+                }
+
+                $searchs[$id]['rang'] = $rang;
+            }
+            $this->data->search = $searchs;
+
             $this->view->addOverlay('hoa://Application/View/Admin/ListUser.xyl');
             $this->view->render();
         }

@@ -105,9 +105,26 @@ namespace Application\Controller {
 
 
                 if (strpos($_POST['search'], '@') === 0) {
-                    $term               = substr($_POST['search'], 1);
-                    $this->data->label  = 'Search of Author : ' . $term;
-                    $this->data->search = $user->search($term);
+                    $term              = substr($_POST['search'], 1);
+                    $this->data->label = 'Search of Author : ' . $term;
+                    $searchs           = $user->search($term);
+                    foreach ($searchs as $id => $search) {
+                        $rang = null;
+                        switch ($search['rang']) {
+                            case 2:
+                                $rang = '<span class="label label-important">Administrator</span>';
+                                break;
+                            case 1:
+                                $rang = '<span class="label label-success">User</span>';
+                                break;
+                            case 0:
+                            default:
+                                $rang = '<span class="label label-inverse">Banned or Unactivate</span>';
+                        }
+
+                        $searchs[$id]['rang'] = $rang;
+                    }
+                    $this->data->search = $searchs;
                     $this->view->interprete();
                     $this->view->render($this->view->getSnippet('author_list'));
 

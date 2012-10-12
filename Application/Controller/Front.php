@@ -39,7 +39,7 @@ namespace Application\Controller {
                         $this->view->addOverlay('hoa://Application/View/Front/Success.xyl');
 
                     } else {
-                        $this->data->error = 'This credentials are not reconized here';
+                        $this->data->error = 'This credentials are not reconized here, your are might be banned or unactived';
                         $this->view->addOverlay('hoa://Application/View/Front/Failed.xyl');
                     }
 
