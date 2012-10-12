@@ -181,7 +181,7 @@
 }
 
 .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
-    background-position: 0 -15px;
+    background-color: #0088cc;
     color: #333;
     text-decoration: none;
 
@@ -189,6 +189,8 @@
 
 .ui-state-hover a, .ui-state-hover a:hover {
     color: #212121;
+    background-color: #0088cc;
+
     text-decoration: none;
 }
 
@@ -1317,12 +1319,10 @@
 }
 
 .ui-menu .ui-menu-item a.ui-state-hover,
-.ui-menu .ui-menu-item a.ui-state-active,
-.ui-menu .ui-menu-item:hover {
+.ui-menu .ui-menu-item a.ui-state-active {
     padding: 0px;
     margin: 0px;
     font-weight: normal;
-    background-color: #0088cc;
     color: #fff
 }
 
