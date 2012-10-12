@@ -28,6 +28,7 @@ namespace Application\Controller {
                     }
 
                 }
+
                 $this->data->information = $information;
                 if (empty($information)) {
                     $this->view->addOverlay('hoa://Application/View/Hoathis/404.xyl');
