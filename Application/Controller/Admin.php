@@ -55,11 +55,10 @@ namespace Application\Controller {
             $this->view->render();
         }
 
-        public function EdituserAction($user) {
+        public function EdituserAction($_this, $user) {
             if (!\Hoa\Session\Session::isNamespaceSet('admin')) {
-                $this->view->addOverlay('hoa://Application/View/Error.Auth.xyl');
-                $this->view->render();
-
+                $this->flash('error', 'Error we dont have correct credential');
+                $_this->getKit('Redirector')->redirect('i', array());
                 return;
             }
 
@@ -106,16 +105,16 @@ namespace Application\Controller {
                             $users->update($id, $pass, $mail);
                             $users->setRang($id, $rang);
                             $users->setUsername($id, $name);
-                            $this->data->message = 'Modification success';
-                            $this->view->addOverlay('hoa://Application/View/Front/Success.xyl');
+                            $this->flash('success', 'Modification success');
+                            $_this->getKit('Redirector')->redirect('i', array());
                         } else {
-                            $this->data->error = 'Your field "Password" and "Retype Password" are not equal';
-                            $this->view->addOverlay('hoa://Application/View/Front/Failed.xyl');
+                            $this->flash('error', 'Your field "Password" and "Retype Password" are not equal');
+                            $_this->getKit('Redirector')->redirect('i', array());
                         }
 
                     } else {
-                        $this->data->error = 'This input are empty ' . implode(',', $error);
-                        $this->view->addOverlay('hoa://Application/View/Front/Failed.xyl');
+                        $this->flash('error', 'This input are empty ' . implode(',', $error));
+                        $_this->getKit('Redirector')->redirect('i', array());
                     }
 
 

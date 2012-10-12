@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xyl-stylesheet href="hoa://Application/Public/Css/jquery.ui.1.8.16.ie.css" ?>
-<?xyl-stylesheet href="hoa://Application/Public/Css/jquery-ui-1.8.16.custom.css" ?>
-<?xyl-fragment href="hoa://Application/View/Index/Fragment/List.xyl" as="handle"?>
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
     <article id="content">
         <div class="container-fluid hero-unit">

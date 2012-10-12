@@ -13,8 +13,9 @@
 
         <script src="hoa://Application/Public/Js/jquery.min.js"/>
         <script src="hoa://Application/Public/Js/bootstrap-dropdown.js"/>
-        <script src="hoa://Application/Public/Js/bootstrap-typeahead.js"/>
+        <script src="hoa://Application/Public/Js/bootstrap-alert.js"/>
 
+        <article id="flash"/>
         <article id="content"/>
 
 

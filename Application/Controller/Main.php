@@ -5,10 +5,10 @@ namespace {
 }
 namespace Application\Controller {
     class Main extends Generic {
-        public function ProfilAction() {
+        public function ProfilAction($_this) {
             if (!\Hoa\Session\Session::isNamespaceSet('user')) {
-                $this->view->addOverlay('hoa://Application/View/Error.Auth.xyl');
-                $this->view->render();
+                $this->flash('error', 'You don`t have the require credential');
+                $_this->getKit('Redirector')->redirect('i', array());
 
                 return;
             }
@@ -38,16 +38,16 @@ namespace Application\Controller {
                     if (empty($error)) {
                         if ($pass === $rpass) {
                             $model->update($model->idUser, $pass, $mail);
-                            $this->data->message = 'Modification success';
-                            $this->view->addOverlay('hoa://Application/View/Front/Success.xyl');
+                            $this->flash('success', 'Modification success');
+                            $_this->getKit('Redirector')->redirect('i', array());
                         } else {
-                            $this->data->error = 'Your field "Password" and "Retype Password" are not equal';
-                            $this->view->addOverlay('hoa://Application/View/Front/Failed.xyl');
+                            $this->flash('error', 'Your field "Password" and "Retype Password" are not equal');
+                            $_this->getKit('Redirector')->redirect('i', array());
                         }
 
                     } else {
-                        $this->data->error = 'This input are empty ' . implode(',', $error);
-                        $this->view->addOverlay('hoa://Application/View/Front/Failed.xyl');
+                        $this->flash('error', 'This input are empty ' . implode(',', $error));
+                        $_this->getKit('Redirector')->redirect('i', array());
                     }
 
 
@@ -62,7 +62,6 @@ namespace Application\Controller {
         }
 
         public function IndexAction() {
-
 
             $this->view->addOverlay('hoa://Application/View/Main/Search.xyl');
             $this->view->render();
@@ -147,10 +146,10 @@ namespace Application\Controller {
 
         }
 
-        public function CreateAction() {
+        public function CreateAction($_this) {
             if (!\Hoa\Session\Session::isNamespaceSet('user')) {
-                $this->view->addOverlay('hoa://Application/View/Error.Auth.xyl');
-                $this->view->render();
+                $this->flash('error', 'You don`t have the require credential');
+                $_this->getKit('Redirector')->redirect('i', array());
 
                 return;
             }
@@ -188,14 +187,15 @@ namespace Application\Controller {
                         $valid = $model->insert($session->idUser, $name, $descripion, $home, $release, $documentation, $issue);
 
                         if ($valid === true) {
-                            $this->view->addOverlay('hoa://Application/View/Main/Create.Success.xyl');
+                            $this->flash('success', 'Create success');
+                            $_this->getKit('Redirector')->redirect('i', array());
                         } else {
-                            $this->data->error = 'An library as ever a same name !';
-                            $this->view->addOverlay('hoa://Application/View/Main/Create.Failed.xyl');
+                            $this->flash('error', 'An library as ever a same name !');
+                            $_this->getKit('Redirector')->redirect('i', array());
                         }
                     } else {
-                        $this->data->error = 'This input are empty ' . implode(',', $error);
-                        $this->view->addOverlay('hoa://Application/View/Main/Create.Failed.xyl');
+                        $this->flash('error', 'This input are empty ' . implode(',', $error));
+                        $_this->getKit('Redirector')->redirect('i', array());
                     }
                 } else {
                     $this->view->addOverlay('hoa://Application/View/Main/Create.xyl');
@@ -233,7 +233,6 @@ namespace Application\Controller {
                     $this->view->addOverlay('hoa://Application/View/Hoathis/404.xyl');
 
                 } else {
-
 
                     $rang = null;
                     switch ($model->rang) {

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<overlay xmlns="http://hoa-project.net/xyl/xylophone">
-    <article id="content">
-        <div class="alert alert-error">Not implement yet :D</div>
-        <div class="well"><a href="/" class="btn btn-success">Return</a></div>
-    </article>
-</overlay>

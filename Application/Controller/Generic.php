@@ -22,6 +22,33 @@ namespace Application\Controller {
                 $this->view->addUse('hoa://Application/View/Menu.xyl');
                 $this->view->addUse('hoa://Application/View/Navbar.Disconnected.xyl');
             }
+
+            if (array_key_exists('hoathis', $_SESSION) && !empty($_SESSION['hoathis'])) {
+                $hoathis = $_SESSION['hoathis'];
+                if (array_key_exists('error', $hoathis)) {
+
+                    $this->data->type    = "alert alert-error";
+                    $this->data->message = $hoathis['error'];
+
+                } else if (array_key_exists('info', $hoathis)) {
+
+                    $this->data->type    = "alert alert-info";
+                    $this->data->message = $hoathis['info'];
+
+                } elseif (array_key_exists('success', $hoathis)) {
+
+                    $this->data->type    = "alert alert-success";
+                    $this->data->message = $hoathis['success'];
+
+                }
+                $this->view->addOverlay('hoa://Application/View/Flash.xyl');
+            }
+            $_SESSION['hoathis'] = array();
+
+        }
+
+        public function flash($level, $message) {
+            $_SESSION['hoathis'][$level] = $message;
         }
 
 

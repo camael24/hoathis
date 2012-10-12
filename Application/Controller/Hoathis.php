@@ -39,10 +39,10 @@ namespace Application\Controller {
             $this->view->render();
         }
 
-        public function EditAction($page) {
+        public function EditAction($_this, $page) {
             if (!\Hoa\Session\Session::isNamespaceSet('user')) {
-                $this->view->addOverlay('hoa://Application/View/Error.Auth.xyl');
-                $this->view->render();
+                $this->flash('error', 'You don`t have the require credential');
+                $_this->getKit('Redirector')->redirect('i', array());
 
                 return;
             }
@@ -75,8 +75,8 @@ namespace Application\Controller {
                         $documentation = $check('doc');
                         $model->update($page, $descripion, $home, $release, $documentation, $issue);
 
-                        $this->data->message = 'Edition success';
-                        $this->view->addOverlay('hoa://Application/View/Front/Success.xyl');
+                        $this->flash('success', 'Edition success');
+                        $_this->getKit('Redirector')->redirect('i', array());
 
                     } else {
 
