@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2dad6089-5fba-4474-8aaa-56cbe5c042fc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/View/Front/Connexion.Failed.xyl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Controller/Front.php" afterPath="$PROJECT_DIR$/Application/Controller/Front.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Controller/Hoathis.php" afterPath="$PROJECT_DIR$/Application/Controller/Hoathis.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Model/User.php" afterPath="$PROJECT_DIR$/Application/Model/User.php" />
     </list>
     <ignored path="hoathis.net.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,19 +68,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="User.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Model/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="98" column="26" selection-start="2669" selection-end="2669" vertical-scroll-proportion="-6.6923075">
+            <state line="75" column="55" selection-start="1898" selection-end="1898" vertical-scroll-proportion="0.33292684">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Front.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Front.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Controller/Front.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="88" selection-start="1513" selection-end="1513" vertical-scroll-proportion="0.2695122">
+            <state line="41" column="88" selection-start="1513" selection-end="1513" vertical-scroll-proportion="-4.3333335">
               <folding />
             </state>
           </provider>
@@ -137,13 +135,13 @@
         <option value="$PROJECT_DIR$/Application/Public/Classic/Css/jquery-ui-1.8.16.custom.css" />
         <option value="$PROJECT_DIR$/Application/Model/Library.php" />
         <option value="$PROJECT_DIR$/Application/View/Error.Auth.xyl" />
-        <option value="$PROJECT_DIR$/Application/Model/User.php" />
         <option value="$PROJECT_DIR$/Application/Controller/Admin.php" />
         <option value="$PROJECT_DIR$/Application/Controller/Main.php" />
         <option value="$PROJECT_DIR$/Application/Controller/Hoathis.php" />
         <option value="$PROJECT_DIR$/Application/View/Front/Success.xyl" />
         <option value="$PROJECT_DIR$/Application/View/Front/Connexion.Failed.xyl" />
         <option value="$PROJECT_DIR$/Application/Controller/Front.php" />
+        <option value="$PROJECT_DIR$/Application/Model/User.php" />
       </list>
     </option>
   </component>
@@ -609,13 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Model/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="26" selection-start="2669" selection-end="2669" vertical-scroll-proportion="-6.6923075">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Controller/Main.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="38" selection-start="633" selection-end="637" vertical-scroll-proportion="0.33333334">
@@ -688,7 +679,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Controller/Front.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="88" selection-start="1513" selection-end="1513" vertical-scroll-proportion="0.2695122">
+        <state line="41" column="88" selection-start="1513" selection-end="1513" vertical-scroll-proportion="-4.3333335">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Model/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="55" selection-start="1898" selection-end="1898" vertical-scroll-proportion="0.33292684">
           <folding />
         </state>
       </provider>

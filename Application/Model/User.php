@@ -73,7 +73,7 @@ namespace Application\Model {
         }
 
         public function checkUser($user) {
-            $select = 'SELECT * FROM `user` WHERE `name` = :user';
+            $select = 'SELECT * FROM `user` WHERE `username` = :user';
             $select = $this->getMappingLayer()
                 ->prepare($select)
                 ->execute(array(
