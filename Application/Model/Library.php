@@ -84,7 +84,7 @@ namespace Application\Model {
         }
 
         public function search($data) {
-            $select = 'SELECT *  FROM library AS l, user AS u WHERE l.name LIKE :data AND l.valid = :valid AND l.refUser = u.idUser;';
+            $select = 'SELECT *  FROM library AS l, user AS u WHERE l.name LIKE :data AND l.valid = :valid AND l.refUser = u.idUser LIMIT 20;';
             $select = $this->getMappingLayer()->prepare($select)->execute(
                 array(
                     'data'  => '%' . $data . '%',

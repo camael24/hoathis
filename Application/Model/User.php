@@ -165,7 +165,7 @@ namespace Application\Model {
         }
 
         public function search($data) {
-            $select = 'SELECT *  FROM user WHERE username LIKE :data AND rang > 0';
+            $select = 'SELECT *  FROM user WHERE username LIKE :data AND rang > 0 LIMIT 20';
             $select = $this->getMappingLayer()->prepare($select)->execute(
                 array(
                     'data'  => $data . '%'

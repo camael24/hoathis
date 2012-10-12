@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2dad6089-5fba-4474-8aaa-56cbe5c042fc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/View/Main/Search.xyl" afterPath="$PROJECT_DIR$/Application/View/Main/Search.xyl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Model/Library.php" afterPath="$PROJECT_DIR$/Application/Model/Library.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Model/User.php" afterPath="$PROJECT_DIR$/Application/Model/User.php" />
     </list>
     <ignored path="hoathis.net.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,10 +60,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery-ui-1.8.16.custom.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Application/Public/Classic/Css/jquery-ui-1.8.16.custom.css">
+      <file leaf-file-name="Library.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Model/Library.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="192" column="0" selection-start="4817" selection-end="4817" vertical-scroll-proportion="0.5543735">
+            <state line="86" column="12" selection-start="2047" selection-end="2047" vertical-scroll-proportion="-10.923077">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Model/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="167" column="90" selection-start="4889" selection-end="4889" vertical-scroll-proportion="0.51715976">
               <folding />
             </state>
           </provider>
@@ -104,15 +114,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="List.xyl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/View/Main/Fragment/List.xyl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="30" selection-start="948" selection-end="948" vertical-scroll-proportion="-19.615385">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -126,11 +127,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Application/Model/Library.php" />
         <option value="$PROJECT_DIR$/Application/View/Main/Profil.xyl" />
         <option value="$PROJECT_DIR$/Application/Public/index.php" />
         <option value="$PROJECT_DIR$/Application/View/Admin/Profil.xyl" />
-        <option value="$PROJECT_DIR$/Application/Model/User.php" />
         <option value="$PROJECT_DIR$/Application/View/Admin/ListUser.xyl" />
         <option value="$PROJECT_DIR$/Data/Variable/Database/hoathis.sql" />
         <option value="$PROJECT_DIR$/Application/Controller/Front.php" />
@@ -142,6 +141,8 @@
         <option value="$PROJECT_DIR$/Application/Public/Classic/Js/hoathis-autocomplete.js" />
         <option value="$PROJECT_DIR$/Application/View/Main/Search.xyl" />
         <option value="$PROJECT_DIR$/Application/Public/Classic/Css/jquery-ui-1.8.16.custom.css" />
+        <option value="$PROJECT_DIR$/Application/Model/Library.php" />
+        <option value="$PROJECT_DIR$/Application/Model/User.php" />
       </list>
     </option>
   </component>
@@ -422,10 +423,6 @@
               <option name="myItemId" value="Application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -441,107 +438,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Classic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Classic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Classic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Classic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
+              <option name="myItemId" value="Model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -725,23 +622,9 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Data/Variable/Database/hoathis.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="41" selection-start="537" selection-end="537" vertical-scroll-proportion="0.3903559">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Controller/Front.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="41" column="124" selection-start="1499" selection-end="1499" vertical-scroll-proportion="-14.384615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Model/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="24" selection-start="2169" selection-end="2169" vertical-scroll-proportion="-42.192307">
           <folding />
         </state>
       </provider>
@@ -823,6 +706,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Public/Classic/Css/jquery-ui-1.8.16.custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="192" column="0" selection-start="4817" selection-end="4817" vertical-scroll-proportion="0.5543735">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Application/View/Main/Search.xyl">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="68" selection-start="685" selection-end="685" vertical-scroll-proportion="-7.1923075">
@@ -830,9 +720,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Public/Classic/Css/jquery-ui-1.8.16.custom.css">
+    <entry file="file://$PROJECT_DIR$/Application/Model/Library.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="192" column="0" selection-start="4817" selection-end="4817" vertical-scroll-proportion="0.5543735">
+        <state line="86" column="12" selection-start="2047" selection-end="2047" vertical-scroll-proportion="-10.923077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Model/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="167" column="90" selection-start="4889" selection-end="4889" vertical-scroll-proportion="0.51715976">
           <folding />
         </state>
       </provider>
