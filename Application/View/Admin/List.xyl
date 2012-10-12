@@ -8,7 +8,7 @@
                 <li bind="?search">
 
                     <div class="row">
-                        <h2 class="span6"><value bind="?author"/>/
+                        <h2 class="span6"><value bind="?username"/>/
                             <span class="emphase" bind="?name"/>
                         </h2>
                         <a href="@h:page=(?idLibrary)" class="btn btn-primary">
@@ -29,7 +29,7 @@
                 <li bind="?search2">
 
                     <div class="row">
-                        <h2 class="span6"><value bind="?author"/>/
+                        <h2 class="span6"><value bind="?username"/>/
                             <span class="emphase" bind="?name"/>
                         </h2>
                         <a href="@h:page=(?idLibrary)" class="btn btn-primary">

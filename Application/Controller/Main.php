@@ -44,7 +44,7 @@ namespace Application\Controller {
 
 
             } else {
-                $this->data->login = $model->name;
+                $this->data->login = $model->username;
                 $this->data->mail  = $model->email;
 
                 $this->view->addOverlay('hoa://Application/View/Front/Profil.xyl');

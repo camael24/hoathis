@@ -5,7 +5,7 @@
             <form action="@e:page=(?page)" method="post">
                 <fieldset>
                     <legend>
-                        <h2 class="span6">Editing : <value bind="?author"/>/
+                        <h2 class="span6">Editing : <value bind="?username"/>/
                             <span class="emphase" bind="?name"/>
                         </h2>
                     </legend>

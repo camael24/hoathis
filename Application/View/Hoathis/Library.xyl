@@ -4,7 +4,7 @@
         <div class="container-fluid" bind="?information">
             <fieldset>
                 <legend>
-                    <h2 class="span6"><value bind="?author"/>/
+                    <h2 class="span6"><value bind="?username"/>/
                         <span class="emphase" bind="?name"/>
                         <value bind="?editing"/>
                     </h2>
@@ -75,7 +75,7 @@
                         <div class="btn btn-danger btn-mini">
                             <i class="icon-white icon-leaf"/>
                         </div>
-                        <span class="help-inline" bind="?contact"/>
+                        <span class="help-inline" bind="?username"/>
                     </div>
                 </div>
             </fieldset>

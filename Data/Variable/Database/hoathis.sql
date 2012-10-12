@@ -59,7 +59,7 @@ INSERT INTO `library` (`idLibrary`, `refUser`, `name`, `description`, `home`, `r
 
 CREATE TABLE IF NOT EXISTS `user` (
   `idUser` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `rang` int(11) NOT NULL,
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`idUser`, `name`, `password`, `email`, `rang`) VALUES
+INSERT INTO `user` (`idUser`, `username`, `password`, `email`, `rang`) VALUES
 (1, 'fee', 'bzzzzdd', 'eeeee', 0),
 (2, 'foo', '0beec7b5ea3f0fdbc95d0dd47f3c5bc275da8a33', 'barooooo@hhh', 1),
 (3, 'Hello', 'dd3bb71657fca7eb66a287d629420ebc1875cd86', 'foobar', 1),

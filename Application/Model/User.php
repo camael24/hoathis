@@ -16,9 +16,9 @@ namespace Application\Model {
          */
         protected $_idUser;
         /**
-         * @invariant name: undefined();
+         * @invariant username: undefined();
          */
-        protected $_name;
+        protected $_username;
         /**
          * @invariant password: undefined();
          */
@@ -41,7 +41,7 @@ namespace Application\Model {
 
 
         public function connect($user, $password) {
-            $select = 'SELECT * FROM `user` WHERE `name` = :name AND `password` = SHA1(:pass)';
+            $select = 'SELECT * FROM `user` WHERE `username` = :name AND `password` = SHA1(:pass)';
             $select = $this->getMappingLayer()
                 ->prepare($select)
                 ->execute(array(
@@ -85,7 +85,7 @@ namespace Application\Model {
 
         public function insert($user, $password, $mail) {
 
-            $sql    = 'INSERT INTO `user` (`idUser` ,`name` ,`password` ,`email` ,`rang`)VALUES (NULL , :name, SHA1(:pass), :mail, 1);';
+            $sql    = 'INSERT INTO `user` (`idUser` ,`username` ,`password` ,`email` ,`rang`)VALUES (NULL , :name, SHA1(:pass), :mail, 1);';
             $select = $this->getMappingLayer()
                 ->prepare($sql)
                 ->execute(array(
@@ -134,6 +134,10 @@ namespace Application\Model {
                 $this->setMail($id, $mail);
             if ($pass !== null)
                 $this->setPassword($id, $pass);
+        }
+
+        public function search($term) {
+
         }
 
     }

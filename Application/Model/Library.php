@@ -60,63 +60,44 @@ namespace Application\Model {
         }
 
         public function getInformation($id, $all = false) {
+
+            $v = 1;
             if ($all === true) {
-                $select = 'SELECT * FROM `library` WHERE `idLibrary` = :id';
-            } else {
-                $select = 'SELECT * FROM `library` WHERE `idLibrary` = :id AND `valid` = "1"';
+                $v = 0;
             }
-            $select = $this->getMappingLayer()
-                ->prepare($select)
-                ->execute(array('id' => $id))
-                ->fetchAll();
+
+
+            $select = 'SELECT *  FROM library AS l, user AS u WHERE l.idLibrary = :id AND l.valid >= :valid AND l.refUser = u.idUser;';
+            $select = $this->getMappingLayer()->prepare($select)->execute(
+                array(
+                    'id'    => $id,
+                    'valid' => $v
+                )
+            )->fetchAll(); // TODO : use fulltext search
 
             if (count($select) == 1)
                 $select = $select[0];
             else
                 return array();
 
-            $user = new User();
-
-
-            $user->open(array('id' => $select['refUser']));
-
-            if ($user->name === null) {
-                $user->name = '#ERROR';
-            }
-
-            $select['author']  = $user->name;
-            $select['contact'] = $user->name;
-
-
             return $select;
         }
 
         public function search($data) {
-            $select = "SELECT * FROM `library`  WHERE name LIKE '%" . $data . "%' AND `valid` = '1'";
-            $select = $this->getMappingLayer()->prepare($select)->execute()->fetchAll();
-
-            $user = new User();
-
-            foreach ($select as $id => $elmt) {
-
-
-                $user->open(array('id' => $elmt['refUser']));
-
-                if ($user->name === null) {
-                    $user->name = '#ERROR';
-                }
-
-                $select[$id]['author']  = $user->name;
-                $select[$id]['contact'] = $user->name;
-            }
-
+            $select = 'SELECT *  FROM library AS l, user AS u WHERE l.name LIKE :data AND l.valid = :valid AND l.refUser = u.idUser;';
+            $select = $this->getMappingLayer()->prepare($select)->execute(
+                array(
+                    'data'  => '%' . $data . '%',
+                    'valid' => 1
+                )
+            )->fetchAll(); // TODO : use fulltext search
             return $select;
         }
 
         private function _set($id, $champ, $value) {
             if ($value === null)
                 return;
-            $sql = 'UPDATE `library` SET `' . $champ . '` = :data WHERE `idLibrary` = :id;';
+            $sql = 'UPDATE `library` SET `' . $champ . '` = :data WHERE `idLibrary` = :id;'; // TODO Bug on peux pas mettre un bind sur une colonne ? :s
             $this->getMappingLayer()
                 ->prepare($sql)
                 ->execute(array(
@@ -183,46 +164,17 @@ namespace Application\Model {
         }
 
         public function getFromValidity($v = 0) {
-            $select = "SELECT * FROM `library`  WHERE valid = " . $v;
-            $select = $this->getMappingLayer()->prepare($select)->execute()->fetchAll();
-
-            $user = new User();
-
-            foreach ($select as $id => $elmt) {
-
-
-                $user->open(array('id' => $elmt['refUser']));
-
-                if ($user->name === null) {
-                    $user->name = '#ERROR';
-                }
-
-                $select[$id]['author']  = $user->name;
-                $select[$id]['contact'] = $user->name;
-            }
+            $select = 'SELECT *  FROM library AS l, user AS u WHERE l.valid = ? AND l.refuser = u.idUser';
+            $select = $this->getMappingLayer()->prepare($select)->execute(array($v))->fetchAll();
 
             return $select;
 
         }
 
         public function getFromAuthor($id) {
-            $select = "SELECT * FROM `library`  WHERE refUser = :refUser AND `valid` = '1'";
-            $select = $this->getMappingLayer()->prepare($select)->execute(array('refUser' => $id))->fetchAll();
-
-            $user = new User();
-
-            foreach ($select as $id => $elmt) {
-
-
-                $user->open(array('id' => $elmt['refUser']));
-
-                if ($user->name === null) {
-                    $user->name = '#ERROR';
-                }
-
-                $select[$id]['author']  = $user->name;
-                $select[$id]['contact'] = $user->name;
-            }
+//            $select = "SELECT * FROM `library`  WHERE refUser = :refUser AND `valid` = '1'";
+            $select = 'SELECT *  FROM library AS l, user AS u WHERE l.valid = 1 AND refUser = ? AND l.refuser = u.idUser';
+            $select = $this->getMappingLayer()->prepare($select)->execute(array($id))->fetchAll();
 
             return $select;
 

@@ -16,6 +16,7 @@ namespace Application\Controller {
         public function IndexAction() {
             $model               = new \Application\Model\Library();
             $this->data->label   = 'Application not yet validate';
+
             $this->data->search  = $model->getFromValidity();
             $this->data->label2  = 'Application validated';
             $this->data->search2 = $model->getFromValidity(1);
