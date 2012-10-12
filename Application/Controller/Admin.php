@@ -90,8 +90,9 @@ namespace Application\Controller {
 
             };
 
-            $users->open(array('id' => $user));
-            if (!empty($_POST)) {
+            if (false === $users->open(array('id' => $user))) {
+                $this->view->addOverlay('hoa://Application/View/Hoathis/404.xyl');
+            } else if (!empty($_POST)) {
                 $id = intval($check('idelmt', true));
                 if ($id === $user) {
                     $name  = $check('user', true, $users->username);

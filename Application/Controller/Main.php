@@ -15,47 +15,49 @@ namespace Application\Controller {
             $error   = array();
             $session = new \Hoa\Session\QNamespace('user');
             $model   = new \Application\Model\User();
-            $model->open(array('id' => $session->idUser));
+            if (false === $model->open(array('id' => $session->idUser))) {
+                $this->view->addOverlay('hoa://Application/View/Hoathis/404.xyl');
+            } else {
 
-            $check = function ($id, $check = true) use (&$error) {
-                if (array_key_exists($id, $_POST) && $_POST[$id] != '')
-                    return $_POST[$id];
-                else {
-                    if ($check === true)
-                        $error[] = $id;
+                $check = function ($id, $check = true) use (&$error) {
+                    if (array_key_exists($id, $_POST) && $_POST[$id] != '')
+                        return $_POST[$id];
+                    else {
+                        if ($check === true)
+                            $error[] = $id;
 
-                    return null;
-                }
+                        return null;
+                    }
 
-            };
+                };
 
-            if (!empty($_POST)) {
-                $mail  = $check('mail');
-                $pass  = $check('pass', false);
-                $rpass = $check('rpass', false);
-                if (empty($error)) {
-                    if ($pass === $rpass) {
-                        $model->update($model->idUser, $pass, $mail);
-                        $this->data->message = 'Modification success';
-                        $this->view->addOverlay('hoa://Application/View/Front/Success.xyl');
+                if (!empty($_POST)) {
+                    $mail  = $check('mail');
+                    $pass  = $check('pass', false);
+                    $rpass = $check('rpass', false);
+                    if (empty($error)) {
+                        if ($pass === $rpass) {
+                            $model->update($model->idUser, $pass, $mail);
+                            $this->data->message = 'Modification success';
+                            $this->view->addOverlay('hoa://Application/View/Front/Success.xyl');
+                        } else {
+                            $this->data->error = 'Your field "Password" and "Retype Password" are not equal';
+                            $this->view->addOverlay('hoa://Application/View/Front/Failed.xyl');
+                        }
+
                     } else {
-                        $this->data->error = 'Your field "Password" and "Retype Password" are not equal';
+                        $this->data->error = 'This input are empty ' . implode(',', $error);
                         $this->view->addOverlay('hoa://Application/View/Front/Failed.xyl');
                     }
 
+
                 } else {
-                    $this->data->error = 'This input are empty ' . implode(',', $error);
-                    $this->view->addOverlay('hoa://Application/View/Front/Failed.xyl');
+                    $this->data->login = $model->username;
+                    $this->data->mail  = $model->email;
+
+                    $this->view->addOverlay('hoa://Application/View/Front/Profil.xyl');
                 }
-
-
-            } else {
-                $this->data->login = $model->username;
-                $this->data->mail  = $model->email;
-
-                $this->view->addOverlay('hoa://Application/View/Front/Profil.xyl');
             }
-
             $this->view->render();
         }
 
@@ -155,47 +157,50 @@ namespace Application\Controller {
 
             $session = new \Hoa\Session\QNamespace('user');
             $model   = new \Application\Model\User();
-            $model->open(array('id' => $session->idUser));
+            if (false === $model->open(array('id' => $session->idUser))) {
+                $this->view->addOverlay('hoa://Application/View/Hoathis/404.xyl');
+            } else {
 
-            $error = array();
+                $error = array();
 
-            $check = function ($id) use (&$error) {
-                if (array_key_exists($id, $_POST) && $_POST[$id] != '')
-                    return $_POST[$id];
-                else {
-                    $error[] = $id;
+                $check = function ($id) use (&$error) {
+                    if (array_key_exists($id, $_POST) && $_POST[$id] != '')
+                        return $_POST[$id];
+                    else {
+                        $error[] = $id;
 
-                    return null;
-                }
+                        return null;
+                    }
 
-            };
+                };
 
-            if (!empty($_POST)) {
-                $name          = $check('name');
-                $descripion    = $check('description');
-                $home          = $check('home');
-                $release       = $check('release');
-                $issue         = $check('issues');
-                $documentation = $check('doc');
+                if (!empty($_POST)) {
+                    $name          = $check('name');
+                    $descripion    = $check('description');
+                    $home          = $check('home');
+                    $release       = $check('release');
+                    $issue         = $check('issues');
+                    $documentation = $check('doc');
 
 
-                if (empty($error)) {
-                    $model = new \Application\Model\Library();
-                    $valid = $model->insert($session->idUser, $name, $descripion, $home, $release, $documentation, $issue);
+                    if (empty($error)) {
+                        $model = new \Application\Model\Library();
+                        $valid = $model->insert($session->idUser, $name, $descripion, $home, $release, $documentation, $issue);
 
-                    if ($valid === true) {
-                        $this->view->addOverlay('hoa://Application/View/Main/Create.Success.xyl');
+                        if ($valid === true) {
+                            $this->view->addOverlay('hoa://Application/View/Main/Create.Success.xyl');
+                        } else {
+                            $this->data->error = 'An library as ever a same name !';
+                            $this->view->addOverlay('hoa://Application/View/Main/Create.Failed.xyl');
+                        }
                     } else {
-                        $this->data->error = 'An library as ever a same name !';
+                        $this->data->error = 'This input are empty ' . implode(',', $error);
                         $this->view->addOverlay('hoa://Application/View/Main/Create.Failed.xyl');
                     }
                 } else {
-                    $this->data->error = 'This input are empty ' . implode(',', $error);
-                    $this->view->addOverlay('hoa://Application/View/Main/Create.Failed.xyl');
-                }
-            } else {
-                $this->view->addOverlay('hoa://Application/View/Main/Create.xyl');
+                    $this->view->addOverlay('hoa://Application/View/Main/Create.xyl');
 
+                }
             }
             $this->view->render();
 
@@ -224,32 +229,35 @@ namespace Application\Controller {
             $user = intval($user);
             if (is_int($user) && $user > 0) {
                 $model = new \Application\Model\User();
-                $model->open(array('id' => $user));
+                if (false === $model->open(array('id' => $user))) {
+                    $this->view->addOverlay('hoa://Application/View/Hoathis/404.xyl');
+
+                } else {
 
 
-                $rang = null;
-                switch ($model->rang) {
-                    case 2:
-                        $rang = '<span class="label label-important">Administrator</span>';
-                        break;
-                    case 1:
-                        $rang = '<span class="label label-success">User</span>';
-                        break;
-                    case 0:
-                    default:
-                        $rang = '<span class="label label-inverse">Banned or Unactivate</span>';
+                    $rang = null;
+                    switch ($model->rang) {
+                        case 2:
+                            $rang = '<span class="label label-important">Administrator</span>';
+                            break;
+                        case 1:
+                            $rang = '<span class="label label-success">User</span>';
+                            break;
+                        case 0:
+                        default:
+                            $rang = '<span class="label label-inverse">Banned or Unactivate</span>';
+                    }
+
+
+                    if (\Hoa\Session\Session::isNamespaceSet('admin'))
+                        $this->data->editing = '<a href="/u/' . $user . '/edit" class="btn btn-danger btn-mini pull-right"><i class="icon-white icon-pencil"></i></a>'; //TODO its for ... emulate an flag
+
+                    $this->data->login = $model->username;
+                    $this->data->mail  = $model->email;
+                    $this->data->rang  = $rang;
+
+                    $this->view->addOverlay('hoa://Application/View/Main/Profil.xyl');
                 }
-
-
-                if (\Hoa\Session\Session::isNamespaceSet('admin'))
-                    $this->data->editing = '<a href="/u/' . $user . '/edit" class="btn btn-danger btn-mini pull-right"><i class="icon-white icon-pencil"></i></a>'; //TODO its for ... emulate an flag
-
-                $this->data->login = $model->username;
-                $this->data->mail  = $model->email;
-                $this->data->rang  = $rang;
-
-                $this->view->addOverlay('hoa://Application/View/Main/Profil.xyl');
-
                 $this->view->render();
             }
         }

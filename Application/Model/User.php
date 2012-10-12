@@ -105,7 +105,10 @@ namespace Application\Model {
                 'id'     => $id
             ))->fetchAll();
 
-            $this->map($select[0]);
+            if (count($select) === 1)
+                $this->map($select[0]);
+            else
+                return false;
 
             return;
         }
@@ -177,6 +180,7 @@ namespace Application\Model {
         public function all() {
             $select = 'SELECT *  FROM user';
             $select = $this->getMappingLayer()->prepare($select)->execute()->fetchAll();
+
             return $select;
         }
 
