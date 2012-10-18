@@ -2,11 +2,11 @@
 <definition xmlns="http://hoa-project.net/xyl/xylophone">
     <yield name="menuadm">
         <li>
-            <a href="@ai:_able=index" class="dropdown-toggle"><i class="icon-white icon-tasks"/>Libraries
+            <a href="@a" class="dropdown-toggle"><i class="icon-white icon-tasks"/>Libraries
             </a>
         </li>
         <li>
-            <a href="@ai:_able=users" class="dropdown-toggle"><i class="icon-white icon-eye-open"/>Users
+            <a href="@ap:_able=users" class="dropdown-toggle"><i class="icon-white icon-eye-open"/>Users
             </a>
         </li>
     </yield>

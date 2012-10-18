@@ -113,6 +113,23 @@ namespace Application\Model {
             return;
         }
 
+        public function openByName(Array $constraints = array()) {
+            $id     = $constraints['name'];
+            $select = 'SELECT * FROM `user` WHERE `username` = :id';
+            $select = $this->getMappingLayer()
+                ->prepare($select)
+                ->execute(array(
+                'id'     => $id
+            ))->fetchAll();
+
+            if (count($select) === 1)
+                $this->map($select[0]);
+            else
+                return false;
+
+            return;
+        }
+
         public function setPassword($id, $pass) {
             if ($pass === null)
                 return;

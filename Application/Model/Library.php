@@ -59,6 +59,30 @@ namespace Application\Model {
             return;
         }
 
+        public function getInformationFromName($name, $all = false) {
+
+            $v = 1;
+            if ($all === true) {
+                $v = 0;
+            }
+
+
+            $select = 'SELECT *  FROM library AS l, user AS u WHERE l.name = :name AND l.valid >= :valid AND l.refUser = u.idUser;';
+            $select = $this->getMappingLayer()->prepare($select)->execute(
+                array(
+                    'name'    => $name,
+                    'valid'   => $v
+                )
+            )->fetchAll();
+
+            if (count($select) == 1)
+                $select = $select[0];
+            else
+                return array();
+
+            return $select;
+        }
+
         public function getInformation($id, $all = false) {
 
             $v = 1;
@@ -135,7 +159,7 @@ namespace Application\Model {
         public function insert($user, $name, $description, $homepage, $release, $documentation, $issue) {
             $map = array(
                 'refUser'       => $user,
-                'name'          => $name,
+                'name'          => preg_replace('#[^[:alnum:]]#', '', $name),
                 'description'   => $description,
                 'home'          => $homepage,
                 'release'       => $release,
@@ -175,6 +199,15 @@ namespace Application\Model {
 //            $select = "SELECT * FROM `library`  WHERE refUser = :refUser AND `valid` = '1'";
             $select = 'SELECT *  FROM library AS l, user AS u WHERE l.valid = 1 AND refUser = ? AND l.refuser = u.idUser';
             $select = $this->getMappingLayer()->prepare($select)->execute(array($id))->fetchAll();
+
+            return $select;
+
+        }
+
+        public function getFromAuthorName($name) {
+//            $select = "SELECT * FROM `library`  WHERE refUser = :refUser AND `valid` = '1'";
+            $select = 'SELECT *  FROM library AS l, user AS u WHERE l.valid = 1 AND u.username = ? AND l.refuser = u.idUser';
+            $select = $this->getMappingLayer()->prepare($select)->execute(array($name))->fetchAll();
 
             return $select;
 

@@ -19,7 +19,7 @@ namespace Application\Controller {
 
             $this->data->search  = $model->getFromValidity();
             $this->data->label2  = 'Application validated';
-            $this->data->search2 = $model->getFromValidity(1);
+            $this->data->search2 = $model->getFromValidity(1);      // TODO BUG !!
 
             $this->view->addOverlay('hoa://Application/View/Admin/List.xyl');
             $this->view->render();
@@ -27,7 +27,6 @@ namespace Application\Controller {
         }
 
         public function UsersAction() {
-            // List de tous le monde + boutton admin ?
             $user              = new \Application\Model\User();
             $this->data->label = 'All users in da world';
 
@@ -59,6 +58,7 @@ namespace Application\Controller {
             if (!\Hoa\Session\Session::isNamespaceSet('admin')) {
                 $this->flash('error', 'Error we dont have correct credential');
                 $_this->getKit('Redirector')->redirect('i', array());
+
                 return;
             }
 
@@ -142,16 +142,16 @@ namespace Application\Controller {
             $this->view->render();
         }
 
-        public function UnvalidateAction($page) {
+        public function UnvalidatelibAction($id) {
             $model = new \Application\Model\Library();
-            $model->setValid($page, 0);
+            $model->setValid($id, 0);
             header('Location:/admin/');
 
         }
 
-        public function ValidateAction($page) {
+        public function ValidatelibAction($id) {
             $model = new \Application\Model\Library();
-            $model->setValid($page, 1);
+            $model->setValid($id, 1);
             header('Location:/admin/');
         }
 

@@ -6,7 +6,7 @@
                 <div class="container-fluid">
                     <a class="brand" href="/">Hoathis.net</a>
                     <div class="btn-group pull-right">
-                        <a href="@f:action=connexion" class="btn btn-success" title="Log in">
+                        <a href="@w:_able=connexion" class="btn btn-success" title="Log in">
                             <i class="icon-user"/>
                         </a>
                     </div>

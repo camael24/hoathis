@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <definition xmlns="http://hoa-project.net/xyl/xylophone">
     <yield name="icon">
-        <a href="@ai:action=index" class="btn btn-warning" title="admin zone">
+        <a href="@ap:_able=index" class="btn btn-warning" title="admin zone">
             <i class="icon-white icon-lock"/>
         </a>
     </yield>

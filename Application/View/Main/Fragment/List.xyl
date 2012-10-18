@@ -11,7 +11,7 @@
                     <h2 class="span6"><value bind="?username"/>/
                         <span class="emphase" bind="?name"/>
                     </h2>
-                    <a href="@h:page=(?idLibrary)" class="btn btn-primary">
+                    <a href="@p:project=(?name)" class="btn btn-primary">
                         <i class="icon-white icon-chevron-right"/>
                     </a>
                 </div>
@@ -30,7 +30,7 @@
                         <value bind="?username"/>
                         <value bind="?rang"/>
                     </h2>
-                    <a href="@u:user=(?idUser)" class="btn btn-primary">
+                    <a href="@u:user=(?username)" class="btn btn-primary">
                         <i class="icon-white icon-chevron-right"/>
                     </a>
                 </div>

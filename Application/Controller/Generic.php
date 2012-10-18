@@ -5,8 +5,10 @@ namespace Application\Controller {
             if (!\Hoa\Session\Session::isNamespaceSet('user')) {
                 $this->view->addUse('hoa://Application/View/Navbar.Disconnected.xyl');
             } else {
-                $data                 = new \Hoa\Session\QNamespace('user');
-                $this->data->username = ucfirst($data->user);
+                $data  = new \Hoa\Session\QNamespace('user');
+                $model = new \Application\Model\User();
+                $model->open(array('id' => $data->idUser));
+                $this->data->username = ucfirst($model->username);
                 $this->view->addUse('hoa://Application/View/Navbar.Connected.xyl');
             }
 

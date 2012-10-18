@@ -5,64 +5,7 @@ namespace {
 }
 namespace Application\Controller {
     class Main extends Generic {
-        public function ProfilAction($_this) {
-            if (!\Hoa\Session\Session::isNamespaceSet('user')) {
-                $this->flash('error', 'You don`t have the require credential');
-                $_this->getKit('Redirector')->redirect('i', array());
-
-                return;
-            }
-            $error   = array();
-            $session = new \Hoa\Session\QNamespace('user');
-            $model   = new \Application\Model\User();
-            if (false === $model->open(array('id' => $session->idUser))) {
-                $this->view->addOverlay('hoa://Application/View/Hoathis/404.xyl');
-            } else {
-
-                $check = function ($id, $check = true) use (&$error) {
-                    if (array_key_exists($id, $_POST) && $_POST[$id] != '')
-                        return $_POST[$id];
-                    else {
-                        if ($check === true)
-                            $error[] = $id;
-
-                        return null;
-                    }
-
-                };
-
-                if (!empty($_POST)) {
-                    $mail  = $check('mail');
-                    $pass  = $check('pass', false);
-                    $rpass = $check('rpass', false);
-                    if (empty($error)) {
-                        if ($pass === $rpass) {
-                            $model->update($model->idUser, $pass, $mail);
-                            $this->flash('success', 'Modification success');
-                            $_this->getKit('Redirector')->redirect('i', array());
-                        } else {
-                            $this->flash('error', 'Your field "Password" and "Retype Password" are not equal');
-                            $_this->getKit('Redirector')->redirect('i', array());
-                        }
-
-                    } else {
-                        $this->flash('error', 'This input are empty ' . implode(',', $error));
-                        $_this->getKit('Redirector')->redirect('i', array());
-                    }
-
-
-                } else {
-                    $this->data->login = $model->username;
-                    $this->data->mail  = $model->email;
-
-                    $this->view->addOverlay('hoa://Application/View/Front/Profil.xyl');
-                }
-            }
-            $this->view->render();
-        }
-
         public function IndexAction() {
-
             $this->view->addOverlay('hoa://Application/View/Main/Search.xyl');
             $this->view->render();
         }
@@ -140,12 +83,128 @@ namespace Application\Controller {
                     $this->view->render($this->view->getSnippet('main_list'));
                 }
 
-
             }
 
+        }
+        public function ConnexionAction($_this) {
+            $error = array();
+
+            $check = function ($id) use (&$error) {
+                if (array_key_exists($id, $_POST) && $_POST[$id] != '')
+                    return $_POST[$id];
+                else {
+                    $error[] = $id;
+
+                    return null;
+                }
+
+            };
+
+            if (!empty($_POST)) {
+                $user = $check('user');
+                $pass = $check('pass');
+                if (empty($error)) {
+                    $model  = new \Application\Model\User();
+                    $result = $model->connect($user, $pass);
+
+                    if ($result === true) {
+                        $session         = new \Hoa\Session\QNamespace('user');
+                        $session->idUser = $model->idUser;
+
+                        if ($model->rang == 2) {
+                            new \Hoa\Session\QNamespace('admin'); // TODO : not really an ACL
+                        }
+                        $this->flash('success', 'Connexion success');
+                        $_this->getKit('Redirector')->redirect('i', array());
+                        $_this->getKit('Redirector')->redirect('i', array());
+
+
+                    } else {
+                        $this->flash('error', 'This credentials are not reconized here, your are might be banned or unactived');
+                        $_this->getKit('Redirector')->redirect('i', array());
+                    }
+
+                } else {
+                    $this->flash('error', 'This input are empty ' . implode(',', $error));
+                    $_this->getKit('Redirector')->redirect('i', array());
+                }
+
+
+            } else {
+                $this->view->addOverlay('hoa://Application/View/Front/Connexion.xyl');
+            }
+
+            $this->view->render();
 
         }
 
+        public function DisconnectAction($_this) {
+            \Hoa\Session\Session::unsetAllFlashes();
+            \Hoa\Session\Session::unsetAllNamespaces();
+            \Hoa\Session\Session::forgetMe();
+            \Hoa\Session\Session::destroy();
+//            $this->flash('success', 'Disconnect success');
+            $_this->getKit('Redirector')->redirect('i', array());
+        }
+        public function RegisterAction($_this) {
+            $error = array();
+
+            $check = function ($id) use (&$error) {
+                if (array_key_exists($id, $_POST) && $_POST[$id] != '')
+                    return $_POST[$id];
+                else {
+                    $error[] = $id;
+
+                    return null;
+                }
+
+            };
+
+            if (!empty($_POST)) {
+                $user      = $check('user');
+                $password  = $check('pass');
+                $rpassword = $check('rpass');
+                $mail      = $check('mail');
+
+                if (empty($error)) {
+                    if ($password === $rpassword) {
+
+                        $model = new \Application\Model\User();
+
+                        if (!$model->checkMail($mail)) {
+                            $this->flash('error', 'Your mail has ever register');
+                            $_this->getKit('Redirector')->redirect('i', array());
+                        } else if (!$model->checkUser($user)) {
+                            $this->flash('error', 'Your username has ever register');
+                            $_this->getKit('Redirector')->redirect('i', array());
+                        } else {
+                            $model->insert($user, $password, $mail);
+                            $this->flash('success', 'Register success');
+                            $_this->getKit('Redirector')->redirect('i', array());
+                        }
+
+                    } else {
+
+                        $this->flash('error', 'Your field "Password" and "Retype Password" are not equal');
+                        $_this->getKit('Redirector')->redirect('i', array());
+                    }
+                } else {
+                    $this->flash('error', 'This input are empty ' . implode(',', $error));
+                    $_this->getKit('Redirector')->redirect('i', array());
+                }
+
+            } else {
+                $this->view->addOverlay('hoa://Application/View/Front/Register.xyl');
+            }
+
+            $this->view->render();
+
+        }
+
+        public function ForgotAction($_this) {
+            $this->flash('info', 'This is not implement');
+            $_this->getKit('Redirector')->redirect('i', array());
+        }
         public function CreateAction($_this) {
             if (!\Hoa\Session\Session::isNamespaceSet('user')) {
                 $this->flash('error', 'You don`t have the require credential');
@@ -204,61 +263,6 @@ namespace Application\Controller {
             }
             $this->view->render();
 
-        }
-
-        public function ListAction() {
-
-            if (!\Hoa\Session\Session::isNamespaceSet('user')) {
-                $this->view->addOverlay('hoa://Application/View/Error.Auth.xyl');
-                $this->view->render();
-
-                return;
-            }
-
-            $session            = new \Hoa\Session\QNamespace('user');
-            $model              = new \Application\Model\Library();
-            $this->data->label  = 'My Hoathis';
-            $this->data->search = $model->getFromAuthor($session->idUser);
-
-            $this->view->addOverlay('hoa://Application/View/Main/List.xyl');
-            $this->view->render();
-
-        }
-
-        public function UserAction($user) {
-            $user = intval($user);
-            if (is_int($user) && $user > 0) {
-                $model = new \Application\Model\User();
-                if (false === $model->open(array('id' => $user))) {
-                    $this->view->addOverlay('hoa://Application/View/Hoathis/404.xyl');
-
-                } else {
-
-                    $rang = null;
-                    switch ($model->rang) {
-                        case 2:
-                            $rang = '<span class="label label-important">Administrator</span>';
-                            break;
-                        case 1:
-                            $rang = '<span class="label label-success">User</span>';
-                            break;
-                        case 0:
-                        default:
-                            $rang = '<span class="label label-inverse">Banned or Unactivate</span>';
-                    }
-
-
-                    if (\Hoa\Session\Session::isNamespaceSet('admin'))
-                        $this->data->editing = '<a href="/u/' . $user . '/edit" class="btn btn-danger btn-mini pull-right"><i class="icon-white icon-pencil"></i></a>'; //TODO its for ... emulate an flag
-
-                    $this->data->login = $model->username;
-                    $this->data->mail  = $model->email;
-                    $this->data->rang  = $rang;
-
-                    $this->view->addOverlay('hoa://Application/View/Main/Profil.xyl');
-                }
-                $this->view->render();
-            }
         }
     }
 }

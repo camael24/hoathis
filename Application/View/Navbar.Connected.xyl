@@ -15,7 +15,7 @@
                             <menu/>
                             <menuadm/>
                             <li>
-                                <a href="@c:action=create" class="dropdown-toggle" title="Send an hoathis">
+                                <a href="@w:_able=create" class="dropdown-toggle" title="Send an hoathis">
                                     <i class="icon-white icon-arrow-up"/>
                                     Send
                                 </a>
@@ -29,14 +29,14 @@
                                 <ul class="dropdown-menu">
                                     <li bind="?username"/>
                                     <li>
-                                        <a href="@c:action=profil">My Profil</a>
+                                        <a href="@u:user=(?username)">My Profil</a>
                                     </li>
                                     <li>
-                                        <a href="@c:action=list">My Hoathis</a>
+                                        <a href="@up:_able=list&amp;user=(?username)">My Hoathis</a>
                                     </li>
                                     <li class="divider"></li>
                                     <li>
-                                        <a href="@f:action=disconnect">Disconnect</a>
+                                        <a href="@w:_able=disconnect">Disconnect</a>
                                     </li>
                                 </ul>
                             </li>

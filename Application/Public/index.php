@@ -40,17 +40,36 @@ namespace {
     ));
 
     // TODO : ici c'est un vrai boxons idem dans les fonctions des controleurs
+    /*
+    *                                                     Controlleur, , Action    , Variable
+    * http://sample.hoathis.hoa/                       => Project      , List      , $project  = sample
+    * http://sample.hoathis.hoa/edit.html              => Project      , Edit      , $project  = sample
+    * http://sample.hoathis.hoa/delete.html            => Project      , Delete    , $project  = sample
+    * http://hoathis.hoa/thehawk                       => User         , Profil    , $user     = thehawk
+    * http://hoathis.hoa/thehawk/edit.html             => User         , Edit      , $user     = thehawk
+    * http://hoathis.hoa/thehawk/delete.html           => User         , Delete    , $user     = thehawk
+    * http://hoathis.hoa/                              => Main         , Index
+    * http://hoathis.hoa/search.html                   => Main         , Search
+    * http://hoathis.hoa/a/                            => Admin        , Index
+    * http://hoathis.hoa/a/users.html                  => Admin        , Users
+    * http://hoathis.hoa/a/users/1                     => Admin        , Users     , $user     = thehawk
+     */
     $router
-        ->get('h', '/m/(?<page>.*?)', 'Hoathis', 'Index')
-        ->get_post('a', '/admin/(?<_able>.*?)/(?<page>.*?)', 'admin', 'index')
-        ->get_post('ai', '/admin/(?<_able>.*?)', 'admin', 'index')
-        ->get_post('e', '/e/(?<page>.*?)', 'Hoathis', 'Edit')
-        ->get_post('ue', '/u/(?<user>.*?)/edit', 'admin', 'Edituser')
-        ->get_post('u', '/u/(?<user>.*?)', 'Main', 'User')
-        ->get_post('c', '/a/(?<action>.*?).html', 'Main', 'Index')
-        ->get_post('f', '/(?<action>.*?).html', 'Front', 'Connexion')
-        ->get('i', '/', 'Main', 'Index');
+        ->get('pp', '(?<project>[^\.]+)@/(?<_able>[^\.]+)\.html', 'project', 'list')
+        ->get('p', '(?<project>[^\.]+)@/', 'project', 'list')
 
+
+        ->get_post('api', '/a/(?<_able>[^/])/(?<id>.*?)', 'admin')
+        ->get('ap', '/a/(?<_able>[^\.]+)\.html', 'admin')
+        ->get('a', '/a/', 'admin', 'index')
+
+
+        ->get_post('up', '/(?<user>[^/]{3,})/(?<_able>[^\.]+)\.html', 'user', 'index')
+        ->get('u', '/(?<user>[^/]{3,})/', 'user', 'profil')
+
+
+        ->get_post('w', '/(?<_able>[^\.]+)\.html', 'main')
+        ->get('i', '/', 'main', 'index');
     $view = new \Hoa\Xyl\Xyl(
         new Hoa\File\Read('hoa://Application/View/Main.xyl'),
         new Hoa\Http\Response\Response(),

@@ -2,7 +2,7 @@
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
     <article id="content">
         <div class="hero-unit">
-            <form  action="@f:action=connexion" method="post" class="form-horizontal">
+            <form  action="@w:_able=connexion" method="post" class="form-horizontal">
                 <legend>Connexion</legend>
                 <div class="control-group">
                     <label class="control-label" for="user">Username :</label>
@@ -26,8 +26,8 @@
             </form>
             <legend></legend>
            <p>
-               <a href="@f:action=register" class="btn btn-success">Register</a>
-               <a href="@f:action=forgot" class="btn btn-danger">Forgot password </a>
+               <a href="@w:_able=register" class="btn btn-success">Register</a>
+               <a href="@w:_able=forgot" class="btn btn-danger">Forgot password </a>
            </p>
         </div>
     </article>
