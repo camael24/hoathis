@@ -38,7 +38,7 @@ namespace Application\Controller {
             $item  = function ($item, $validate) use (&$html , $t) {
                 $html .= '<li><div class="row">
                         <h2 class="span6">' . $item['username'] . '/<span class="emphase">' . $item['name'] . '</span></h2>
-                        <a href="#" class="btn btn-primary"><i class="icon-white icon-chevron-right"></i></a>';
+                        <a href="'.$t->router->unroute('p', array('project' => $item['name'])).'" class="btn btn-primary"><i class="icon-white icon-chevron-right"></i></a>';
                 if ($validate === false) {
                     $html .= '<a href="'.$t->router->unroute('api', array('_able' => 'validatelib' , 'id' => $item['idLibrary'])).'" class="btn btn-success" title="validate it"><i class="icon-white icon-ok"></i></a>
                           <a href="'.$t->router->unroute('api', array('_able' => 'delete' , 'id' => $item['idLibrary'])).'" class="btn btn-danger" title="remove it"><i class="icon-white icon-remove"></i></a>';

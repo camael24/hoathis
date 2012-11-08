@@ -15,7 +15,7 @@ namespace Application\Controller {
 
             $information = $model->getInformationFromName($project , $all);
 
-            if (\Hoa\Session\Session::isNamespaceSet('user')) {
+            if (\Hoa\Session\Session::isNamespaceSet('user')) {         // TODO : Error d'acl !
                 $session = new \Hoa\Session\QNamespace('user');
                 if (intval($information['refUser']) === $session->idUser or \Hoa\Session\Session::isNamespaceSet('admin')) {
                     $information['editing'] = '<a href="#" class="btn btn-danger btn-mini pull-right"><i class="icon-white icon-pencil"></i></a>'; //TODO its for ... emulate an flag
