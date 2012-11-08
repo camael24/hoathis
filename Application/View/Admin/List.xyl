@@ -3,46 +3,7 @@
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
     <article id="content">
         <div id="result">
-            <p class="lead" bind="?label"/>
-            <ul>
-                <li bind="?search">
-
-                    <div class="row">
-                        <h2 class="span6"><value bind="?username"/>/
-                            <span class="emphase" bind="?name"/>
-                        </h2>
-                        <a href="@p:project=(?name)" class="btn btn-primary">
-                            <i class="icon-white icon-chevron-right"/>
-                        </a>
-                        <a href="@api:_able=validatelib&amp;id=(?idLibrary)" class="btn btn-success" title="validate it">
-                            <i class="icon-white icon-ok"/>
-                        </a>
-                        <a href="@api:_able=deletelib&amp;id=(?idLibrary)" class="btn btn-danger" title="remove it">
-                            <i class="icon-white icon-remove"/>
-                        </a>
-                    </div>
-                    <p bind="?description"/>
-                </li>
-            </ul>
-            <p class="lead" bind="?label2"/>
-            <ul>
-                <li bind="?search2">
-
-                    <div class="row">
-                        <h2 class="span6"><value bind="?username"/>/
-                            <span class="emphase" bind="?name"/>
-                        </h2>
-                        <a href="@p:project=(?name)" class="btn btn-primary">
-                            <i class="icon-white icon-chevron-right"/>
-                        </a>
-                        <a href="@api:_able=unvalidatelib&amp;id=(?idLibrary)" class="btn btn-warning"
-                           title="Unvalidate it">
-                            <i class="icon-white icon-chevron-down"/>
-                        </a>
-                    </div>
-                    <p bind="?description"/>
-                </li>
-            </ul>
+            <value bind="?result"/>
         </div>
     </article>
 </overlay>

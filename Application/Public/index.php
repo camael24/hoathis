@@ -39,7 +39,6 @@ namespace {
         'connection.autoload'              => 'default'
     ));
 
-    // TODO : ici c'est un vrai boxons idem dans les fonctions des controleurs
     /*
     *                                                     Controlleur, , Action    , Variable
     * http://sample.hoathis.hoa/                       => Project      , List      , $project  = sample
@@ -59,17 +58,17 @@ namespace {
         ->get('p', '(?<project>[^\.]+)@/', 'project', 'list')
 
 
-        ->get_post('api', '/a/(?<_able>[^/])/(?<id>.*?)', 'admin')
-        ->get('ap', '/a/(?<_able>[^\.]+)\.html', 'admin')
-        ->get('a', '/a/', 'admin', 'index')
+        ->get_post('api', 'www@/a/(?<_able>[^/])/(?<id>.*?)', 'admin')
+        ->get('ap', 'www@/a/(?<_able>[^\.]+)\.html', 'admin')
+        ->get('a', 'www@/a/', 'admin', 'index')
 
 
-        ->get_post('up', '/(?<user>[^/]{3,})/(?<_able>[^\.]+)\.html', 'user', 'index')
-        ->get('u', '/(?<user>[^/]{3,})/', 'user', 'profil')
+        ->get_post('up', 'www@/(?<user>[^/]{3,})/(?<_able>[^\.]+)\.html', 'user', 'index')
+        ->get('u', 'www@/(?<user>[^/]{3,})/', 'user', 'profil')
 
 
-        ->get_post('w', '/(?<_able>[^\.]+)\.html', 'main')
-        ->get('i', '/', 'main', 'index');
+        ->get_post('w', 'www@/(?<_able>[^\.]+)\.html', 'main')
+        ->get('i', 'www@/', 'main', 'index');
     $view = new \Hoa\Xyl\Xyl(
         new Hoa\File\Read('hoa://Application/View/Main.xyl'),
         new Hoa\Http\Response\Response(),

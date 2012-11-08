@@ -86,6 +86,7 @@ namespace Application\Controller {
             }
 
         }
+
         public function ConnexionAction($_this) {
             $error = array();
 
@@ -115,18 +116,17 @@ namespace Application\Controller {
                             new \Hoa\Session\QNamespace('admin'); // TODO : not really an ACL
                         }
                         $this->flash('success', 'Connexion success');
-                        $_this->getKit('Redirector')->redirect('i', array());
-                        $_this->getKit('Redirector')->redirect('i', array());
+                        $_this->getKit('Redirector')->redirect('up', array('user' => $model->username, '_able' => 'list'));
 
 
                     } else {
                         $this->flash('error', 'This credentials are not reconized here, your are might be banned or unactived');
-                        $_this->getKit('Redirector')->redirect('i', array());
+                        $_this->getKit('Redirector')->redirect('w', array('_able' => 'connexion'));
                     }
 
                 } else {
                     $this->flash('error', 'This input are empty ' . implode(',', $error));
-                    $_this->getKit('Redirector')->redirect('i', array());
+                    $_this->getKit('Redirector')->redirect('w', array('_able' => 'connexion'));
                 }
 
 
@@ -146,6 +146,7 @@ namespace Application\Controller {
 //            $this->flash('success', 'Disconnect success');
             $_this->getKit('Redirector')->redirect('i', array());
         }
+
         public function RegisterAction($_this) {
             $error = array();
 
@@ -169,14 +170,16 @@ namespace Application\Controller {
                 if (empty($error)) {
                     if ($password === $rpassword) {
 
+                        //TODO : check valid data ! before register !
+
                         $model = new \Application\Model\User();
 
                         if (!$model->checkMail($mail)) {
                             $this->flash('error', 'Your mail has ever register');
-                            $_this->getKit('Redirector')->redirect('i', array());
+                            $_this->getKit('Redirector')->redirect('w', array('_able' => 'register'));
                         } else if (!$model->checkUser($user)) {
                             $this->flash('error', 'Your username has ever register');
-                            $_this->getKit('Redirector')->redirect('i', array());
+                            $_this->getKit('Redirector')->redirect('w', array('_able' => 'register'));
                         } else {
                             $model->insert($user, $password, $mail);
                             $this->flash('success', 'Register success');
@@ -186,11 +189,11 @@ namespace Application\Controller {
                     } else {
 
                         $this->flash('error', 'Your field "Password" and "Retype Password" are not equal');
-                        $_this->getKit('Redirector')->redirect('i', array());
+                        $_this->getKit('Redirector')->redirect('w', array('_able' => 'register'));
                     }
                 } else {
                     $this->flash('error', 'This input are empty ' . implode(',', $error));
-                    $_this->getKit('Redirector')->redirect('i', array());
+                    $_this->getKit('Redirector')->redirect('w', array('_able' => 'register'));
                 }
 
             } else {
@@ -202,9 +205,10 @@ namespace Application\Controller {
         }
 
         public function ForgotAction($_this) {
-            $this->flash('info', 'This is not implement');
+            $this->flash('info', 'This is not implement yet');
             $_this->getKit('Redirector')->redirect('i', array());
         }
+
         public function CreateAction($_this) {
             if (!\Hoa\Session\Session::isNamespaceSet('user')) {
                 $this->flash('error', 'You don`t have the require credential');
@@ -233,6 +237,7 @@ namespace Application\Controller {
                 };
 
                 if (!empty($_POST)) {
+                    //TODO : check valid data !
                     $name          = $check('name');
                     $descripion    = $check('description');
                     $home          = $check('home');
@@ -250,11 +255,11 @@ namespace Application\Controller {
                             $_this->getKit('Redirector')->redirect('i', array());
                         } else {
                             $this->flash('error', 'An library as ever a same name !');
-                            $_this->getKit('Redirector')->redirect('i', array());
+                            $_this->getKit('Redirector')->redirect('w', array('_able' => 'create'));
                         }
                     } else {
                         $this->flash('error', 'This input are empty ' . implode(',', $error));
-                        $_this->getKit('Redirector')->redirect('i', array());
+                        $_this->getKit('Redirector')->redirect('w', array('_able' => 'create'));
                     }
                 } else {
                     $this->view->addOverlay('hoa://Application/View/Main/Create.xyl');

@@ -45,8 +45,8 @@ namespace Application\Model {
             $select = $this->getMappingLayer()
                 ->prepare($select)
                 ->execute(array(
-                'name'     => $user,
-                'pass'     => $password
+                'name' => $user,
+                'pass' => $password
             ))->fetchAll();
 
             if (count($select) === 0) {
@@ -66,7 +66,7 @@ namespace Application\Model {
             $select = $this->getMappingLayer()
                 ->prepare($select)
                 ->execute(array(
-                'mail'     => $mail,
+                'mail' => $mail,
             ))->fetchAll();
 
             return (count($select) === 0);
@@ -77,7 +77,7 @@ namespace Application\Model {
             $select = $this->getMappingLayer()
                 ->prepare($select)
                 ->execute(array(
-                'user'     => $user,
+                'user' => $user,
             ))->fetchAll();
 
             return (count($select) === 0);
@@ -90,9 +90,9 @@ namespace Application\Model {
             $select = $this->getMappingLayer()
                 ->prepare($sql)
                 ->execute(array(
-                'name'     => $user,
-                'pass'     => $password,
-                'mail'     => $mail
+                'name' => $user,
+                'pass' => $password,
+                'mail' => $mail
             ));
         }
 
@@ -102,7 +102,7 @@ namespace Application\Model {
             $select = $this->getMappingLayer()
                 ->prepare($select)
                 ->execute(array(
-                'id'     => $id
+                'id' => $id
             ))->fetchAll();
 
             if (count($select) === 1)
@@ -119,7 +119,7 @@ namespace Application\Model {
             $select = $this->getMappingLayer()
                 ->prepare($select)
                 ->execute(array(
-                'id'     => $id
+                'id' => $id
             ))->fetchAll();
 
             if (count($select) === 1)
@@ -137,8 +137,8 @@ namespace Application\Model {
             $this->getMappingLayer()
                 ->prepare($sql)
                 ->execute(array(
-                'id'       => $id,
-                'pass'     => $pass
+                'id'   => $id,
+                'pass' => $pass
             ));
         }
 
@@ -150,8 +150,8 @@ namespace Application\Model {
             $this->getMappingLayer()
                 ->prepare($sql)
                 ->execute(array(
-                'id'       => $id,
-                'rang'     => $value
+                'id'   => $id,
+                'rang' => $value
             ));
         }
 
@@ -162,8 +162,8 @@ namespace Application\Model {
             $this->getMappingLayer()
                 ->prepare($sql)
                 ->execute(array(
-                'id'       => $id,
-                'mail'     => $mail
+                'id'   => $id,
+                'mail' => $mail
             ));
         }
 
@@ -174,8 +174,8 @@ namespace Application\Model {
             $this->getMappingLayer()
                 ->prepare($sql)
                 ->execute(array(
-                'id'       => $id,
-                'user'     => $username
+                'id'   => $id,
+                'user' => $username
             ));
         }
 
@@ -188,7 +188,7 @@ namespace Application\Model {
             $select = 'SELECT *  FROM user WHERE username LIKE :data AND rang > 0 LIMIT 20';
             $select = $this->getMappingLayer()->prepare($select)->execute(
                 array(
-                    'data'  => $data . '%'
+                    'data' => $data . '%'
                 )
             )->fetchAll(); // TODO : use fulltext search
             return $select;

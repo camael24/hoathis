@@ -187,9 +187,10 @@ namespace Application\Model {
             }
         }
 
-        public function getFromValidity($v = 0) {
-            $select = 'SELECT *  FROM library AS l, user AS u WHERE l.valid = ? AND l.refuser = u.idUser';
-            $select = $this->getMappingLayer()->prepare($select)->execute(array($v))->fetchAll();
+        public function getAll() {
+            // SELECT *  FROM library AS l, user AS u WHERE l.valid = ? AND l.refUser = u.idUser
+            $select = 'SELECT * FROM library INNER JOIN user ON library.refUser = user.idUser';
+            $select = $this->getMappingLayer()->prepare($select)->execute()->fetchAll();
 
             return $select;
 

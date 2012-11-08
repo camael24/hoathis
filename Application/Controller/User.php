@@ -80,15 +80,15 @@ namespace Application\Controller {
                         if ($pass === $rpass) {
                             $model->update($model->idUser, $pass, $mail);
                             $this->flash('success', 'Modification success');
-                            $_this->getKit('Redirector')->redirect('i', array());
+                            $_this->getKit('Redirector')->redirect('u', array('user' => $model->username));
                         } else {
                             $this->flash('error', 'Your field "Password" and "Retype Password" are not equal');
-                            $_this->getKit('Redirector')->redirect('i', array());
+                            $_this->getKit('Redirector')->redirect('up', array('user' => $model->username, '_able' => 'edit'));
                         }
 
                     } else {
                         $this->flash('error', 'This input are empty ' . implode(',', $error));
-                        $_this->getKit('Redirector')->redirect('i', array());
+                        $_this->getKit('Redirector')->redirect('up', array('user' => $model->username, '_able' => 'edit'));
                     }
 
 
