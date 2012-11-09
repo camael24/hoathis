@@ -24,7 +24,7 @@ namespace {
     from('Hoathis')
         ->import('Kit.Aggregator');
 
-    \Hoa\Session::start();
+    \Hoa\Session\Session::start();
 
     $dispatcher = new \Hoa\Dispatcher\Basic();
     $router     = new \Hoa\Router\Http();
@@ -53,6 +53,7 @@ namespace {
     * http://hoathis.hoa/a/users.html                  => Admin        , Users
     * http://hoathis.hoa/a/users/1                     => Admin        , Users     , $user     = thehawk
      */
+//    $router->setSubdomainSuffix('foo');
     $router
         ->get('pp', '(?<project>[^\.]+)@/(?<_able>[^\.]+)\.html', 'project', 'list')
         ->get('p', '(?<project>[^\.]+)@/', 'project', 'list')
