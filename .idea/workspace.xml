@@ -2,77 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2dad6089-5fba-4474-8aaa-56cbe5c042fc" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Controller\Admin.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Controller\Generic.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Controller\Main.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Controller\Project.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Controller\User.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Model\Library.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Model\User.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\.htaccess" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\css\images\ui-bg_flat_0_aaaaaa_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\css\images\ui-bg_glass_55_fbf9ee_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\css\images\ui-bg_glass_65_ffffff_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\css\images\ui-bg_glass_75_dadada_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\css\images\ui-bg_glass_75_e6e6e6_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\css\images\ui-bg_glass_75_ffffff_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\css\images\ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\css\images\ui-bg_inset-soft_95_fef1ec_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\css\images\ui-icons_222222_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\css\images\ui-icons_2e83ff_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\css\images\ui-icons_454545_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\css\images\ui-icons_888888_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\css\images\ui-icons_cd0a0a_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\css\images\ui-icons_f6cf3b_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\css\jquery-ui-1.8.16.custom.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\css\jquery.ui.1.8.16.ie.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\css\style.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\img\126.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\img\glyphicons-halflings-white.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\img\glyphicons-halflings.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\js\bootstrap-alert.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\js\bootstrap-button.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\js\bootstrap-carousel.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\js\bootstrap-collapse.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\js\bootstrap-dropdown.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\js\bootstrap-modal.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\js\bootstrap-popover.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\js\bootstrap-scrollspy.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\js\bootstrap-tab.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\js\bootstrap-tooltip.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\js\bootstrap-transition.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\js\bootstrap-typeahead.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\js\hoathis-autocomplete.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\js\jquery-ui-1.9.0.custom.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\Public\Classic\js\jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\View\Admin\Icon-Admin.xyl" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\View\Admin\Icon.xyl" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\View\Admin\List.xyl" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\View\Admin\ListOOO.xyl" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\View\Admin\ListUser.xyl" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\View\Admin\Profil.xyl" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\View\Flash.xyl" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\View\Front\Connexion.xyl" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\View\Front\Profil.xyl" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\View\Front\Register.xyl" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\View\Hoathis\404.xyl" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\View\Hoathis\Edit.xyl" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\View\Hoathis\Library.xyl" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\View\Main.xyl" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\View\Main\Create.xyl" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\View\Main\Fragment\List.xyl" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\View\Main\List.xyl" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\View\Main\Profil.xyl" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\View\Main\Search.xyl" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\View\Menu-Admin.xyl" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\View\Menu-User.xyl" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\View\Menu.xyl" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\View\Navbar.Connected.xyl" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Application\View\Navbar.Disconnected.xyl" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Data\Bin\d.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Data\Bin\foo" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Data\Bin\myapp" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Data\Bin\myapp.bat" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/Controller/Generic.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/Controller/Main.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/Model/Library.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/Model/User.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/Public/Classic/css/bootstrap-responsive.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/Public/Classic/css/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/Public/Classic/css/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/View/Flash.xyl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/View/Main.xyl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/View/Main/Connect.xyl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/View/Main/Index.xyl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/View/Main/Register.xyl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/View/Navbar/Connect.xyl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/View/Navbar/Default.xyl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Public/index.php" afterPath="$PROJECT_DIR$/Application/Public/index.php" />
     </list>
@@ -94,10 +38,46 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Application/Public/index.php">
+      <file leaf-file-name="Main.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Controller/Main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="0.025362318">
+            <state line="15" column="73" selection-start="372" selection-end="372" vertical-scroll-proportion="-3.1538463">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Register.xyl" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/View/Main/Register.xyl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="38" selection-start="1631" selection-end="1631" vertical-scroll-proportion="0.6195652">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Connect.xyl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/View/Navbar/Connect.xyl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="56" selection-start="1221" selection-end="1221" vertical-scroll-proportion="-19.444445">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Default.xyl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/View/Navbar/Default.xyl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="54" selection-start="1232" selection-end="1232" vertical-scroll-proportion="-19.444445">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Connect.xyl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/View/Main/Connect.xyl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="57" selection-start="1326" selection-end="1326" vertical-scroll-proportion="-20.222221">
               <folding />
             </state>
           </provider>
@@ -116,22 +96,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Application/View/Front/Register.xyl" />
-        <option value="$PROJECT_DIR$/Application/View/Main/Create.xyl" />
-        <option value="$PROJECT_DIR$/Application/Controller/Main.php" />
-        <option value="$PROJECT_DIR$/Application/Model/Library.php" />
-        <option value="$PROJECT_DIR$/Application/View/Admin/List.xyl" />
-        <option value="$PROJECT_DIR$/Application/Controller/User.php" />
-        <option value="$PROJECT_DIR$/Application/Model/User.php" />
-        <option value="$PROJECT_DIR$/Application/View/Hoathis/Library.xyl" />
-        <option value="$PROJECT_DIR$/Application/Controller/Admin.php" />
-        <option value="$PROJECT_DIR$/Application/Controller/Project.php" />
-        <option value="$PROJECT_DIR$/Data/Variable/Theme/makeBoot.sh" />
-        <option value="$PROJECT_DIR$/Data/Variable/Theme/make.php" />
-        <option value="$PROJECT_DIR$/Data/Variable/Theme/Bootstrap/less/variables.less" />
         <option value="$PROJECT_DIR$/Data/Less/Grammar.pp" />
         <option value="$PROJECT_DIR$/Data/Bin/foo" />
+        <option value="$PROJECT_DIR$/Application/Public/Classic/css/style.css" />
+        <option value="$PROJECT_DIR$/Application/View/Main/Index.xyl" />
+        <option value="$PROJECT_DIR$/Application/View/Navbar/Navbar.Connect.xyl" />
         <option value="$PROJECT_DIR$/Application/Public/index.php" />
+        <option value="$PROJECT_DIR$/Application/Model/User.php" />
+        <option value="$PROJECT_DIR$/Application/Model/Library.php" />
+        <option value="$PROJECT_DIR$/Application/View/Flash.xyl" />
+        <option value="$PROJECT_DIR$/Application/View/Main.xyl" />
+        <option value="$PROJECT_DIR$/Application/Controller/Generic.php" />
+        <option value="$PROJECT_DIR$/Application/View/Navbar/Connect.xyl" />
+        <option value="$PROJECT_DIR$/Application/View/Navbar/Default.xyl" />
+        <option value="$PROJECT_DIR$/Application/Controller/Main.php" />
+        <option value="$PROJECT_DIR$/Application/View/Main/Connect.xyl" />
+        <option value="$PROJECT_DIR$/Application/View/Main/Register.xyl" />
       </list>
     </option>
   </component>
@@ -178,140 +158,6 @@
               <option name="myItemId" value="hoathis.net" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.jetbrains.php.config.PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP" />
-              <option name="myItemType" value="com.jetbrains.php.config.PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.jetbrains.php.config.PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP" />
-              <option name="myItemType" value="com.jetbrains.php.config.PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hoa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.jetbrains.php.config.PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP" />
-              <option name="myItemType" value="com.jetbrains.php.config.PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hoa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hoa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.jetbrains.php.config.PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP" />
-              <option name="myItemType" value="com.jetbrains.php.config.PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hoa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hoa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Compiler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.jetbrains.php.config.PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP" />
-              <option name="myItemType" value="com.jetbrains.php.config.PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hoa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hoa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Compiler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Llk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.jetbrains.php.config.PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -351,11 +197,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Variable" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Theme" />
+              <option name="myItemId" value="Library" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -373,55 +215,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Variable" />
+              <option name="myItemId" value="Library" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemId" value="Hoathis" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Variable" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dictionary" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Variable" />
+              <option name="myItemId" value="Kit" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -456,6 +258,54 @@
               <option name="myItemId" value="Application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Navbar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -475,6 +325,116 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -485,8 +445,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="preferences.sourceCode.PHP" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -508,18 +468,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp\www\hoathis.net\Application\View\Admin" />
+      <recent name="C:\wamp\www\hoathis.net\Application\View\Main" />
+      <recent name="C:\wamp\www\hoathis.net\Application\View\Navbar" />
       <recent name="C:\wamp\www\hoathis.net\Application\Controller" />
+      <recent name="C:\wamp\www\hoathis.net\Application\View\Admin" />
       <recent name="C:\wamp\www\hoathis.net\Application\Controller\O" />
-      <recent name="C:\wamp\www\hoathis.net\Application\View" />
-      <recent name="C:\wamp\www\hoathis.net\Application\View\Flash" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\hoathis.net\Application\Public\Classic\css" />
+      <recent name="C:\wamp\www\hoathis.net\Application\Public\Classic" />
+      <recent name="C:\wamp\www\hoathis.net\Application\Public" />
       <recent name="C:\wamp\www\hoathis.net\Application\Controller\O" />
       <recent name="C:\wamp\www\hoathis.net\Application\View" />
-      <recent name="C:\wamp\www\hoathis.net\Application\View\Main" />
-      <recent name="C:\wamp\www\hoathis.net\Application\View\Front" />
-      <recent name="C:\wamp\www\hoathis.net\Application\Model" />
     </key>
   </component>
   <component name="RunManager">
@@ -590,7 +550,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27267876" sideWeight="0.2611607" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30843115" sideWeight="0.6707589" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31216648" sideWeight="0.6707589" order="0" side_tool="false" content_ui="combo" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -665,24 +625,108 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Data/Variable/Theme/make.php">
+    <entry file="file://$PROJECT_DIR$/Application/Public/Classic/js/bootstrap.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="24" selection-start="783" selection-end="783" vertical-scroll-proportion="0.4277251" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-26.526316" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Library/Hoa/Hoa/Compiler/Llk/Llk.pp">
+    <entry file="file://$PROJECT_DIR$/Application/Public/Classic/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.8323766" />
+        <state line="284" column="31" selection-start="4188" selection-end="4188" vertical-scroll-proportion="0.2864137" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Library/Hoa/Hoa/Compiler/Llk/Llk.php">
+    <entry file="file://$PROJECT_DIR$/Application/Public/Classic/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="74" selection-start="3544" selection-end="3544" vertical-scroll-proportion="-1.6421801" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Model/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="206" column="12" selection-start="5899" selection-end="5899" vertical-scroll-proportion="4.753623">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/Library/Hoathis/Kit/Redirector.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Public/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="0.025362318">
+        <state line="67" column="52" selection-start="2234" selection-end="2234" vertical-scroll-proportion="-42.77778">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/View/Flash.xyl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="4" selection-start="98" selection-end="118" vertical-scroll-proportion="-1.5555556">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/View/Main.xyl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="72" selection-start="697" selection-end="697" vertical-scroll-proportion="-4.090909">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/View/Main/Index.xyl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="18" selection-start="258" selection-end="258" vertical-scroll-proportion="-7.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controller/Generic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="36" selection-start="915" selection-end="915" vertical-scroll-proportion="-12.444445">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Model/Library.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="225" column="12" selection-start="7271" selection-end="7271" vertical-scroll-proportion="1.5828221">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controller/Main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="73" selection-start="372" selection-end="372" vertical-scroll-proportion="-3.1538463">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/View/Navbar/Default.xyl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="54" selection-start="1232" selection-end="1232" vertical-scroll-proportion="-19.444445">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/View/Navbar/Connect.xyl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="56" selection-start="1221" selection-end="1221" vertical-scroll-proportion="-19.444445">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/View/Main/Connect.xyl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="57" selection-start="1326" selection-end="1326" vertical-scroll-proportion="-20.222221">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/View/Main/Register.xyl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="38" selection-start="1631" selection-end="1631" vertical-scroll-proportion="0.6195652">
           <folding />
         </state>
       </provider>

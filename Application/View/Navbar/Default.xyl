@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definition xmlns="http://hoa-project.net/xyl/xylophone">
+    <yield name="navbar">
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="navbar-inner">
+                <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+
+                <!-- Be sure to leave the brand out there if you want it shown -->
+                <a class="brand" href="#">Hoathis.net</a>
+
+                <!-- Everything you want hidden at 940px or less, place within here -->
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="@w:_able=connect">Sign-in</a>
+                        </li>
+                        <li>
+                            <a href="@w:_able=register">Register</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </yield>
+</definition>

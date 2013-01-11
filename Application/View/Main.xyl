@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-stylesheet    href="hoa://Application/Public/Css/bootstrap.css" ?>
+<?xyl-stylesheet    href="hoa://Application/Public/Css/bootstrap-responsive.css" ?>
+<?xyl-stylesheet    href="hoa://Application/Public/Css/style.css" ?>
+<?xyl-meta          name="viewport" content="width=device-width, initial-scale=1.0" ?>
+
+<document xmlns="http://hoa-project.net/xyl/xylophone">
+    <title>Hoathis.net</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"/>
+    <script src="hoa://Application/Public/Js/bootstrap.js"/>
+
+    <navbar/>
+
+    <div class="container-fluid">
+        <article id="flash"/>
+        <article id="content"/>
+
+    </div>
+
+</document>

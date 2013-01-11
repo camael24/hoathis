@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+    <article id="content">
+        <div id="result">
+            <p>Foo</p>
+            <p>Foo</p>
+            <p>Foo</p>
+            <p>Foo</p>
+            <p>Foo</p>
+        </div>
+    </article>
+</overlay>
