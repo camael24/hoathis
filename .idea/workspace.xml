@@ -2,17 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2dad6089-5fba-4474-8aaa-56cbe5c042fc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/View/Main/Create.xyl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/Controller/Project.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/View/Project/Edit.xyl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/View/Project/Info.xyl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/View/User/Edit.xyl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/View/User/Profil.xyl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Controller/Generic.php" afterPath="$PROJECT_DIR$/Application/Controller/Generic.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Controller/Main.php" afterPath="$PROJECT_DIR$/Application/Controller/Main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Public/Classic/css/style.css" afterPath="$PROJECT_DIR$/Application/Public/Classic/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/View/Main.xyl" afterPath="$PROJECT_DIR$/Application/View/Main.xyl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/View/Main/Connect.xyl" afterPath="$PROJECT_DIR$/Application/View/Main/Connect.xyl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/View/Main/Index.xyl" afterPath="$PROJECT_DIR$/Application/View/Main/Index.xyl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/View/Main/Register.xyl" afterPath="$PROJECT_DIR$/Application/View/Main/Register.xyl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Public/index.php" afterPath="$PROJECT_DIR$/Application/Public/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/View/Main/Create.xyl" afterPath="$PROJECT_DIR$/Application/View/Main/Create.xyl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/View/Navbar/Connect.xyl" afterPath="$PROJECT_DIR$/Application/View/Navbar/Connect.xyl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/View/Navbar/Default.xyl" afterPath="$PROJECT_DIR$/Application/View/Navbar/Default.xyl" />
     </list>
     <ignored path="hoathis.net.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,82 +32,28 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Controller/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="45" selection-start="342" selection-end="342" vertical-scroll-proportion="-12.444445">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Controller/Main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="125" column="34" selection-start="4379" selection-end="4379" vertical-scroll-proportion="-26.777779">
+            <state line="111" column="93" selection-start="4003" selection-end="4003" vertical-scroll-proportion="0.6400742">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Create.xyl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/View/Main/Create.xyl">
+      <file leaf-file-name="Edit.xyl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/View/User/Edit.xyl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="91" selection-start="534" selection-end="534" vertical-scroll-proportion="-7.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Application/Public/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="22" selection-start="2042" selection-end="2042" vertical-scroll-proportion="0.57608694">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.xyl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/View/Main.xyl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="930" selection-end="930" vertical-scroll-proportion="-20.222221">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Index.xyl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/View/Main/Index.xyl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="24" selection-start="1036" selection-end="1036" vertical-scroll-proportion="-19.444445">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Generic.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Controller/Generic.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="78" selection-start="2144" selection-end="2144" vertical-scroll-proportion="-19.777779">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Connect.xyl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/View/Navbar/Connect.xyl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="29" selection-start="1156" selection-end="1156" vertical-scroll-proportion="-17.88889">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Default.xyl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/View/Navbar/Default.xyl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="22" selection-start="1300" selection-end="1410" vertical-scroll-proportion="-20.222221">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Connect.xyl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/View/Main/Connect.xyl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="16" selection-start="1648" selection-end="1648" vertical-scroll-proportion="-26.444445">
+            <state line="29" column="121" selection-start="1606" selection-end="1606" vertical-scroll-proportion="-22.555555">
               <folding />
             </state>
           </provider>
@@ -126,22 +72,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Application/View/Navbar/Navbar.Connect.xyl" />
-        <option value="$PROJECT_DIR$/Application/Model/User.php" />
-        <option value="$PROJECT_DIR$/Application/Model/Library.php" />
-        <option value="$PROJECT_DIR$/Application/View/Flash.xyl" />
-        <option value="$PROJECT_DIR$/Application/View/Main/Register.xyl" />
-        <option value="$PROJECT_DIR$/Application/View/Main/Connect.xyl" />
         <option value="$PROJECT_DIR$/Application/View/Main.xyl" />
         <option value="$PROJECT_DIR$/Application/Public/Classic/css/style.css" />
         <option value="$PROJECT_DIR$/Application/View/Main/Index.xyl" />
         <option value="$PROJECT_DIR$/Application/Controller/Hoathis.php" />
-        <option value="$PROJECT_DIR$/Application/Public/index.php" />
-        <option value="$PROJECT_DIR$/Application/Controller/Generic.php" />
         <option value="$PROJECT_DIR$/Application/View/Navbar/Default.xyl" />
-        <option value="$PROJECT_DIR$/Application/View/Navbar/Connect.xyl" />
-        <option value="$PROJECT_DIR$/Application/Controller/Main.php" />
         <option value="$PROJECT_DIR$/Application/View/Main/Create.xyl" />
+        <option value="$PROJECT_DIR$/Application/Controller/Main.php" />
+        <option value="$PROJECT_DIR$/Application/View/Navbar/Connect.xyl" />
+        <option value="$PROJECT_DIR$/Application/Controller/Generic.php" />
+        <option value="$PROJECT_DIR$/Application/View/User/Profil.xyl" />
+        <option value="$PROJECT_DIR$/Application/View/Project/Info.xyl" />
+        <option value="$PROJECT_DIR$/Application/View/Project/Edit.xyl" />
+        <option value="$PROJECT_DIR$/Application/Public/index.php" />
+        <option value="$PROJECT_DIR$/Application/Controller/Project.php" />
+        <option value="$PROJECT_DIR$/Application/View/User/Edit.xyl" />
+        <option value="$PROJECT_DIR$/Application/Controller/User.php" />
       </list>
     </option>
   </component>
@@ -290,6 +236,50 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="User" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -499,10 +489,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp\www\hoathis.net\Application\Controller" />
+      <recent name="C:\wamp\www\hoathis.net\Application\View\User" />
       <recent name="C:\wamp\www\hoathis.net\Application\View\Main" />
       <recent name="C:\wamp\www\hoathis.net\Application\View\Navbar" />
       <recent name="C:\wamp\www\hoathis.net\Application\View\Admin" />
-      <recent name="C:\wamp\www\hoathis.net\Application\Controller\O" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp\www\hoathis.net\Application\Public\Classic\css" />
@@ -577,7 +567,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284091" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3284091" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27267876" sideWeight="0.2611607" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31216648" sideWeight="0.6715909" order="0" side_tool="false" content_ui="combo" />
@@ -655,49 +645,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/Public/Classic/css/bootstrap.css">
+    <entry file="file://$PROJECT_DIR$/Application/View/Main/Register.xyl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="284" column="31" selection-start="4188" selection-end="4188" vertical-scroll-proportion="0.2864137" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Model/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="206" column="12" selection-start="5899" selection-end="5899" vertical-scroll-proportion="4.753623">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/Library/Hoathis/Kit/Redirector.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/View/Flash.xyl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="4" selection-start="98" selection-end="118" vertical-scroll-proportion="-1.5555556">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Model/Library.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="225" column="12" selection-start="7271" selection-end="7271" vertical-scroll-proportion="1.5828221">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/View/Main/Connect.xyl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="16" selection-start="1648" selection-end="1648" vertical-scroll-proportion="-26.444445">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Public/Classic/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="16" selection-start="55" selection-end="55" vertical-scroll-proportion="0.049122807">
+        <state line="9" column="64" selection-start="506" selection-end="506" vertical-scroll-proportion="0.22826087">
           <folding />
         </state>
       </provider>
@@ -709,58 +659,100 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/View/Main/Index.xyl">
+    <entry file="file://$PROJECT_DIR$/Application/View/Main/Create.xyl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="24" selection-start="1036" selection-end="1036" vertical-scroll-proportion="-19.444445">
+        <state line="28" column="117" selection-start="1636" selection-end="1636" vertical-scroll-proportion="0.2536232">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/View/Main/Register.xyl">
+    <entry file="file://$PROJECT_DIR$/Application/View/Main/Index.xyl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="64" selection-start="506" selection-end="506" vertical-scroll-proportion="0.22826087">
+        <state line="25" column="24" selection-start="1036" selection-end="1036" vertical-scroll-proportion="0.634058">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Controller/Generic.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="78" selection-start="2144" selection-end="2144" vertical-scroll-proportion="-19.777779">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/View/Navbar/Default.xyl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="22" selection-start="1300" selection-end="1410" vertical-scroll-proportion="-20.222221">
+        <state line="32" column="81" selection-start="914" selection-end="914" vertical-scroll-proportion="0.8115942">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/View/Navbar/Connect.xyl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="29" selection-start="1156" selection-end="1156" vertical-scroll-proportion="-17.88889">
+        <state line="25" column="52" selection-start="1238" selection-end="1238" vertical-scroll-proportion="0.634058">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controller/Main.php">
+    <entry file="file://$PROJECT_DIR$/Application/View/Navbar/Default.xyl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="34" selection-start="4379" selection-end="4379" vertical-scroll-proportion="-26.777779">
+        <state line="27" column="22" selection-start="1300" selection-end="1410" vertical-scroll-proportion="0.6594203">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/View/Main/Create.xyl">
+    <entry file="file://$PROJECT_DIR$/Application/View/Main/Connect.xyl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="91" selection-start="534" selection-end="534" vertical-scroll-proportion="-7.0">
+        <state line="34" column="16" selection-start="1648" selection-end="1648" vertical-scroll-proportion="0.8623188">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/View/Project/Info.xyl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="62" selection-start="3349" selection-end="3349" vertical-scroll-proportion="-59.88889">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/View/User/Profil.xyl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="40" selection-start="266" selection-end="266" vertical-scroll-proportion="-4.6666665">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/View/Project/Edit.xyl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="38" selection-start="519" selection-end="519" vertical-scroll-proportion="-9.333333">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Public/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="22" selection-start="2042" selection-end="2042" vertical-scroll-proportion="0.57608694">
+        <state line="57" column="14" selection-start="1911" selection-end="1911" vertical-scroll-proportion="-10.888889">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controller/Project.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="48" selection-start="1849" selection-end="3144" vertical-scroll-proportion="-26.296297">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/View/User/Edit.xyl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="121" selection-start="1606" selection-end="1606" vertical-scroll-proportion="-22.555555">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controller/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="45" selection-start="342" selection-end="342" vertical-scroll-proportion="-12.444445">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controller/Main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="111" column="93" selection-start="4003" selection-end="4003" vertical-scroll-proportion="0.6400742">
           <folding />
         </state>
       </provider>

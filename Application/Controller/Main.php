@@ -112,7 +112,7 @@ namespace Application\Controller {
                 $this->getKit('Redirector')->redirect('i', array());
             }
 
-            var_dump('Here is the search !');
+            var_dump('Here is the search !'); // TODO do it f***
 
             $this->view->addOverlay('hoa://Application/View/Main/Index.xyl');
             $this->view->render();
@@ -122,8 +122,48 @@ namespace Application\Controller {
         public function CreateAction() {
             $this->guestGuard();
 
+            if (!empty($_POST)) {
+                $name        = $this->check('name', true);
+                $description = $this->check('description', true);
+                $home        = $this->check('home', true);
+                $release     = $this->check('release', true);
+                $issue       = $this->check('issues');
+                $doc         = $this->check('documentation');
+
+                $error = false;
+                if ($name === null) {
+                    $this->popup('error', 'The field name is empty ');
+                    $error = true;
+                } else if ($description === null) {
+                    $this->popup('error', 'The field description is empty ');
+                    $error = true;
+                } else if ($home === null) {
+                    $this->popup('error', 'The field homepage is empty ');
+                    $error = true;
+                } else if ($release === null) {
+                    $this->popup('error', 'The field release is empty ');
+                    $error = true;
+                }
+
+
+                if ($error === true) {
+                    $this->getKit('Redirector')->redirect('w', array('_able' => 'create'));
+                } else {
+                    // TODO Connection @BDD
+                    $this->popup('success', 'Your projet has been create, you might wait his acception by the staff'); //TODO change here
+
+                    $this->getKit('Redirector')->redirect('i', array());
+                }
+
+            }
+
+
             $this->view->addOverlay('hoa://Application/View/Main/Create.xyl');
             $this->view->render();
+        }
+
+        public function ProfilAction() {
+            $this->getKit('Redirector')->redirect('u', array('user' => 'foo')); // TODO link with session
         }
     }
 }

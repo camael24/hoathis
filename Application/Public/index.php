@@ -23,10 +23,6 @@ from('Hoathis')
     ->import('Kit.Aggregator');
 
 
-$s        = new \Hoa\Session\Session('connect');
-$s['foo'] = 'bar';
-
-
 $dispatcher = new \Hoa\Dispatcher\Basic();
 $router     = new \Hoa\Router\Http();
 
@@ -56,7 +52,13 @@ $dispatcher->setKitName('Hoathis\Kit\Aggregator');
 * http://hoathis.hoa/a/users/1 => Admin , Users , $user = thehawk
 */
 // $router->setSubdomainSuffix('foo');
+
 $router
+
+    ->get_post('pp', '/p/(?<project>[^/]+)/(?<_able>[^\.]+)\.html', 'project')
+    ->get('p', '/p/(?<project>[^/]+)/', 'project', 'info')
+    ->get_post('up', '/(?<user>[^/]{3,})/(?<_able>[^\.]+)\.html', 'user', 'index')
+    ->get('u', '/(?<user>[^/]{3,})/', 'user', 'profil')
     ->get_post('w', '/(?<_able>[^\.]+)\.html', 'main')
     ->get('i', '/', 'main', 'index');
 

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+    <article id="content">
+        <div class="container-fluid" bind="?information">
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>
+                        <h2 class="span6">Editing : <value bind="?login"/>/
+                            <span class="emphase" bind="?name"/>
+                        </h2>
+                    </legend>
+
+                    <div class="row-fluid">
+                        <div class="span2">Description</div>
+                        <input class="span4" type="text" name="description" value="(?description)"/>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span2">Homepage</div>
+                        <input class="span4" type="text" name="home" value="(?home)"/>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span2">Download link</div>
+                        <input class="span4" type="text" name="release" value="(?release)"/>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span2">Documentation link</div>
+                        <input class="span4" type="text" name="doc" value="(?documentation)"/>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span2">Issues link</div>
+                        <input class="span4" type="text" name="issues" value="(?issues)"/>
+                    </div>
+                    <legend></legend>
+                    <div class="control-group">
+                        <label class="control-label" for="send"></label>
+                        <div class="controls">
+                            <input type="submit" id="send" class="btn btn-primary"/>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </article>
+</overlay>

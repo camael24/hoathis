@@ -23,6 +23,8 @@
                             <a href="@w:_able=create">Send an hoathis</a>
                         </li>
                         <li>
+                            <a href="@w:_able=profil">Your Profile</a>
+                        </li><li>
                             <a href="@w:_able=disconnect">Disconnect</a>
                         </li>
                     </ul>

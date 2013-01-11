@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+    <article id="content">
+        <div class="hero-unit">
+            <div class="form-horizontal">
+                <legend>Profil
+                    <span bind="?edit"/>
+                </legend>
+                <div class="control-group">
+                    <label class="control-label" for="user">Username :</label>
+                    <div class="controls">
+                        <p bind="?login"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="mail">Email</label>
+                    <div class="controls">
+                        <p bind="?mail"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="mail">Rang</label>
+                    <div class="controls">
+                        <p bind="?rang"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</overlay>

@@ -32,12 +32,11 @@ namespace Application\Controller {
             $user = new \Hoa\Session\Session('user');
 
 
-            if ($user->isEmpty() === true) {
+            if ($user->isEmpty() === true)
                 $this->view->addUse('hoa://Application/View/Navbar/Default.xyl');
-
-            } else {
+            else
                 $this->view->addUse('hoa://Application/View/Navbar/Connect.xyl');
-            }
+
 
         }
 

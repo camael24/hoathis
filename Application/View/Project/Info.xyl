@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+    <article id="content">
+        <div class="container-fluid" bind="?information">
+            <fieldset>
+                <legend>
+                    <h2 class="span6"><value bind="?login"/>/
+                        <span class="emphase" bind="?name"/>
+                        <value bind="?editing"/>
+                    </h2>
+                </legend>
+
+                <div class="row-fluid">
+                    <div class="span2">Library name</div>
+                    <div class="span4" bind="?name"/>
+                </div>
+                <div class="row-fluid">
+                    <div class="span2">Description</div>
+                    <div class="span4 well" bind="?description"/>
+                </div>
+                <div class="row-fluid">
+                    <div class="span2">Send on</div>
+                    <div class="span4" bind="?time"/>
+                </div>
+                <div class="row-fluid">
+                    <div class="span2">Author</div>
+                    <div class="span4">
+                        <a href="(?home)" class="btn btn-success btn-mini">
+                            <i class="icon-home"/>
+
+                        </a>
+                        <span class="help-inline">
+                            <value bind="?author"/>(
+                            <value bind="?home"/>
+                            )
+                        </span>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span2">Download link</div>
+                    <div class="span4">
+                        <a href="(?release)" class="btn btn-inverse btn-mini">
+                            <i class="icon-white icon-inbox"/>
+                        </a>
+                        <span class="help-inline" bind="?release"/>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span2">Documentation link</div>
+                    <div class="span4">
+                        <a href="(?documentation)" class="btn btn-info btn-mini">
+                            <i class="icon-book"/>
+                        </a>
+                        <span class="help-inline" bind="?documentation"/>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span2">Issues link</div>
+                    <div class="span4">
+                        <a href="(?issues)" class="btn btn-danger btn-mini">
+                            <i class="icon-white icon-ban-circle"/>
+                        </a>
+                        <span class="help-inline" bind="?issues"/>
+
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>
+                    <h2 class="span6">About</h2>
+                </legend>
+                <div class="row-fluid">
+                    <div class="span2">Contact author</div>
+                    <div class="span4">
+                        <a href="@u:user=(?login)" class="btn btn-danger btn-mini">
+                            <i class="icon-white icon-leaf"/>
+                        </a>
+                        <span class="help-inline" bind="?login"/>
+                    </div>
+                </div>
+            </fieldset>
+
+        </div>
+    </article>
+</overlay>
