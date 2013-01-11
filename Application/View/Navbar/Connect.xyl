@@ -17,10 +17,10 @@
                 <div class="nav-collapse collapse">
                     <ul class="nav">
                         <li class="active">
-                            <a href="#">Home</a>
+                            <a href="@i">Home</a>
                         </li>
                         <li>
-                            <a href="#">Libraries</a>
+                            <a href="@w:_able=create">Send an hoathis</a>
                         </li>
                         <li>
                             <a href="@w:_able=disconnect">Disconnect</a>

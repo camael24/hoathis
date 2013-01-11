@@ -64,6 +64,14 @@ namespace Application\Controller {
             $flash['message'] = $message;
         }
 
+        public function guestGuard() {
+            $user = new \Hoa\Session\Session('user');
+            if ($user->isEmpty() === true) {
+                $this->popup('info', 'You don`t have the require credential');
+                $this->getKit('Redirector')->redirect('w', array('_able' => 'connect'));
+            }
+        }
+
 
     }
 }

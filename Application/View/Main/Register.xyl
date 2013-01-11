@@ -5,27 +5,27 @@
             <form action="@w:_able=register" method="post" class="form-horizontal">
                 <legend>Register</legend>
                 <div class="control-group">
-                    <label class="control-label" for="user">Username :</label>
+                    <label class="control-label" for="user">Login :</label>
                     <div class="controls">
-                        <input type="text" id="user" name="user" placeholder="Login"  required="required"/>
+                        <input type="text" id="user" name="login" placeholder="Login"/>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="pass">Password</label>
                     <div class="controls">
-                        <input type="password" id="pass" name="pass" placeholder="Password"  required="required"/>
+                        <input type="password" id="pass" name="pass" placeholder="Password"/>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="rpass">Retype password</label>
                     <div class="controls">
-                        <input type="password" id="rpass" name="rpass" placeholder="Re-Password"  required="required"/>
+                        <input type="password" id="rpass" name="rpass" placeholder="Re-Password"/>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="mail">Email</label>
                     <div class="controls">
-                        <input type="text" id="mail" name="mail" placeholder="Email"  required="required"/>
+                        <input type="text" id="mail" name="mail" placeholder="Email"/>
                     </div>
                 </div>
                 <div class="control-group">

@@ -6,9 +6,9 @@
             <legend>Sign-in</legend>
             <form class="form-horizontal" method="POST" action="#">
                 <div class="control-group">
-                    <label class="control-label" for="inputEmail">Email</label>
+                    <label class="control-label" for="inputLogin">Login</label>
                     <div class="controls">
-                        <input type="text" id="inputEmail" name="email" placeholder="Email" required="required"/>
+                        <input type="text" id="inputLogin" name="login" placeholder="Login" required="required"/>
                     </div>
                 </div>
                 <div class="control-group">
@@ -28,6 +28,11 @@
                     </div>
                 </div>
             </form>
+            <legend></legend>
+            <p>
+                <a href="@w:_able=register" class="btn btn-success">Register</a>
+                <a href="@w:_able=forgot" class="btn btn-danger">Forgot password</a>
+            </p>
         </div>
     </article>
 </overlay>

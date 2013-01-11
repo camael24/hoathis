@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+    <article id="content">
+        <div class="hero-unit">
+            <form action="@w:_able=create" method="post" class="form-horizontal">
+                <legend>Your Hoathis</legend>
+                <div class="control-group">
+                    <label class="control-label" for="name">Name :</label>
+                    <div class="controls">
+                        <input type="text" id="name" name="name" placeholder="Library name"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="description">Description :</label>
+                    <div class="controls">
+                        <input type="text" id="description" name="description" placeholder="Some few words about your library"/>
+                    </div>
+                </div>
+                <legend>Link</legend>
+                <div class="control-group">
+                    <label class="control-label" for="home">Homepage :</label>
+                    <div class="controls">
+                        <input type="text" id="home" name="home" placeholder="Homepage link"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="release">Release :</label>
+                    <div class="controls">
+                        <input type="text" id="release" name="release" placeholder="Release link"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="issues">Issues :</label>
+                    <div class="controls">
+                        <input type="text" id="issues" name="issues" placeholder="Issues link"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="doc">Documentation :</label>
+                    <div class="controls">
+                        <input type="text" id="doc" name="doc" placeholder="Documentation link"/>
+                    </div>
+                </div>
+                <legend></legend>
+                <div class="control-group">
+                    <label class="control-label" for="send"></label>
+                    <div class="controls">
+                        <input type="submit" id="send" class="btn btn-primary"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </article>
+</overlay>
