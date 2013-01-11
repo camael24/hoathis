@@ -17,6 +17,7 @@ from('Hoa')
     ->import('Http.Response');
 
 from('Application')
+    ->import('Model.*')
     ->import('Controller.Generic');
 
 from('Hoathis')
@@ -29,13 +30,13 @@ $router     = new \Hoa\Router\Http();
 
 $dispatcher->setKitName('Hoathis\Kit\Aggregator');
 
-//\Hoa\Database\Dal::initializeParameters(array(
-//    'connection.list.default.dal'      => 'Pdo',
-//    'connection.list.default.dsn'      => 'mysql:host=localhost;dbname=hoathis',
-//    'connection.list.default.username' => 'root',
-//    'connection.list.default.password' => 'toor', // DEV Mdp , F### :D
-//    'connection.autoload'              => 'default'
-//));
+\Hoa\Database\Dal::initializeParameters(array(
+    'connection.list.default.dal'      => 'Pdo',
+    'connection.list.default.dsn'      => 'mysql:host=localhost;dbname=hoathis',
+    'connection.list.default.username' => 'root',
+    'connection.list.default.password' => '00114477', // DEV Mdp , F### :D
+    'connection.autoload'              => 'default'
+));
 
 /*
 * Controlleur, , Action , Variable

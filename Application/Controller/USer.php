@@ -14,11 +14,16 @@ namespace Application\Controller {
 
         public function ProfilAction($user) {
 
-            $this->data->login = $user;
-            $this->data->mail  = 'foo@bar.com';
-            $this->data->rang  = 'Boulet';
 
-            if (true) // TODO : Here check for editing Profil !
+            $userD = new \Hoa\Session\Session('user');
+            $userM = new \Application\Model\User();
+            $userM->openByName(array('name' => $user));
+
+            $this->data->login = $userM->username;
+            $this->data->mail  = $userM->email;
+            $this->data->rang  = 'Basic';
+
+            if (intval($userM->idUser) === $userD['idUser']) // TODO : Here check for editing Profil !
                 $this->data->edit = '<a href="' . $this->router->unroute('up', array('user' => $user, '_able' => 'edit')) . '"><i class="icon-pencil"></i></a>';
 
             $this->view->addOverlay('hoa://Application/View/User/Profil.xyl');
@@ -26,21 +31,26 @@ namespace Application\Controller {
 
         }
 
+
         public function EditAction($user) {
 
             $this->guestGuard();
 
             if (!empty($_POST)) {
-                $login     = $this->check('login', true);
+                $userD = new \Hoa\Session\Session('user');
+                $userM = new \Application\Model\User();
+                $userM->openByName(array('name' => $user));
+                $error = false;
+                if (intval($userM->idUser) !== $userD['idUser']) { // TODO : Here check for editing Profil !
+                    $this->popup('error', 'You are not allow to edit this');
+                    $error = true;
+                }
                 $password  = $this->check('pass');
                 $rpassword = $this->check('rpass');
                 $mail      = $this->check('mail', true);
 
-                $error = false;
-                if ($login === null) {
-                    $this->popup('error', 'The field login is empty ');
-                    $error = true;
-                } else if ($password === null) {
+
+                if ($password === null) {
                     $this->popup('error', 'The field password is empty ');
                     $error = true;
                 } else if ($rpassword === null) {
@@ -58,17 +68,20 @@ namespace Application\Controller {
                 if ($error === true) {
                     $this->getKit('Redirector')->redirect('up', array('user' => $user, '_able' => 'edit'));
                 } else {
-                    // TODO Connection @BDD
-                    $this->popup('success', 'Your register is an success !, welcome here'); //TODO change here
+                    $userM->update($userM->idUser, $password, $mail);
+                    $this->popup('success', 'Your register is an success !, welcome here');
 
                     $this->getKit('Redirector')->redirect('i', array());
                 }
             }
 
 
-            $this->data->login = $user;
-            $this->data->mail  = 'foo@bar.com';
-            $this->data->rang  = 'Boulet';
+            $userM = new \Application\Model\User();
+            $userM->openByName(array('name' => $user));
+
+            $this->data->login = $userM->username;
+            $this->data->mail  = $userM->email;
+            $this->data->rang  = 'Basic';
 
             $this->view->addOverlay('hoa://Application/View/User/Edit.xyl');
             $this->view->render();

@@ -157,6 +157,7 @@ namespace Application\Model {
         }
 
         public function insert($user, $name, $description, $homepage, $release, $documentation, $issue) {
+            var_dump($documentation);
             $map = array(
                 'refUser'       => $user,
                 'name'          => preg_replace('#[^[:alnum:]]#', '', $name),

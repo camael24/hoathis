@@ -9,7 +9,7 @@
                 <div class="control-group">
                     <label class="control-label" for="user">Username :</label>
                     <div class="controls">
-                        <input type="text" id="user" name="login" placeholder="Login" value='(?login)' required="required"/>
+                        <value bind="?login" />
                     </div>
                 </div>
                 <div class="control-group">

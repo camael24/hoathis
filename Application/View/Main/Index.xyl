@@ -24,6 +24,7 @@
             </p>
         </div>
         <div id="result">
+            <yield select="?f:handle#main_list"/>
         </div>
     </article>
 </overlay>

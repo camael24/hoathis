@@ -37,18 +37,25 @@ namespace Application\Controller {
                     $error = true;
                 }
 
+                $userModel = new \Application\Model\User();
 
+
+                if (!$userModel->checkMail($mail)) {
+                    $this->popup('error', 'Your email address has ever register in our database ');
+                    $error = true;
+                }
+                if (!$userModel->checkUser($login)) {
+                    $this->popup('error', 'Your login name has ever register in our database');
+                    $error = true;
+                }
                 if ($error === true) {
                     $this->getKit('Redirector')->redirect('w', array('_able' => 'register'));
                 } else {
-                    // TODO Connection @BDD
-                    $user        = new \Hoa\Session\Session('user');
-                    $user['foo'] = 'bar';
 
+                    $userModel->insert($login, $password, $mail);
 
-                    $this->popup('success', 'Your register is an success !, welcome here'); //TODO change here
-
-                    $this->getKit('Redirector')->redirect('i', array());
+                    $this->popup('success', 'Your register is an success !, welcome here you can connect');
+                    $this->getKit('Redirector')->redirect('w', array('_able' => 'connect'));
                 }
             }
 
@@ -62,7 +69,7 @@ namespace Application\Controller {
             if (!empty($_POST)) {
                 $email    = $this->check('login', true);
                 $password = $this->check('password', true);
-                $remember = $this->check('remember'); //TODO add support of cookie
+//                $remember = $this->check('remember'); //TODO add support of cookie
 
 
                 $error = false;
@@ -75,16 +82,21 @@ namespace Application\Controller {
                 }
 
 
+                $user = new \Application\Model\User();
+                if (!$user->connect($email, $password)) {
+                    $this->popup('error', 'This credentials are not reconized here, your are might be banned or unactived');
+                    $error = true;
+                }
+
                 if ($error === true) {
                     $this->getKit('Redirector')->redirect('w', array('_able' => 'connect'));
                 } else {
-                    // TODO Connection @BDD
-                    $user        = new \Hoa\Session\Session('user');
-                    $user['foo'] = 'bar';
+                    $sUser             = new \Hoa\Session\Session('user');
+                    $sUser['idUser']   = $user->idUser;
+                    $sUser['username'] = $user->username;
+                    $sUser['email']    = $user->mail;
 
-
-                    $this->popup('success', 'Hello @NAME :D'); //TODO change here
-
+                    $this->popup('success', 'Hello ' . $user->username); //TODO change here
                     $this->getKit('Redirector')->redirect('i', array());
                 }
 
@@ -112,7 +124,9 @@ namespace Application\Controller {
                 $this->getKit('Redirector')->redirect('i', array());
             }
 
-            var_dump('Here is the search !'); // TODO do it f***
+            $library = new \Application\Model\Library();
+
+            $this->data->search = $library->search($search);
 
             $this->view->addOverlay('hoa://Application/View/Main/Index.xyl');
             $this->view->render();
@@ -128,7 +142,7 @@ namespace Application\Controller {
                 $home        = $this->check('home', true);
                 $release     = $this->check('release', true);
                 $issue       = $this->check('issues');
-                $doc         = $this->check('documentation');
+                $doc         = $this->check('doc');
 
                 $error = false;
                 if ($name === null) {
@@ -145,26 +159,37 @@ namespace Application\Controller {
                     $error = true;
                 }
 
+                $user = new \Hoa\Session\Session('user');
+                $id   = $user['idUser'];
+
+                $library = new \Application\Model\Library();
+                if ($library->insert($id, $name, $description, $home, $release, $doc, $issue) === false) {
+                    $this->popup('error', 'An project has ever a same name');
+                    $error = true;
+                }
 
                 if ($error === true) {
                     $this->getKit('Redirector')->redirect('w', array('_able' => 'create'));
                 } else {
-                    // TODO Connection @BDD
-                    $this->popup('success', 'Your projet has been create, you might wait his acception by the staff'); //TODO change here
 
+                    $this->popup('success', 'Your projet has been create, you might wait his acception by the staff'); //TODO change here
                     $this->getKit('Redirector')->redirect('i', array());
                 }
-
             }
-
 
             $this->view->addOverlay('hoa://Application/View/Main/Create.xyl');
             $this->view->render();
         }
 
         public function ProfilAction() {
-            $this->getKit('Redirector')->redirect('u', array('user' => 'foo')); // TODO link with session
+            $user = new \Hoa\Session\Session('user');
+
+            $this->getKit('Redirector')->redirect('u', array('user' => $user['username']));
         }
+
+//        public function ListAction() {
+//            $this->getKit('Redirector')->redirect('up', array('user' => 'foo' , '_able' => 'list'));
+//        }
     }
 }
 

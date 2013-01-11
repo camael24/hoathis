@@ -14,19 +14,13 @@ namespace Application\Controller {
 
         public function InfoAction($project) {
 
-            $information = array(
-                'login'         => 'foo',
-                'name'          => 'foo',
-                'description'   => 'an foo bar exemple project :D',
-                'time'          => date('d/m/T H:i:s'),
-                'home'          => 'http://foo.bar',
-                'author'        => 'Camael',
-                'release'       => 'http://bar.net',
-                'documentation' => 'http://lol.net',
-                'issues'        => 'http://vtff.net'
-            );
 
-            if (true) // TODO : Here check for editing Profil !
+            $library     = new \Application\Model\Library();
+            $information = $library->getInformationFromName($project);
+
+            $user = new \Hoa\Session\Session('user');
+
+            if (intval($information['refUser']) === $user['idUser']) //TODO add when we get ACL OR rang information
                 $information['editing'] = '<a href="' . $this->router->unroute('pp', array('project' => $project, '_able' => 'edit')) . '"><i class="icon-pencil"></i></a>';
 
             $this->data->information = $information;
@@ -40,26 +34,24 @@ namespace Application\Controller {
 
             $this->guestGuard();
 
-            $information = array(
-                'login'         => 'foo',
-                'name'          => 'foo',
-                'description'   => 'an foo bar exemple project :D',
-                'time'          => date('d/m/T H:i:s'),
-                'home'          => 'http://foo.bar',
-                'author'        => 'Camael',
-                'release'       => 'http://bar.net',
-                'documentation' => 'http://lol.net',
-                'issues'        => 'http://vtff.net'
-            );
+            $library     = new \Application\Model\Library();
+            $information = $library->getInformationFromName($project);
+
+            $user = new \Hoa\Session\Session('user');
 
             if (!empty($_POST)) {
+                $error = false;
+                if (intval($information['refUser']) !== $user['idUser']) { //TODO add when we get ACL OR rang information
+                    $this->popup('error', 'You are not allow to edit this');
+                    $error = true;
+                }
                 $description = $this->check('description', true);
                 $home        = $this->check('home', true);
                 $release     = $this->check('release', true);
                 $issue       = $this->check('issues');
-                $doc         = $this->check('documentation');
+                $doc         = $this->check('doc');
 
-                $error = false;
+
                 if ($description === null) {
                     $this->popup('error', 'The field description is empty ');
                     $error = true;
@@ -75,7 +67,7 @@ namespace Application\Controller {
                 if ($error === true) {
                     $this->getKit('Redirector')->redirect('pp', array('project' => $project, '_able' => 'create'));
                 } else {
-                    // TODO Connection @BDD
+                    $library->update($information['idLibrary'], $description, $home, $release, $doc, $issue);
                     $this->popup('success', 'Your projet has been update'); //TODO change here
                     $this->getKit('Redirector')->redirect('p', array('project' => $project));
                 }
