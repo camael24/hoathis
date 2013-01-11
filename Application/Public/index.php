@@ -32,9 +32,9 @@ $dispatcher->setKitName('Hoathis\Kit\Aggregator');
 
 \Hoa\Database\Dal::initializeParameters(array(
     'connection.list.default.dal'      => 'Pdo',
-    'connection.list.default.dsn'      => 'mysql:host=localhost;dbname=hoathis',
-    'connection.list.default.username' => 'root',
-    'connection.list.default.password' => '00114477', // DEV Mdp , F### :D
+    'connection.list.default.dsn'      => 'mysql:host=127.0.0.1;dbname=hoathis',
+    'connection.list.default.username' => 'camael',
+    'connection.list.default.password' => 'toor', // DEV Mdp , F### :D
     'connection.autoload'              => 'default'
 ));
 
