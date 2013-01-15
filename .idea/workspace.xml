@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96c9817f-af1a-45bf-802a-eab5078c6437" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/View/Main/Search.xyl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Controller/Main.php" afterPath="$PROJECT_DIR$/Application/Controller/Main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Public/index.php" afterPath="$PROJECT_DIR$/Application/Public/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/View/Main/Index.xyl" afterPath="$PROJECT_DIR$/Application/View/Main/Index.xyl" />
     </list>
     <ignored path="hoathis.net.iws" />
@@ -25,15 +24,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Default.xyl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/View/Admin/Navbar/Default.xyl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Controller/User.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -43,10 +33,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Main.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Controller/Main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="145" column="132" selection-start="5675" selection-end="5675" vertical-scroll-proportion="-18.222221">
+            <state line="142" column="69" selection-start="5621" selection-end="5621" vertical-scroll-proportion="0.8623188">
               <folding />
             </state>
           </provider>
@@ -61,28 +51,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Index.xyl" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Index.xyl" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/View/Main/Index.xyl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="2" selection-start="1022" selection-end="1022" vertical-scroll-proportion="0.634058">
+            <state line="26" column="12" selection-start="1048" selection-end="1048" vertical-scroll-proportion="-20.222221">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="List.xyl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/View/Admin/User/List.xyl">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Public/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="94" selection-start="362" selection-end="420" vertical-scroll-proportion="-0.7777778">
+            <state line="59" column="24" selection-start="1968" selection-end="1968" vertical-scroll-proportion="-9.111111">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Info.xyl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/View/Project/Info.xyl">
+      <file leaf-file-name="Project.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Controller/Project.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="46" selection-start="454" selection-end="454" vertical-scroll-proportion="-0.7777778">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Controller/Admin/Main.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
@@ -140,10 +139,10 @@
         <option value="$PROJECT_DIR$/Application/Model/User.php" />
         <option value="$PROJECT_DIR$/Application/Controller/User.php" />
         <option value="$PROJECT_DIR$/Application/View/User/Profil.xyl" />
-        <option value="$PROJECT_DIR$/Application/Public/index.php" />
         <option value="$PROJECT_DIR$/Application/Model/Library.php" />
         <option value="$PROJECT_DIR$/Application/Controller/Main.php" />
         <option value="$PROJECT_DIR$/Application/View/Main/Index.xyl" />
+        <option value="$PROJECT_DIR$/Application/Public/index.php" />
       </list>
     </option>
   </component>
@@ -558,34 +557,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/View/Main/Register.xyl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="38" selection-start="1493" selection-end="1493" vertical-scroll-proportion="-4.740741">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/View/Admin/User/Edit.xyl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="30" selection-start="270" selection-end="271" vertical-scroll-proportion="-2.4230769">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/View/User/Profil.xyl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="82" selection-start="1047" selection-end="1047" vertical-scroll-proportion="0.38350517">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="22" selection-start="1966" selection-end="1966" vertical-scroll-proportion="-0.7777778">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Model/Library.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="238" column="0" selection-start="7799" selection-end="7799" vertical-scroll-proportion="-8.925926">
@@ -649,14 +620,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controller/Main.php">
+    <entry file="file://$PROJECT_DIR$/Application/View/Main/Search.xyl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="132" selection-start="5675" selection-end="5675" vertical-scroll-proportion="-18.222221">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/View/Main/Search.xyl">
+    <entry file="file://$PROJECT_DIR$/Application/Controller/Admin/Main.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
@@ -665,7 +636,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/View/Main/Index.xyl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="2" selection-start="1022" selection-end="1022" vertical-scroll-proportion="0.634058">
+        <state line="26" column="12" selection-start="1048" selection-end="1048" vertical-scroll-proportion="-20.222221">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Public/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="24" selection-start="1968" selection-end="1968" vertical-scroll-proportion="-9.111111">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controller/Project.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controller/Main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="142" column="69" selection-start="5621" selection-end="5621" vertical-scroll-proportion="0.8623188">
           <folding />
         </state>
       </provider>
