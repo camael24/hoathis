@@ -15,12 +15,20 @@ namespace Application\Controller {
         public function InfoAction($project) {
 
 
-            $library     = new \Application\Model\Library();
-            $information = $library->getInformationFromName($project);
+            $library = new \Application\Model\Library();
+
+
+            $information = $library->getInformationFromName($project, $this->isAdminAllowed());
+
+            if(empty($information)) {
+                $this->popup('info' , 'this project is not yet activate by staff or you have make an error in the URL, be patient thanks');
+                $this->getKit('Redirector')->redirect('i', array());
+            }
+
 
             $user = new \Hoa\Session\Session('user');
 
-            if (intval($information['refUser']) === $user['idUser']) //TODO add when we get ACL OR rang information
+            if (array_key_exists('refUser', $information) && array_key_exists('idUser', $user) && intval($information['refUser']) === $user['idUser']) //TODO add when we get ACL OR rang information
                 $information['editing'] = '<a href="' . $this->router->unroute('pp', array('project' => $project, '_able' => 'edit')) . '"><i class="icon-pencil"></i></a>';
 
             $this->data->information = $information;
@@ -35,7 +43,13 @@ namespace Application\Controller {
             $this->guestGuard();
 
             $library     = new \Application\Model\Library();
-            $information = $library->getInformationFromName($project);
+            $information = $library->getInformationFromName($project, $this->isAdminAllowed());
+
+            if(empty($information)) {
+                $this->popup('info' , 'this project is not yet activate by staff, be patient thanks');
+                $this->getKit('Redirector')->redirect('i', array());
+            }
+
 
             $user = new \Hoa\Session\Session('user');
 

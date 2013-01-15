@@ -12,6 +12,19 @@ namespace Application\Controller {
 
         }
 
+        public function ListAction($user) {
+
+            $lib      = new \Application\Model\Library();
+            $userData = new \Application\Model\User();
+            $userData->openByName(array('name' => $user));
+
+            $this->data->user    = ucfirst($userData->username);
+            $this->data->project = $lib->getFromAuthorName($userData->username);
+
+            $this->view->addOverlay('hoa://Application/View/User/List.xyl');
+            $this->view->render();
+        }
+
         public function ProfilAction($user) {
 
 
@@ -60,7 +73,7 @@ namespace Application\Controller {
                     $this->popup('error', 'The field Email is empty ');
                     $error = true;
                 } else if ($password !== $rpassword) {
-                    $this->popup('error', 'The filed password and retype your password must be egal ');
+                    $this->popup('error', 'The field password and retype your password must be egal ');
                     $error = true;
                 }
 
@@ -68,9 +81,9 @@ namespace Application\Controller {
                 if ($error === true) {
                     $this->getKit('Redirector')->redirect('up', array('user' => $user, '_able' => 'edit'));
                 } else {
-                    $userM->update($userM->idUser, $password, $mail);
+                    $userM->setPassword($userM->idUser, $password);
+                    $userM->setMail($userM->idUser, $mail);
                     $this->popup('success', 'Your register is an success !, welcome here');
-
                     $this->getKit('Redirector')->redirect('i', array());
                 }
             }

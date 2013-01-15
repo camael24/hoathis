@@ -18,7 +18,9 @@ from('Hoa')
 
 from('Application')
     ->import('Model.*')
-    ->import('Controller.Generic');
+    ->import('Controller.Generic')
+    ->import('Controller.Admin.*');
+
 
 from('Hoathis')
     ->import('Kit.Aggregator');
@@ -55,6 +57,11 @@ $dispatcher->setKitName('Hoathis\Kit\Aggregator');
 // $router->setSubdomainSuffix('foo');
 
 $router
+    ->get_post('admin-user-id', '/a/user/(?<_able>[^-]+)-(?<id>[^\.]+)\.html', 'admin\user')
+    ->get_post('admin-user', '/a/user/(?<_able>[^\.]+)\.html', 'admin\user')
+    ->get_post('admin-project-id', '/a/project/(?<_able>[^-]+)-(?<id>[^\.]+)\.html', 'admin\project')
+    ->get_post('admin-project', '/a/project/(?<_able>[^\.]+)\.html', 'admin\project')
+    ->get_post('admin-home', '/a/', 'admin\main', 'index')
 
     ->get_post('pp', '/p/(?<project>[^/]+)/(?<_able>[^\.]+)\.html', 'project')
     ->get('p', '/p/(?<project>[^/]+)/', 'project', 'info')

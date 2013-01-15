@@ -11,6 +11,7 @@
     <script src="hoa://Application/Public/Js/bootstrap.js"/>
 
     <navbar/>
+    <navbar-admin/>
 
     <div id="b" class="container-fluid">
         <article id="flash"/>

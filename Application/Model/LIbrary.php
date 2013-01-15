@@ -70,8 +70,8 @@ namespace Application\Model {
             $select = 'SELECT *  FROM library AS l, user AS u WHERE l.name = :name AND l.valid >= :valid AND l.refUser = u.idUser;';
             $select = $this->getMappingLayer()->prepare($select)->execute(
                 array(
-                    'name'    => $name,
-                    'valid'   => $v
+                    'name'  => $name,
+                    'valid' => $v
                 )
             )->fetchAll();
 
@@ -82,6 +82,7 @@ namespace Application\Model {
 
             return $select;
         }
+
 
         public function getInformation($id, $all = false) {
 
@@ -125,8 +126,8 @@ namespace Application\Model {
             $this->getMappingLayer()
                 ->prepare($sql)
                 ->execute(array(
-                'id'       => $id,
-                'data'     => $value
+                'id'   => $id,
+                'data' => $value
             ));
         }
 
@@ -136,7 +137,7 @@ namespace Application\Model {
             $this->getMappingLayer()
                 ->prepare($sql)
                 ->execute(array(
-                'id'       => $id,
+                'id' => $id,
             ));
         }
 
@@ -151,7 +152,7 @@ namespace Application\Model {
             $this->getMappingLayer()
                 ->prepare($sql)
                 ->execute(array(
-                'id'       => $id,
+                'id' => $id,
             ));
 
         }
@@ -220,6 +221,17 @@ namespace Application\Model {
             $select = $this->getMappingLayer()->prepare($sql)->execute(array('id' => $id))->fetchAll();
         }
 
+        public function getValidate() {
+            $select = 'SELECT * FROM library INNER JOIN user ON library.refUser = user.idUser AND library.valid = 1';
+
+            return $this->getMappingLayer()->prepare($select)->execute()->fetchAll();
+        }
+
+        public function getUnValidate() {
+            $select = 'SELECT * FROM library INNER JOIN user ON library.refUser = user.idUser AND library.valid = 0';
+
+            return $this->getMappingLayer()->prepare($select)->execute()->fetchAll();
+        }
 
     }
 

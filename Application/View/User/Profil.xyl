@@ -25,6 +25,9 @@
                     </div>
                 </div>
             </div>
+            <legend>
+                <a href="@up:user=(?login)&amp;_able=list">Ses Hoathis</a>
+            </legend>
         </div>
     </article>
 </overlay>

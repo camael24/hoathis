@@ -41,7 +41,7 @@ namespace Application\Model {
 
 
         public function connect($user, $password) {
-            $select = 'SELECT * FROM `user` WHERE `username` = :name AND `password` = SHA1(:pass) AND rang > 0';
+            $select = 'SELECT * FROM `user` WHERE `username` = :name AND `password` = SHA1(:pass) AND rang > 1';
             $select = $this->getMappingLayer()
                 ->prepare($select)
                 ->execute(array(
@@ -86,7 +86,7 @@ namespace Application\Model {
         public function insert($user, $password, $mail) {
 
             // RANG 0 = Unactivate or Banned
-            $sql    = 'INSERT INTO `user` (`idUser` ,`username` ,`password` ,`email` ,`rang`)VALUES (NULL , :name, SHA1(:pass), :mail, 1);';
+            $sql    = 'INSERT INTO `user` (`idUser` ,`username` ,`password` ,`email` ,`rang`)VALUES (NULL , :name, SHA1(:pass), :mail, 2);';
             $select = $this->getMappingLayer()
                 ->prepare($sql)
                 ->execute(array(
@@ -97,20 +97,21 @@ namespace Application\Model {
         }
 
         public function open(Array $constraints = array()) {
-            $id     = $constraints['id'];
-            $select = 'SELECT * FROM `user` WHERE `idUser` = :id';
-            $select = $this->getMappingLayer()
-                ->prepare($select)
-                ->execute(array(
-                'id' => $id
-            ))->fetchAll();
-
+            $id      = $constraints['id'];
+            $select = $this->getById($id);
             if (count($select) === 1)
                 $this->map($select[0]);
             else
                 return false;
 
-            return;
+            return true;
+        }
+
+        public function getById($id) {
+            $select = 'SELECT * FROM `user` WHERE `idUser` = :id';
+
+            return $this->getMappingLayer()->prepare($select)->execute(array('id' => $id))->fetchAll();
+
         }
 
         public function openByName(Array $constraints = array()) {
@@ -131,7 +132,7 @@ namespace Application\Model {
         }
 
         public function setPassword($id, $pass) {
-            if ($pass === null)
+            if (empty($pass))
                 return;
             $sql = 'UPDATE `user` SET `password` = SHA1(:pass) WHERE `idUser` = :id;';
             $this->getMappingLayer()
@@ -143,7 +144,7 @@ namespace Application\Model {
         }
 
         public function setRang($id, $value) {
-            if ($value === null)
+            if (empty($value))
                 return;
 
             $sql = 'UPDATE `user` SET `rang` = :rang WHERE `idUser` = :id;';
@@ -156,7 +157,7 @@ namespace Application\Model {
         }
 
         public function setMail($id, $mail) {
-            if ($mail === null)
+            if (empty($mail))
                 return;
             $sql = 'UPDATE `user` SET `email` = :mail WHERE `idUser` = :id;';
             $this->getMappingLayer()
@@ -168,7 +169,7 @@ namespace Application\Model {
         }
 
         public function setUsername($id, $username) {
-            if ($username === null)
+            if (empty($username))
                 return;
             $sql = 'UPDATE `user` SET `username` = :user WHERE `idUser` = :id;';
             $this->getMappingLayer()
@@ -185,7 +186,7 @@ namespace Application\Model {
         }
 
         public function search($data) {
-            $select = 'SELECT *  FROM user WHERE username LIKE :data AND rang > 0 LIMIT 20';
+            $select = 'SELECT *  FROM user AS u, rang AS r WHERE u.username LIKE :data AND u.rang > 1 AND u.rang = r.idRang LIMIT 20 ';
             $select = $this->getMappingLayer()->prepare($select)->execute(
                 array(
                     'data' => $data . '%'
@@ -195,7 +196,7 @@ namespace Application\Model {
         }
 
         public function all() {
-            $select = 'SELECT *  FROM user';
+            $select = 'SELECT *  FROM user AS u, rang AS r WHERE rang = r.idRang';
             $select = $this->getMappingLayer()->prepare($select)->execute()->fetchAll();
 
             return $select;

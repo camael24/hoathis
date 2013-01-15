@@ -35,6 +35,9 @@ namespace Application\Controller {
                 } else if ($password !== $rpassword) {
                     $this->popup('error', 'The filed password and retype your password must be egal ');
                     $error = true;
+                } else if (strlen($login) < 3) {
+                    $this->popup('error', 'Your login must have over 3 characters !');
+                    $error = true;
                 }
 
                 $userModel = new \Application\Model\User();
@@ -124,10 +127,19 @@ namespace Application\Controller {
                 $this->getKit('Redirector')->redirect('i', array());
             }
 
-            $library = new \Application\Model\Library();
+            if (strpos($search, '@') === 0) {
+                $user               = new \Application\Model\User();
+                $this->data->author = $user->search(substr($search, 1));
 
-            $this->data->search = $library->search($search);
 
+            } else {
+                $user               = new \Application\Model\User();
+                $this->data->author = $user->search($search);
+
+                $library            = new \Application\Model\Library();
+                $this->data->search = $library->search($search); //TODO : Allow search by user @foobar
+
+            }
             $this->view->addOverlay('hoa://Application/View/Main/Index.xyl');
             $this->view->render();
 
@@ -187,9 +199,11 @@ namespace Application\Controller {
             $this->getKit('Redirector')->redirect('u', array('user' => $user['username']));
         }
 
-//        public function ListAction() {
-//            $this->getKit('Redirector')->redirect('up', array('user' => 'foo' , '_able' => 'list'));
-//        }
+        public function ListAction() { //TODO : List project by user like search @
+            $user = new \Hoa\Session\Session('user');
+
+            $this->getKit('Redirector')->redirect('up', array('user' => $user['username'], '_able' => 'list'));
+        }
     }
 }
 
