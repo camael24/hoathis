@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+    <article id="content">
+        <div id="result">
+            <ul>
+                <li bind="?user">
+
+                    <div class="row">
+                        <h2 class="span6">
+                            <value bind="?username"/>
+                            <span class="label label-(?RangClass)" bind="?RangLabel"/>
+                        </h2>
+                        <a href="@admin-user-id:id=(?idUser)&amp;_able=edit" class="btn btn-primary">
+                            <i class="icon-white icon-chevron-right"/>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </article>
+</overlay>

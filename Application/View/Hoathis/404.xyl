@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<overlay xmlns="http://hoa-project.net/xyl/xylophone">
-    <article id="content">
-        <div class="container-fluid hero-unit">
-            <h1>Error 404</h1>
-        </div>
-    </article>
-</overlay>

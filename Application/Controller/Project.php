@@ -1,91 +1,98 @@
 <?php
 namespace {
-    from('Application')->import('Model.*');
-    from('Application')->import('Controller.Generic');
 }
 namespace Application\Controller {
-    class Project extends Generic {
-        public function ListAction($project) {
-            $model = new \Application\Model\Library();
 
-            $all = false;
-            if (\Hoa\Session\Session::isNamespaceSet('admin')) {
-                $all = true;
+    class Project extends Generic {
+
+        public function IndexAction() {
+
+            $this->view->addOverlay('hoa://Application/View/Main/Index.xyl');
+            $this->view->render();
+
+        }
+
+        public function InfoAction($project) {
+
+
+            $library = new \Application\Model\Library();
+
+
+            $information = $library->getInformationFromName($project, $this->isAdminAllowed());
+
+            if(empty($information)) {
+                $this->popup('info' , 'this project is not yet activate by staff or you have make an error in the URL, be patient thanks');
+                $this->getKit('Redirector')->redirect('i', array());
             }
 
-            $information = $model->getInformationFromName($project , $all);
 
-            if (\Hoa\Session\Session::isNamespaceSet('user')) {         // TODO : Error d'acl !
-                $session = new \Hoa\Session\QNamespace('user');
-                if (intval($information['refUser']) === $session->idUser or \Hoa\Session\Session::isNamespaceSet('admin')) {
-                    $information['editing'] = '<a href="#" class="btn btn-danger btn-mini pull-right"><i class="icon-white icon-pencil"></i></a>'; //TODO its for ... emulate an flag
+            $user = new \Hoa\Session\Session('user');
+
+            if (array_key_exists('refUser', $information) && array_key_exists('idUser', $user) && intval($information['refUser']) === $user['idUser']) //TODO add when we get ACL OR rang information
+                $information['editing'] = '<a href="' . $this->router->unroute('pp', array('project' => $project, '_able' => 'edit')) . '"><i class="icon-pencil"></i></a>';
+
+            $this->data->information = $information;
+
+            $this->view->addOverlay('hoa://Application/View/Project/Info.xyl');
+            $this->view->render();
+
+        }
+
+        public function EditAction($project) {
+
+            $this->guestGuard();
+
+            $library     = new \Application\Model\Library();
+            $information = $library->getInformationFromName($project, $this->isAdminAllowed());
+
+            if(empty($information)) {
+                $this->popup('info' , 'this project is not yet activate by staff, be patient thanks');
+                $this->getKit('Redirector')->redirect('i', array());
+            }
+
+
+            $user = new \Hoa\Session\Session('user');
+
+            if (!empty($_POST)) {
+                $error = false;
+                if (intval($information['refUser']) !== $user['idUser']) { //TODO add when we get ACL OR rang information
+                    $this->popup('error', 'You are not allow to edit this');
+                    $error = true;
+                }
+                $description = $this->check('description', true);
+                $home        = $this->check('home', true);
+                $release     = $this->check('release', true);
+                $issue       = $this->check('issues');
+                $doc         = $this->check('doc');
+
+
+                if ($description === null) {
+                    $this->popup('error', 'The field description is empty ');
+                    $error = true;
+                } else if ($home === null) {
+                    $this->popup('error', 'The field homepage is empty ');
+                    $error = true;
+                } else if ($release === null) {
+                    $this->popup('error', 'The field release is empty ');
+                    $error = true;
+                }
+
+
+                if ($error === true) {
+                    $this->getKit('Redirector')->redirect('pp', array('project' => $project, '_able' => 'create'));
+                } else {
+                    $library->update($information['idLibrary'], $description, $home, $release, $doc, $issue);
+                    $this->popup('success', 'Your projet has been update'); //TODO change here
+                    $this->getKit('Redirector')->redirect('p', array('project' => $project));
                 }
 
             }
 
             $this->data->information = $information;
-            if (empty($information)) {
-                $this->view->addOverlay('hoa://Application/View/Hoathis/404.xyl');
-            } else {
-                $this->view->addOverlay('hoa://Application/View/Hoathis/Library.xyl');
-            }
+            $this->view->addOverlay('hoa://Application/View/Project/Edit.xyl');
             $this->view->render();
         }
 
-//        public function EditAction($_this, $project) {
-//            if (!\Hoa\Session\Session::isNamespaceSet('user')) {
-//                $this->flash('error', 'You don`t have the require credential');
-//                $_this->getKit('Redirector')->redirect('i', array());
-//
-//                return;
-//            }
-//
-//            $error = array();
-//
-//            $check   = function ($id) use (&$error) {
-//                if (array_key_exists($id, $_POST) && $_POST[$id] != '')
-//                    return $_POST[$id];
-//                else {
-//                    $error[] = $id;
-//
-//                    return null;
-//                }
-//
-//            };
-//            $session = new \Hoa\Session\QNamespace('user');
-//            $model   = new \Application\Model\Library();
-//
-//            if (intval($model->refUser) === $session->idUser or \Hoa\Session\Session::isNamespaceSet('admin')) {
-//                $page = intval($page);
-//                if (!is_int($page) && $page > 0) {
-//                    $this->view->addOverlay('hoa://Application/View/Hoathis/404.xyl');
-//                } else {
-//                    if (!empty($_POST)) {
-//                        $descripion    = $check('description');
-//                        $home          = $check('home');
-//                        $release       = $check('release');
-//                        $issue         = $check('issues');
-//                        $documentation = $check('doc');
-//                        $model->update($page, $descripion, $home, $release, $documentation, $issue);
-//
-//                        $this->flash('success', 'Edition success');
-//                        $_this->getKit('Redirector')->redirect('i', array());
-//
-//                    } else {
-//
-//                        $information             = $model->getInformation($page);
-//                        $information['page']     = $page;
-//                        $this->data->information = $information;
-//                        if (empty($information)) {
-//                            $this->view->addOverlay('hoa://Application/View/Hoathis/404.xyl');
-//                        } else {
-//                            $this->view->addOverlay('hoa://Application/View/Hoathis/Edit.xyl');
-//                        }
-//                    }
-//                }
-//            }
-//            $this->view->render();
-//        }
 
     }
 }

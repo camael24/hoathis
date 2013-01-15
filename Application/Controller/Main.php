@@ -1,273 +1,208 @@
 <?php
 namespace {
-    from('Application')->import('Model.*');
-    from('Application')->import('Controller.Generic');
 }
 namespace Application\Controller {
+
     class Main extends Generic {
+
         public function IndexAction() {
-            $this->view->addOverlay('hoa://Application/View/Main/Search.xyl');
+
+            $this->view->addOverlay('hoa://Application/View/Main/Index.xyl');
+            $this->view->render();
+
+        }
+
+        public function RegisterAction() {
+            if (!empty($_POST)) {
+                $login     = $this->check('login', true);
+                $password  = $this->check('pass', true);
+                $rpassword = $this->check('rpass', true);
+                $mail      = $this->check('mail', true);
+
+                $error = false;
+                if ($login === null) {
+                    $this->popup('error', 'The field login is empty ');
+                    $error = true;
+                } else if ($password === null) {
+                    $this->popup('error', 'The field password is empty ');
+                    $error = true;
+                } else if ($rpassword === null) {
+                    $this->popup('error', 'The field retype-password is empty ');
+                    $error = true;
+                } else if ($mail === null) {
+                    $this->popup('error', 'The field Email is empty ');
+                    $error = true;
+                } else if ($password !== $rpassword) {
+                    $this->popup('error', 'The filed password and retype your password must be egal ');
+                    $error = true;
+                } else if (strlen($login) < 3) {
+                    $this->popup('error', 'Your login must have over 3 characters !');
+                    $error = true;
+                }
+
+                $userModel = new \Application\Model\User();
+
+
+                if (!$userModel->checkMail($mail)) {
+                    $this->popup('error', 'Your email address has ever register in our database ');
+                    $error = true;
+                }
+                if (!$userModel->checkUser($login)) {
+                    $this->popup('error', 'Your login name has ever register in our database');
+                    $error = true;
+                }
+                if ($error === true) {
+                    $this->getKit('Redirector')->redirect('w', array('_able' => 'register'));
+                } else {
+
+                    $userModel->insert($login, $password, $mail);
+
+                    $this->popup('success', 'Your register is an success !, welcome here you can connect');
+                    $this->getKit('Redirector')->redirect('w', array('_able' => 'connect'));
+                }
+            }
+
+
+            $this->view->addOverlay('hoa://Application/View/Main/Register.xyl');
             $this->view->render();
         }
 
-        public function SearchActionAsync() {
-            $this->SearchAction();
+        public function ConnectAction() {
+
+            if (!empty($_POST)) {
+                $email    = $this->check('login', true);
+                $password = $this->check('password', true);
+//                $remember = $this->check('remember'); //TODO add support of cookie
+
+
+                $error = false;
+                if ($email === null) {
+                    $this->popup('error', 'The field login is empty ');
+                    $error = true;
+                } else if ($password === null) {
+                    $this->popup('error', 'The field password is empty ');
+                    $error = true;
+                }
+
+
+                $user = new \Application\Model\User();
+                if (!$user->connect($email, $password)) {
+                    $this->popup('error', 'This credentials are not reconized here, your are might be banned or unactived');
+                    $error = true;
+                }
+
+                if ($error === true) {
+                    $this->getKit('Redirector')->redirect('w', array('_able' => 'connect'));
+                } else {
+                    $sUser             = new \Hoa\Session\Session('user');
+                    $sUser['idUser']   = $user->idUser;
+                    $sUser['username'] = $user->username;
+                    $sUser['email']    = $user->mail;
+
+                    $this->popup('success', 'Hello ' . $user->username); //TODO change here
+                    $this->getKit('Redirector')->redirect('i', array());
+                }
+
+            }
+
+            $this->view->addOverlay('hoa://Application/View/Main/Connect.xyl');
+            $this->view->render();
+        }
+
+        public function ForgotAction() {
+            $this->popup('info', 'this function is not implement yet!'); //TODO change here
+            $this->getKit('Redirector')->redirect('i', array());
+
+        }
+
+        public function DisconnectAction() {
+            \Hoa\Session\Session::destroy();
+            $this->getKit('Redirector')->redirect('i', array());
         }
 
         public function SearchAction() {
-            $model = new \Application\Model\Library();
-            $user  = new \Application\Model\User();
-            if (array_key_exists('term', $_POST)) {
-                if (strpos($_POST['term'], '@') === 0) {
-                    $term = substr($_POST['term'], 1);
-                    $s    = $user->search($term);
+            $search = $this->check('search', true);
+            if ($search === null) {
+                $this->popup('error', 'The field search is empty ');
+                $this->getKit('Redirector')->redirect('i', array());
+            }
+
+            if (strpos($search, '@') === 0) {
+                $user               = new \Application\Model\User();
+                $this->data->author = $user->search(substr($search, 1));
 
 
-                    $elmt = array();
-                    foreach ($s as $i)
-                        $elmt[] = '@' . $i['username'];
+            } else {
+                $user               = new \Application\Model\User();
+                $this->data->author = $user->search($search);
 
-                    echo json_encode($elmt);
-                } else {
-
-                    $s = $model->search($_POST['term']);
-
-                    $elmt = array();
-                    foreach ($s as $i)
-                        $elmt[] = $i['name'];
-
-
-                    echo json_encode($elmt);
-                }
-            } else if (array_key_exists('search', $_POST)) {
-                $main = 'hoa://Application/View/Main/Fragment/List.xyl';
-
-                $xyl        = new \Hoa\Xyl(
-                    new \Hoa\File\Read($main),
-                    new \Hoa\Http\Response(),
-                    new \Hoa\Xyl\Interpreter\Html(),
-                    $this->router
-                );
-                $this->view = $xyl;
-                $this->data = $xyl->getData();
-
-
-                if (strpos($_POST['search'], '@') === 0) {
-                    $term              = substr($_POST['search'], 1);
-                    $this->data->label = 'Search of Author : ' . $term;
-                    $searchs           = $user->search($term);
-                    foreach ($searchs as $id => $search) {
-                        $rang = null;
-                        switch ($search['rang']) {
-                            case 2:
-                                $rang = '<span class="label label-important">Administrator</span>';
-                                break;
-                            case 1:
-                                $rang = '<span class="label label-success">User</span>';
-                                break;
-                            case 0:
-                            default:
-                                $rang = '<span class="label label-inverse">Banned or Unactivate</span>';
-                        }
-
-                        $searchs[$id]['rang'] = $rang;
-                    }
-                    $this->data->search = $searchs;
-                    $this->view->interprete();
-                    $this->view->render($this->view->getSnippet('author_list'));
-
-                } else {
-                    $this->data->label  = 'Search of : ' . $_POST['search'];
-                    $this->data->search = $model->search($_POST['search']);
-                    $this->view->interprete();
-                    $this->view->render($this->view->getSnippet('main_list'));
-                }
+                $library            = new \Application\Model\Library();
+                $this->data->search = $library->search($search); //TODO : Allow search by user @foobar
 
             }
+            $this->view->addOverlay('hoa://Application/View/Main/Index.xyl');
+            $this->view->render();
 
         }
 
-        public function ConnexionAction($_this) {
-            $error = array();
-
-            $check = function ($id) use (&$error) {
-                if (array_key_exists($id, $_POST) && $_POST[$id] != '')
-                    return $_POST[$id];
-                else {
-                    $error[] = $id;
-
-                    return null;
-                }
-
-            };
+        public function CreateAction() {
+            $this->guestGuard();
 
             if (!empty($_POST)) {
-                $user = $check('user');
-                $pass = $check('pass');
-                if (empty($error)) {
-                    $model  = new \Application\Model\User();
-                    $result = $model->connect($user, $pass);
+                $name        = $this->check('name', true);
+                $description = $this->check('description', true);
+                $home        = $this->check('home', true);
+                $release     = $this->check('release', true);
+                $issue       = $this->check('issues');
+                $doc         = $this->check('doc');
 
-                    if ($result === true) {
-                        $session         = new \Hoa\Session\QNamespace('user');
-                        $session->idUser = $model->idUser;
+                $error = false;
+                if ($name === null) {
+                    $this->popup('error', 'The field name is empty ');
+                    $error = true;
+                } else if ($description === null) {
+                    $this->popup('error', 'The field description is empty ');
+                    $error = true;
+                } else if ($home === null) {
+                    $this->popup('error', 'The field homepage is empty ');
+                    $error = true;
+                } else if ($release === null) {
+                    $this->popup('error', 'The field release is empty ');
+                    $error = true;
+                }
 
-                        if ($model->rang == 2) {
-                            new \Hoa\Session\QNamespace('admin'); // TODO : not really an ACL
-                        }
-                        $this->flash('success', 'Connexion success');
-                        $_this->getKit('Redirector')->redirect('up', array('user' => $model->username, '_able' => 'list'));
+                $user = new \Hoa\Session\Session('user');
+                $id   = $user['idUser'];
 
+                $library = new \Application\Model\Library();
+                if ($library->insert($id, $name, $description, $home, $release, $doc, $issue) === false) {
+                    $this->popup('error', 'An project has ever a same name');
+                    $error = true;
+                }
 
-                    } else {
-                        $this->flash('error', 'This credentials are not reconized here, your are might be banned or unactived');
-                        $_this->getKit('Redirector')->redirect('w', array('_able' => 'connexion'));
-                    }
-
+                if ($error === true) {
+                    $this->getKit('Redirector')->redirect('w', array('_able' => 'create'));
                 } else {
-                    $this->flash('error', 'This input are empty ' . implode(',', $error));
-                    $_this->getKit('Redirector')->redirect('w', array('_able' => 'connexion'));
+
+                    $this->popup('success', 'Your projet has been create, you might wait his acception by the staff'); //TODO change here
+                    $this->getKit('Redirector')->redirect('i', array());
                 }
-
-
-            } else {
-                $this->view->addOverlay('hoa://Application/View/Front/Connexion.xyl');
             }
 
+            $this->view->addOverlay('hoa://Application/View/Main/Create.xyl');
             $this->view->render();
-
         }
 
-        public function DisconnectAction($_this) {
-            \Hoa\Session\Session::unsetAllFlashes();
-            \Hoa\Session\Session::unsetAllNamespaces();
-            \Hoa\Session\Session::forgetMe();
-            \Hoa\Session\Session::destroy();
-//            $this->flash('success', 'Disconnect success');
-            $_this->getKit('Redirector')->redirect('i', array());
+        public function ProfilAction() {
+            $user = new \Hoa\Session\Session('user');
+
+            $this->getKit('Redirector')->redirect('u', array('user' => $user['username']));
         }
 
-        public function RegisterAction($_this) {
-            $error = array();
+        public function ListAction() { //TODO : List project by user like search @
+            $user = new \Hoa\Session\Session('user');
 
-            $check = function ($id) use (&$error) {
-                if (array_key_exists($id, $_POST) && $_POST[$id] != '')
-                    return $_POST[$id];
-                else {
-                    $error[] = $id;
-
-                    return null;
-                }
-
-            };
-
-            if (!empty($_POST)) {
-                $user      = $check('user');
-                $password  = $check('pass');
-                $rpassword = $check('rpass');
-                $mail      = $check('mail');
-
-                if (empty($error)) {
-                    if ($password === $rpassword) {
-
-                        //TODO : check valid data ! before register !
-
-                        $model = new \Application\Model\User();
-
-                        if (!$model->checkMail($mail)) {
-                            $this->flash('error', 'Your mail has ever register');
-                            $_this->getKit('Redirector')->redirect('w', array('_able' => 'register'));
-                        } else if (!$model->checkUser($user)) {
-                            $this->flash('error', 'Your username has ever register');
-                            $_this->getKit('Redirector')->redirect('w', array('_able' => 'register'));
-                        } else {
-                            $model->insert($user, $password, $mail);
-                            $this->flash('success', 'Register success');
-                            $_this->getKit('Redirector')->redirect('i', array());
-                        }
-
-                    } else {
-
-                        $this->flash('error', 'Your field "Password" and "Retype Password" are not equal');
-                        $_this->getKit('Redirector')->redirect('w', array('_able' => 'register'));
-                    }
-                } else {
-                    $this->flash('error', 'This input are empty ' . implode(',', $error));
-                    $_this->getKit('Redirector')->redirect('w', array('_able' => 'register'));
-                }
-
-            } else {
-                $this->view->addOverlay('hoa://Application/View/Front/Register.xyl');
-            }
-
-            $this->view->render();
-
-        }
-
-        public function ForgotAction($_this) {
-            $this->flash('info', 'This is not implement yet');
-            $_this->getKit('Redirector')->redirect('i', array());
-        }
-
-        public function CreateAction($_this) {
-            if (!\Hoa\Session\Session::isNamespaceSet('user')) {
-                $this->flash('error', 'You don`t have the require credential');
-                $_this->getKit('Redirector')->redirect('i', array());
-
-                return;
-            }
-
-            $session = new \Hoa\Session\QNamespace('user');
-            $model   = new \Application\Model\User();
-            if (false === $model->open(array('id' => $session->idUser))) {
-                $this->view->addOverlay('hoa://Application/View/Hoathis/404.xyl');
-            } else {
-
-                $error = array();
-
-                $check = function ($id) use (&$error) {
-                    if (array_key_exists($id, $_POST) && $_POST[$id] != '')
-                        return $_POST[$id];
-                    else {
-                        $error[] = $id;
-
-                        return null;
-                    }
-
-                };
-
-                if (!empty($_POST)) {
-                    //TODO : check valid data !
-                    $name          = $check('name');
-                    $descripion    = $check('description');
-                    $home          = $check('home');
-                    $release       = $check('release');
-                    $issue         = $check('issues');
-                    $documentation = $check('doc');
-
-
-                    if (empty($error)) {
-                        $model = new \Application\Model\Library();
-                        $valid = $model->insert($session->idUser, $name, $descripion, $home, $release, $documentation, $issue);
-
-                        if ($valid === true) {
-                            $this->flash('success', 'Create success');
-                            $_this->getKit('Redirector')->redirect('i', array());
-                        } else {
-                            $this->flash('error', 'An library as ever a same name !');
-                            $_this->getKit('Redirector')->redirect('w', array('_able' => 'create'));
-                        }
-                    } else {
-                        $this->flash('error', 'This input are empty ' . implode(',', $error));
-                        $_this->getKit('Redirector')->redirect('w', array('_able' => 'create'));
-                    }
-                } else {
-                    $this->view->addOverlay('hoa://Application/View/Main/Create.xyl');
-
-                }
-            }
-            $this->view->render();
-
+            $this->getKit('Redirector')->redirect('up', array('user' => $user['username'], '_able' => 'list'));
         }
     }
 }

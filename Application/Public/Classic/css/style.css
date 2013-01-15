@@ -1,52 +1,33 @@
-@media (max-width: 978px) {
-    body {
-        padding-top: 0px;
-    }
-}
-
-@media (min-width: 978px) {
-    body {
-        padding-top: 60px;
-    }
-}
-
-body {
-    padding-bottom: 30px;
-}
-
-.input-auto {
-    width: 70%;
-}
-
 footer {
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-    background-color: #ffffff;
+    position         : fixed;
+    padding-left     : 10px;
+    bottom           : 0px;
+    width            : 100%;
+    background-color : #ffffff;
+    border: 0;
+    border-top: 1px solid #e5e5e5;
 }
 
-.emphase {
-    color: green;
+#b {
+    padding-bottom : 50px;
 }
 
 #result > ul > li >h2:first-letter {
-    text-transform: uppercase;
+    text-transform : uppercase;
 }
 
 #result > ul > li {
-    list-style: none;
-    display: block;
-    background-color: #eeeeee;
-    padding: 4px;
-    margin: 5px;
-    line-height: 1;
-    border: 1px solid #ddd;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
-    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
-
+    list-style            : none;
+    display               : block;
+    background-color      : #eeeeee;
+    padding               : 4px;
+    margin                : 5px;
+    line-height           : 1;
+    border                : 1px solid #ddd;
+    -webkit-border-radius : 4px;
+    -moz-border-radius    : 4px;
+    border-radius         : 4px;
+    -webkit-box-shadow    : 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow       : 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow            : 0 1px 1px rgba(0, 0, 0, 0.075);
 }
-
