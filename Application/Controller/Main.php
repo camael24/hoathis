@@ -140,7 +140,7 @@ namespace Application\Controller {
                 $this->data->search = $library->search($search); //TODO : Allow search by user @foobar
 
             }
-            $this->view->addOverlay('hoa://Application/View/Main/Index.xyl');
+            $this->view->addOverlay('hoa://Application/View/Main/Seach.xyl');
             $this->view->render();
 
         }

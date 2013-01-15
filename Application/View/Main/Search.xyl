@@ -23,6 +23,9 @@
 
             </p>
         </div>
-
+        <div id="result">
+            <yield select="?f:handle#main_list"/>
+            <yield select="?f:handle#author_list"/>
+        </div>
     </article>
 </overlay>
