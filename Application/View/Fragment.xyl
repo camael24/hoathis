@@ -10,7 +10,7 @@
                     <h2 class="span6"><value bind="?username"/>/
                         <span class="emphase" bind="?name"/>
                     </h2>
-                    <a href="@p:project=(?name)" class="btn btn-primary">
+                    <a href="@project-home:project=(?name)" class="btn btn-primary">
                         <i class="icon-white icon-chevron-right"/>
                     </a>
                 </div>
@@ -29,7 +29,7 @@
                         <value bind="?username"/>
                         <span class="label label-(?RangClass)" bind="?RangLabel"/>
                     </h2>
-                    <a href="@u:user=(?username)" class="btn btn-primary">
+                    <a href="@user-home:user=(?username)" class="btn btn-primary">
                         <i class="icon-white icon-chevron-right"/>
                     </a>
                 </div>

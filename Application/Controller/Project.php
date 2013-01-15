@@ -22,14 +22,14 @@ namespace Application\Controller {
 
             if(empty($information)) {
                 $this->popup('info' , 'this project is not yet activate by staff or you have make an error in the URL, be patient thanks');
-                $this->getKit('Redirector')->redirect('i', array());
+                $this->getKit('Redirector')->redirect('home', array());
             }
 
 
             $user = new \Hoa\Session\Session('user');
 
             if (array_key_exists('refUser', $information) && array_key_exists('idUser', $user) && intval($information['refUser']) === $user['idUser']) //TODO add when we get ACL OR rang information
-                $information['editing'] = '<a href="' . $this->router->unroute('pp', array('project' => $project, '_able' => 'edit')) . '"><i class="icon-pencil"></i></a>';
+                $information['editing'] = '<a href="' . $this->router->unroute('project-caller', array('project' => $project, '_able' => 'edit')) . '"><i class="icon-pencil"></i></a>';
 
             $this->data->information = $information;
 
@@ -47,7 +47,7 @@ namespace Application\Controller {
 
             if(empty($information)) {
                 $this->popup('info' , 'this project is not yet activate by staff, be patient thanks');
-                $this->getKit('Redirector')->redirect('i', array());
+                $this->getKit('Redirector')->redirect('home', array());
             }
 
 
@@ -79,11 +79,11 @@ namespace Application\Controller {
 
 
                 if ($error === true) {
-                    $this->getKit('Redirector')->redirect('pp', array('project' => $project, '_able' => 'create'));
+                    $this->getKit('Redirector')->redirect('project-caller', array('project' => $project, '_able' => 'create'));
                 } else {
                     $library->update($information['idLibrary'], $description, $home, $release, $doc, $issue);
                     $this->popup('success', 'Your projet has been update'); //TODO change here
-                    $this->getKit('Redirector')->redirect('p', array('project' => $project));
+                    $this->getKit('Redirector')->redirect('project-home', array('project' => $project));
                 }
 
             }

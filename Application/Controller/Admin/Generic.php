@@ -14,7 +14,7 @@ namespace Application\Controller\Admin {
             $this->guestGuard();
             if (!$this->isAdminAllowed()) {
                 $this->popup('info', 'You don`t allow to access here');
-                $this->getKit('Redirector')->redirect('w', array('_able' => 'connect'));
+                $this->getKit('Redirector')->redirect('home-caller', array('_able' => 'connect'));
             }
 
         }

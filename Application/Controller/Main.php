@@ -52,13 +52,13 @@ namespace Application\Controller {
                     $error = true;
                 }
                 if ($error === true) {
-                    $this->getKit('Redirector')->redirect('w', array('_able' => 'register'));
+                    $this->getKit('Redirector')->redirect('home-caller', array('_able' => 'register'));
                 } else {
 
                     $userModel->insert($login, $password, $mail);
 
                     $this->popup('success', 'Your register is an success !, welcome here you can connect');
-                    $this->getKit('Redirector')->redirect('w', array('_able' => 'connect'));
+                    $this->getKit('Redirector')->redirect('home-caller', array('_able' => 'connect'));
                 }
             }
 
@@ -92,7 +92,7 @@ namespace Application\Controller {
                 }
 
                 if ($error === true) {
-                    $this->getKit('Redirector')->redirect('w', array('_able' => 'connect'));
+                    $this->getKit('Redirector')->redirect('home-caller', array('_able' => 'connect'));
                 } else {
                     $sUser             = new \Hoa\Session\Session('user');
                     $sUser['idUser']   = $user->idUser;
@@ -100,7 +100,7 @@ namespace Application\Controller {
                     $sUser['email']    = $user->mail;
 
                     $this->popup('success', 'Hello ' . $user->username); //TODO change here
-                    $this->getKit('Redirector')->redirect('i', array());
+                    $this->getKit('Redirector')->redirect('home', array());
                 }
 
             }
@@ -111,20 +111,20 @@ namespace Application\Controller {
 
         public function ForgotAction() {
             $this->popup('info', 'this function is not implement yet!'); //TODO change here
-            $this->getKit('Redirector')->redirect('i', array());
+            $this->getKit('Redirector')->redirect('home', array());
 
         }
 
         public function DisconnectAction() {
             \Hoa\Session\Session::destroy();
-            $this->getKit('Redirector')->redirect('i', array());
+            $this->getKit('Redirector')->redirect('home', array());
         }
 
         public function SearchAction() {
             $search = $this->check('search', true);
             if ($search === null) {
                 $this->popup('error', 'The field search is empty ');
-                $this->getKit('Redirector')->redirect('i', array());
+                $this->getKit('Redirector')->redirect('home', array());
             }
 
             if (strpos($search, '@') === 0) {
@@ -181,11 +181,11 @@ namespace Application\Controller {
                 }
 
                 if ($error === true) {
-                    $this->getKit('Redirector')->redirect('w', array('_able' => 'create'));
+                    $this->getKit('Redirector')->redirect('home-caller', array('_able' => 'create'));
                 } else {
 
                     $this->popup('success', 'Your projet has been create, you might wait his acception by the staff'); //TODO change here
-                    $this->getKit('Redirector')->redirect('i', array());
+                    $this->getKit('Redirector')->redirect('home', array());
                 }
             }
 
@@ -196,13 +196,13 @@ namespace Application\Controller {
         public function ProfilAction() {
             $user = new \Hoa\Session\Session('user');
 
-            $this->getKit('Redirector')->redirect('u', array('user' => $user['username']));
+            $this->getKit('Redirector')->redirect('user-home', array('user' => $user['username']));
         }
 
         public function ListAction() { //TODO : List project by user like search @
             $user = new \Hoa\Session\Session('user');
 
-            $this->getKit('Redirector')->redirect('up', array('user' => $user['username'], '_able' => 'list'));
+            $this->getKit('Redirector')->redirect('user-caller', array('user' => $user['username'], '_able' => 'list'));
         }
     }
 }

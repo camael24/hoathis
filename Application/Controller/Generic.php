@@ -71,7 +71,7 @@ namespace Application\Controller {
             $user = new \Hoa\Session\Session('user');
             if ($user->isEmpty() === true) {
                 $this->popup('info', 'You don`t have the require credential');
-                $this->getKit('Redirector')->redirect('w', array('_able' => 'connect'));
+                $this->getKit('Redirector')->redirect('home-caller', array('_able' => 'connect'));
             }
         }
 

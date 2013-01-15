@@ -17,16 +17,16 @@
                 <div class="nav-collapse collapse">
                     <ul class="nav">
                         <li class="active">
-                            <a href="@i">Home</a>
+                            <a href="@home">Home</a>
                         </li>
                         <li>
-                            <a href="@w:_able=connect">Sign-in</a>
+                            <a href="@home-caller:_able=connect">Sign-in</a>
                         </li>
                         <li>
-                            <a href="@w:_able=register">Register</a>
+                            <a href="@home-caller:_able=register">Register</a>
                         </li>
                         <li>
-                            <a href="@w:_able=create">Send an hoathis</a>
+                            <a href="@home-caller:_able=create">Send an hoathis</a>
                         </li>
                     </ul>
                 </div>

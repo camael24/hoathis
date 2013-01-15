@@ -97,7 +97,7 @@ namespace Application\Model {
         }
 
         public function open(Array $constraints = array()) {
-            $id      = $constraints['id'];
+            $id     = $constraints['id'];
             $select = $this->getById($id);
             if (count($select) === 1)
                 $this->map($select[0]);
@@ -116,7 +116,7 @@ namespace Application\Model {
 
         public function openByName(Array $constraints = array()) {
             $id     = $constraints['name'];
-            $select = 'SELECT * FROM `user` WHERE `username` = :id';
+            $select = 'SELECT * FROM user  WHERE username = :id';
             $select = $this->getMappingLayer()
                 ->prepare($select)
                 ->execute(array(
@@ -129,6 +129,13 @@ namespace Application\Model {
                 return false;
 
             return;
+        }
+
+        public function getRangLabel($rang) {
+            $select = 'SELECT * FROM rang  WHERE idRang = :id';
+            $s      = $this->getMappingLayer()->prepare($select)->execute(array('id' => $rang))->fetchAll();
+
+            return $s[0];
         }
 
         public function setPassword($id, $pass) {

@@ -30,8 +30,8 @@
             </form>
             <legend></legend>
             <p>
-                <a href="@w:_able=register" class="btn btn-success">Register</a>
-                <a href="@w:_able=forgot" class="btn btn-danger">Forgot password</a>
+                <a href="@home-caller:_able=register" class="btn btn-success">Register</a>
+                <a href="@home-caller:_able=forgot" class="btn btn-danger">Forgot password</a>
             </p>
         </div>
     </article>

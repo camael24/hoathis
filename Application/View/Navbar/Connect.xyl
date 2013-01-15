@@ -17,19 +17,19 @@
                 <div class="nav-collapse collapse">
                     <ul class="nav">
                         <li>
-                            <a href="@i">Home</a>
+                            <a href="@home">Home</a>
                         </li>
                         <li>
-                            <a href="@w:_able=create">Send an hoathis</a>
+                            <a href="@home-caller:_able=create">Send an hoathis</a>
                         </li>
                         <li>
-                            <a href="@w:_able=profil">Your Profile</a>
+                            <a href="@home-caller:_able=profil">Your Profile</a>
                         </li>
                         <li>
-                            <a href="@w:_able=list">Your Hoathis</a>
+                            <a href="@home-caller:_able=list">Your Hoathis</a>
                         </li>
                         <li>
-                            <a href="@w:_able=disconnect">Disconnect</a>
+                            <a href="@home-caller:_able=disconnect">Disconnect</a>
                         </li>
                     </ul>
                 </div>

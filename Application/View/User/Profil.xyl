@@ -21,12 +21,12 @@
                 <div class="control-group">
                     <label class="control-label" for="mail">Rang</label>
                     <div class="controls">
-                        <p bind="?rang"/>
+                        <span class="label label-(?RangClass)" bind="?RangLabel"/>
                     </div>
                 </div>
             </div>
             <legend>
-                <a href="@up:user=(?login)&amp;_able=list">Ses Hoathis</a>
+                <a href="@user-caller:user=(?login)&amp;_able=list">Ses Hoathis</a>
             </legend>
         </div>
     </article>

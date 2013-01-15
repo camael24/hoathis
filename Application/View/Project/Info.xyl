@@ -72,7 +72,7 @@
                 <div class="row-fluid">
                     <div class="span2">Contact author</div>
                     <div class="span4">
-                        <a href="@u:user=(?username)" class="btn btn-danger btn-mini">
+                        <a href="@user-home:user=(?username)" class="btn btn-danger btn-mini">
                             <i class="icon-white icon-leaf"/>
                         </a>
                         <span class="help-inline" bind="?username"/>

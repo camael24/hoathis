@@ -5,7 +5,7 @@
             <p>
                 <h2>Search in database:</h2>
 
-                <form action="@w:_able=search" method="post">
+                <form action="@home-caller:_able=search" method="post">
                     <div class="control-group">
                         <!--<div class="input-append">-->
                         <input class="span12 input-auto" id="searchBar" name="search" type="text"
