@@ -65,7 +65,7 @@ namespace {
     $go = cinq('Do you want change your Hoa directory [y/n]');
 
     if (true === $go) {
-        include_once "Whereishoa.php";
+        include_once "WhereisHoa.php";
 
     }
 
