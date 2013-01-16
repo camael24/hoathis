@@ -24,6 +24,7 @@
                         <!--<input type="checkbox" name="remember"/>-->
                         <!--Remember me-->
                         <!--</label>-->
+                        <input type="hidden" name="redirect" value="(?redirect)"/>
                         <input type="submit" id="send" class="btn btn-primary"/>
                     </div>
                 </div>

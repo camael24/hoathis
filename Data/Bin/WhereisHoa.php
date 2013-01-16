@@ -41,60 +41,67 @@ namespace {
      * @copyright  Copyright © 2007-2012 Ivan Enderlin.
      */
 
-    function _define($name, $value, $case = false) {
+    if (!function_exists('_define')) {
+        function _define($name, $value, $case = false) {
 
-        if (!defined($name))
-            return define($name, $value, $case);
+            if (!defined($name))
+                return define($name, $value, $case);
 
-        return false;
-    }
-
-    function cin($out = null) {
-
-        if (null !== $out)
-            cout($out);
-
-        return trim(fgets(STDIN));
-    }
-
-    function cinq($out = null) {
-
-        $in = strtolower(cin($out));
-
-        switch ($in) {
-
-            case 'y':
-            case 'ye':
-            case 'yes':
-            case 'yeah': // hihi
-                return true;
-                break;
-
-            default:
-                return false;
+            return false;
         }
     }
+    if (!function_exists('cin')) {
+        function cin($out = null) {
 
-    function cout($out) {
+            if (null !== $out)
+                cout($out);
 
-        return fwrite(STDOUT, $out);
-    }
-
-    function check($out, $test, $die = true) {
-
-        if (false === $test) {
-
-            cout('✖  ' . $out);
-
-            if (true === $die)
-                exit;
-            else
-                return;
+            return trim(fgets(STDIN));
         }
+    }
+    if (!function_exists('cinq')) {
 
-        cout('✔  ' . $out);
+        function cinq($out = null) {
 
-        return;
+            $in = strtolower(cin($out));
+
+            switch ($in) {
+
+                case 'y':
+                case 'ye':
+                case 'yes':
+                case 'yeah': // hihi
+                    return true;
+                    break;
+
+                default:
+                    return false;
+            }
+        }
+    }
+    if (!function_exists('cout')) {
+        function cout($out) {
+
+            return fwrite(STDOUT, $out);
+        }
+    }
+    if (!function_exists('check')) {
+        function check($out, $test, $die = true) {
+
+            if (false === $test) {
+
+                cout('✖  ' . $out);
+
+                if (true === $die)
+                    exit;
+                else
+                    return;
+            }
+
+            cout('✔  ' . $out);
+
+            return;
+        }
     }
 
     _define('STDIN', fopen('php://stdin', 'rb'));

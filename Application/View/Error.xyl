@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-stylesheet    href="hoa://Application/Public/Css/bootstrap.css" ?>
+<?xyl-stylesheet    href="hoa://Application/Public/Css/bootstrap-responsive.css" ?>
+<?xyl-stylesheet    href="hoa://Application/Public/Css/style.css" ?>
+<?xyl-meta          name="viewport" content="width=device-width, initial-scale=1.0" ?>
+
+<document xmlns="http://hoa-project.net/xyl/xylophone">
+    <title>Hoathis.net</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"/>
+    <script src="hoa://Application/Public/Js/bootstrap.js"/>
+
+    <navbar/>
+    <navbar-admin/>
+
+    <div id="b" class="container-fluid">
+        <article id="content">
+            <div class="alert alert-error">Exception , we have a log of it</div>
+        </article>
+
+    </div>
+
+    <footer>
+        <p>
+            <a href="http://www.hoaproject.net">Hoa</a>
+            est la création de&amp;amp;nbsp;<a href="http://mnt.io/">Ivan Enderlin</a>, tous droits réservés | Hoathis est en CDD (Community Driven Developpment).
+        </p>
+    </footer>
+
+
+
+</document>

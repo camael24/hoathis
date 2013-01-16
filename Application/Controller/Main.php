@@ -69,9 +69,23 @@ namespace Application\Controller {
 
         public function ConnectAction() {
 
+            $s = new \Hoa\Session\Session('user');
+            if (!$s->isEmpty())
+                $this->getKit('Redirector')->redirect('home', array());
+
+            $query = $this->router->getQuery(); //TODO a faire
+            $page  = (isset($query['redirect']) && !empty($query['redirect']))
+                ? $query['redirect']
+                : null;
+
+
+            $this->data->redirect = $page;
+
+
             if (!empty($_POST)) {
                 $email    = $this->check('login', true);
                 $password = $this->check('password', true);
+                $redirect = $this->check('redirect', true);
 //                $remember = $this->check('remember'); //TODO add support of cookie
 
 
@@ -100,7 +114,12 @@ namespace Application\Controller {
                     $sUser['email']    = $user->mail;
 
                     $this->popup('success', 'Hello ' . $user->username); //TODO change here
-                    $this->getKit('Redirector')->redirect('home', array());
+                    if ($redirect === null)
+                        $this->getKit('Redirector')->redirect('home', array());
+                    else {
+                        header('location:' . $page);
+                        exit;
+                    }
                 }
 
             }

@@ -12,7 +12,7 @@ return array(
     ),
   'parameters' =>
   array(
-      'root.hoa'                        => '(:root:)',
+      'root.hoa'                        => '/usr/local/lib/Hoa/Hoa',
       'root.application'                => '(:cwd:h:)',
       'root.data'                       => '(:%root.application:h:)/Data',
       'protocol.Application'            => '(:%root.application:)/',
