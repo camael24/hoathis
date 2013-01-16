@@ -24,6 +24,7 @@ from('Application')
 
 
 from('Hoathis')
+    ->import('Context.~')
     ->import('Kit.Aggregator');
 
 
@@ -31,15 +32,17 @@ try {
     $dispatcher = new \Hoa\Dispatcher\Basic();
     $router     = new \Hoa\Router\Http();
 
-    $s = new \Hoa\Session\Session('user');
-
     $dispatcher->setKitName('Hoathis\Kit\Aggregator');
+
+    $context = new \Hoathis\Context\Context();
+    $context->read();
+
 
     \Hoa\Database\Dal::initializeParameters(array(
         'connection.list.default.dal'      => 'Pdo',
         'connection.list.default.dsn'      => 'mysql:host=127.0.0.1;dbname=hoathis',
-        'connection.list.default.username' => 'camael',
-        'connection.list.default.password' => 'toor', // DEV Mdp , F### :D
+        'connection.list.default.username' => $context->mysql_user,
+        'connection.list.default.password' => $context->mysql_pass,
         'connection.autoload'              => 'default'
     ));
 
