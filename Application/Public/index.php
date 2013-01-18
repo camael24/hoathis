@@ -35,7 +35,7 @@ try {
     $dispatcher->setKitName('Hoathis\Kit\Aggregator');
 
     $context = new \Hoathis\Context\Context();
-
+    $context->load();
 
     \Hoa\Database\Dal::initializeParameters(array(
         'connection.list.default.dal'      => 'Pdo',

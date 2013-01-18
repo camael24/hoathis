@@ -5,7 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Public/index.php" afterPath="$PROJECT_DIR$/Application/Public/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Library/Hoathis/Context/Context.php" afterPath="$PROJECT_DIR$/Data/Library/Hoathis/Context/Context.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Variable/Log/Exception.log" afterPath="$PROJECT_DIR$/Data/Variable/Log/Exception.log" />
     </list>
     <ignored path="hoathis.net.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +27,7 @@
       <file leaf-file-name="Set.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Data/Library/Hoathis/Context/Bin/Set.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="43" selection-start="2229" selection-end="2229" vertical-scroll-proportion="-20.37037">
+            <state line="31" column="47" selection-start="841" selection-end="841" vertical-scroll-proportion="-19.444445">
               <folding />
             </state>
           </provider>
@@ -52,19 +51,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Context.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Context.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Data/Library/Hoathis/Context/Context.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="7" selection-start="112" selection-end="112" vertical-scroll-proportion="0.1492891">
+            <state line="42" column="14" selection-start="1010" selection-end="1010" vertical-scroll-proportion="-23.62963">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Public/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="22" selection-start="938" selection-end="938" vertical-scroll-proportion="-6.2222223">
+            <state line="37" column="21" selection-start="959" selection-end="959" vertical-scroll-proportion="0.19905214">
               <folding />
             </state>
           </provider>
@@ -106,8 +105,8 @@
         <option value="$PROJECT_DIR$/Data/Library/Hoathis/Context/Exception.php" />
         <option value="$PROJECT_DIR$/Data/Etc/Context/default" />
         <option value="$PROJECT_DIR$/Data/Library/Hoathis/Context/Bin/Set.php" />
-        <option value="$PROJECT_DIR$/Application/Public/index.php" />
         <option value="$PROJECT_DIR$/Data/Library/Hoathis/Context/Context.php" />
+        <option value="$PROJECT_DIR$/Application/Public/index.php" />
       </list>
     </option>
   </component>
@@ -860,21 +859,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Data/Library/Hoathis/Context/Bin/Set.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="43" selection-start="2229" selection-end="2229" vertical-scroll-proportion="-20.37037">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="22" selection-start="938" selection-end="938" vertical-scroll-proportion="-6.2222223">
+        <state line="31" column="47" selection-start="841" selection-end="841" vertical-scroll-proportion="-19.444445">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Data/Library/Hoathis/Context/Context.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="7" selection-start="112" selection-end="112" vertical-scroll-proportion="0.1492891">
+        <state line="42" column="14" selection-start="1010" selection-end="1010" vertical-scroll-proportion="-23.62963">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="21" selection-start="959" selection-end="959" vertical-scroll-proportion="0.19905214">
           <folding />
         </state>
       </provider>

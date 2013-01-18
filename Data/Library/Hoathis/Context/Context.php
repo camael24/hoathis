@@ -21,13 +21,6 @@ namespace Hoathis\Context {
         private $_mappingContextKey = null;
 
         /**
-         * @param null $contextName
-         */
-        public function __construct($contextName = null) {
-            $this->load($contextName);
-        }
-
-        /**
          * @param $key
          *
          * @return mixed|null
@@ -47,7 +40,7 @@ namespace Hoathis\Context {
         /**
          * @param null $contextName
          */
-        protected function load($contextName = null) {
+        public function load($contextName = null) {
             if ($contextName === null)
                 $contextName = $this->getDefaultContext();
 
