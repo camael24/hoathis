@@ -35,7 +35,6 @@ try {
     $dispatcher->setKitName('Hoathis\Kit\Aggregator');
 
     $context = new \Hoathis\Context\Context();
-    $context->read();
 
 
     \Hoa\Database\Dal::initializeParameters(array(

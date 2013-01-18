@@ -73,3 +73,24 @@
 [18/01/2013 13:45:00]  file_get_contents(): (-1) file_get_contents(hoa://Data/Etc/Context/production/context.json): failed to open stream: "\Hoa\Core\Protocol\Wrapper::stream_open" call failedin /var/www/hoathis.net/Data/Library/Hoathis/Context/Context.php at line 17.
 [18/01/2013 13:45:01]  file_get_contents(): (-1) file_get_contents(hoa://Data/Etc/Context/production/context.json): failed to open stream: "\Hoa\Core\Protocol\Wrapper::stream_open" call failedin /var/www/hoathis.net/Data/Library/Hoathis/Context/Context.php at line 17.
 [18/01/2013 13:45:01]  file_get_contents(): (-1) file_get_contents(hoa://Data/Etc/Context/production/context.json): failed to open stream: "\Hoa\Core\Protocol\Wrapper::stream_open" call failedin /var/www/hoathis.net/Data/Library/Hoathis/Context/Context.php at line 17.
+[18/01/2013 14:40:13]  {main}: (-1) Undefined property: Hoathis\Context\Context::$mysql_userin /var/www/hoathis.net/Application/Public/index.php at line 43.
+[18/01/2013 14:40:13]  {main}: (-1) Undefined property: Hoathis\Context\Context::$mysql_userin /var/www/hoathis.net/Application/Public/index.php at line 43.
+[18/01/2013 14:40:14]  {main}: (-1) Undefined property: Hoathis\Context\Context::$mysql_userin /var/www/hoathis.net/Application/Public/index.php at line 43.
+[18/01/2013 14:40:14]  {main}: (-1) Undefined property: Hoathis\Context\Context::$mysql_userin /var/www/hoathis.net/Application/Public/index.php at line 43.
+[18/01/2013 14:40:14]  {main}: (-1) Undefined property: Hoathis\Context\Context::$mysql_userin /var/www/hoathis.net/Application/Public/index.php at line 43.
+[18/01/2013 14:40:14]  {main}: (-1) Undefined property: Hoathis\Context\Context::$mysql_userin /var/www/hoathis.net/Application/Public/index.php at line 43.
+[18/01/2013 14:40:14]  {main}: (-1) Undefined property: Hoathis\Context\Context::$mysql_userin /var/www/hoathis.net/Application/Public/index.php at line 43.
+[18/01/2013 14:40:14]  {main}: (-1) Undefined property: Hoathis\Context\Context::$mysql_userin /var/www/hoathis.net/Application/Public/index.php at line 43.
+[18/01/2013 14:40:15]  {main}: (-1) Undefined property: Hoathis\Context\Context::$mysql_userin /var/www/hoathis.net/Application/Public/index.php at line 43.
+[18/01/2013 14:40:15]  {main}: (-1) Undefined property: Hoathis\Context\Context::$mysql_userin /var/www/hoathis.net/Application/Public/index.php at line 43.
+[18/01/2013 14:40:15]  {main}: (-1) Undefined property: Hoathis\Context\Context::$mysql_userin /var/www/hoathis.net/Application/Public/index.php at line 43.
+[18/01/2013 14:40:15]  {main}: (-1) Undefined property: Hoathis\Context\Context::$mysql_userin /var/www/hoathis.net/Application/Public/index.php at line 43.
+[18/01/2013 14:40:15]  {main}: (-1) Undefined property: Hoathis\Context\Context::$mysql_userin /var/www/hoathis.net/Application/Public/index.php at line 43.
+[18/01/2013 14:40:16]  {main}: (-1) Undefined property: Hoathis\Context\Context::$mysql_userin /var/www/hoathis.net/Application/Public/index.php at line 43.
+[18/01/2013 14:40:16]  {main}: (-1) Undefined property: Hoathis\Context\Context::$mysql_userin /var/www/hoathis.net/Application/Public/index.php at line 43.
+[18/01/2013 14:40:16]  {main}: (-1) Undefined property: Hoathis\Context\Context::$mysql_userin /var/www/hoathis.net/Application/Public/index.php at line 43.
+[18/01/2013 14:40:16]  {main}: (-1) Undefined property: Hoathis\Context\Context::$mysql_userin /var/www/hoathis.net/Application/Public/index.php at line 43.
+[18/01/2013 14:40:16]  {main}: (-1) Undefined property: Hoathis\Context\Context::$mysql_userin /var/www/hoathis.net/Application/Public/index.php at line 43.
+[18/01/2013 14:40:16]  {main}: (-1) Undefined property: Hoathis\Context\Context::$mysql_userin /var/www/hoathis.net/Application/Public/index.php at line 43.
+[18/01/2013 14:40:17]  {main}: (-1) Undefined property: Hoathis\Context\Context::$mysql_userin /var/www/hoathis.net/Application/Public/index.php at line 43.
+[18/01/2013 14:40:17]  {main}: (-1) Undefined property: Hoathis\Context\Context::$mysql_userin /var/www/hoathis.net/Application/Public/index.php at line 43.
