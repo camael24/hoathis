@@ -64,7 +64,7 @@ try {
 // $router->setSubdomainSuffix('hoathis');
 
     $router
-        ->get_post('admin-  user-id', '/a/user/(?<_able>[^-]+)-(?<id>[^\.]+)\.html', 'admin\user')
+        ->get_post('admin-user-id', '/a/user/(?<_able>[^-]+)-(?<id>[^\.]+)\.html', 'admin\user')
         ->get_post('admin-user', '/a/user/(?<_able>[^\.]+)\.html', 'admin\user')
         ->get_post('admin-project-id', '/a/project/(?<_able>[^-]+)-(?<id>[^\.]+)\.html', 'admin\project')
         ->get_post('admin-project', '/a/project/(?<_able>[^\.]+)\.html', 'admin\project')

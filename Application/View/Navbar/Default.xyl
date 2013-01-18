@@ -11,14 +11,11 @@
                 </a>
 
                 <!-- Be sure to leave the brand out there if you want it shown -->
-                <a class="brand" href="#">Hoathis.net</a>
+                <a class="brand" href="@home">Hoathis.net</a>
 
                 <!-- Everything you want hidden at 940px or less, place within here -->
                 <div class="nav-collapse collapse">
                     <ul class="nav">
-                        <li class="active">
-                            <a href="@home">Home</a>
-                        </li>
                         <li>
                             <a href="@home-caller:_able=connect">Sign-in</a>
                         </li>

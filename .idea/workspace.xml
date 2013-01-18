@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96c9817f-af1a-45bf-802a-eab5078c6437" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/Core.link.php.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/Etc/Configuration/.Cache/HoaCoreCore.php.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/Etc/Configuration/HoaCoreCore.json.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/Library/Hoathis/Context/Bin/Add.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/Library/Hoathis/Context/Bin/Load.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/Library/Hoathis/Context/Context.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/Variable/Log/Exception.log" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/Library/Hoathis/Context/Exception.php" />
+      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Data\Bin\Deploy.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Data\Bin\deploy" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\hoathis.net\Data\Library\Hoathis\Context\Bin\Load.php" afterPath="" />
+      <change type="MOVED" beforePath="C:\wamp\www\hoathis.net\Data\Library\Hoathis\Context\Bin\Add.php" afterPath="$PROJECT_DIR$/Data/Library/Hoathis/Context/Bin/Set.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Public/index.php" afterPath="$PROJECT_DIR$/Application/Public/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/View/Navbar/Connect.xyl" afterPath="$PROJECT_DIR$/Application/View/Navbar/Connect.xyl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/View/Navbar/Default.xyl" afterPath="$PROJECT_DIR$/Application/View/Navbar/Default.xyl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Library/Hoathis/Context/Context.php" afterPath="$PROJECT_DIR$/Data/Library/Hoathis/Context/Context.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Variable/Log/Exception.log" afterPath="$PROJECT_DIR$/Data/Variable/Log/Exception.log" />
     </list>
     <ignored path="hoathis.net.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,37 +32,28 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Application/Public/index.php">
+      <file leaf-file-name="Set.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Data/Library/Hoathis/Context/Bin/Set.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="43" selection-start="878" selection-end="878" vertical-scroll-proportion="0.4277251">
+            <state line="82" column="43" selection-start="2229" selection-end="2229" vertical-scroll-proportion="0.6516588">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="context.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Data/Etc/Context/dev/context.json">
+      <file leaf-file-name="default" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Data/Etc/Context/default">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="1" selection-start="0" selection-end="54" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="context.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Data/Etc/Context/prod/context.json">
+      <file leaf-file-name="production.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Data/Etc/Context/production.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="1" selection-start="54" selection-end="54" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Load.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Data/Library/Hoathis/Context/Bin/Load.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="62" selection-start="1062" selection-end="1062" vertical-scroll-proportion="-14.777778">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -69,16 +62,16 @@
       <file leaf-file-name="Context.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Data/Library/Hoathis/Context/Context.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="76" selection-start="920" selection-end="920" vertical-scroll-proportion="-19.444445">
+            <state line="26" column="28" selection-start="776" selection-end="776" vertical-scroll-proportion="-3.7407408">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pp.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Library/Hoa/Hoa/Compiler/Bin/Pp.php">
+      <file leaf-file-name="Exception.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Data/Library/Hoathis/Context/Exception.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="159" column="17" selection-start="2162" selection-end="4330" vertical-scroll-proportion="-28.777779">
+            <state line="2" column="4" selection-start="18" selection-end="18" vertical-scroll-proportion="-1.5555556">
               <folding />
             </state>
           </provider>
@@ -97,22 +90,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Application/View/Main/Index.xyl" />
-        <option value="$PROJECT_DIR$/Application/View/Error.xyl" />
-        <option value="$PROJECT_DIR$/Data/Variable/Log/Exception.log" />
-        <option value="$PROJECT_DIR$/Application/View/Main/Connect.xyl" />
         <option value="$PROJECT_DIR$/Application/Controller/Main.php" />
         <option value="$PROJECT_DIR$/Data/Bin/deploy" />
         <option value="$PROJECT_DIR$/Data/Bin/WhereisHoa.php" />
         <option value="$PROJECT_DIR$/Data/Bin/Deploy.php" />
         <option value="$PROJECT_DIR$/Data/Library/Hoathis/Context/Bin/Add.php" />
-        <option value="$PROJECT_DIR$/Data/Etc/Context/default" />
         <option value="$PROJECT_DIR$/Data/Library/Hoathis/Context/Bin/Load.php" />
-        <option value="$PROJECT_DIR$/Data/Library/Hoathis/Context/Context.php" />
         <option value="$PROJECT_DIR$/Data/Etc/Context/production/context.json" />
         <option value="$PROJECT_DIR$/Data/Etc/Context/dev/context.json" />
         <option value="$PROJECT_DIR$/Data/Etc/Context/prod/context.json" />
         <option value="$PROJECT_DIR$/Application/Public/index.php" />
+        <option value="$PROJECT_DIR$/Application/View/Navbar/Connect.xyl" />
+        <option value="$PROJECT_DIR$/Application/View/Navbar/Default.xyl" />
+        <option value="$PROJECT_DIR$/Data/Library/Hoathis/Context/Exception.php" />
+        <option value="$PROJECT_DIR$/Data/Library/Hoathis/Context/Context.php" />
+        <option value="$PROJECT_DIR$/Data/Etc/Context/default" />
+        <option value="$PROJECT_DIR$/Data/Library/Hoathis/Context/Bin/Set.php" />
       </list>
     </option>
   </component>
@@ -502,63 +495,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Data" />
+              <option name="myItemId" value="Application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Etc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Context" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="prod" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Etc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Context" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bin" />
+              <option name="myItemId" value="View" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -573,6 +514,58 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Navbar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -594,12 +587,48 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="web-ide.project.structure" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -621,10 +650,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\hoathis.net\Data\Etc" />
+      <recent name="C:\wamp\www\hoathis.net\Data\Library\Hoathis\Context" />
       <recent name="C:\wamp\www\hoathis.net\Data\Library\Hoathis\Context\Bin" />
       <recent name="C:\wamp\www\hoathis.net\Data\Bin" />
       <recent name="C:\wamp\www\hoathis.net\Application\View" />
-      <recent name="C:\wamp\www\hoathis.net\Application\View\Main" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\hoathis.net\Data\Etc" />
     </key>
   </component>
   <component name="RunManager">
@@ -641,6 +674,24 @@
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="96c9817f-af1a-45bf-802a-eab5078c6437" name="Default" comment="" />
@@ -654,23 +705,23 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26040554" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27267876" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -727,107 +778,101 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="715" column="9" selection-start="21191" selection-end="21191" vertical-scroll-proportion="-0.14357683">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/Core.link.php.orig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.36524823">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/Bin/WhereisHoa.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="5" selection-start="4049" selection-end="4049" vertical-scroll-proportion="2.1753554">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/Bin/Deploy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="21" selection-start="1612" selection-end="1612" vertical-scroll-proportion="0.6315166">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/Etc/Configuration/HoaRouterHttp.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="58" selection-start="0" selection-end="312" vertical-scroll-proportion="0.6453901">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Data/Etc/Configuration/HoaCache.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="76" selection-start="0" selection-end="1186" vertical-scroll-proportion="0.4964539">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/Library/Hoathis/Context/Bin/Add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="38" selection-start="1136" selection-end="1136" vertical-scroll-proportion="0.35308057">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Library/Hoa/Hoa/Compiler/Bin/Pp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="159" column="17" selection-start="2162" selection-end="4330" vertical-scroll-proportion="-28.777779">
-          <folding />
-        </state>
+        <state line="20" column="76" selection-start="0" selection-end="1186" vertical-scroll-proportion="0.4964539" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Data/Variable/Log/Exception.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.33613446">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.33613446" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/Reflection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="925" column="20" selection-start="25341" selection-end="25341" vertical-scroll-proportion="0.3652393">
+        <state line="925" column="20" selection-start="25341" selection-end="25341" vertical-scroll-proportion="0.3652393" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Library/Hoa/Hoa/Compiler/Bin/Pp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="159" column="17" selection-start="2162" selection-end="4330" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Data/Library/Hoathis/Context/Context.php">
+    <entry file="file://$PROJECT_DIR$/Application/View/Main.xyl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="76" selection-start="920" selection-end="920" vertical-scroll-proportion="-19.444445">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Data/Library/Hoathis/Context/Bin/Load.php">
+    <entry file="file://$PROJECT_DIR$/Application/View/Navbar/Connect.xyl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="62" selection-start="1062" selection-end="1062" vertical-scroll-proportion="-14.777778">
+        <state line="18" column="40" selection-start="932" selection-end="932" vertical-scroll-proportion="-14.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Data/Etc/Context/dev/context.json">
+    <entry file="file://$PROJECT_DIR$/Application/View/Navbar/Default.xyl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="1" selection-start="0" selection-end="54" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/Etc/Context/prod/context.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="1" selection-start="54" selection-end="54" vertical-scroll-proportion="0.0">
+        <state line="18" column="44" selection-start="932" selection-end="932" vertical-scroll-proportion="-14.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Public/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="43" selection-start="878" selection-end="878" vertical-scroll-proportion="0.4277251">
+        <state line="36" column="39" selection-start="930" selection-end="930" vertical-scroll-proportion="-1.3175355">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controller/Main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-2.3886256">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="619" column="9" selection-start="18606" selection-end="18606" vertical-scroll-proportion="-3.7662337">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/Library/Hoathis/Context/Exception.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="4" selection-start="18" selection-end="18" vertical-scroll-proportion="-1.5555556">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/Library/Hoathis/Context/Context.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="28" selection-start="776" selection-end="776" vertical-scroll-proportion="-3.7407408">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/Etc/Context/default">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/Etc/Context/production.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/Library/Hoathis/Context/Bin/Set.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="43" selection-start="2229" selection-end="2229" vertical-scroll-proportion="0.6516588">
           <folding />
         </state>
       </provider>
