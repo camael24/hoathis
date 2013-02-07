@@ -94,3 +94,13 @@
 [18/01/2013 14:40:16]  {main}: (-1) Undefined property: Hoathis\Context\Context::$mysql_userin /var/www/hoathis.net/Application/Public/index.php at line 43.
 [18/01/2013 14:40:17]  {main}: (-1) Undefined property: Hoathis\Context\Context::$mysql_userin /var/www/hoathis.net/Application/Public/index.php at line 43.
 [18/01/2013 14:40:17]  {main}: (-1) Undefined property: Hoathis\Context\Context::$mysql_userin /var/www/hoathis.net/Application/Public/index.php at line 43.
+[25/01/2013 12:56:52] favicon.ico Hoa\Router\Http::route(): (5) Cannot found an appropriated rule to route favicon.ico.in /usr/local/lib/Hoa/Hoa/Router/Http.php at line 495.
+[25/01/2013 12:56:52] favicon.ico Hoa\Router\Http::route(): (5) Cannot found an appropriated rule to route favicon.ico.in /usr/local/lib/Hoa/Hoa/Router/Http.php at line 495.
+[25/01/2013 12:56:53] favicon.ico Hoa\Router\Http::route(): (5) Cannot found an appropriated rule to route favicon.ico.in /usr/local/lib/Hoa/Hoa/Router/Http.php at line 495.
+[25/01/2013 12:56:53] favicon.ico Hoa\Router\Http::route(): (5) Cannot found an appropriated rule to route favicon.ico.in /usr/local/lib/Hoa/Hoa/Router/Http.php at line 495.
+[28/01/2013 10:15:43] favicon.ico Hoa\Router\Http::route(): (5) Cannot found an appropriated rule to route favicon.ico.in /usr/local/lib/Hoa/Hoa/Router/Http.php at line 495.
+[28/01/2013 10:15:43] favicon.ico Hoa\Router\Http::route(): (5) Cannot found an appropriated rule to route favicon.ico.in /usr/local/lib/Hoa/Hoa/Router/Http.php at line 495.
+[28/01/2013 10:15:43] favicon.ico Hoa\Router\Http::route(): (5) Cannot found an appropriated rule to route favicon.ico.in /usr/local/lib/Hoa/Hoa/Router/Http.php at line 495.
+[31/01/2013 15:39:12] favicon.ico Hoa\Router\Http::route(): (5) Cannot found an appropriated rule to route favicon.ico.in /usr/local/lib/Hoa/Hoa/Router/Http.php at line 495.
+[31/01/2013 15:39:12] favicon.ico Hoa\Router\Http::route(): (5) Cannot found an appropriated rule to route favicon.ico.in /usr/local/lib/Hoa/Hoa/Router/Http.php at line 495.
+[31/01/2013 15:39:12] favicon.ico Hoa\Router\Http::route(): (5) Cannot found an appropriated rule to route favicon.ico.in /usr/local/lib/Hoa/Hoa/Router/Http.php at line 495.
