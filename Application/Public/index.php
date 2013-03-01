@@ -34,17 +34,13 @@ try {
 
     $dispatcher->setKitName('Hoathis\Kit\Aggregator');
 
-    $context = new \Hoathis\Context\Context();
-    $context->load();
-
-    \Hoa\Database\Dal::initializeParameters(array(
-        'connection.list.default.dal'      => 'Pdo',
-        'connection.list.default.dsn'      => 'mysql:host=127.0.0.1;dbname=hoathis',
-        'connection.list.default.username' => $context->mysql_user,
-        'connection.list.default.password' => $context->mysql_pass,
-        'connection.autoload'              => 'default'
-    ));
-
+   
+    Hoa\Database\Dal::initializeParameters(array(
+            'connection.list.default.dal' => Hoa\Database\Dal::PDO,
+            'connection.list.default.dsn' =>
+            'sqlite:hoa://Data/Variable/Database/Hoathis.sqlite',
+            'connection.autoload' => 'default'
+     ));
 
     /*
     * Controlleur, , Action , Variable
