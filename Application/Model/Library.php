@@ -233,7 +233,6 @@ namespace Application\Model {
         }
 
         public function check($value, $champ) {
-            return true;
             switch ($champ) {
                 case 'name':
                     return preg_match('#[^[:alnum:]]#', $value);
@@ -245,7 +244,7 @@ namespace Application\Model {
                 case 'release':
                 case 'documentation':
                 case 'issues':
-                    return ((filter_input(FILTER_VALIDATE_URL, $value) === false)
+                    return ((filter_var($value, FILTER_VALIDATE_URL) === false)
                         ? false
                         : true);
                     break;

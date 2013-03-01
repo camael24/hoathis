@@ -212,7 +212,6 @@ namespace Application\Model {
         }
 
         public function check($value, $champ) {            // TODO check with atoum !
-            return true;
             switch ($champ) {
                 case 'username':
                     return (strlen($value) > 3);
@@ -221,9 +220,9 @@ namespace Application\Model {
                     return (strlen($value) > 7);
                     break;
                 case 'email':
-                    return ((filter_input(FILTER_VALIDATE_EMAIL, $value) === false)
-                        ? false
-                        : true);
+                    return ((filter_var($value, FILTER_VALIDATE_EMAIL) !== false)
+                        ? true
+                        : false);
                     break;
                 default:
                     return false;

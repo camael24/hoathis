@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96c9817f-af1a-45bf-802a-eab5078c6437" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/Variable/Test/Foo.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/Variable/Test/testFoo.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Model/Library.php" afterPath="$PROJECT_DIR$/Application/Model/Library.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Model/User.php" afterPath="$PROJECT_DIR$/Application/Model/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Public/index.php" afterPath="$PROJECT_DIR$/Application/Public/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Variable/Log/Exception.log" afterPath="$PROJECT_DIR$/Data/Variable/Log/Exception.log" />
     </list>
     <ignored path="hoathis.net.iws" />
@@ -26,55 +27,37 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Controller/Main.php">
+      <file leaf-file-name="Foo.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Data/Variable/Test/Foo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="231" column="63" selection-start="9237" selection-end="9237" vertical-scroll-proportion="-10.888889">
+            <state line="18" column="75" selection-start="0" selection-end="980" vertical-scroll-proportion="-9.333333">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Controller/User.php">
+      <file leaf-file-name="User.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Model/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="24" selection-start="915" selection-end="915" vertical-scroll-proportion="-8.222222">
+            <state line="214" column="26" selection-start="6381" selection-end="6381" vertical-scroll-proportion="0.36729857">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Public/index.php">
+      <file leaf-file-name="Library.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Model/Library.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="0" selection-start="3209" selection-end="3209" vertical-scroll-proportion="-13.37037">
+            <state line="235" column="24" selection-start="7717" selection-end="7717" vertical-scroll-proportion="-8.185185">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Rang.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Application/Model/Rang.php">
+      <file leaf-file-name="testFoo.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Data/Variable/Test/testFoo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="8" selection-start="818" selection-end="818" vertical-scroll-proportion="0.75829387">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="filter.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/filter.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="9" selection-start="1005" selection-end="1005" vertical-scroll-proportion="-3.7662337">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Edit.xyl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/View/User/Edit.xyl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="27" column="64" selection-start="723" selection-end="723" vertical-scroll-proportion="-16.333334">
               <folding />
             </state>
           </provider>
@@ -98,8 +81,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Application/View/Main.xyl" />
-        <option value="$PROJECT_DIR$/Application/View/Navbar/Connect.xyl" />
         <option value="$PROJECT_DIR$/Application/View/Main/Connect.xyl" />
         <option value="$PROJECT_DIR$/Application/View/Navbar/Default.xyl" />
         <option value="$PROJECT_DIR$/Application/Controller/Generic.php" />
@@ -112,6 +93,8 @@
         <option value="$PROJECT_DIR$/Data/Variable/Database/database.sqlite.sql" />
         <option value="$PROJECT_DIR$/Application/Controller/User.php" />
         <option value="$PROJECT_DIR$/Application/Public/index.php" />
+        <option value="$PROJECT_DIR$/Data/Variable/Test/Foo.php" />
+        <option value="$PROJECT_DIR$/Data/Variable/Test/testFoo.php" />
         <option value="$PROJECT_DIR$/Application/Model/User.php" />
         <option value="$PROJECT_DIR$/Application/Model/Library.php" />
       </list>
@@ -169,66 +152,6 @@
               <option name="myItemId" value="Library" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hoa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.jetbrains.php.config.PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP" />
-              <option name="myItemType" value="com.jetbrains.php.config.PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hoa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hoa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.jetbrains.php.config.PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP" />
-              <option name="myItemType" value="com.jetbrains.php.config.PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hoa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hoa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Filter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -269,6 +192,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Variable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Variable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -552,11 +497,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\hoathis.net\Data\Variable\Test" />
       <recent name="C:\wamp\www\hoathis.net\Application\View\Main" />
       <recent name="C:\wamp\www\hoathis.net\Data\Etc" />
       <recent name="C:\wamp\www\hoathis.net\Data\Library\Hoathis\Context" />
       <recent name="C:\wamp\www\hoathis.net\Data\Library\Hoathis\Context\Bin" />
-      <recent name="C:\wamp\www\hoathis.net\Data\Bin" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp\www\hoathis.net\Data\Etc" />
@@ -703,20 +648,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/Controller/Generic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="12" selection-start="265" selection-end="265" vertical-scroll-proportion="38.74074">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controller/Admin/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="47" selection-start="1434" selection-end="1434" vertical-scroll-proportion="14.62963">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Controller/Admin/Generic.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="6" vertical-scroll-proportion="0.0">
@@ -759,6 +690,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Model/Rang.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="8" selection-start="132" selection-end="826" vertical-scroll-proportion="0.75829387">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="0" selection-start="3209" selection-end="3209" vertical-scroll-proportion="0.4277251">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controller/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="24" selection-start="915" selection-end="915" vertical-scroll-proportion="0.26714802">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controller/Main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="231" column="63" selection-start="9237" selection-end="9237" vertical-scroll-proportion="0.34834123">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Application/View/User/Edit.xyl">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -768,49 +727,35 @@
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/filter.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="9" selection-start="1005" selection-end="1005" vertical-scroll-proportion="-3.7662337">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controller/Main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="231" column="63" selection-start="9237" selection-end="9237" vertical-scroll-proportion="-10.888889">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controller/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="24" selection-start="915" selection-end="915" vertical-scroll-proportion="-8.222222">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="0" selection-start="3209" selection-end="3209" vertical-scroll-proportion="-13.37037">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Model/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="214" column="12" selection-start="6367" selection-end="6379" vertical-scroll-proportion="-11.814815">
+        <state line="30" column="9" selection-start="1005" selection-end="1017" vertical-scroll-proportion="0.3652393">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Model/Library.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="235" column="24" selection-start="7717" selection-end="7717" vertical-scroll-proportion="0.2535545">
+        <state line="235" column="24" selection-start="7717" selection-end="7717" vertical-scroll-proportion="-8.185185">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Model/Rang.php">
+    <entry file="file://$PROJECT_DIR$/Data/Variable/Test/Foo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="8" selection-start="818" selection-end="818" vertical-scroll-proportion="0.75829387">
+        <state line="18" column="75" selection-start="0" selection-end="980" vertical-scroll-proportion="-9.333333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/Variable/Test/testFoo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="64" selection-start="723" selection-end="723" vertical-scroll-proportion="-16.333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Model/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="214" column="26" selection-start="6381" selection-end="6381" vertical-scroll-proportion="0.36729857">
           <folding />
         </state>
       </provider>
