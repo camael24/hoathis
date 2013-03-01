@@ -17,16 +17,6 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
-      <library name="PHARS">
-        <CLASSES>
-          <root url="phar://C:/wamp/www/Library/mageekguy.atoum.phar" />
-        </CLASSES>
-        <SOURCES>
-          <root url="phar://C:/wamp/www/Library/mageekguy.atoum.phar" />
-        </SOURCES>
-      </library>
-    </orderEntry>
   </component>
 </module>
 

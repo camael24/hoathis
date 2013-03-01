@@ -12,6 +12,16 @@ namespace Application\Controller {
 
         }
 
+
+        public function AllAction() {
+            $model = new \Application\Model\Library();
+            $this->data->hoathis = $model->getAll();
+
+
+            $this->view->addOverlay('hoa://Application/View/Main/List.xyl');
+            $this->view->render();
+        }
+
         public function RegisterAction() {
             if (!empty($_POST)) {
                 $login     = $this->check('login', true);

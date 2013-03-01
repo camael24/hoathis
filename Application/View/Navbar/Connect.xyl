@@ -15,22 +15,59 @@
 
                 <!-- Everything you want hidden at 940px or less, place within here -->
                 <div class="nav-collapse collapse">
+
                     <ul class="nav">
                         <li>
-                            <a href="@home-caller:_able=create">Send an hoathis</a>
+                            <div class="btn-group">
+                                <a href="@home-caller:_able=create" class="btn btn-success">
+                                    <i class="icon-share"></i>
+                                    Share your Hoathis
+                                </a>
+                            </div>
                         </li>
+                        <li class="divider-vertical"></li>
                         <li>
-                            <a href="@home-caller:_able=profil">Your Profile</a>
+                            <div class="btn-group">
+                                <a href="@home-caller:_able=all" class="btn">
+                                    <i class="icon-th-list"></i>
+                                    Show all hoathis
+                                </a>
+                            </div>
                         </li>
+                        <li class="divider-vertical"></li>
                         <li>
-                            <a href="@home-caller:_able=list">Your Hoathis</a>
-                        </li>
-                        <li>
-                            <a href="@home-caller:_able=disconnect">Disconnect</a>
+                            <div class="btn-group ">
+                                <div class="btn">
+                                    <i class="icon-user"></i>  You
+                                </div>
+                                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="@home-caller:_able=profil">
+                                            <i class="icon-pencil"></i>
+                                            My Profile
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@home-caller:_able=list">
+                                            <i class="icon-align-justify"></i>
+                                            My Hoathis
+                                        </a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="@home-caller:_able=disconnect">
+                                            <i class="icon-off"></i>
+                                            Disconnect
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
                 </div>
-
             </div>
         </div>
     </yield>

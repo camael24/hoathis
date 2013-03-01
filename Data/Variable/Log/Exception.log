@@ -104,3 +104,22 @@
 [31/01/2013 15:39:12] favicon.ico Hoa\Router\Http::route(): (5) Cannot found an appropriated rule to route favicon.ico.in /usr/local/lib/Hoa/Hoa/Router/Http.php at line 495.
 [31/01/2013 15:39:12] favicon.ico Hoa\Router\Http::route(): (5) Cannot found an appropriated rule to route favicon.ico.in /usr/local/lib/Hoa/Hoa/Router/Http.php at line 495.
 [31/01/2013 15:39:12] favicon.ico Hoa\Router\Http::route(): (5) Cannot found an appropriated rule to route favicon.ico.in /usr/local/lib/Hoa/Hoa/Router/Http.php at line 495.
+[18/02/2013 17:44:55] register.html Hoa\Database\AbstractLayer\Pdo\Pdo::__construct(): (0) could not find driverin /usr/local/lib/Hoa/Hoa/Database/AbstractLayer/Pdo/Pdo.php at line 107.
+[18/02/2013 17:45:11] register.html Hoa\Database\AbstractLayer\Pdo\Pdo::__construct(): (0) could not find driverin /usr/local/lib/Hoa/Hoa/Database/AbstractLayer/Pdo/Pdo.php at line 107.
+[18/02/2013 17:49:17] register.html Hoa\Database\AbstractLayer\Pdo\Pdo::__construct(): (0) could not find driverin /usr/local/lib/Hoa/Hoa/Database/AbstractLayer/Pdo/Pdo.php at line 107.
+[18/02/2013 17:49:45] connect.html Hoa\Database\AbstractLayer\Pdo\Pdo::__construct(): (0) could not find driverin /usr/local/lib/Hoa/Hoa/Database/AbstractLayer/Pdo/Pdo.php at line 107.
+[18/02/2013 17:50:00] connect.html Hoa\Database\AbstractLayer\Pdo\Pdo::__construct(): (0) could not find driverin /usr/local/lib/Hoa/Hoa/Database/AbstractLayer/Pdo/Pdo.php at line 107.
+[18/02/2013 17:59:53] register.html Hoa\Database\AbstractLayer\Pdo\Pdo::__construct(): (0) could not find driverin /usr/local/lib/Hoa/Hoa/Database/AbstractLayer/Pdo/Pdo.php at line 107.
+[27/02/2013 13:10:01] f/bar Hoa\Router\Http::route(): (5) Cannot found an appropriated rule to route f/bar.in /usr/local/lib/Hoa/Hoa/Router/Http.php at line 495.
+[27/02/2013 13:11:24] f/bar Hoa\Router\Http::route(): (5) Cannot found an appropriated rule to route f/bar.in /usr/local/lib/Hoa/Hoa/Router/Http.php at line 495.
+[27/02/2013 13:12:12] f/bar Hoa\Router\Http::route(): (5) Cannot found an appropriated rule to route f/bar.in /usr/local/lib/Hoa/Hoa/Router/Http.php at line 495.
+[27/02/2013 13:13:02] f/foo Hoa\Router\Http::route(): (5) Cannot found an appropriated rule to route f/foo.in /usr/local/lib/Hoa/Hoa/Router/Http.php at line 495.
+[27/02/2013 13:13:51] f/foo Hoa\Router\Http::route(): (5) Cannot found an appropriated rule to route f/foo.in /usr/local/lib/Hoa/Hoa/Router/Http.php at line 495.
+[27/02/2013 13:16:04] f/foo Hoa\Router\Http::route(): (5) Cannot found an appropriated rule to route f/foo.in /usr/local/lib/Hoa/Hoa/Router/Http.php at line 495.
+[01/03/2013 10:16:54] favicon.ico Hoa\Router\Http::route(): (5) Cannot found an appropriated rule to route favicon.ico.in /usr/local/lib/Hoa/Hoa/Router/Http.php at line 495.
+[01/03/2013 10:17:23] list Hoa\Router\Http::route(): (5) Cannot found an appropriated rule to route list.in /usr/local/lib/Hoa/Hoa/Router/Http.php at line 495.
+[01/03/2013 10:27:03] admin/ {closure}(): (-1) Undefined offset: 0in /var/www/hoathis.net/Application/Model/User.php at line 138.
+[01/03/2013 10:35:27]  Hoa\Xml\Xml::__construct(): (2) Errors occured while parsing the XML document hoa://Application/View/Navbar/Connect.xyl:  • Opening and ending tag mismatch: div line 17 and li (at line 18, column 103);  • Opening and ending tag mismatch: li line 21 and div (at line 36, column 23).in /usr/local/lib/Hoa/Hoa/Xml/Xml.php at line 213.
+[01/03/2013 10:35:27]  Hoa\Xml\Xml::__construct(): (2) Errors occured while parsing the XML document hoa://Application/View/Navbar/Connect.xyl:  • Opening and ending tag mismatch: div line 17 and li (at line 18, column 103);  • Opening and ending tag mismatch: li line 21 and div (at line 36, column 23).in /usr/local/lib/Hoa/Hoa/Xml/Xml.php at line 213.
+[01/03/2013 10:35:30]  Hoa\Xml\Xml::__construct(): (2) Errors occured while parsing the XML document hoa://Application/View/Navbar/Connect.xyl:  • Opening and ending tag mismatch: div line 17 and li (at line 18, column 103);  • Opening and ending tag mismatch: li line 21 and div (at line 36, column 23).in /usr/local/lib/Hoa/Hoa/Xml/Xml.php at line 213.
+[01/03/2013 10:35:30]  Hoa\Xml\Xml::__construct(): (2) Errors occured while parsing the XML document hoa://Application/View/Navbar/Connect.xyl:  • Opening and ending tag mismatch: div line 17 and li (at line 18, column 103);  • Opening and ending tag mismatch: li line 21 and div (at line 36, column 23).in /usr/local/lib/Hoa/Hoa/Xml/Xml.php at line 213.

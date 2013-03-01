@@ -8,7 +8,7 @@
 <document xmlns="http://hoa-project.net/xyl/xylophone">
     <title>Hoathis.net</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"/>
-    <script src="hoa://Application/Public/Js/bootstrap.js"/>
+
 
     <navbar/>
     <navbar-admin/>
@@ -25,7 +25,7 @@
             est la création de&amp;amp;nbsp;<a href="http://mnt.io/">Ivan Enderlin</a>, tous droits réservés | Hoathis est en CDD (Community Driven Developpment).
         </p>
     </footer>
-
+    <script src="hoa://Application/Public/Js/bootstrap.js"/>
 
 
 </document>

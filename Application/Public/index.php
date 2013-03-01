@@ -115,7 +115,7 @@ catch (\Hoa\Core\Exception\Exception $e) {
 
         $session            = new \Hoa\Session\Flash('popup');
         $session['type']    = 'error';
-        $session['message'] = 'An error has open, an report has been sent to the administrator thanks for your help';
+        $session['message'] =  $e->getFormattedMessage() . '<br />An error has open, an report has been sent to the administrator thanks for your help';
 
         header('Location:/');
         exit();
