@@ -233,6 +233,7 @@ namespace Application\Model {
         }
 
         public function check($value, $champ) {
+            return true;
             switch ($champ) {
                 case 'name':
                     return preg_match('#[^[:alnum:]]#', $value);

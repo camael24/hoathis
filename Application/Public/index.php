@@ -86,7 +86,7 @@ try {
     );
 }
 catch (\Hoa\Core\Exception\Exception $e) {
-   
+
     if ($e instanceof \Hoa\Session\Exception\Expired or $e instanceof \Hoa\Session\Exception\Locked or $e instanceof \Hoa\Session\Exception\Exception) {
 
         if (array_key_exists('QUERY_STRING', $_SERVER))

@@ -88,7 +88,7 @@ namespace Application\Model {
         public function insert($user, $password, $mail) {
 
             // RANG 0 = Unactivate or Banned
-            $sql    = 'INSERT INTO user (idUser ,username ,password ,email ,rang)VALUES (NULL , :name, pass, :mail, 2);';
+            $sql    = 'INSERT INTO user (idUser ,username ,password ,email ,rang)VALUES (NULL , :name, :pass, :mail, 2);';
             $select = $this->getMappingLayer()
                 ->prepare($sql)
                 ->execute(array(
@@ -211,7 +211,8 @@ namespace Application\Model {
             return $select;
         }
 
-        public function check($value, $champ) {
+        public function check($value, $champ) {            // TODO check with atoum !
+            return true;
             switch ($champ) {
                 case 'username':
                     return (strlen($value) > 3);
