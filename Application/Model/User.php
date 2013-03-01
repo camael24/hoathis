@@ -41,13 +41,15 @@ namespace Application\Model {
 
 
         public function connect($user, $password) {
-            $select = 'SELECT * FROM `user` WHERE `username` = :name AND `password` = SHA1(:pass) AND rang > 1';
+
+            $select = 'SELECT * FROM user WHERE username = :name AND password = :pass AND rang > 1';
             $select = $this->getMappingLayer()
                 ->prepare($select)
                 ->execute(array(
                 'name' => $user,
-                'pass' => $password
+                'pass' => sha1($password)
             ))->fetchAll();
+
 
             if (count($select) === 0) {
                 return false;
@@ -62,7 +64,7 @@ namespace Application\Model {
 
 
         public function checkMail($mail) {
-            $select = 'SELECT * FROM `user` WHERE `email` = :mail';
+            $select = 'SELECT * FROM user WHERE email = :mail';
             $select = $this->getMappingLayer()
                 ->prepare($select)
                 ->execute(array(
@@ -73,7 +75,7 @@ namespace Application\Model {
         }
 
         public function checkUser($user) {
-            $select = 'SELECT * FROM `user` WHERE `username` = :user';
+            $select = 'SELECT * FROM user WHERE username = :user';
             $select = $this->getMappingLayer()
                 ->prepare($select)
                 ->execute(array(
@@ -86,12 +88,12 @@ namespace Application\Model {
         public function insert($user, $password, $mail) {
 
             // RANG 0 = Unactivate or Banned
-            $sql    = 'INSERT INTO `user` (`idUser` ,`username` ,`password` ,`email` ,`rang`)VALUES (NULL , :name, SHA1(:pass), :mail, 2);';
+            $sql    = 'INSERT INTO user (idUser ,username ,password ,email ,rang)VALUES (NULL , :name, pass, :mail, 2);';
             $select = $this->getMappingLayer()
                 ->prepare($sql)
                 ->execute(array(
-                'name' => $user,
-                'pass' => $password,
+                'name' => strtolower($user),
+                'pass' => sha1($password),
                 'mail' => $mail
             ));
         }
@@ -108,7 +110,7 @@ namespace Application\Model {
         }
 
         public function getById($id) {
-            $select = 'SELECT * FROM `user` WHERE `idUser` = :id';
+            $select = 'SELECT * FROM user WHERE idUser = :id';
 
             return $this->getMappingLayer()->prepare($select)->execute(array('id' => $id))->fetchAll();
 
@@ -120,7 +122,7 @@ namespace Application\Model {
             $select = $this->getMappingLayer()
                 ->prepare($select)
                 ->execute(array(
-                'id' => $id
+                'id' => strtolower($id)
             ))->fetchAll();
 
             if (count($select) === 1)
@@ -141,7 +143,7 @@ namespace Application\Model {
         public function setPassword($id, $pass) {
             if (empty($pass))
                 return;
-            $sql = 'UPDATE `user` SET `password` = SHA1(:pass) WHERE `idUser` = :id;';
+            $sql = 'UPDATE user SET password = SHA1(:pass) WHERE idUser = :id;';
             $this->getMappingLayer()
                 ->prepare($sql)
                 ->execute(array(
@@ -154,7 +156,7 @@ namespace Application\Model {
             if (empty($value))
                 return;
 
-            $sql = 'UPDATE `user` SET `rang` = :rang WHERE `idUser` = :id;';
+            $sql = 'UPDATE user SET rang = :rang WHERE idUser = :id;';
             $this->getMappingLayer()
                 ->prepare($sql)
                 ->execute(array(
@@ -166,7 +168,7 @@ namespace Application\Model {
         public function setMail($id, $mail) {
             if (empty($mail))
                 return;
-            $sql = 'UPDATE `user` SET `email` = :mail WHERE `idUser` = :id;';
+            $sql = 'UPDATE user SET email = :mail WHERE idUser = :id;';
             $this->getMappingLayer()
                 ->prepare($sql)
                 ->execute(array(
@@ -178,7 +180,7 @@ namespace Application\Model {
         public function setUsername($id, $username) {
             if (empty($username))
                 return;
-            $sql = 'UPDATE `user` SET `username` = :user WHERE `idUser` = :id;';
+            $sql = 'UPDATE user SET username = :user WHERE idUser = :id;';
             $this->getMappingLayer()
                 ->prepare($sql)
                 ->execute(array(
@@ -218,7 +220,9 @@ namespace Application\Model {
                     return (strlen($value) > 7);
                     break;
                 case 'email':
-                    return filter_input(FILTER_VALIDATE_EMAIL, $value);
+                    return ((filter_input(FILTER_VALIDATE_EMAIL, $value) === false)
+                        ? false
+                        : true);
                     break;
                 default:
                     return false;

@@ -34,6 +34,8 @@ namespace Application\Controller {
 
             $rang = $userM->getRangLabel($userM->rang);
 
+
+
             $this->data->login = $userM->username;
             $this->data->mail = $userM->email;
             $this->data->RangLabel = $rang['RangLabel'];

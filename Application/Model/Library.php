@@ -122,7 +122,7 @@ namespace Application\Model {
         private function _set($id, $champ, $value) {
             if ($value === null)
                 return;
-            $sql = 'UPDATE `library` SET `' . $champ . '` = :data WHERE `idLibrary` = :id;';
+            $sql = 'UPDATE library SET ' . $champ . ' = :data WHERE idLibrary = :id;';
             $this->getMappingLayer()
                 ->prepare($sql)
                 ->execute(array(
@@ -133,7 +133,7 @@ namespace Application\Model {
 
         public function setValid($id, $valid) {
             $this->_set($id, 'valid', $valid);
-            $sql = 'UPDATE `library` SET `time` = NOW() WHERE `idLibrary` = :id;';
+            $sql = 'UPDATE library SET time = NOW() WHERE idLibrary = :id;';
             $this->getMappingLayer()
                 ->prepare($sql)
                 ->execute(array(
@@ -148,7 +148,7 @@ namespace Application\Model {
             $this->_set($id, 'documentation', $documentation);
             $this->_set($id, 'issues', $issue);
 
-            $sql = 'UPDATE `library` SET `time` = NOW() WHERE `idLibrary` = :id;';
+            $sql = 'UPDATE library SET time = NOW() WHERE idLibrary = :id;';
             $this->getMappingLayer()
                 ->prepare($sql)
                 ->execute(array(
@@ -158,7 +158,6 @@ namespace Application\Model {
         }
 
         public function insert($user, $name, $description, $homepage, $release, $documentation, $issue) {
-            var_dump($documentation);
             $map = array(
                 'refUser'       => $user,
                 'name'          => preg_replace('#[^[:alnum:]]#', '', $name),
@@ -167,16 +166,16 @@ namespace Application\Model {
                 'release'       => $release,
                 'documentation' => $documentation,
                 'issue'         => $issue,
+                'time'          => time(),
                 'valid'         => '0'
             );
 
-
-            $select = 'SELECT * FROM `library` WHERE `name` = :name';
+            $select = 'SELECT * FROM library WHERE name = :name';
             $select = $this->getMappingLayer()->prepare($select)->execute(array('name' => $name))->fetchAll();
             if (count($select) < 1) {
 
-                $insert = 'INSERT INTO `library` (`idLibrary`, `refUser`, `name`, `description`, `home`, `release`, `documentation`, `issues`, `time` , `valid`)
-            VALUES (NULL, :refUser, :name, :description, :home, :release, :documentation, :issue, NOW() , :valid);';
+                $insert = 'INSERT INTO library (idLibrary, refUser, name, description, home, release, documentation, issues, time , valid)
+            VALUES (NULL, :refUser, :name, :description, :home, :release, :documentation, :issue, :time , :valid);';
 
 
                 $this->getMappingLayer()
@@ -199,7 +198,7 @@ namespace Application\Model {
         }
 
         public function getFromAuthor($id) {
-//            $select = "SELECT * FROM `library`  WHERE refUser = :refUser AND `valid` = '1'";
+//            $select = "SELECT * FROM library  WHERE refUser = :refUser AND valid = '1'";
             $select = 'SELECT *  FROM library AS l, user AS u WHERE l.valid = 1 AND refUser = ? AND l.refuser = u.idUser';
             $select = $this->getMappingLayer()->prepare($select)->execute(array($id))->fetchAll();
 
@@ -208,7 +207,7 @@ namespace Application\Model {
         }
 
         public function getFromAuthorName($name) {
-//            $select = "SELECT * FROM `library`  WHERE refUser = :refUser AND `valid` = '1'";
+//            $select = "SELECT * FROM library  WHERE refUser = :refUser AND valid = '1'";
             $select = 'SELECT *  FROM library AS l, user AS u WHERE l.valid = 1 AND u.username = ? AND l.refuser = u.idUser';
             $select = $this->getMappingLayer()->prepare($select)->execute(array($name))->fetchAll();
 
@@ -217,7 +216,7 @@ namespace Application\Model {
         }
 
         public function delete($id) {
-            $sql = "DELETE FROM `hoathis`.`library` WHERE `library`.`idLibrary` = :id";
+            $sql = "DELETE FROM library WHERE idLibrary = :id";
             $this->getMappingLayer()->prepare($sql)->execute(array('id' => $id))->fetchAll();
         }
 
@@ -245,7 +244,9 @@ namespace Application\Model {
                 case 'release':
                 case 'documentation':
                 case 'issues':
-                    return filter_input(FILTER_VALIDATE_URL, $value);
+                    return ((filter_input(FILTER_VALIDATE_URL, $value) === false)
+                        ? false
+                        : true);
                     break;
                 default:
             }

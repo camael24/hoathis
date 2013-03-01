@@ -10,6 +10,7 @@ CREATE TABLE library (
     home            VARCHAR(255),
     release         VARCHAR(255),
     documentation   VARCHAR(255),
+    issues          VARCHAR(255),
     time            TIMESTAMP,
     valid           INTEGER,
     PRIMARY KEY(idLibrary)
@@ -36,5 +37,5 @@ INSERT INTO rang( idRang, RangLabel, RangClass) VALUES (null , "Banned" ,"invers
 INSERT INTO rang( idRang, RangLabel, RangClass) VALUES (null , "Register","success");
 INSERT INTO rang( idRang, RangLabel, RangClass) VALUES (null , "Administrator","important");
 
-INSERT INTO user( idUser, username, password, email, rang) VALUES (null,"Camael", "4438ce731657057ba02736526d2018bfac7d4971" ,"thehawk@hoa-project.net",3);
+INSERT INTO user( idUser, username, password, email, rang) VALUES (null,"camael", "4438ce731657057ba02736526d2018bfac7d4971" ,"thehawk@hoa-project.net",3);
 
