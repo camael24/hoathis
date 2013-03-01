@@ -126,3 +126,9 @@
 [01/03/2013 11:21:20] connect.html {closure}(): (-1) call_user_func_array() expects parameter 1 to be a valid callback, class 'Hoa\Xyl\Element\Basic' does not have a method 'hasBeenSent'in /usr/local/lib/Hoa/Hoa/Xml/Element/Concrete.php at line 420.
 [01/03/2013 13:50:22] connect.html {closure}(): (-1) call_user_func_array() expects parameter 1 to be a valid callback, class 'Hoa\Xyl\Element\Basic' does not have a method 'getValidation'in /usr/local/lib/Hoa/Hoa/Xml/Element/Concrete.php at line 420.
 [01/03/2013 14:00:22] connect.html {closure}(): (-1) call_user_func_array() expects parameter 1 to be a valid callback, class 'Hoa\Xyl\Element\Basic' does not have a method 'getValidation'in /usr/local/lib/Hoa/Hoa/Xml/Element/Concrete.php at line 420.
+[01/03/2013 15:59:37] connect.html Hoa\Database\AbstractLayer\Pdo\Pdo::__construct(): (0) could not find driverin /usr/local/lib/Hoa/Hoa/Database/AbstractLayer/Pdo/Pdo.php at line 107.
+[01/03/2013 16:01:06] connect.html Hoa\Database\AbstractLayer\Pdo\Pdo::__construct(): (0) could not find driverin /usr/local/lib/Hoa/Hoa/Database/AbstractLayer/Pdo/Pdo.php at line 107.
+[01/03/2013 16:01:15] connect.html Hoa\Database\AbstractLayer\Pdo\Pdo::__construct(): (0) could not find driverin /usr/local/lib/Hoa/Hoa/Database/AbstractLayer/Pdo/Pdo.php at line 107.
+[01/03/2013 16:04:57] connect.html Hoa\Database\AbstractLayer\Pdo\Pdo::__construct(): (0) could not find driverin /usr/local/lib/Hoa/Hoa/Database/AbstractLayer/Pdo/Pdo.php at line 107.
+[01/03/2013 16:05:07] connect.html Hoa\Database\AbstractLayer\Pdo\Pdo::__construct(): (0) could not find driverin /usr/local/lib/Hoa/Hoa/Database/AbstractLayer/Pdo/Pdo.php at line 107.
+[01/03/2013 16:09:13] connect.html Hoa\Database\AbstractLayer\Pdo\Pdo::__construct(): (0) could not find driverin /usr/local/lib/Hoa/Hoa/Database/AbstractLayer/Pdo/Pdo.php at line 107.

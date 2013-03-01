@@ -34,12 +34,10 @@ try {
 
     $dispatcher->setKitName('Hoathis\Kit\Aggregator');
 
-   
     Hoa\Database\Dal::initializeParameters(array(
             'connection.list.default.dal' => Hoa\Database\Dal::PDO,
-            'connection.list.default.dsn' =>
-            'sqlite:hoa://Data/Variable/Database/Hoathis.sqlite',
-            'connection.autoload' => 'default'
+            'connection.list.default.dsn' => 'sqlite:hoa://Data/Variable/Database/Hoathis.sqlite',
+            'connection.autoload'         => 'default'
      ));
 
     /*

@@ -1,3 +1,7 @@
+DROP TABLE IF EXISTS library;
+DROP TABLE IF EXISTS rang;
+DROP TABLE IF EXISTS user;
+
 CREATE TABLE library (
     idLibrary       INTEGER,
     refUser         INTEGER,
@@ -33,4 +37,4 @@ INSERT INTO rang( idRang, RangLabel, RangClass) VALUES (null , "Register","succe
 INSERT INTO rang( idRang, RangLabel, RangClass) VALUES (null , "Administrator","important");
 
 INSERT INTO user( idUser, username, password, email, rang) VALUES (null,"Camael", "4438ce731657057ba02736526d2018bfac7d4971" ,"thehawk@hoa-project.net",3);
-INSERT INTO user( idUser, username, password, email, rang) VALUES (null,"Hywan", "d033e22ae348aeb5660fc2140aec35850c4da997" ,"hywan@hoa-project.net",3);˼
+
