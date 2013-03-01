@@ -46,7 +46,7 @@ namespace Application\Model {
             $select = $this->getMappingLayer()
                 ->prepare($select)
                 ->execute(array(
-                'name' => $user,
+                'name' => strtolower($user),
                 'pass' => sha1($password)
             ))->fetchAll();
 
@@ -79,7 +79,7 @@ namespace Application\Model {
             $select = $this->getMappingLayer()
                 ->prepare($select)
                 ->execute(array(
-                'user' => $user,
+                'user' => strtolower($user),
             ))->fetchAll();
 
             return (count($select) === 0);
@@ -185,7 +185,7 @@ namespace Application\Model {
                 ->prepare($sql)
                 ->execute(array(
                 'id'   => $id,
-                'user' => $username
+                'user' => strtolower($username)
             ));
         }
 
@@ -198,7 +198,7 @@ namespace Application\Model {
             $select = 'SELECT *  FROM user AS u, rang AS r WHERE u.username LIKE :data AND u.rang > 1 AND u.rang = r.idRang LIMIT 20 ';
             $select = $this->getMappingLayer()->prepare($select)->execute(
                 array(
-                    'data' => $data . '%'
+                    'data' => strtolower($data) . '%'
                 )
             )->fetchAll(); // TODO : use fulltext search
             return $select;
