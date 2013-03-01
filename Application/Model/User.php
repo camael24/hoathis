@@ -209,6 +209,22 @@ namespace Application\Model {
             return $select;
         }
 
+        public function check($value, $champ) {
+            switch ($champ) {
+                case 'username':
+                    return (strlen($value) > 3);
+                    break;
+                case 'password':
+                    return (strlen($value) > 7);
+                    break;
+                case 'email':
+                    return filter_input(FILTER_VALIDATE_EMAIL, $value);
+                    break;
+                default:
+                    return false;
+            }
+        }
+
     }
 
 }

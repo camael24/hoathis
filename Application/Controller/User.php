@@ -80,13 +80,22 @@ namespace Application\Controller {
                     $error = true;
                 }
 
+                if($userM->check($password , 'password') === false){
+                    $this->popup('error', 'The field password is not valid');
+                    $error = true;
+                }
+                else if ($userM->check($mail , 'email') === false) {
+                    $this->popup('error', 'The field mail is not valid');
+                    $error = true;
+                }
+
 
                 if ($error === true) {
                     $this->getKit('Redirector')->redirect('user-caller', array('user' => $user, '_able' => 'edit'));
                 } else {
                     $userM->setPassword($userM->idUser, $password);
                     $userM->setMail($userM->idUser, $mail);
-                    $this->popup('success', 'Your register is an success !, welcome here');
+                    $this->popup('success', 'Thanks for update your personnal information');
                     $this->getKit('Redirector')->redirect('home', array());
                 }
             }

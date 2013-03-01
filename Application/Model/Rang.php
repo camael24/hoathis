@@ -36,6 +36,7 @@ namespace Application\Model {
             return $this->getMappingLayer()->prepare($select)->execute(array())->fetchAll();
         }
 
+
     }
 
 }

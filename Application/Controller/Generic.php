@@ -8,25 +8,8 @@ namespace Application\Controller {
         public function construct() {
             $flash = new \Hoa\Session\Flash('popup');
 
-            if (isset($flash['message'])) {
-
-                switch ($flash['type']) {
-                    case 'info':
-                        $this->data->type = "alert alert-info";
-                        break;
-                    case 'success':
-                        $this->data->type = "alert alert-success";
-                        break;
-                    case 'error':
-                    default:
-                        $this->data->type = "alert alert-error";
-
-
-                }
-                $this->data->message = $flash['message'];
-                $this->view->addOverlay('hoa://Application/View/Flash.xyl');
-
-            }
+            if (isset($flash['message']))
+                $this->displayPopup($flash['type'], $flash['message']);
 
 
             $user = new \Hoa\Session\Session('user');
@@ -59,6 +42,24 @@ namespace Application\Controller {
                 else
                     return null;
 
+        }
+
+        public function displayPopup($type, $message) {
+            switch ($type) {
+                case 'info':
+                    $this->data->type = "alert alert-info";
+                    break;
+                case 'success':
+                    $this->data->type = "alert alert-success";
+                    break;
+                case 'error':
+                default:
+                    $this->data->type = "alert alert-error";
+
+
+            }
+            $this->data->message = $message;
+            $this->view->addOverlay('hoa://Application/View/Flash.xyl');
         }
 
         public function popup($type, $message) {

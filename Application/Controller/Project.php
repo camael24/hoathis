@@ -77,6 +77,26 @@ namespace Application\Controller {
                     $error = true;
                 }
 
+                if($library->check($description , 'description') === false){
+                    $this->popup('error', 'The field description is not valid');
+                    $error = true;
+                }
+                else if ($library->check($home , 'home') === false ){
+                    $this->popup('error', 'The field home is not valid');
+                    $error = true;
+                }
+                else if ($library->check($release , 'release') === false ){
+                    $this->popup('error', 'The field release is not valid');
+                    $error = true;
+                }
+                else if ($library->check($doc , 'doc') === false ){
+                    $this->popup('error', 'The field documentation is not valid');
+                    $error = true;
+                }
+                else if ($library->check($issue , 'issues') === false ){
+                    $this->popup('error', 'The field issues is not valid');
+                    $error = true;
+                }
 
                 if ($error === true) {
                     $this->getKit('Redirector')->redirect('project-caller', array('project' => $project, '_able' => 'create'));

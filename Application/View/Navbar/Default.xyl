@@ -13,21 +13,41 @@
                 <!-- Be sure to leave the brand out there if you want it shown -->
                 <a class="brand" href="@home">Hoathis.net</a>
 
-                <!-- Everything you want hidden at 940px or less, place within here -->
                 <div class="nav-collapse collapse">
+
                     <ul class="nav">
                         <li>
-                            <a href="@home-caller:_able=connect">Sign-in</a>
+                            <div class="btn-group">
+                                <a href="@home-caller:_able=create" class="btn btn-success">
+                                    <i class="icon-share"></i>
+                                    Share your Hoathis
+                                </a>
+                            </div>
                         </li>
+                        <li class="divider-vertical"></li>
                         <li>
-                            <a href="@home-caller:_able=register">Register</a>
+                            <div class="btn-group">
+                                <a href="@home-caller:_able=all" class="btn">
+                                    <i class="icon-th-list"></i>
+                                    Show all hoathis
+                                </a>
+                            </div>
                         </li>
+
+                        <li class="divider-vertical"></li>
                         <li>
-                            <a href="@home-caller:_able=create">Send an hoathis</a>
+                            <div class="btn-group">
+                                <a href="@home-caller:_able=connect" class="btn">
+                                    Login
+                                </a>
+                                <a href="@home-caller:_able=register" class="btn">
+                                    Register
+                                </a>
+
+                            </div>
                         </li>
                     </ul>
                 </div>
-
             </div>
         </div>
     </yield>

@@ -14,7 +14,7 @@ namespace Application\Controller {
 
 
         public function AllAction() {
-            $model = new \Application\Model\Library();
+            $model               = new \Application\Model\Library();
             $this->data->hoathis = $model->getAll();
 
 
@@ -52,14 +52,28 @@ namespace Application\Controller {
 
                 $userModel = new \Application\Model\User();
 
-
-                if (!$userModel->checkMail($mail)) {
-                    $this->popup('error', 'Your email address has ever register in our database ');
+                if ($userModel->check($login, 'username') === false) {
+                    $this->popup('error', 'The filed username is not valid');
                     $error = true;
                 }
-                if (!$userModel->checkUser($login)) {
-                    $this->popup('error', 'Your login name has ever register in our database');
+                else if ($userModel->check($mail, 'email') === false) {
+                    $this->popup('error', 'The filed mail is not valid');
                     $error = true;
+                }
+                else if ($userModel->check($password, 'password') === false) {
+                    $this->popup('error', 'The filed password is not valid');
+                    $error = true;
+                }
+
+                if ($error === false) {
+                    if (!$userModel->checkMail($mail)) {
+                        $this->popup('error', 'Your email address has ever register in our database ');
+                        $error = true;
+                    }
+                    if (!$userModel->checkUser($login)) {
+                        $this->popup('error', 'Your login name has ever register in our database');
+                        $error = true;
+                    }
                 }
                 if ($error === true) {
                     $this->getKit('Redirector')->redirect('home-caller', array('_able' => 'register'));
@@ -133,9 +147,9 @@ namespace Application\Controller {
                 }
 
             }
-
             $this->view->addOverlay('hoa://Application/View/Main/Connect.xyl');
             $this->view->render();
+//
         }
 
         public function ForgotAction() {
@@ -204,7 +218,26 @@ namespace Application\Controller {
                 $id   = $user['idUser'];
 
                 $library = new \Application\Model\Library();
-                if ($library->insert($id, $name, $description, $home, $release, $doc, $issue) === false) {
+
+
+                if ($library->check($description, 'description') === false) {
+                    $this->popup('error', 'The field description is not valid');
+                    $error = true;
+                } else if ($library->check($home, 'home') === false) {
+                    $this->popup('error', 'The field home is not valid');
+                    $error = true;
+                } else if ($library->check($release, 'release') === false) {
+                    $this->popup('error', 'The field release is not valid');
+                    $error = true;
+                } else if ($library->check($doc, 'documentation') === false) {
+                    $this->popup('error', 'The field documentation is not valid');
+                    $error = true;
+                } else if ($library->check($issue, 'issues') === false) {
+                    $this->popup('error', 'The field issues is not valid');
+                    $error = true;
+                }
+
+                if ($error === false && $library->insert($id, $name, $description, $home, $release, $doc, $issue) === false) {
                     $this->popup('error', 'An project has ever a same name');
                     $error = true;
                 }

@@ -122,7 +122,7 @@ namespace Application\Model {
         private function _set($id, $champ, $value) {
             if ($value === null)
                 return;
-            $sql = 'UPDATE `library` SET `' . $champ . '` = :data WHERE `idLibrary` = :id;'; // TODO Bug on peux pas mettre un bind sur une colonne ? :s
+            $sql = 'UPDATE `library` SET `' . $champ . '` = :data WHERE `idLibrary` = :id;';
             $this->getMappingLayer()
                 ->prepare($sql)
                 ->execute(array(
@@ -217,8 +217,8 @@ namespace Application\Model {
         }
 
         public function delete($id) {
-            $sql    = "DELETE FROM `hoathis`.`library` WHERE `library`.`idLibrary` = :id";
-            $select = $this->getMappingLayer()->prepare($sql)->execute(array('id' => $id))->fetchAll();
+            $sql = "DELETE FROM `hoathis`.`library` WHERE `library`.`idLibrary` = :id";
+            $this->getMappingLayer()->prepare($sql)->execute(array('id' => $id))->fetchAll();
         }
 
         public function getValidate() {
@@ -232,6 +232,26 @@ namespace Application\Model {
 
             return $this->getMappingLayer()->prepare($select)->execute()->fetchAll();
         }
+
+        public function check($value, $champ) {
+            switch ($champ) {
+                case 'name':
+                    return preg_match('#[^[:alnum:]]#', $value);
+                    break;
+                case 'description':
+                    return (strlen($value) > 5);
+                    break;
+                case 'home':
+                case 'release':
+                case 'documentation':
+                case 'issues':
+                    return filter_input(FILTER_VALIDATE_URL, $value);
+                    break;
+                default:
+            }
+            return false;
+        }
+
 
     }
 
