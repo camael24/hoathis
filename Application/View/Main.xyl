@@ -20,16 +20,11 @@
     </div>
 
     <footer>
-        <p>Hoathis.net est appuyé sur twitter/Bootstrap, construit par Thehawk_
-        <a href="http://github.com/camael24/">As Camael24</a> et l'ensemble de
-        la communauté Hoa disponible sur Freenode #hoaproject
-        </p>
         <p>
-          L'ensemble des Hoathis présentés sont la propriété intégrale de leurs auteurs
-          respectifs. Hoathis se réserve le droit de modifier/editer/modéré les
-          contenus offensant vis à vis de la loi.
+          Hoathis.net by <a href="https://github.com/camael24">Thehawk_</a> and
+          Hoa community.
         </p>
-    </footer>
+     </footer>
     <script src="hoa://Application/Public/Js/bootstrap.js"/>
 
 
