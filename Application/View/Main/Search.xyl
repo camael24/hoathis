@@ -8,7 +8,7 @@
                 <form action="@home-caller:_able=search" method="post">
                     <div class="control-group">
                         <!--<div class="input-append">-->
-                        <input class="span12 input-auto" id="searchBar" name="search" type="text"
+                        <input class="input-auto" id="searchBar" name="search" type="text"
                                placeholder="Search ..."
                                tabindex="1"/>
                         <!--<div class="add-on">-->
