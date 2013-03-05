@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96c9817f-af1a-45bf-802a-eab5078c6437" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Controller/Main.php" afterPath="$PROJECT_DIR$/Application/Controller/Main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Model/Library.php" afterPath="$PROJECT_DIR$/Application/Model/Library.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Public/Classic/Css/bootstrap.css" afterPath="$PROJECT_DIR$/Application/Public/Classic/Css/bootstrap.css" />
     </list>
     <ignored path="hoathis.net.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,10 +31,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Main.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Controller/Main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="72" selection-start="3370" selection-end="3370" vertical-scroll-proportion="0.7085308">
+            <state line="83" column="72" selection-start="3370" selection-end="3370" vertical-scroll-proportion="52.51852">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Public/Classic/Css/bootstrap.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2308" column="31" selection-start="43589" selection-end="43592" vertical-scroll-proportion="-1.5419581">
               <folding />
             </state>
           </provider>
@@ -81,10 +88,10 @@
         <option value="$PROJECT_DIR$/Application/Model/User.php" />
         <option value="$PROJECT_DIR$/Application/View/Main/Search.xyl" />
         <option value="$PROJECT_DIR$/Application/Public/Classic/Css/style.css" />
-        <option value="$PROJECT_DIR$/Application/Public/Classic/Css/bootstrap.css" />
         <option value="$PROJECT_DIR$/Application/Public/Classic/Css/bootstrap-responsive.css" />
         <option value="$PROJECT_DIR$/Application/Model/Library.php" />
         <option value="$PROJECT_DIR$/Application/Controller/Main.php" />
+        <option value="$PROJECT_DIR$/Application/Public/Classic/Css/bootstrap.css" />
       </list>
     </option>
   </component>
@@ -745,13 +752,6 @@
         <state line="20" column="64" selection-start="405" selection-end="405" vertical-scroll-proportion="0.48220438" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Public/Classic/Css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2300" column="58" selection-start="43213" selection-end="43213" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Public/Classic/Css/bootstrap-responsive.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="941" column="55" selection-start="20552" selection-end="20552" vertical-scroll-proportion="4.291619">
@@ -1037,7 +1037,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Controller/Main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="72" selection-start="3370" selection-end="3370" vertical-scroll-proportion="0.7085308">
+        <state line="83" column="72" selection-start="3370" selection-end="3370" vertical-scroll-proportion="52.51852">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Public/Classic/Css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2308" column="31" selection-start="43589" selection-end="43592" vertical-scroll-proportion="-1.5419581">
           <folding />
         </state>
       </provider>
