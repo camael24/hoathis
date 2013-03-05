@@ -146,3 +146,4 @@
 [01/03/2013 17:41:14] register.html Hoa\Database\AbstractLayer\Pdo\Pdo::__construct(): (14) SQLSTATE[HY000] [14] unable to open database filein /usr/local/lib/Hoa/Hoa/Database/AbstractLayer/Pdo/Pdo.php at line 107.
 [04/03/2013 17:33:43] all.html Hoa\Database\AbstractLayer\Pdo\Pdo::__construct(): (14) SQLSTATE[HY000] [14] unable to open database filein /usr/local/lib/Hoa/Hoa/Database/AbstractLayer/Pdo/Pdo.php at line 107.
 [04/03/2013 17:33:48] connect.html Hoa\Database\AbstractLayer\Pdo\Pdo::__construct(): (14) SQLSTATE[HY000] [14] unable to open database filein /usr/local/lib/Hoa/Hoa/Database/AbstractLayer/Pdo/Pdo.php at line 107.
+[05/03/2013 09:16:08] favicon.ico Hoa\Router\Http::route(): (5) Cannot found an appropriated rule to route favicon.ico.in /usr/local/lib/Hoa/Hoa/Router/Http.php at line 495.
