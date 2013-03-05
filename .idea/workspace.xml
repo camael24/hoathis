@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="96c9817f-af1a-45bf-802a-eab5078c6437" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Controller/Admin/User.php" afterPath="$PROJECT_DIR$/Application/Controller/Admin/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Controller/Main.php" afterPath="$PROJECT_DIR$/Application/Controller/Main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Controller/Project.php" afterPath="$PROJECT_DIR$/Application/Controller/Project.php" />
     </list>
     <ignored path="hoathis.net.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,16 +27,7 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Public/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="28" selection-start="4450" selection-end="4450" vertical-scroll-proportion="-21.777779">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Application/Controller/Admin/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="13" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.6220379">
+            <state line="115" column="28" selection-start="4450" selection-end="4450" vertical-scroll-proportion="-35.77778">
               <folding />
             </state>
           </provider>
@@ -44,7 +36,25 @@
       <file leaf-file-name="Main.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Controller/Main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="235" column="51" selection-start="9430" selection-end="9430" vertical-scroll-proportion="-100.37037">
+            <state line="137" column="53" selection-start="5473" selection-end="5473" vertical-scroll-proportion="-12.444445">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Project.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Controller/Project.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="18" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.64620936">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Info.xyl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/View/Project/Info.xyl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
@@ -69,7 +79,6 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/Application/Model/Rang.php" />
-        <option value="$PROJECT_DIR$/Application/Controller/Project.php" />
         <option value="$PROJECT_DIR$/Data/Variable/Database/database.sqlite.sql" />
         <option value="$PROJECT_DIR$/Application/Controller/User.php" />
         <option value="$PROJECT_DIR$/Data/Variable/Test/Foo.php" />
@@ -79,11 +88,12 @@
         <option value="$PROJECT_DIR$/Application/Public/Classic/Css/style.css" />
         <option value="$PROJECT_DIR$/Application/Public/Classic/Css/bootstrap-responsive.css" />
         <option value="$PROJECT_DIR$/Application/Public/Classic/Css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/Application/Controller/Main.php" />
         <option value="$PROJECT_DIR$/Application/Public/index.php" />
         <option value="$PROJECT_DIR$/Application/Controller/Generic.php" />
         <option value="$PROJECT_DIR$/Application/Model/Library.php" />
         <option value="$PROJECT_DIR$/Application/Controller/Admin/User.php" />
+        <option value="$PROJECT_DIR$/Application/Controller/Main.php" />
+        <option value="$PROJECT_DIR$/Application/Controller/Project.php" />
       </list>
     </option>
   </component>
@@ -127,18 +137,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="hoathis.net" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.jetbrains.php.config.PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP" />
-              <option name="myItemType" value="com.jetbrains.php.config.PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -303,6 +301,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hoathis.net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Navbar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -388,58 +408,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Classic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hoathis.net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Classic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -683,11 +651,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/Controller/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="24" selection-start="915" selection-end="915" vertical-scroll-proportion="0.26714802" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/View/User/Edit.xyl">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -741,27 +704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controller/Main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="235" column="51" selection-start="9430" selection-end="9430" vertical-scroll-proportion="-100.37037">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="28" selection-start="4450" selection-end="4450" vertical-scroll-proportion="-21.777779">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controller/Project.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="47" selection-start="414" selection-end="414" vertical-scroll-proportion="-15.555555">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Controller/Generic.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="67" column="41" selection-start="2182" selection-end="2182" vertical-scroll-proportion="0.49763033">
@@ -778,7 +720,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Controller/Admin/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="13" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.6220379">
+        <state line="43" column="13" selection-start="498" selection-end="1974" vertical-scroll-proportion="0.6220379">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="28" selection-start="4450" selection-end="4450" vertical-scroll-proportion="-35.77778">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/View/Project/Info.xyl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controller/Main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="137" column="53" selection-start="5473" selection-end="5473" vertical-scroll-proportion="-12.444445">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controller/Project.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="18" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.64620936">
           <folding />
         </state>
       </provider>

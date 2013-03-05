@@ -20,16 +20,20 @@ namespace Application\Controller {
 
             $information = $library->getInformationFromName($project, $this->isAdminAllowed());
 
-            if(empty($information)) {
-                $this->popup('info' , 'this project is not yet activate by staff or you have make an error in the URL, be patient thanks');
+            if (empty($information)) {
+                $this->popup('info', 'this project is not yet activate by staff or you have make an error in the URL, be patient thanks');
                 $this->getKit('Redirector')->redirect('home', array());
             }
 
 
-            $user = new \Hoa\Session\Session('user');
+            $session_user = new \Hoa\Session\Session('user');
+            $user         = new \Application\Model\User();
+            $user->open(array('id' => $session_user['idUser']));
 
-            if (array_key_exists('refUser', $information) && array_key_exists('idUser', $user) && intval($information['refUser']) === $user['idUser']) //TODO add when we get ACL OR rang information
+
+            if (array_key_exists('refUser', $information) && (intval($information['refUser']) == intval($user->idUser) or $user->rang > 2)) //TODO add when we get ACL OR rang information
                 $information['editing'] = '<a href="' . $this->router->unroute('project-caller', array('project' => $project, '_able' => 'edit')) . '"><i class="icon-pencil"></i></a>';
+
 
             $this->data->information = $information;
 
@@ -39,14 +43,13 @@ namespace Application\Controller {
         }
 
         public function EditAction($project) {
-
             $this->guestGuard();
 
             $library     = new \Application\Model\Library();
             $information = $library->getInformationFromName($project, $this->isAdminAllowed());
 
-            if(empty($information)) {
-                $this->popup('info' , 'this project is not yet activate by staff, be patient thanks');
+            if (empty($information)) {
+                $this->popup('info', 'this project is not yet activate by staff, be patient thanks');
                 $this->getKit('Redirector')->redirect('home', array());
             }
 
@@ -77,23 +80,19 @@ namespace Application\Controller {
                     $error = true;
                 }
 
-                if($library->check($description , 'description') === false){
+                if ($library->check($description, 'description') === false) {
                     $this->popup('error', 'The field description is not valid');
                     $error = true;
-                }
-                else if ($library->check($home , 'home') === false ){
+                } else if ($library->check($home, 'home') === false) {
                     $this->popup('error', 'The field home is not valid');
                     $error = true;
-                }
-                else if ($library->check($release , 'release') === false ){
+                } else if ($library->check($release, 'release') === false) {
                     $this->popup('error', 'The field release is not valid');
                     $error = true;
-                }
-                else if ($library->check($doc , 'doc') === false ){
+                } else if ($library->check($doc, 'doc') === false) {
                     $this->popup('error', 'The field documentation is not valid');
                     $error = true;
-                }
-                else if ($library->check($issue , 'issues') === false ){
+                } else if ($library->check($issue, 'issues') === false) {
                     $this->popup('error', 'The field issues is not valid');
                     $error = true;
                 }
