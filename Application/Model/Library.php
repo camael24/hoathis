@@ -66,11 +66,10 @@ namespace Application\Model {
                 $v = 0;
             }
 
-
-            $select = 'SELECT *  FROM library AS l, user AS u WHERE l.name = :name AND l.valid >= :valid AND l.refUser = u.idUser;';
+            $select = 'SELECT * FROM library AS l, user AS u WHERE l.name = :name AND l.valid >= :valid AND l.refUser = u.idUser;';
             $select = $this->getMappingLayer()->prepare($select)->execute(
                 array(
-                    'name'  => $name,
+                    'name'  => strtolower($name),
                     'valid' => $v
                 )
             )->fetchAll();
@@ -161,7 +160,7 @@ namespace Application\Model {
         public function insert($user, $name, $description, $homepage, $release, $documentation, $issue) {
             $map = array(
                 'refUser'       => $user,
-                'name'          => preg_replace('#[^[:alnum:]]#', '', $name),
+                'name'          => strtolower(preg_replace('#[^[:alnum:]]#', '', $name)),
                 'description'   => $description,
                 'home'          => $homepage,
                 'release'       => $release,

@@ -229,12 +229,6 @@ namespace Application\Controller {
                 } else if ($library->check($release, 'release') === false) {
                     $this->popup('error', 'The field release is not valid');
                     $error = true;
-                } else if ($library->check($doc, 'documentation') === false) {
-                    $this->popup('error', 'The field documentation is not valid');
-                    $error = true;
-                } else if ($library->check($issue, 'issues') === false) {
-                    $this->popup('error', 'The field issues is not valid');
-                    $error = true;
                 }
 
                 if ($error === false && $library->insert($id, $name, $description, $home, $release, $doc, $issue) === false) {
