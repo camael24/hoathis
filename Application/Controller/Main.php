@@ -81,7 +81,7 @@ namespace Application\Controller {
 
                     $userModel->insert($login, $password, $mail);
 
-                    $this->popup('success', 'Your register is an success !, welcome here you can connect');
+                    $this->popup('success', 'you successfully registered! Welcome here you can connect');
                     $this->getKit('Redirector')->redirect('home-caller', array('_able' => 'connect'));
                 }
             }

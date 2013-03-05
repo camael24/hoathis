@@ -133,11 +133,12 @@ namespace Application\Model {
 
         public function setValid($id, $valid) {
             $this->_set($id, 'valid', $valid);
-            $sql = 'UPDATE library SET time = NOW() WHERE idLibrary = :id;';
+            $sql = 'UPDATE library SET time = :time WHERE idLibrary = :id;';
             $this->getMappingLayer()
                 ->prepare($sql)
                 ->execute(array(
                 'id' => $id,
+                'time' => time()
             ));
         }
 
