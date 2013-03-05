@@ -35,9 +35,6 @@ namespace Application\Controller {
                 $information['editing'] = '<a href="' . $this->router->unroute('project-caller', array('project' => $project, '_able' => 'edit')) . '"><i class="icon-pencil"></i></a>';
 
 
-            $information['time'] = date('d/m/Y H:i:s' , $information['time']);
-
-
             $this->data->information = $information;
 
 

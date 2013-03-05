@@ -16,11 +16,15 @@
                 </div>
                 <div class="row-fluid">
                     <div class="span2">Description</div>
-                    <div class="span4 well" bind="?description" style="word-wrap:break-word;"/>
+                    <div class="span4 well wrap" bind="?description"/>
                 </div>
                 <div class="row-fluid">
-                    <div class="span2">Send on</div>
-                    <div class="span4" bind="?time"/>
+                    <div class="span2">Last update</div>
+                    <div class="span4">
+                        <value formatter="date"
+                               formatter-format="F jS Y, \a\r\o\u\n\d ga"
+                               formatter-timestamp="(?time)"/>
+                    </div>
                 </div>
                 <div class="row-fluid">
                     <div class="span2">Author</div>

@@ -5,16 +5,18 @@
         <p class="lead">Hoathis:</p>
         <ul>
             <li bind="?search">
-
                 <div class="row">
-                    <h2 class="span6"><value bind="?username"/>/
-                        <span class="emphase" bind="?name"/>
+                    <h2 class="inline">
+                        <a href="@project-home:project=(?name)" bind="?name"/>
                     </h2>
-                    <a href="@project-home:project=(?name)" class="btn btn-primary">
-                        <i class="icon-white icon-chevron-right"/>
-                    </a>
+                    <span class="label" bind="?username"/>
+                    <span class="label label-info">
+                        <value formatter="date"
+                               formatter-format="F jS Y, \a\r\o\u\n\d ga"
+                               formatter-timestamp="(?time)"/>
+                    </span>
                 </div>
-                <p bind="?description"/>
+                <p bind="?description" class="wrap"/>
             </li>
         </ul>
     </snippet>
@@ -46,7 +48,7 @@
             <div class="control-group">
                 <label class="control-label" for="inputPassword">Password</label>
                 <div class="controls">
-                    <input type="password" id="inputPassword" name="password" placeholder="Password" />
+                    <input type="password" id="inputPassword" name="password" placeholder="Password"/>
                 </div>
             </div>
             <div class="control-group">
@@ -55,7 +57,9 @@
                     <input type="submit" id="send" name="send" class="btn btn-primary"/>
                 </div>
             </div>
-            <error id="foo"><p>F</p></error>
+            <error id="foo">
+                <p>F</p>
+            </error>
         </form>
     </snippet>
 </fragment>
