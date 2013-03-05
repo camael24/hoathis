@@ -37,7 +37,9 @@ namespace Application\Controller {
 
             $information['time'] = date('d/m/Y H:i:s' , $information['time']);
 
-            $this>data->information = $information;
+
+            $this->data->information = $information;
+
 
             $this->view->addOverlay('hoa://Application/View/Project/Info.xyl');
             $this->view->render();
