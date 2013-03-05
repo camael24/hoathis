@@ -6,9 +6,7 @@
 
                     <div class="row">
                         <h2 class="span6">
-                            <a href="@project-home:project=(?name)">
-                                <span class="emphase" bind="?name"/>
-                            </a>
+                            <a href="@project-home:project=(?name)" bind="?name"/>
                         </h2>
 
                     </div>
