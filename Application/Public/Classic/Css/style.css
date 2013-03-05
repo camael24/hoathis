@@ -4,8 +4,8 @@ footer {
     bottom           : 0px;
     width            : 100%;
     background-color : #ffffff;
-    border: 0;
-    border-top: 1px solid #e5e5e5;
+    border           : 0;
+    border-top       : 1px solid #e5e5e5;
 }
 
 #b {
@@ -31,7 +31,17 @@ footer {
     -moz-box-shadow       : 0 1px 1px rgba(0, 0, 0, 0.075);
     box-shadow            : 0 1px 1px rgba(0, 0, 0, 0.075);
 }
+
 #searchBar {
-    width: 100%;
-    max-width: 940px;
+    width     : 100%;
+    max-width : 940px;
+}
+
+.wrap {
+    word-wrap : break-word;
+}
+
+.inline {
+    display      : inline;
+    padding-left : 50px;
 }

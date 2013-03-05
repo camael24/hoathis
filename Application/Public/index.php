@@ -1,4 +1,6 @@
 <?php
+
+try {
 require dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'Data' . DIRECTORY_SEPARATOR . 'Core.link.php';
 
 date_default_timezone_set('Europe/Paris');
@@ -28,7 +30,6 @@ from('Hoathis')
     ->import('Kit.Aggregator');
 
 
-try {
     $dispatcher = new \Hoa\Dispatcher\Basic();
     $router     = new \Hoa\Router\Http();
 
