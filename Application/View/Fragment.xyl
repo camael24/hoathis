@@ -7,14 +7,28 @@
             <li bind="?search">
 
                 <div class="row">
-                    <h2 class="span6"><value bind="?username"/>/
-                        <span class="emphase" bind="?name"/>
+                    <h2 class="span6">
+                        <a href="@project-home:project=(?name)">
+                            <span class="emphase" bind="?name"/>
+                        </a>
                     </h2>
-                    <a href="@project-home:project=(?name)" class="btn btn-primary">
-                        <i class="icon-white icon-chevron-right"/>
-                    </a>
+
                 </div>
-                <p bind="?description"/>
+                <div class="row-fluid span12">
+                    <div class="span4">Auhors :
+                        <span class="label" bind="?username"/>
+                    </div>
+                    <div class="span4">Last update :
+                        <span class="label label-info">
+                            <value formatter="date"
+                                   formatter-format="F jS Y, \a\r\o\u\n\d ga"
+                                   formatter-timestamp="(?time)"/>
+                        </span>
+                    </div>
+                </div>
+
+                <hr/>
+                <p bind="?description" style="word-wrap:break-word;"/>
             </li>
         </ul>
     </snippet>
@@ -46,7 +60,7 @@
             <div class="control-group">
                 <label class="control-label" for="inputPassword">Password</label>
                 <div class="controls">
-                    <input type="password" id="inputPassword" name="password" placeholder="Password" />
+                    <input type="password" id="inputPassword" name="password" placeholder="Password"/>
                 </div>
             </div>
             <div class="control-group">
@@ -55,7 +69,9 @@
                     <input type="submit" id="send" name="send" class="btn btn-primary"/>
                 </div>
             </div>
-            <error id="foo"><p>F</p></error>
+            <error id="foo">
+                <p>F</p>
+            </error>
         </form>
     </snippet>
 </fragment>

@@ -15,6 +15,7 @@ namespace Application\Controller {
 
         public function AllAction() {
             $model               = new \Application\Model\Library();
+
             $this->data->hoathis = $model->getAll();
 
 
