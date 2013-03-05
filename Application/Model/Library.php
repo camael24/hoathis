@@ -136,7 +136,7 @@ namespace Application\Model {
             $this->getMappingLayer()
                 ->prepare($sql)
                 ->execute(array(
-                'id' => $id,
+                'id'   => $id,
                 'time' => time()
             ));
         }
@@ -148,11 +148,12 @@ namespace Application\Model {
             $this->_set($id, 'documentation', $documentation);
             $this->_set($id, 'issues', $issue);
 
-            $sql = 'UPDATE library SET time = NOW() WHERE idLibrary = :id;';
+            $sql = 'UPDATE library SET time = :time WHERE idLibrary = :id;';
             $this->getMappingLayer()
                 ->prepare($sql)
                 ->execute(array(
-                'id' => $id,
+                'time' => time(),
+                'id'   => $id,
             ));
 
         }

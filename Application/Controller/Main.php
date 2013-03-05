@@ -135,7 +135,7 @@ namespace Application\Controller {
                     $sUser             = new \Hoa\Session\Session('user');
                     $sUser['idUser']   = $user->idUser;
                     $sUser['username'] = $user->username;
-                    $sUser['email']    = $user->mail;
+                    $sUser['email']    = $user->mail;;
 
                     $this->popup('success', 'Hello ' . $user->username); //TODO change here
                     if ($redirect === null)
