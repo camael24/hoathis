@@ -89,16 +89,10 @@ namespace Application\Controller {
                 } else if ($library->check($release, 'release') === false) {
                     $this->popup('error', 'The field release is not valid');
                     $error = true;
-                } else if ($library->check($doc, 'doc') === false) {
-                    $this->popup('error', 'The field documentation is not valid');
-                    $error = true;
-                } else if ($library->check($issue, 'issues') === false) {
-                    $this->popup('error', 'The field issues is not valid');
-                    $error = true;
                 }
 
                 if ($error === true) {
-                    $this->getKit('Redirector')->redirect('project-caller', array('project' => $project, '_able' => 'create'));
+                    $this->getKit('Redirector')->redirect('project-caller', array('project' => $project, '_able' => 'edit'));
                 } else {
                     $library->update($information['idLibrary'], $description, $home, $release, $doc, $issue);
                     $this->popup('success', 'Your projet has been update'); //TODO change here

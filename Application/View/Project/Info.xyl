@@ -4,7 +4,7 @@
         <div class="container-fluid" bind="?information">
             <fieldset>
                 <legend>
-                    <h2 class="span6"><value bind="?username"/>/
+                    <h2 class="span6">
                         <span class="emphase" bind="?name"/>
                         <value bind="?editing"/>
                     </h2>
