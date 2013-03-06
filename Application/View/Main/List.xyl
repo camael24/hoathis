@@ -8,13 +8,13 @@
                             <a href="@project-home:project=(?name)" bind="?name"/>
                         </h2>
                         <span class="label" bind="?username"/>
-                        <span class="label label-info">
+                        <span href="#" class="label label-info" title="foo">
                             <value formatter="date"
                                    formatter-format="F jS Y, \a\r\o\u\n\d ga"
                                    formatter-timestamp="(?time)"/>
                         </span>
                     </div>
-                    <p bind="?description" class="wrap"/>
+                    <p bind="?description" class="wrap description"/>
                 </li>
             </ul>
         </div>

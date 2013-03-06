@@ -45,3 +45,8 @@ footer {
     display      : inline;
     padding-left : 50px;
 }
+
+.description {
+    padding-top  : 10px;
+    padding-left : 5px;
+}
