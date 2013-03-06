@@ -3,18 +3,7 @@
         <div id="result">
             <ul>
                 <li bind="?hoathis">
-                    <div class="row">
-                        <h2 class="inline">
-                            <a href="@project-home:project=(?name)" bind="?name"/>
-                        </h2>
-                        <span class="label" bind="?username"/>
-                        <span href="#" class="label label-info" title="foo">
-                            <value formatter="date"
-                                   formatter-format="F jS Y, \a\r\o\u\n\d ga"
-                                   formatter-timestamp="(?time)"/>
-                        </span>
-                    </div>
-                    <p bind="?description" class="wrap description"/>
+                    <yield select="?f:handle#libraryListBlock"/>
                 </li>
             </ul>
         </div>

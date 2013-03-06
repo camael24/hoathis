@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definition xmlns="http://hoa-project.net/xyl/xylophone">
+    <yield name="searchNavbar">
+        <form action="@home-caller:_able=search" class="navbar-search pull-right">
+            <input type="text" class="search-query" name="search" placeholder="Search"/>
+        </form>
+    </yield>
+</definition>

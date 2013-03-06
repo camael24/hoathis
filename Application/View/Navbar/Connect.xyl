@@ -38,7 +38,8 @@
                         <li>
                             <div class="btn-group ">
                                 <div class="btn">
-                                    <i class="icon-user"></i>  You
+                                    <i class="icon-user"></i>
+                                    You
                                 </div>
                                 <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                                     <span class="caret"></span>
@@ -68,6 +69,7 @@
                         </li>
                     </ul>
                 </div>
+                <searchNavbar/>
             </div>
         </div>
     </yield>

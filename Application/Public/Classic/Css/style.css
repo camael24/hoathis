@@ -37,6 +37,10 @@ footer {
     max-width : 940px;
 }
 
+.searchForm {
+    max-height : 180px;
+}
+
 .wrap {
     word-wrap : break-word;
 }
@@ -49,4 +53,9 @@ footer {
 .description {
     padding-top  : 10px;
     padding-left : 5px;
+}
+
+.listDescription {
+    padding-top  : 10px;
+    padding-left : 20px;
 }
