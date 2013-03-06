@@ -46,8 +46,9 @@ footer {
 }
 
 .inline {
-    display      : inline;
-    padding-left : 50px;
+    display        : inline;
+    padding-left   : 50px;
+    vertical-align : middle;
 }
 
 .description {

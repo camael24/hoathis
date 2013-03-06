@@ -7,14 +7,10 @@
 
             public function construct () {
                 $flash = new \Hoa\Session\Flash('popup');
-
-                if(isset($flash['message']))
+                if($flash->isEmpty() === false)
                     $this->displayPopup($flash['type'], $flash['message']);
 
-
                 $user = new \Hoa\Session\Session('user');
-
-
                 if($user->isEmpty() === true)
                     $this->view->addUse('hoa://Application/View/Navbar/Default.xyl');
                 else

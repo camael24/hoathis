@@ -3,7 +3,7 @@
     <article id="content">
         <yield select="?f:handle#searchForm"/>
         <div id="result">
-            <p class="lead">Latest project :</p>
+            <p class="lead">Latest projects :</p>
             <ul>
                 <li bind="?lastUpdate">
                     <yield select="?f:handle#libraryListBlock"/>

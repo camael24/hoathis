@@ -10,6 +10,13 @@
                 $library = new \Application\Model\Library();
                 $library = $library->getLastUpdateLibrary(5);
 
+                if(count($library) < 1) {
+                    $library[0] = array(
+                        'label'     => 'No Library Found',
+                        'time'     => time()
+                    );
+                }
+
                 $this->data->lastUpdate = $library;
 
                 $this->view->addOverlay('hoa://Application/View/Main/Index.xyl');
@@ -205,17 +212,37 @@
                 }
 
                 if(strpos($search, '@') === 0) {
-                    $user               = new \Application\Model\User();
-                    $this->data->author = $user->search(substr($search, 1));
+                    $user = new \Application\Model\User();
+                    $user = $user->search(substr($search, 1));
 
+                    if(count($user) < 1) {
+                        $user[0] = array(
+                            'label' => 'No User found',
+                        );
+                    }
+                    $this->data->author = $user;
 
                 }
                 else {
-                    $user               = new \Application\Model\User();
-                    $this->data->author = $user->search($search);
+                    $user = new \Application\Model\User();
+                    $user = $user->search($search);
+                    if(count($user) < 1) {
+                        $user[0] = array(
+                            'label' => 'No User found',
+                        );
+                    }
+                    $this->data->author = $user;
 
-                    $library            = new \Application\Model\Library();
-                    $this->data->search = $library->search($search); //TODO : Allow search by user @foobar
+                    $library = new \Application\Model\Library();
+                    $library = $library->search($search);
+                    if(count($library) < 1) {
+                        $library[0] = array(
+                            'label'     => 'No Library Found',
+                            'time'     => time()
+                        );
+                    }
+
+                    $this->data->search = $library;
 
                 }
                 $this->view->addOverlay('hoa://Application/View/Main/Search.xyl');
