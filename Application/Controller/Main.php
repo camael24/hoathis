@@ -29,7 +29,6 @@
 
                 $all = $model->getAll();
                 if(count($all) == 0) {
-
                     $this->view->addOverlay('hoa://Application/View/Main/NoHoathis.xyl');
                 }
                 else {
