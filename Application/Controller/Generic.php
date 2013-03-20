@@ -6,9 +6,7 @@
         abstract class Generic extends \Hoathis\Kit\Aggregator {
 
             public function construct () {
-                $flash = new \Hoa\Session\Flash('popup');
-                if($flash->isEmpty() === false)
-                    $this->displayPopup($flash['type'], $flash['message']);
+                $this->displayPopup();
 
                 $user = new \Hoa\Session\Session('user');
                 if($user->isEmpty() === true)
@@ -41,28 +39,20 @@
 
             }
 
-            public function displayPopup ($type, $message) {
-                switch ($type) {
-                    case 'info':
-                        $this->data->type = "alert alert-info";
-                        break;
-                    case 'success':
-                        $this->data->type = "alert alert-success";
-                        break;
-                    case 'error':
-                    default:
-                        $this->data->type = "alert alert-error";
+            public function displayPopup () {
 
-
+                $flash = \Hoathis\Flash\Popup::getInstance();
+                $pop   = $flash->serve();
+                if(!empty($pop)) {
+                    $this->data->stack = $pop;
+                    $this->view->addOverlay('hoa://Application/View/Flash.xyl');
                 }
-                $this->data->message = $message;
-                $this->view->addOverlay('hoa://Application/View/Flash.xyl');
             }
 
             public function popup ($type, $message) {
-                $flash            = new \Hoa\Session\Flash('popup');
-                $flash['type']    = $type;
-                $flash['message'] = $message;
+
+                $flash = \Hoathis\Flash\Popup::getInstance();
+                $flash->{$type}($message);
             }
 
             public function guestGuard () {
