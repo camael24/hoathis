@@ -12,25 +12,25 @@
                 <div class="control-group">
                     <label class="control-label" for="user">Username :</label>
                     <div class="controls">
-                        <input type="text" id="user" name="user" placeholder="Login" value='(?username)'/>
+                        <input type="text" id="user" name="user" placeholder="Login" value='(?username)' autocomplete="off"/><span class="help-inline">Length > 3</span>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="pass">New Password</label>
                     <div class="controls">
-                        <input type="password" id="pass" name="pass" placeholder="Password"/>
+                        <input type="password" id="pass" name="pass" placeholder="Password"  autocomplete="off"/><span class="help-inline">Length > 7</span>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="rpass">Retype new password</label>
                     <div class="controls">
-                        <input type="password" id="rpass" name="rpass" placeholder="Re-Password"/>
+                        <input type="password" id="rpass" name="rpass" placeholder="Re-Password"/><span class="help-inline">Length > 7 and same as Password</span>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="mail">Email</label>
                     <div class="controls">
-                        <input type="text" id="mail" name="mail" placeholder="Email" value="(?email)"/>
+                        <input type="text" id="mail" name="mail" placeholder="Email" value="(?email)"/><span class="help-inline">Valid email</span>
                     </div>
                 </div>
                 <div class="control-group">

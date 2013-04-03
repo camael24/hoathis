@@ -51,12 +51,6 @@
                                             My Profile
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="@home-caller:_able=list">
-                                            <i class="icon-align-justify"></i>
-                                            My Hoathis
-                                        </a>
-                                    </li>
                                     <li class="divider"></li>
                                     <li>
                                         <a href="@home-caller:_able=disconnect">

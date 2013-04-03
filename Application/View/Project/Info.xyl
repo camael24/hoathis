@@ -68,12 +68,11 @@
                     <h2 class="span6">About</h2>
                 </legend>
                 <div class="row-fluid">
-                    <div class="span2">Contact author</div>
+                    <div class="span2">Profil</div>
                     <div class="span4">
-                        <a href="@user-home:user=(?username)" class="btn btn-danger btn-mini">
-                            <i class="icon-white icon-leaf"/>
-                        </a>
+                        <img src="(?gravatar)" />
                         <a href="@user-home:user=(?username)" bind="?username"/>
+
                     </div>
                 </div>
             </fieldset>

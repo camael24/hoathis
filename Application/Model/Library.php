@@ -9,7 +9,8 @@
 
     namespace Application\Model {
 
-        class Library extends \Hoa\Model\Model {
+        class Library extends \Hoa\Model\Model
+        {
 
             /**
              * @invariant idLibrary: undefined();
@@ -51,18 +52,24 @@
              * @invariant valid: undefined();
              */
             protected $_valid;
+            /**
+             * @invariant recoveryToken: undefined();
+             */
+            protected $_recoveryToken;
 
-            protected function construct () {
+            protected function construct()
+            {
 
                 $this->setMappingLayer(\Hoa\Database\Dal::getLastInstance());
 
                 return;
             }
 
-            public function getInformationFromName ($name, $all = false) {
+            public function getInformationFromName($name, $all = false)
+            {
 
                 $v = 1;
-                if($all === true) {
+                if ($all === true) {
                     $v = 0;
                 }
 
@@ -71,13 +78,13 @@
                     ->getMappingLayer()
                     ->prepare($select)
                     ->execute(array(
-                                   'name'  => strtolower($name),
-                                   'valid' => $v
-                              )
-                )
+                            'name'  => strtolower($name),
+                            'valid' => $v
+                        )
+                    )
                     ->fetchAll();
 
-                if(count($select) == 1)
+                if (count($select) == 1)
                     $select = $select[0];
                 else
                     return array();
@@ -86,10 +93,11 @@
             }
 
 
-            public function getInformation ($id, $all = false) {
+            public function getInformation($id, $all = false)
+            {
 
                 $v = 1;
-                if($all === true) {
+                if ($all === true) {
                     $v = 0;
                 }
 
@@ -99,13 +107,13 @@
                     ->getMappingLayer()
                     ->prepare($select)
                     ->execute(array(
-                                   'id'    => $id,
-                                   'valid' => $v
-                              )
-                )
+                            'id'    => $id,
+                            'valid' => $v
+                        )
+                    )
                     ->fetchAll(); // TODO : use fulltext search
 
-                if(count($select) == 1)
+                if (count($select) == 1)
                     $select = $select[0];
                 else
                     return array();
@@ -113,48 +121,52 @@
                 return $select;
             }
 
-            public function search ($data) {
+            public function search($data)
+            {
                 $select = 'SELECT *  FROM library AS l, user AS u WHERE l.name LIKE :data AND l.valid = :valid AND l.refUser = u.idUser LIMIT 20;';
                 $select = $this
                     ->getMappingLayer()
                     ->prepare($select)
                     ->execute(array(
-                                   'data'  => '%' . $data . '%',
-                                   'valid' => 1
-                              )
-                )
+                            'data'  => '%' . $data . '%',
+                            'valid' => 1
+                        )
+                    )
                     ->fetchAll(); // TODO : use fulltext search
                 return $select;
             }
 
-            private function _set ($id, $champ, $value) {
-                if($value === null)
+            private function _set($id, $champ, $value)
+            {
+                if ($value === null)
                     return;
                 $sql = 'UPDATE library SET ' . $champ . ' = :data WHERE idLibrary = :id;';
                 $this
                     ->getMappingLayer()
                     ->prepare($sql)
                     ->execute(array(
-                                   'id'   => $id,
-                                   'data' => $value
-                              )
-                );
+                            'id'   => $id,
+                            'data' => $value
+                        )
+                    );
             }
 
-            public function setValid ($id, $valid) {
+            public function setValid($id, $valid)
+            {
                 $this->_set($id, 'valid', $valid);
                 $sql = 'UPDATE library SET time = :time WHERE idLibrary = :id;';
                 $this
                     ->getMappingLayer()
                     ->prepare($sql)
                     ->execute(array(
-                                   'id'   => $id,
-                                   'time' => time()
-                              )
-                );
+                            'id'   => $id,
+                            'time' => time()
+                        )
+                    );
             }
 
-            public function update ($id, $description, $homepage, $release, $documentation, $issue) {
+            public function update($id, $description, $homepage, $release, $documentation, $issue)
+            {
                 $this->_set($id, 'description', $description);
                 $this->_set($id, 'home', $homepage);
                 $this->_set($id, 'release', $release);
@@ -166,14 +178,15 @@
                     ->getMappingLayer()
                     ->prepare($sql)
                     ->execute(array(
-                                   'time' => time(),
-                                   'id'   => $id,
-                              )
-                );
+                            'time' => time(),
+                            'id'   => $id,
+                        )
+                    );
 
             }
 
-            public function insert ($user, $name, $description, $homepage, $release, $documentation, $issue) {
+            public function insert($user, $name, $description, $homepage, $release, $documentation, $issue)
+            {
                 $map = array(
                     'refUser'       => $user,
                     'name'          => strtolower(preg_replace('#[^[:alnum:]]#', '', $name)),
@@ -183,7 +196,7 @@
                     'documentation' => $documentation,
                     'issue'         => $issue,
                     'time'          => time(),
-                    'valid'         => '0'
+                    'valid'         => '0',
                 );
 
                 $select = 'SELECT * FROM library WHERE name = :name';
@@ -192,7 +205,7 @@
                     ->prepare($select)
                     ->execute(array('name' => $name))
                     ->fetchAll();
-                if(count($select) < 1) {
+                if (count($select) < 1) {
 
                     $insert
                         = 'INSERT INTO library (idLibrary, refUser, name, description, home, release, documentation, issues, time , valid)
@@ -205,13 +218,13 @@
                         ->execute($map);
 
                     return true;
-                }
-                else {
+                } else {
                     return false;
                 }
             }
 
-            public function getAll () {
+            public function getAll()
+            {
                 // SELECT *  FROM library AS l, user AS u WHERE l.valid = ? AND l.refUser = u.idUser
                 $select = 'SELECT * FROM library INNER JOIN user ON library.refUser = user.idUser';
                 $select = $this
@@ -224,7 +237,23 @@
 
             }
 
-            public function getFromAuthor ($id) {
+            public function getList($start, $nb)
+            {
+                $select = 'SELECT * FROM library INNER JOIN user ON library.refUser = user.idUser LIMIT :start, :nb';
+                $select = $this
+                    ->getMappingLayer()
+                    ->prepare($select)
+                    ->execute(array(
+                        'start' => $start,
+                        'nb'    => $nb
+                    ))
+                    ->fetchAll();
+
+                return $select;
+            }
+
+            public function getFromAuthor($id)
+            {
 //            $select = "SELECT * FROM library  WHERE refUser = :refUser AND valid = '1'";
                 $select = 'SELECT *  FROM library AS l, user AS u WHERE l.valid = 1 AND refUser = ? AND l.refuser = u.idUser';
                 $select = $this
@@ -237,7 +266,8 @@
 
             }
 
-            public function getFromAuthorName ($name) {
+            public function getFromAuthorName($name)
+            {
 //            $select = "SELECT * FROM library  WHERE refUser = :refUser AND valid = '1'";
                 $select = 'SELECT *  FROM library AS l, user AS u WHERE l.valid = 1 AND u.username = ? AND l.refuser = u.idUser';
                 $select = $this
@@ -250,7 +280,20 @@
 
             }
 
-            public function delete ($id) {
+            public function getFromAuthorNameLimit($name, $start, $nb)
+            {
+                $select = 'SELECT *  FROM library AS l, user AS u WHERE l.valid = 1 AND u.username = ? AND l.refuser = u.idUser LIMIT ?, ?';
+                $select = $this
+                    ->getMappingLayer()
+                    ->prepare($select)
+                    ->execute(array($name, $start, $nb))
+                    ->fetchAll();
+
+                return $select;
+            }
+
+            public function delete($id)
+            {
                 $sql = "DELETE FROM library WHERE idLibrary = :id";
                 $this
                     ->getMappingLayer()
@@ -259,7 +302,8 @@
                     ->fetchAll();
             }
 
-            public function getValidate () {
+            public function getValidate()
+            {
                 $select = 'SELECT * FROM library INNER JOIN user ON library.refUser = user.idUser AND library.valid = 1';
 
                 return $this
@@ -269,7 +313,8 @@
                     ->fetchAll();
             }
 
-            public function getUnValidate () {
+            public function getUnValidate()
+            {
                 $select = 'SELECT * FROM library INNER JOIN user ON library.refUser = user.idUser AND library.valid = 0';
 
                 return $this
@@ -278,8 +323,30 @@
                     ->execute()
                     ->fetchAll();
             }
+            public function getValidateLimit($start , $nb)
+            {
+                $select = 'SELECT * FROM library INNER JOIN user ON library.refUser = user.idUser AND library.valid = 1 LIMIT ?,?';
 
-            public function check ($value, $champ) {
+                return $this
+                    ->getMappingLayer()
+                    ->prepare($select)
+                    ->execute(array($start , $nb))
+                    ->fetchAll();
+            }
+
+            public function getUnValidateLimit($start , $nb)
+            {
+                $select = 'SELECT * FROM library INNER JOIN user ON library.refUser = user.idUser AND library.valid = 0 LIMIT ?,?';
+
+                return $this
+                    ->getMappingLayer()
+                    ->prepare($select)
+                    ->execute(array($start , $nb))
+                    ->fetchAll();
+            }
+
+            public function check($value, $champ)
+            {
                 switch ($champ) {
                     case 'name':
                         return preg_match('#[^[:alnum:]]#', $value);
@@ -298,7 +365,8 @@
                 return false;
             }
 
-            public function getLastUpdateLibrary ($nb = 5) {
+            public function getLastUpdateLibrary($nb = 5)
+            {
                 $select = 'SELECT *  FROM library AS l, user AS u WHERE l.valid = 1 AND l.refuser = u.idUser ORDER BY l.time DESC LIMIT ' . $nb . ';';
 
                 return $this

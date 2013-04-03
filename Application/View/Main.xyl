@@ -21,11 +21,14 @@
 
     <footer>
         <p>
-          Hoathis.net by <a href="https://github.com/camael24">Thehawk_</a> and
-          Hoa community.
+            Hoathis.net by
+            <a href="https://github.com/camael24">Thehawk_</a>
+            and
+            Hoa community.
         </p>
-     </footer>
+    </footer>
     <script src="hoa://Application/Public/Js/bootstrap.js"/>
+    <script src="hoa://Application/Public/Js/application.js"/>
 
 
 </document>

@@ -1,5 +1,4 @@
 <?php
-
     try {
         require dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'Data' . DIRECTORY_SEPARATOR . 'Core.link.php';
 
@@ -15,9 +14,13 @@
             ->import('Session.Flash')
             ->import('Xyl.~')
             ->import('Xyl.Interpreter.Html.~')
-            ->import('File.Read')
             ->import('File.ReadWrite')
-            ->import('Http.Response');
+            ->import('Http.Response')
+            ->import('Mail.Message')
+            ->import('Mail.Content.*')
+            ->import('Mail.Transport.Smtp')
+            ->import('Socket.Client')
+            ->import('File.Read');
 
         from('Application')
             ->import('Model.*')
@@ -26,7 +29,7 @@
 
 
         from('Hoathis')
-            ->import('Context.~')
+            ->import('Xyl.Interpreter.Html.~')
             ->import('Flash.Popup')
             ->import('Kit.Aggregator');
 
@@ -43,6 +46,7 @@
                                                )
         );
 
+        Hoa\Mail\Message::setDefaultTransport(new Hoa\Mail\Transport\Smtp(new Hoa\Socket\Client('tcp://mail.hoa-project.net:587'), 'julien.clauzel@hoa-project.net', '***'));
         /*
         * Controlleur, , Action , Variable
         * http://sample.hoathis.hoa/ => Project , List , $project = sample
@@ -66,15 +70,19 @@
             ->get_post('admin-project', '/a/project/(?<_able>[^\.]+)\.html', 'admin\project')
             ->get_post('admin-home', '/a/', 'admin\main', 'index')
 
+            ->get_post('api-able', '/api/(?<_able>[^\.]+)\.html', 'api', 'index')
+
             ->get_post('project-caller', '/p/(?<project>[^/]+)/(?<_able>[^\.]+)\.html', 'project')
             ->get('project-home', '/p/(?<project>[^/]+)/', 'project', 'info')
+
             ->get_post('user-caller', '/(?<user>[^/]{3,})/(?<_able>[^\.]+)\.html', 'user', 'index')
             ->get('user-home', '/(?<user>[^/]{3,})/', 'user', 'profil')
+
             ->get_post('home-caller', '/(?<_able>[^\.]+)\.html', 'main')
             ->get('home', '/', 'main', 'index');
 
 
-        $view = new \Hoa\Xyl\Xyl(new Hoa\File\Read('hoa://Application/View/Main.xyl'), new Hoa\Http\Response\Response(), new Hoa\Xyl\Interpreter\Html\Html(), $router);
+        $view = new \Hoa\Xyl\Xyl(new Hoa\File\Read('hoa://Application/View/Main.xyl'), new Hoa\Http\Response\Response(), new Hoathis\Xyl\Interpreter\Html\Html(), $router);
 
 
         $dispatcher->dispatch($router, $view
