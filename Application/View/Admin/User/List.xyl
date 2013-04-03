@@ -13,6 +13,9 @@
                         <a href="@admin-user-id:id=(?idUser)&amp;_able=edit" class="btn btn-primary">
                             <i class="icon-white icon-chevron-right"/>
                         </a>
+                        <a href="@admin-user-id:id=(?idUser)&amp;_able=remove" class="btn btn-danger">
+                            <i class="icon-trash"/>
+                        </a>
                     </div>
                 </li>
             </ul>

@@ -17,7 +17,9 @@
             ->import('Xyl.Interpreter.Html.~')
             ->import('File.Read')
             ->import('File.ReadWrite')
+            ->import('Mail.Rfc882')
             ->import('Http.Response');
+
 
         from('Application')
             ->import('Model.*')
@@ -42,6 +44,7 @@
                                                     'connection.autoload'         => 'default'
                                                )
         );
+
 
         /*
         * Controlleur, , Action , Variable
