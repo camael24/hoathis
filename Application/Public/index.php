@@ -69,10 +69,14 @@
             ->get_post('admin-project', '/a/project/(?<_able>[^\.]+)\.html', 'admin\project')
             ->get_post('admin-home', '/a/', 'admin\main', 'index')
 
+            ->get_post('api-able', '/api/(?<_able>[^\.]+)\.html', 'api', 'index')
+
             ->get_post('project-caller', '/p/(?<project>[^/]+)/(?<_able>[^\.]+)\.html', 'project')
             ->get('project-home', '/p/(?<project>[^/]+)/', 'project', 'info')
+
             ->get_post('user-caller', '/(?<user>[^/]{3,})/(?<_able>[^\.]+)\.html', 'user', 'index')
             ->get('user-home', '/(?<user>[^/]{3,})/', 'user', 'profil')
+
             ->get_post('home-caller', '/(?<_able>[^\.]+)\.html', 'main')
             ->get('home', '/', 'main', 'index');
 

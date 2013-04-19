@@ -13,21 +13,32 @@
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="mail">Email</label>
-                    <div class="controls">
-                        <p bind="?mail"/>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="mail">Rang</label>
+                    <label class="control-label" for="mail">Rang :</label>
                     <div class="controls">
                         <span class="label label-(?RangClass)" bind="?RangLabel"/>
                     </div>
                 </div>
             </div>
-            <legend>
-                <a href="@user-caller:user=(?login)&amp;_able=list">Ses Hoathis</a>
-            </legend>
+        </div>
+        <div id="result">
+            <p class="lead">The Hoathis of
+                <value bind="?user"/>
+            </p>
+            <ul>
+                <li bind="?project">
+
+                    <div class="row">
+                        <h2 class="span6"><value bind="?username"/>/
+                            <span class="emphase" bind="?name"/>
+                        </h2>
+                        <a href="@project-home:project=(?name)" class="btn btn-primary">
+                            <i class="icon-white icon-chevron-right"/>
+                        </a>
+
+                    </div>
+                    <p bind="?description"/>
+                </li>
+            </ul>
         </div>
     </article>
 </overlay>

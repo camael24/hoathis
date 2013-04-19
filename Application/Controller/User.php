@@ -12,27 +12,18 @@
 
             }
 
-            public function ListAction ($user) {
-
-                $lib      = new \Application\Model\Library();
-                $userData = new \Application\Model\User();
-                $userData->openByName(array('name' => $user));
-
-                $this->data->user    = ucfirst($userData->username);
-                $this->data->project = $lib->getFromAuthorName($userData->username);
-
-                $this->view->addOverlay('hoa://Application/View/User/List.xyl');
-                $this->view->render();
-            }
-
             public function ProfilAction ($user) {
 
 
                 $userD = new \Hoa\Session\Session('user');
                 $userM = new \Application\Model\User();
+
                 $userM->openByName(array('name' => $user));
 
-                $rang = $userM->getRangLabel($userM->rang);
+                $lib                 = new \Application\Model\Library();
+                $rang                = $userM->getRangLabel($userM->rang);
+                $this->data->user    = ucfirst($userM->username);
+                $this->data->project = $lib->getFromAuthorName($userM->username);
 
 
                 $this->data->login     = $userM->username;
@@ -69,7 +60,7 @@
                 $this->guestGuard();
 
                 if(!empty($_POST)) {
-                    $error = false;
+                    $error     = false;
                     $password  = $this->check('pass');
                     $rpassword = $this->check('rpass');
                     $mail      = $this->check('mail', true);
@@ -109,7 +100,7 @@
                                                            'user'  => $user,
                                                            '_able' => 'edit'
                                                       )
-                        );
+                            );
                     }
                     else {
                         $userM->setPassword($userM->idUser, $password);

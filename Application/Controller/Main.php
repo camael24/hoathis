@@ -12,8 +12,8 @@
 
                 if(count($library) < 1) {
                     $library[0] = array(
-                        'label'     => 'No Library Found',
-                        'time'     => time()
+                        'label' => 'No Library Found',
+                        'time'  => time()
                     );
                 }
 
@@ -166,8 +166,7 @@
                         $sUser             = new \Hoa\Session\Session('user');
                         $sUser['idUser']   = $user->idUser;
                         $sUser['username'] = $user->username;
-                        $sUser['email']    = $user->mail;
-                        ;
+                        $sUser['email']    = $user->mail;;
 
                         $this->popup('success', 'Hello ' . $user->username); //TODO change here
                         if($redirect === null)
@@ -236,8 +235,8 @@
                     $library = $library->search($search);
                     if(count($library) < 1) {
                         $library[0] = array(
-                            'label'     => 'No Library Found',
-                            'time'     => time()
+                            'label' => 'No Library Found',
+                            'time'  => time()
                         );
                     }
 
@@ -337,7 +336,7 @@
                                                    'user'  => $user['username'],
                                                    '_able' => 'list'
                                               )
-                );
+                    );
             }
         }
     }
