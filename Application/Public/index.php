@@ -1,5 +1,4 @@
 <?php
-
     try {
         require dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'Data' . DIRECTORY_SEPARATOR . 'Core.link.php';
 
@@ -17,7 +16,6 @@
             ->import('Xyl.Interpreter.Html.~')
             ->import('File.Read')
             ->import('File.ReadWrite')
-            ->import('Mail.Rfc882')
             ->import('Http.Response');
 
 
@@ -110,8 +108,7 @@
                                                                                                     "\n",
                                                                                                     "\t",
                                                                                                     "\r"
-                                                                                               ), '', $e->raise(true)
-                            ) . "\n"
+), '', $e->raise(true)) . "\n"
             );
 
             $flash = \Hoathis\Flash\Popup::getInstance();

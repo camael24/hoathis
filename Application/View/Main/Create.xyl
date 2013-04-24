@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
     <article id="content">
+        <script src="hoa://Application/Public/Js/import.js"/>
+        <div class="btn-group">
+            <a href="#" class="btn" id="importFromGH"  data-toggle="collapse" data-target="#github">Import from Github</a>
+            <a href="#" class="btn" id="importFromComposer" data-toggle="collapse" data-target="#composer">Import from composer.json</a>
+        </div>
+
+        <div id="composer" class="collapse out">
+            <div id="holder">Drop an composer.json file here</div>
+        </div>
+        <div id="github" class="collapse out">
+            <input type="text" id="git" class="span10" placeholder="Your github repos like http://github.com/foo/bar/"/>
+        </div>
         <div class="hero-unit">
             <form action="@home-caller:_able=create" method="post" class="form-horizontal">
                 <legend>Your Hoathis</legend>
@@ -13,7 +25,8 @@
                 <div class="control-group">
                     <label class="control-label" for="description">Description :</label>
                     <div class="controls">
-                        <input type="text" id="description" name="description" placeholder="Some few words about your library" required="required"/>
+                        <input type="text" id="description" name="description"
+                               placeholder="Some few words about your library" required="required"/>
                     </div>
                 </div>
                 <legend>Link</legend>

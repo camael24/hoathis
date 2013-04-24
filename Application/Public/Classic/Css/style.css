@@ -60,3 +60,22 @@ footer {
     padding-top  : 10px;
     padding-left : 20px;
 }
+
+#holder {
+    border : 10px dashed #ccc;
+    width  : 250px;
+    height : 50px;
+    margin : 20px auto;
+}
+
+#holder.hover {
+    border : 10px dashed #333;
+}
+
+#show {
+    display : block;
+}
+
+#hide {
+    display : none;
+}
