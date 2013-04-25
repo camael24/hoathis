@@ -20,12 +20,11 @@
 
                 $userM->openByName(array('name' => $user));
 
-                $lib                 = new \Application\Model\Library();
-                $rang                = $userM->getRangLabel($userM->rang);
-                $this->data->user    = ucfirst($userM->username);
-                $this->data->project = $lib->getFromAuthorName($userM->username);
-
-
+                $lib                   = new \Application\Model\Library();
+                $rang                  = $userM->getRangLabel($userM->rang);
+                $this->data->gravatar  = 'http://www.gravatar.com/avatar/' . md5(strtolower(trim($userM->email))) . '?d=mm&s=200';
+                $this->data->user      = ucfirst($userM->username);
+                $this->data->project   = $lib->getFromAuthorName($userM->username);
                 $this->data->login     = $userM->username;
                 $this->data->mail      = $userM->email;
                 $this->data->RangLabel = $rang['RangLabel'];

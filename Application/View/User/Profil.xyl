@@ -6,16 +6,23 @@
                 <legend>Profil
                     <span bind="?edit"/>
                 </legend>
-                <div class="control-group">
-                    <label class="control-label" for="user">Username :</label>
-                    <div class="controls">
-                        <p bind="?login"/>
+                <div class="row">
+                    <div class="span2">
+                        <img src="(?gravatar)" />
                     </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="mail">Rang :</label>
-                    <div class="controls">
-                        <span class="label label-(?RangClass)" bind="?RangLabel"/>
+                    <div class="span5">
+                        <div class="control-group">
+                            <label class="control-label" for="user">Username :</label>
+                            <div class="controls">
+                                <p bind="?login"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="mail">Rang :</label>
+                            <div class="controls">
+                                <span class="label label-(?RangClass)" bind="?RangLabel"/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

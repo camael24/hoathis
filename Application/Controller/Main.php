@@ -291,6 +291,8 @@
                             'label' => 'No User found',
                         );
                     }
+                    foreach ($user as $i => $u)
+                        $user[$i]['gravatar'] = 'http://www.gravatar.com/avatar/' . md5(strtolower(trim($u['email']))) . '?d=mm&s=25';
                     $this->data->author = $user;
 
                 }
@@ -302,6 +304,8 @@
                             'label' => 'No User found',
                         );
                     }
+                    foreach ($user as $i => $u)
+                        $user[$i]['gravatar'] = 'http://www.gravatar.com/avatar/' . md5(strtolower(trim($u['email']))) . '?d=mm&s=25';
                     $this->data->author = $user;
 
                     $library = new \Application\Model\Library();
@@ -312,7 +316,6 @@
                             'time'  => time()
                         );
                     }
-
                     $this->data->search = $library;
 
                 }

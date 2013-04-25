@@ -28,6 +28,7 @@
         <div class="row">
             <h2 class="inline">
                 <value bind="?label"/>
+                <img src="(?gravatar)"/>
                 <a href="@user-home:user=(?username)" bind="?username"/>
                 <span class="label label-(?RangClass)" bind="?RangLabel"/>
             </h2>
