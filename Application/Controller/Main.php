@@ -206,23 +206,6 @@
             public function ForgotAction () {
 
 
-                $msg            = new \Hoa\Mail\Message();
-                $msg['From']    = 'Hoa Mail (CLI) <julien.clauzel@hoa-project.net>';
-                $msg['To']      = $login . ' <' . $mail . '>';
-                $msg['Subject'] = 'Register on Hoathis.net';
-
-
-                $text = 'Welcome on Hoathis :' . "\n";
-                $text .= '----------------------------' . "\n";
-                $text .= '  Your login          : ' . $login . "\n";
-                $text .= '  You can log in here : http://hoathis.net' . $this->router->unroute('home-caller', array('_able' => 'connect')) . "\n";
-                $text .= '----------------------------' . "\n";
-                $text .= 'This email come from a bot , not reply to this mail' . "\n";
-
-                $msg->addContent(new \Hoa\Mail\Content\Text($text));
-
-                $msg->send();
-
             }
 
             public function DisconnectAction () {
@@ -340,7 +323,40 @@
                     }
                     else {
 
-                        $this->popup('success', 'Your projet has been create, you might wait his acception by the staff'); //TODO change here
+                        $u      = new \Application\Model\User();
+                        $mail   = $u->getMaillingFromGroup(3);
+                        $author = $u->getById($id);
+                        $author = $author[0];
+
+                        $list = array();
+                        foreach ($mail as $admin)
+                            $list[] = $admin['username'] . ' < ' . $admin['email'] . ' >';
+
+                        $msg            = new \Hoa\Mail\Message();
+                        $msg['From']    = 'Hoa Mail (CLI) <julien.clauzel@hoa-project.net>';
+                        $msg['To']      = array_shift($list);
+                        $msg['Subject'] = 'New Libray';
+                        if(count($list) > 0)
+                            $msg['Cc'] = implode(',', $list);
+
+
+                        $name = strtolower(preg_replace('#[^[:alnum:]]#', '', $name));
+
+                        $text = 'An new library is available on hoathis.net :' . "\n";
+                        $text .= '----------------------------' . "\n";
+                        $text .= '  Library name            : ' . $name . "\n";
+                        $text .= '  Library description     : ' . $description . "\n";
+                        $text .= '  Library Author          : ' . $author['username'] . "\n";
+                        $text .= '  You can log go here     : http://hoathis.net' . $this->router->unroute('project-home', array('project' => $name)) . "\n";
+                        $text .= '----------------------------' . "\n";
+                        $text .= 'This email come from a bot , not reply to this mail' . "\n";
+
+                        $msg->addContent(new \Hoa\Mail\Content\Text($text));
+
+                        $msg->send();
+
+
+                        $this->popup('success', 'Your projet has been create, you might wait his acception by the staff');
                         $this
                             ->getKit('Redirector')
                             ->redirect('home', array());

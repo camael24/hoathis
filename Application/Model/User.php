@@ -232,7 +232,7 @@
                     ->execute(array(
                                    'data' => strtolower($data) . '%'
                               )
-                )
+                    )
                     ->fetchAll(); // TODO : use fulltext search
                 return $select;
             }
@@ -271,6 +271,17 @@
                     ->prepare($sql)
                     ->execute(array('id' => $id))
                     ->fetchAll();
+            }
+
+            public function getMaillingFromGroup ($id) {
+                $select = 'SELECT * FROM user AS u, rang AS r WHERE rang = r.idRang and r.idRang = :id';
+                $select = $this
+                    ->getMappingLayer()
+                    ->prepare($select)
+                    ->execute(array('id' => $id))
+                    ->fetchAll();
+
+                return $select;
             }
 
         }
