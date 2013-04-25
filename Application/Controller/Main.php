@@ -144,7 +144,7 @@
                         ->getKit('Redirector')
                         ->redirect('home', array());
 
-                $query = $this->router->getQuery(); //TODO a faire
+                $query = $this->router->getQuery();
                 $page  = (isset($query['redirect']) && !empty($query['redirect'])) ? $query['redirect'] : null;
 
 
@@ -155,8 +155,6 @@
                     $email    = $this->check('login', true);
                     $password = $this->check('password', true);
                     $redirect = $this->check('redirect', true);
-//                $remember = $this->check('remember'); //TODO add support of cookie
-
 
                     $error = false;
                     if($email === null) {
@@ -186,7 +184,7 @@
                         $sUser['username'] = $user->username;
                         $sUser['email']    = $user->mail;;
 
-                        $this->popup('success', 'Hello ' . $user->username); //TODO change here
+                        $this->popup('success', 'Welcomme in Hoathis.net project');
                         if($redirect === null)
                             $this
                                 ->getKit('Redirector')
@@ -292,7 +290,7 @@
                         );
                     }
                     foreach ($user as $i => $u)
-                        $user[$i]['gravatar'] = 'http://www.gravatar.com/avatar/' . md5(strtolower(trim($u['email']))) . '?d=mm&s=25';
+                        $user[$i]['gravatar'] = 'http://www.gravatar.com/avatar/' . md5(strtolower(trim($u['email']))) . '?d=identicon&s=25';
                     $this->data->author = $user;
 
                 }
@@ -305,7 +303,7 @@
                         );
                     }
                     foreach ($user as $i => $u)
-                        $user[$i]['gravatar'] = 'http://www.gravatar.com/avatar/' . md5(strtolower(trim($u['email']))) . '?d=mm&s=25';
+                        $user[$i]['gravatar'] = 'http://www.gravatar.com/avatar/' . md5(strtolower(trim($u['email']))) . '?d=identicon&s=25';
                     $this->data->author = $user;
 
                     $library = new \Application\Model\Library();
@@ -440,7 +438,7 @@
                     ->redirect('user-home', array('user' => $user['username']));
             }
 
-            public function ListAction () { //TODO : List project by user like search @
+            public function ListAction () {
                 $user = new \Hoa\Session\Session('user');
 
                 $this

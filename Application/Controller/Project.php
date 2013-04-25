@@ -41,7 +41,7 @@
                     ) . '"><i class="icon-pencil"></i></a>';
 
 
-                $information['gravatar'] = 'http://www.gravatar.com/avatar/' . md5(strtolower(trim($information['email']))) . '?d=mm&s=25';
+                $information['gravatar'] = 'http://www.gravatar.com/avatar/' . md5(strtolower(trim($information['email']))) . '?d=identicon&s=25';
 
                 $this->data->information = $information;
 
@@ -117,7 +117,7 @@
                     }
                     else {
                         $library->update($information['idLibrary'], $description, $home, $release, $doc, $issue);
-                        $this->popup('success', 'Your projet has been update'); //TODO change here
+                        $this->popup('success', 'Your projet has been update');
                         $this
                             ->getKit('Redirector')
                             ->redirect('project-home', array('project' => $project));

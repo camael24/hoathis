@@ -22,7 +22,7 @@
 
                 $lib                   = new \Application\Model\Library();
                 $rang                  = $userM->getRangLabel($userM->rang);
-                $this->data->gravatar  = 'http://www.gravatar.com/avatar/' . md5(strtolower(trim($userM->email))) . '?d=mm&s=200';
+                $this->data->gravatar  = 'http://www.gravatar.com/avatar/' . md5(strtolower(trim($userM->email))) . '?d=identicon&s=200';
                 $this->data->user      = ucfirst($userM->username);
                 $this->data->project   = $lib->getFromAuthorName($userM->username);
                 $this->data->login     = $userM->username;
