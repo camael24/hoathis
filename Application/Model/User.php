@@ -80,6 +80,20 @@
                 return (count($select) === 0);
             }
 
+            public function checkToken ($token) {
+                $select = 'SELECT * FROM user WHERE recoveryToken = :token';
+                $select = $this
+                    ->getMappingLayer()
+                    ->prepare($select)
+                    ->execute(array(
+                                   'token' => $token,
+                              )
+                    )
+                    ->fetchAll();
+
+                return (count($select) === 0);
+            }
+
             public function checkUser ($user) {
                 $select = 'SELECT * FROM user WHERE username = :user';
                 $select = $this
@@ -285,12 +299,38 @@
                 return $select;
             }
 
-            public function setToken ($id, $email, $token) {
+            public function setToken ($email, $token) {
+                $check = !$this->checkMail($email);
+                if($check === true) {
+                    $sql = 'UPDATE user SET recoveryToken = :token WHERE email = :email;';
+                    $this
+                        ->getMappingLayer()
+                        ->prepare($sql)
+                        ->execute(array(
+                                       'email' => $email,
+                                       'token' => $token
+                                  )
+                        );
+                }
 
+                return $check;
             }
 
-            public function validToken ($email, $token) {
+            public function getByEmail ($email) {
+                $select = 'SELECT * FROM user WHERE email = :mail';
+                $select = $this
+                    ->getMappingLayer()
+                    ->prepare($select)
+                    ->execute(array(
+                                   'mail' => $email,
+                              )
+                    )
+                    ->fetchAll();
 
+                if(count($select) == 1)
+                    return $select[0];
+                else
+                    return array();
             }
 
         }

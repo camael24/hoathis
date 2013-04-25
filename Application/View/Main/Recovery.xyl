@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+    <article id="content">
+        <div class="hero-unit">
+            <legend>Retrive your login step 2/2</legend>
+            <snippet id="formForgot">
+                <form class="form-horizontal" method="POST" action="#" id="myFormForgot">
+                    <div class="control-group">
+                        <label class="control-label" for="inputLogin">Email :</label>
+                        <div class="controls">
+                            <input type="text" id="inputLogin" name="email" placeholder="Your Email" value="(?email)"/>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputLogin">Token :</label>
+                        <div class="controls">
+                            <input type="text" id="inputLogin" name="token" placeholder="Your recovery token"
+                                   value="(?token)"/>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="pass">New Password</label>
+                        <div class="controls">
+                            <input type="password" id="pass" name="pass" placeholder="Password"/>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="rpass">Retype new password</label>
+                        <div class="controls">
+                            <input type="password" id="rpass" name="rpass" placeholder="Re-Password"/>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <input type="submit" id="send" name="send" class="btn btn-primary"/>
+                        </div>
+                    </div>
+                </form>
+            </snippet>
+        </div>
+    </article>
+</overlay>

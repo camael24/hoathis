@@ -205,6 +205,63 @@
 
             public function ForgotAction () {
 
+                if(!empty($_POST)) {
+                    $email = $this->check('email', true);
+                    $token = md5(time());
+
+                    $error = false;
+                    if($email === null) {
+                        $this->popup('error', 'The field email is empty ');
+                        $error = true;
+                    }
+
+                    $user = new \Application\Model\User();
+
+                    if($user->check($email, 'email') === false) {
+                        $this->popup('error', 'The field email is not valid');
+                        $error = true;
+                    }
+
+                    if($error === false && $user->setToken($email, $token) === false) {
+                        $this->popup('error', 'This email is not register here !');
+                        $error = true;
+                    }
+                    if($error === true) {
+                        $this
+                            ->getKit('Redirector')
+                            ->redirect('home-caller', array('_able' => 'forgot'));
+                    }
+                    else {
+                        $author = $user->getByEmail($email);
+
+                        $msg            = new \Hoa\Mail\Message();
+                        $msg['From']    = 'Hoa Mail (CLI) <julien.clauzel@hoa-project.net>';
+                        $msg['To']      = $author['username'] . ' < ' . $author['email'] . ' >';
+                        $msg['Subject'] = 'Recovery password';
+
+
+                        $text = 'Recovery password process :' . "\n";
+                        $text .= '----------------------------------------------------------------------------------------------------------------' . "\n";
+                        $text .= '  Email address                                                            : ' . $email . "\n";
+                        $text .= '  Recovery token                                                           : ' . $token . "\n";
+                        $text .= '  Recovery link                                                            : http://hoathis.net' . $this->router->unroute('home-caller', array('_able' => 'recovery')) . '?token=' . $token . '&email=' . $email . "\n";
+                        $text .= '----------------------------------------------------------------------------------------------------------------' . "\n";
+                        $text .= '  If the previous link doesn\'t work well , please go manually to          : http://hoathis.net' . $this->router->unroute('home-caller', array('_able' => 'recovery')) . "\n";
+                        $text .= '----------------------------------------------------------------------------------------------------------------' . "\n";
+                        $text .= 'This email come from a bot , not reply to this mail' . "\n";
+
+                        $msg->addContent(new \Hoa\Mail\Content\Text($text));
+
+                        $msg->send();
+
+
+                        $this->popup('success', 'An email has been sent with the procedure');
+                        $this
+                            ->getKit('Redirector')
+                            ->redirect('home', array());
+                    }
+                }
+
                 $this->view->addOverlay('hoa://Application/View/Main/Forgot.xyl');
                 $this->view->render();
             }
@@ -390,6 +447,88 @@
                                                    '_able' => 'list'
                                               )
                     );
+            }
+
+            public function RecoveryAction () {
+                $userModel = new \Application\Model\User();
+                if(!empty($_POST)) {
+                    $token = $this->check('token', true);
+                    $email = $this->check('email', true);
+                    $pass  = $this->check('pass', true);
+                    $rpass = $this->check('rpass', true);
+                    $error = false;
+
+                    if($email === null) {
+                        $this->popup('error', 'The field email is empty ');
+                        $error = true;
+                    }
+                    else if($token === null) {
+                        $this->popup('error', 'The field token is empty ');
+                        $error = true;
+                    }
+                    else if($pass === null) {
+                        $this->popup('error', 'The field password is empty ');
+                        $error = true;
+                    }
+                    else if($rpass === null) {
+                        $this->popup('error', 'The field retype-password is empty ');
+                        $error = true;
+                    }
+                    else if($pass !== $rpass) {
+                        $this->popup('error', 'The filed password and retype your password must be egal ');
+                        $error = true;
+                    }
+
+
+                    if($userModel->check($email, 'email') === false) {
+                        $this->popup('error', 'The filed email is not valid');
+                        $error = true;
+                    }
+                    else if($userModel->check($pass, 'password') === false) {
+                        $this->popup('error', 'The filed password is not valid');
+                        $error = true;
+                    }
+                    else if($userModel->checkMail($email)) {
+                        $this->popup('error', 'Your email address are not register in our database ');
+                        $error = true;
+                    }
+                    else if($userModel->checkToken($token) === true) {
+                        $this->popup('error', 'Your token are not register in our database');
+                        $error = true;
+                    }
+                    if($error === true) {
+                        $this
+                            ->getKit('Redirector')
+                            ->redirect('home-caller', array(
+                                                           '_able' => 'recovery'
+                                                      )
+                            );
+                    }
+                    else {
+                        $user = $userModel->getByEmail($email);
+                        $userModel->setToken($email, '');
+                        $userModel->setPassword($user['idUser'], $pass);
+                        $this->popup('success', 'Your password has been update');
+                        $this
+                            ->getKit('Redirector')
+                            ->redirect('home', array());
+                    }
+
+                }
+
+
+                $query             = $this->router->getQuery();
+                $token             = isset($query['token']) ? $query['token'] : null;
+                $this->data->email = isset($query['email']) ? $query['email'] : null;
+                if($token !== null and $userModel->checkToken($token) === true) {
+                    $this->popup('error', 'Your token are not register in our database');
+                    $this
+                        ->getKit('Redirector')
+                        ->redirect('home', array());
+                }
+
+                $this->view->addOverlay('hoa://Application/View/Main/Recovery.xyl');
+                $this->view->render();
             }
         }
     }

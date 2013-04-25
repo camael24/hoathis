@@ -37,13 +37,13 @@
     <snippet id="formConnect">
         <form class="form-horizontal" method="POST" action="#" id="myFormConnect" error="foo">
             <div class="control-group">
-                <label class="control-label" for="inputLogin">Login</label>
+                <label class="control-label" for="inputLogin">Login :</label>
                 <div class="controls">
                     <input type="text" id="inputLogin" name="login" placeholder="Login"/>
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="inputPassword">Password</label>
+                <label class="control-label" for="inputPassword">Password :</label>
                 <div class="controls">
                     <input type="password" id="inputPassword" name="password" placeholder="Password"/>
                 </div>
@@ -62,20 +62,13 @@
     <snippet id="formForgot">
         <form class="form-horizontal" method="POST" action="#" id="myFormForgot">
             <div class="control-group">
-                <label class="control-label" for="inputLogin">Login</label>
+                <label class="control-label" for="inputLogin">Email :</label>
                 <div class="controls">
-                    <input type="text" id="inputLogin" name="login" placeholder="Login"/>
-                </div>
-            </div>
-            <div class="control-group">
-                <label class="control-label" for="inputPassword">Password</label>
-                <div class="controls">
-                    <input type="password" id="inputPassword" name="password" placeholder="Password"/>
+                    <input type="text" id="inputLogin" name="email" placeholder="Your email"/>
                 </div>
             </div>
             <div class="control-group">
                 <div class="controls">
-                    <input type="hidden" id="redirect" name="redirect" value="(?redirect)"/>
                     <input type="submit" id="send" name="send" class="btn btn-primary"/>
                 </div>
             </div>

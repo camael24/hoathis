@@ -3,7 +3,7 @@
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
     <article id="content">
         <div class="hero-unit">
-            <legend>Retrive your login</legend>
+            <legend>Retrive your login step 1/2</legend>
             <yield select="?f:handle#formForgot"/>
         </div>
     </article>
