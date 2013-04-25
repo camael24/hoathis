@@ -6,13 +6,18 @@
                 <value bind="?label"/>
                 <a href="@project-home:project=(?name)" bind="?name"/>
             </h2>
-            <a href="@user-home:user=(?username)">
+            <a href="@user-home:user=(?username)" class="noHover">
                 <span class="label" bind="?username"/>
             </a>
             <span class="label label-info">
                 <value formatter="date"
-                       formatter-format="F jS Y, \a\r\o\u\n\d ga"
+                       formatter-format="F jS Y, "
                        formatter-timestamp="(?time)"/>
+                around
+                <value
+                        formatter="date"
+                        formatter-format="ga"
+                        formatter-timestamp="(?time)"/>
             </span>
         </div>
         <p bind="?description" class="wrap listDescription"/>

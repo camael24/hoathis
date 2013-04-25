@@ -79,3 +79,6 @@ footer {
 #hide {
     display : none;
 }
+a.noHover:hover {
+    text-decoration : none;
+}

@@ -1,10 +1,30 @@
 function parserComposerFile(json) {
-    $('#name').val(json.name);
-    $('#description').val(json.description);
-    $('#home').val(json.homepage);
-    $('#release').val(json.support.source);
+    if (json.error) {
+        $('#content').prepend('<div class="alert alert-error"><button type="button" class="close" data-dismiss="alert">×</button><p>' + json.error + '</p></div>');
+    }
+    else {
+        $('#name').val(json.name);
+        $('#description').val(json.description);
+        $('#home').val(json.homepage);
+        $('#release').val(json.support.source);
+    }
 }
-$().ready(function () {
+$('#valid').click(function () {
+
+    var file = $('#git').val();
+    var composer = /composer\.json$/;
+
+    if (!composer.test(file)) {
+        file = 'https://raw.github.com/' + file + '/master/composer.json';
+    }
+
+    $.post('/api/composer.html', 'uri=' + file, function (data) {
+        parserComposerFile(data);
+    }, 'json');
+
+});
+
+$('#importFromComposer').click(function () {
     var holder = document.getElementById('holder');
 
     holder.ondragover = function () {

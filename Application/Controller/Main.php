@@ -106,6 +106,24 @@
 
                         $userModel->insert($login, $password, $mail);
 
+                        $msg            = new \Hoa\Mail\Message();
+                        $msg['From']    = 'Hoa Mail (CLI) <julien.clauzel@hoa-project.net>';
+                        $msg['To']      = $login . ' <' . $mail . '>';
+                        $msg['Subject'] = 'Register on Hoathis.net';
+
+
+                        $text = 'Welcome on Hoathis :' . "\n";
+                        $text .= '----------------------------' . "\n";
+                        $text .= '  Your login          : ' . $login . "\n";
+                        $text .= '  You can log in here : http://hoathis.net' . $this->router->unroute('home-caller', array('_able' => 'connect')) . "\n";
+                        $text .= '----------------------------' . "\n";
+                        $text .= 'This email come from a bot , not reply to this mail' . "\n";
+
+                        $msg->addContent(new \Hoa\Mail\Content\Text($text));
+
+                        $msg->send();
+
+
                         $this->popup('success', 'you successfully registered! Welcome here you can connect');
                         $this
                             ->getKit('Redirector')
@@ -186,10 +204,24 @@
             }
 
             public function ForgotAction () {
-                $this->popup('info', 'this function is not implement yet!'); //TODO change here
-                $this
-                    ->getKit('Redirector')
-                    ->redirect('home', array());
+
+
+                $msg            = new \Hoa\Mail\Message();
+                $msg['From']    = 'Hoa Mail (CLI) <julien.clauzel@hoa-project.net>';
+                $msg['To']      = $login . ' <' . $mail . '>';
+                $msg['Subject'] = 'Register on Hoathis.net';
+
+
+                $text = 'Welcome on Hoathis :' . "\n";
+                $text .= '----------------------------' . "\n";
+                $text .= '  Your login          : ' . $login . "\n";
+                $text .= '  You can log in here : http://hoathis.net' . $this->router->unroute('home-caller', array('_able' => 'connect')) . "\n";
+                $text .= '----------------------------' . "\n";
+                $text .= 'This email come from a bot , not reply to this mail' . "\n";
+
+                $msg->addContent(new \Hoa\Mail\Content\Text($text));
+
+                $msg->send();
 
             }
 

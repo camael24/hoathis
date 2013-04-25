@@ -14,10 +14,13 @@
             ->import('Session.Flash')
             ->import('Xyl.~')
             ->import('Xyl.Interpreter.Html.~')
-            ->import('File.Read')
             ->import('File.ReadWrite')
-            ->import('Http.Response');
-
+            ->import('Http.Response')
+            ->import('Mail.Message')
+            ->import('Mail.Content.*')
+            ->import('Mail.Transport.Smtp')
+            ->import('Socket.Client')
+            ->import('File.Read');
 
         from('Application')
             ->import('Model.*')
@@ -43,7 +46,7 @@
                                                )
         );
 
-
+        Hoa\Mail\Message::setDefaultTransport(new Hoa\Mail\Transport\Smtp(new Hoa\Socket\Client('tcp://mail.hoa-project.net:587'), 'julien.clauzel@hoa-project.net', '***'));
         /*
         * Controlleur, , Action , Variable
         * http://sample.hoathis.hoa/ => Project , List , $project = sample
@@ -108,7 +111,8 @@
                                                                                                     "\n",
                                                                                                     "\t",
                                                                                                     "\r"
-), '', $e->raise(true)) . "\n"
+                                                                                               ), '', $e->raise(true)
+                            ) . "\n"
             );
 
             $flash = \Hoathis\Flash\Popup::getInstance();
