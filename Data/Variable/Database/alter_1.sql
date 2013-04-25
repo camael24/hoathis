@@ -1,2 +1,2 @@
 ALTER TABLE user
-ADD recoveryToken VARCHAR(255);
+ADD recoveryToken VARCHAR(35);

@@ -60,6 +60,10 @@
                         $this->popup('error', 'The filed mail is not valid');
                         $error = true;
                     }
+                    else if($user->check($password, 'password') === false) {
+                        $this->popup('error', 'The field password is not valid');
+                        $error = true;
+                    }
 
 
                     if($error === true) {

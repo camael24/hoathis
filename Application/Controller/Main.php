@@ -205,7 +205,8 @@
 
             public function ForgotAction () {
 
-
+                $this->view->addOverlay('hoa://Application/View/Main/Forgot.xyl');
+                $this->view->render();
             }
 
             public function DisconnectAction () {
@@ -302,6 +303,10 @@
                         $this->popup('error', 'The field description is not valid');
                         $error = true;
                     }
+                    else if($library->check($name, 'name') === false) {
+                        $this->popup('error', 'The field name is not valid');
+                        $error = true;
+                    }
                     else if($library->check($home, 'home') === false) {
                         $this->popup('error', 'The field home is not valid');
                         $error = true;
@@ -311,11 +316,11 @@
                         $error = true;
                     }
 
+
                     if($error === false && $library->insert($id, $name, $description, $home, $release, $doc, $issue) === false) {
                         $this->popup('error', 'An project has ever a same name');
                         $error = true;
                     }
-
                     if($error === true) {
                         $this
                             ->getKit('Redirector')

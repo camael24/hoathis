@@ -97,14 +97,15 @@
             public function insert ($user, $password, $mail) {
 
                 // RANG 0 = Unactivate or Banned
-                $sql    = 'INSERT INTO user (idUser ,username ,password ,email ,rang)VALUES (NULL , :name, :pass, :mail, 2);';
+                $sql    = 'INSERT INTO user (idUser ,username ,password ,email ,rang, recoveryToken)VALUES (NULL , :name, :pass, :mail, 2 , :token);';
                 $select = $this
                     ->getMappingLayer()
                     ->prepare($sql)
                     ->execute(array(
-                                   'name' => strtolower($user),
-                                   'pass' => sha1($password),
-                                   'mail' => $mail
+                                   'name'  => strtolower($user),
+                                   'pass'  => sha1($password),
+                                   'mail'  => $mail,
+                                   'token' => ''
                               )
                     );
             }
@@ -165,13 +166,13 @@
             public function setPassword ($id, $pass) {
                 if(empty($pass))
                     return;
-                $sql = 'UPDATE user SET password = SHA1(:pass) WHERE idUser = :id;';
+                $sql = 'UPDATE user SET password = :pass WHERE idUser = :id;';
                 $this
                     ->getMappingLayer()
                     ->prepare($sql)
                     ->execute(array(
                                    'id'   => $id,
-                                   'pass' => $pass
+                                   'pass' => sha1($pass)
                               )
                     );
             }
@@ -282,6 +283,14 @@
                     ->fetchAll();
 
                 return $select;
+            }
+
+            public function setToken ($id, $email, $token) {
+
+            }
+
+            public function validToken ($email, $token) {
+
             }
 
         }

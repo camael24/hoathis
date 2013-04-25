@@ -51,6 +51,10 @@
              * @invariant valid: undefined();
              */
             protected $_valid;
+            /**
+             * @invariant recoveryToken: undefined();
+             */
+            protected $_recoveryToken;
 
             protected function construct () {
 
@@ -74,7 +78,7 @@
                                    'name'  => strtolower($name),
                                    'valid' => $v
                               )
-                )
+                    )
                     ->fetchAll();
 
                 if(count($select) == 1)
@@ -102,7 +106,7 @@
                                    'id'    => $id,
                                    'valid' => $v
                               )
-                )
+                    )
                     ->fetchAll(); // TODO : use fulltext search
 
                 if(count($select) == 1)
@@ -122,7 +126,7 @@
                                    'data'  => '%' . $data . '%',
                                    'valid' => 1
                               )
-                )
+                    )
                     ->fetchAll(); // TODO : use fulltext search
                 return $select;
             }
@@ -138,7 +142,7 @@
                                    'id'   => $id,
                                    'data' => $value
                               )
-                );
+                    );
             }
 
             public function setValid ($id, $valid) {
@@ -151,7 +155,7 @@
                                    'id'   => $id,
                                    'time' => time()
                               )
-                );
+                    );
             }
 
             public function update ($id, $description, $homepage, $release, $documentation, $issue) {
@@ -169,7 +173,7 @@
                                    'time' => time(),
                                    'id'   => $id,
                               )
-                );
+                    );
 
             }
 
@@ -183,7 +187,7 @@
                     'documentation' => $documentation,
                     'issue'         => $issue,
                     'time'          => time(),
-                    'valid'         => '0'
+                    'valid'         => '0',
                 );
 
                 $select = 'SELECT * FROM library WHERE name = :name';
@@ -307,6 +311,7 @@
                     ->execute()
                     ->fetchAll();
             }
+
 
 
         }

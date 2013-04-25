@@ -50,6 +50,10 @@
                 $userM = new \Application\Model\User();
                 $userM->openByName(array('name' => $user));
 
+                $rang                  = $userM->getRangLabel($userM->rang);
+                $this->data->RangLabel = $rang['RangLabel'];
+                $this->data->RangClass = $rang['RangClass'];
+
                 if($userD['idUser'] !== intval($userM->idUser)) {
                     $this->popup('info', 'You don`t have the require credential');
                     $this
@@ -66,15 +70,7 @@
                     $mail      = $this->check('mail', true);
 
 
-                    if($password === null) {
-                        $this->popup('error', 'The field password is empty ');
-                        $error = true;
-                    }
-                    else if($rpassword === null) {
-                        $this->popup('error', 'The field retype-password is empty ');
-                        $error = true;
-                    }
-                    else if($mail === null) {
+                    if($mail === null) {
                         $this->popup('error', 'The field Email is empty ');
                         $error = true;
                     }
@@ -83,11 +79,11 @@
                         $error = true;
                     }
 
-                    if(!empty($password) && $userM->check($password, 'pass') === false) {
+                    if(!empty($password) && $userM->check($password, 'password') === false) {
                         $this->popup('error', 'The field password is not valid');
                         $error = true;
                     }
-                    else if(!empty($mail) && $userM->check($mail, 'mail') === false) {
+                    else if(!empty($mail) && $userM->check($mail, 'email') === false) {
                         $this->popup('error', 'The field mail is not valid');
                         $error = true;
                     }
