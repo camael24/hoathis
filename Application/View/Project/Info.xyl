@@ -68,7 +68,7 @@
                     <h2 class="span6">About</h2>
                 </legend>
                 <div class="row-fluid">
-                    <div class="span2">Contact author</div>
+                    <div class="span2">Profil</div>
                     <div class="span4">
                         <img src="(?gravatar)" />
                         <a href="@user-home:user=(?username)" bind="?username"/>

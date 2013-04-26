@@ -290,7 +290,8 @@
                         );
                     }
                     foreach ($user as $i => $u)
-                        $user[$i]['gravatar'] = 'http://www.gravatar.com/avatar/' . md5(strtolower(trim($u['email']))) . '?d=identicon&s=25';
+                        if(array_key_exists('email', $u))
+                            $user[$i]['gravatar'] = 'http://www.gravatar.com/avatar/' . md5(strtolower(trim($u['email']))) . '?d=identicon&s=25';
                     $this->data->author = $user;
 
                 }
@@ -303,7 +304,8 @@
                         );
                     }
                     foreach ($user as $i => $u)
-                        $user[$i]['gravatar'] = 'http://www.gravatar.com/avatar/' . md5(strtolower(trim($u['email']))) . '?d=identicon&s=25';
+                        if(array_key_exists('email', $u))
+                            $user[$i]['gravatar'] = 'http://www.gravatar.com/avatar/' . md5(strtolower(trim($u['email']))) . '?d=identicon&s=25';
                     $this->data->author = $user;
 
                     $library = new \Application\Model\Library();

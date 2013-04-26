@@ -86,8 +86,6 @@
                         $this->popup('error', 'The field mail is not valid');
                         $error = true;
                     }
-
-
                     if($error === true) {
                         $this
                             ->getKit('Redirector')
@@ -106,7 +104,6 @@
                             ->redirect('home', array());
                     }
                 }
-
 
                 $this->data->login = $userM->username;
                 $this->data->mail  = $userM->email;

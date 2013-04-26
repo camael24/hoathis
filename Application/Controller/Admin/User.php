@@ -45,7 +45,6 @@
                     $mail      = $this->check('mail');
                     $rang      = $this->check('rang');
 
-
                     if($password !== $rpassword) {
                         $this->popup('error', 'The field password and retype your password must be egal ');
                         $error = true;
@@ -60,12 +59,12 @@
                         $this->popup('error', 'The filed mail is not valid');
                         $error = true;
                     }
-                    else if($user->check($password, 'password') === false) {
-                        $this->popup('error', 'The field password is not valid');
-                        $error = true;
+                    else if($password !== null and !empty($password)) {
+                        if($user->check($password, 'password') === false) {
+                            $this->popup('error', 'The field password is not valid');
+                            $error = true;
+                        }
                     }
-
-
                     if($error === true) {
                         $this
                             ->getKit('Redirector')
@@ -89,15 +88,15 @@
                             ->redirect('admin-user', array('_able' => 'list'));
                     }
                 }
-                $data = $user->getById($id);
-                $data = $data[0];
+                $data
+                    = $user->getById($id);
+                $data
+                    = $data[0];
                 foreach ($data as $key => $v) {
-
                     if($key === 'rang') {
                         $rang = new \Application\Model\Rang();
                         $v    = $this->buildSelect($rang->all(), $v);
                     }
-
                     $this->data->$key = $v;
                 }
 

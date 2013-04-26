@@ -73,6 +73,7 @@
                         $this->popup('error', 'You are not allow to edit this');
                         $error = true;
                     }
+                    $name = $this->check('name', true);
                     $description = $this->check('description', true);
                     $home        = $this->check('home', true);
                     $release     = $this->check('release', true);
