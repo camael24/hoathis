@@ -1,3 +1,5 @@
+$('importFromGH').click(function (){
+});
 function parserComposerFile(json) {
     if (json.error) {
         $('#content').prepend('<div class="alert alert-error"><button type="button" class="close" data-dismiss="alert">×</button><p>' + json.error + '</p></div>');

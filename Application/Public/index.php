@@ -46,22 +46,7 @@
                                                )
         );
 
-        Hoa\Mail\Message::setDefaultTransport(new Hoa\Mail\Transport\Smtp(new Hoa\Socket\Client('tcp://mail.hoa-project.net:587'), 'julien.clauzel@hoa-project.net', '***'));
-        /*
-        * Controlleur, , Action , Variable
-        * http://sample.hoathis.hoa/ => Project , List , $project = sample
-        * http://sample.hoathis.hoa/edit.html => Project , Edit , $project = sample
-        * http://sample.hoathis.hoa/delete.html => Project , Delete , $project = sample
-        * http://hoathis.hoa/thehawk => User , Profil , $user = thehawk
-        * http://hoathis.hoa/thehawk/edit.html => User , Edit , $user = thehawk
-        * http://hoathis.hoa/thehawk/delete.html => User , Delete , $user = thehawk
-        * http://hoathis.hoa/ => Main , Index
-        * http://hoathis.hoa/search.html => Main , Search
-        * http://hoathis.hoa/a/ => Admin , Index
-        * http://hoathis.hoa/a/users.html => Admin , Users
-        * http://hoathis.hoa/a/users/1 => Admin , Users , $user = thehawk
-        */
-// $router->setSubdomainSuffix('hoathis');
+        Hoa\Mail\Message::setDefaultTransport(new Hoa\Mail\Transport\Smtp(new Hoa\Socket\Client('tcp://mail.hoa-project.net:587'), 'julien.clauzel@hoa-project.net', 'thehawk!hoa'));
 
         $router
             ->get_post('admin-user-id', '/a/user/(?<_able>[^-]+)-(?<id>[^\.]+)\.html', 'admin\user')
