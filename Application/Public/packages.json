@@ -1,0 +1,130 @@
+{
+    "packages": {
+        "hoa/bench": {
+            "dev-master": {
+                "name": "hoa/bench",
+                "version": "dev-master",
+                "version_normalized": "9999999-dev",
+                "source": {
+                    "type": "git",
+                    "url": "http://github.com/camael24/Bench",
+                    "reference": "c2b9969cc4a41155cf8bbe212324e0ada7f350a0"
+                },
+                "require": {
+                    "hoa/core": "dev-master"
+                },
+                "time": "2013-04-26 07:50:19",
+                "type": "library",
+                "license": [
+                    "BSD-3-Clause"
+                ],
+                "authors": [
+                    {
+                        "name": "Ivan Enderlin",
+                        "email": "ivan.enderlin@hoa-project.net"
+                    },
+                    {
+                        "name": "Hoa community",
+                        "homepage": "http://hoa-project.net/"
+                    }
+                ],
+                "description": "The Hoa\\Bench library.",
+                "homepage": "http://hoa-project.net/",
+                "keywords": [
+                    "analyze",
+                    "bench",
+                    "dtrace",
+                    "library",
+                    "performance",
+                    "time",
+                    "trace"
+                ],
+                "support": {
+                    "email": "ivan.enderlin@hoa-project.net",
+                    "forum": "http://forum.hoa-project.net",
+                    "irc": "irc://irc.freenode.org/hoaproject",
+                    "source": "http://git.hoa-project.net/"
+                }
+            },
+            "dev-filters": {
+                "name": "hoa/bench",
+                "version": "dev-filters",
+                "version_normalized": "dev-filters",
+                "source": {
+                    "type": "git",
+                    "url": "http://github.com/camael24/Bench",
+                    "reference": "c57185dec7122d166d317f4b9e00e06e259cb98b"
+                },
+                "require": {
+                    "hoa/core": "dev-master"
+                },
+                "time": "2013-05-17 15:05:35",
+                "type": "library",
+                "license": [
+                    "BSD-3-Clause"
+                ],
+                "authors": [
+                    {
+                        "name": "Ivan Enderlin",
+                        "email": "ivan.enderlin@hoa-project.net"
+                    },
+                    {
+                        "name": "Hoa community",
+                        "homepage": "http://hoa-project.net/"
+                    }
+                ],
+                "description": "The Hoa\\Bench library.",
+                "homepage": "http://hoa-project.net/",
+                "keywords": [
+                    "analyze",
+                    "bench",
+                    "dtrace",
+                    "library",
+                    "performance",
+                    "time",
+                    "trace"
+                ],
+                "support": {
+                    "email": "ivan.enderlin@hoa-project.net",
+                    "forum": "http://forum.hoa-project.net",
+                    "irc": "irc://irc.freenode.org/hoaproject",
+                    "source": "http://git.hoa-project.net/"
+                }
+            }
+        },
+        "hoathis/less": {
+            "dev-master": {
+                "name": "hoathis/less",
+                "version": "dev-master",
+                "version_normalized": "9999999-dev",
+                "source": {
+                    "type": "git",
+                    "url": "http://github.com/camael24/Less",
+                    "reference": "5b8ee81937b987f603e73acc0a280b9b65967373"
+                },
+                "require": {
+                    "hoa/compiler": "dev-master",
+                    "hoa/console": "dev-master",
+                    "hoa/dispatcher": "dev-master",
+                    "hoa/file": "dev-master",
+                    "hoa/router": "dev-master"
+                },
+                "time": "2013-05-23 13:17:52",
+                "type": "library",
+                "authors": [
+                    {
+                        "name": "Julien CLAUZEL",
+                        "email": "thehawk@hoa-project.net"
+                    }
+                ],
+                "description": "Compile less to css",
+                "support": {
+                    "email": "thehawk@hoa-project.net",
+                    "forum": "http://forum.hoa-project.net",
+                    "irc": "irc://irc.freenode.org/hoaproject",
+                    "source": "http://github.com/camael24/less/"
+                }
+            }
+        }
+    }
+}
