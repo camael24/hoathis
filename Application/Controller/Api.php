@@ -1,5 +1,6 @@
 <?php
     namespace {
+        from('Hoathis')->import('Packages.*');
     }
     namespace Application\Controller {
 
@@ -70,10 +71,40 @@
                 if ($user_Model->checkUser($user) === true or !file_exists($depot_Uri)) {
                     return;
                 }
-
-                $composer = json_decode(file_get_contents($depot_Uri) , true);
                 echo '<pre>';
-                var_dump($composer);
+                var_dump($depot_Uri);
+                $composer = json_decode(file_get_contents($depot_Uri), true);
+
+                $c = new \Hoathis\Packages\Composer();
+                $c->setComposer($composer);
+
+                $create = new \Hoathis\Packages\Create($depot, $c);
+
+                $create->setComposerKey('description');
+                $create->setComposerKey('keywords');
+                $create->setComposerKey('homepage');
+                $create->setBranch('dev-master');
+                $create->setVersionNormalized('9999999-dev');
+                $create->setComposerKey('license');
+                $create->setComposerKey('authors');
+
+                $gh = new \Hoathis\Packages\Github();
+                $gh->setRepos($depot);
+                $commit = $gh->getLastCommit();
+
+                $create->setSource('git', $commit['sha']);
+                $create->setZipBall($commit['sha']);
+                $create->setKey('type', 'library');
+                $create->setKey('time', $commit['commit']['author']['date']);
+                $create->setComposerKey('autoload');
+                $create->setComposerKey('extra');
+                $create->setComposerKey('require');
+                $create->setComposerKey('require-dev');
+                $create->setComposerKey('replace');
+                $create->setComposerKey('replace');
+
+
+                print_r($create->getPackages());
 
 
             }
