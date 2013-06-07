@@ -454,9 +454,6 @@
 
             public function RecoveryAction () {
                 $userModel = new \Application\Model\User();
-                $query     = $this->router->getQuery();
-                $qtoken    = isset($query['token']) ? $query['token'] : null;
-                $qemail    = isset($query['email']) ? $query['email'] : null;
                 if(!empty($_POST)) {
                     $token = $this->check('token', true);
                     $email = $this->check('email', true);
@@ -503,17 +500,12 @@
                         $error = true;
                     }
                     if($error === true) {
-                        $uri = $this->router->unroute('home-caller', array(
-                                                                          '_able' => 'recovery'
-                                                                     )
-                        );
-
-                        $uri = '?token=' . $token . '&email=' . $email;
-
-                        $response = $this->view->getOutputStream();
-                        $response->sendHeader('Location', $uri, true, 302);
-
-                        exit;
+                        $this
+                            ->getKit('Redirector')
+                            ->redirect('home-caller', array(
+                                                           '_able' => 'recovery'
+                                                      )
+                            );
                     }
                     else {
                         $user = $userModel->getByEmail($email);
@@ -528,9 +520,10 @@
                 }
 
 
-                $this->data->token = $qtoken;
-                $this->data->email = $qemail;
-                if($qtoken !== null and $userModel->checkToken($qtoken) === true) {
+                $query             = $this->router->getQuery();
+                $token             = isset($query['token']) ? $query['token'] : null;
+                $this->data->email = isset($query['email']) ? $query['email'] : null;
+                if($token !== null and $userModel->checkToken($token) === true) {
                     $this->popup('error', 'Your token are not register in our database');
                     $this
                         ->getKit('Redirector')

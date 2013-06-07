@@ -1,5 +1,3 @@
-$('importFromGH').click(function () {
-});
 function parserComposerFile(json) {
     if (json.error) {
         $('#content').prepend('<div class="alert alert-error"><button type="button" class="close" data-dismiss="alert">×</button><p>' + json.error + '</p></div>');
@@ -15,16 +13,12 @@ $('#valid').click(function () {
 
     var file = $('#git').val();
     var composer = /composer\.json$/;
-    var repos = '';
-
 
     if (!composer.test(file)) {
-        repos = file;
         file = 'https://raw.github.com/' + file + '/master/composer.json';
-
     }
 
-    $.post('/api/composer.html', 'uri=' + file+'&gh-repos='+repos, function (data) {
+    $.post('/api/composer.html', 'uri=' + file, function (data) {
         parserComposerFile(data);
     }, 'json');
 

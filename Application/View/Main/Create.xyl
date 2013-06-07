@@ -1,33 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
     <article id="content">
-        <div class="accordion" id="accordion2">
-            <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne" id="importFromGH">
-                        Import from Github
-                    </a>
-                </div>
-                <div id="collapseOne" class="accordion-body collapse">
-                    <div class="accordion-inner">
-                        <input type="text" id="git" class="span10"
-                               placeholder="Your github repos foo/bar/ or the URI to your raw composer like https://raw.github.com/foo/bar/master/composer.json"/>
-                        <a href="#" id="valid" class="btn btn-success">Check</a>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo" id="importFromComposer">
-                        Import from Composer.json
-                    </a>
-                </div>
-                <div id="collapseTwo" class="accordion-body collapse">
-                    <div class="accordion-inner">
-                        <div id="holder">Drop an composer.json file here</div>
-                    </div>
-                </div>
-            </div>
+        <div class="btn-group">
+            <a href="#" class="btn" id="importFromGH" data-toggle="collapse" data-target="#github">Import from Github
+            </a>
+            <a href="#" class="btn" id="importFromComposer" data-toggle="collapse" data-target="#composer">Import from
+                composer.json
+            </a>
+        </div>
+
+        <div id="composer" class="collapse out">
+            <div id="holder">Drop an composer.json file here</div>
+        </div>
+        <div id="github" class="collapse out">
+            <input type="text" id="git" class="span10"
+                   placeholder="Your github repos foo/bar/ or the URI to your raw composer like https://raw.github.com/foo/bar/master/composer.json"/>
+            <a href="#" id="valid" class="btn btn-success">Check</a>
         </div>
         <div class="hero-unit">
             <form action="@home-caller:_able=create" method="post" class="form-horizontal">
