@@ -1,84 +1,86 @@
 <?php
 
-/**
- * Hoa
- *
- *
- * @license
- *
- * New BSD License
- *
- * Copyright © 2007-2012, Ivan Enderlin. All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
- *     * Redistributions of source code must retain the above copyright
- *       notice, this list of conditions and the following disclaimer.
- *     * Redistributions in binary form must reproduce the above copyright
- *       notice, this list of conditions and the following disclaimer in the
- *       documentation and/or other materials provided with the distribution.
- *     * Neither the name of the Hoa nor the names of its contributors may be
- *       used to endorse or promote products derived from this software without
- *       specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS AND CONTRIBUTORS BE
- * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
- * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
- * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
- * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
- * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
- * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- */
+    /**
+     * Hoa
+     *
+     *
+     * @license
+     *
+     * New BSD License
+     *
+     * Copyright © 2007-2012, Ivan Enderlin. All rights reserved.
+     *
+     * Redistribution and use in source and binary forms, with or without
+     * modification, are permitted provided that the following conditions are met:
+     *     * Redistributions of source code must retain the above copyright
+     *       notice, this list of conditions and the following disclaimer.
+     *     * Redistributions in binary form must reproduce the above copyright
+     *       notice, this list of conditions and the following disclaimer in the
+     *       documentation and/or other materials provided with the distribution.
+     *     * Neither the name of the Hoa nor the names of its contributors may be
+     *       used to endorse or promote products derived from this software without
+     *       specific prior written permission.
+     *
+     * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+     * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+     * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+     * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS AND CONTRIBUTORS BE
+     * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+     * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+     * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+     * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+     * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+     * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+     * POSSIBILITY OF SUCH DAMAGE.
+     */
 
-$root = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR;
+    $root = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR;
 
-require $root . 'Data' . DIRECTORY_SEPARATOR . 'Core.link.php';
+    require $root . 'Data' . DIRECTORY_SEPARATOR . 'Core.link.php';
 
-if('1' === ini_get('phar.readonly'))
-    throw new \Hoa\Core\Exception(
-        'The directive phar.readonly is set to 1; must be set to 0.' . "\n" .
-        'Tips: php -d phar.readonly=0 %s.', 0, @$argv[0] ?: __FILE__);
+    if ('1' === ini_get('phar.readonly'))
+        throw new \Hoa\Core\Exception(
+            'The directive phar.readonly is set to 1; must be set to 0.' . "\n" .
+            'Tips: php -d phar.readonly=0 %s.', 0, @$argv[0] ? : __FILE__);
 
-if(isset($_SERVER['argv'][1]))
-    $name = $_SERVER['argv'][1];
-else
-    $name = 'Application.phar';
+    if (isset($_SERVER['argv'][1]))
+        $name = $_SERVER['argv'][1];
+    else
+        $name = 'Application.phar';
 
-if(file_exists($name) && false === unlink($name))
-    throw new \Hoa\Core\Exception(
-        'Phar %s already exists and we cannot delete it.', 1, $name);
+    if (file_exists($name) && false === unlink($name))
+        throw new \Hoa\Core\Exception(
+            'Phar %s already exists and we cannot delete it.', 1, $name);
 
-class Filter extends \FilterIterator {
+    class Filter extends \FilterIterator
+    {
 
-    public function accept ( ) {
+        public function accept()
+        {
 
-        return false === strpos($this->current()->getPathname(), '.git');
+            return false === strpos($this->current()->getPathname(), '.git');
+        }
     }
-}
 
-$iterator = new \AppendIterator();
-$iterator->append(new \RecursiveIteratorIterator(
-    new \RecursiveDirectoryIterator($root . 'Application')
-));
-$iterator->append(new \RecursiveIteratorIterator(
-    new \RecursiveDirectoryIterator($root . 'Data')
-));
+    $iterator = new \AppendIterator();
+    $iterator->append(new \RecursiveIteratorIterator(
+        new \RecursiveDirectoryIterator($root . 'Application')
+    ));
+    $iterator->append(new \RecursiveIteratorIterator(
+        new \RecursiveDirectoryIterator($root . 'Data')
+    ));
 
-$phar     = new \Phar(__DIR__ . DS . $name);
-$phar->setMetadata(array(
-    'author'          => 'Ivan Enderlin',
-    'license'         => 'New BSD License',
-    'copyright'       => \Hoa\Core::©(),
-    'version.name'    => $name,
-    'datetime'        => date('c')
-));
-$phar->setSignatureAlgorithm(\Phar::SHA1);
-$phar->buildFromIterator(new Filter($iterator), $root);
-$phar->setStub(<<<'STUB'
+    $phar = new \Phar(__DIR__ . DS . $name);
+    $phar->setMetadata(array(
+        'author'       => 'Ivan Enderlin',
+        'license'      => 'New BSD License',
+        'copyright'    => \Hoa\Core::©(),
+        'version.name' => $name,
+        'datetime'     => date('c')
+    ));
+    $phar->setSignatureAlgorithm(\Phar::SHA1);
+    $phar->buildFromIterator(new Filter($iterator), $root);
+    $phar->setStub(<<<'STUB'
 <?php
 
 \Phar::mapPhar('Application.phar');
@@ -144,6 +146,6 @@ function initialization ( ) {
 
 __HALT_COMPILER();
 STUB
-);
+    );
 
-echo __DIR__ . DS . $name . "\n";
+    echo __DIR__ . DS . $name . "\n";
