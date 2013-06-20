@@ -13,10 +13,10 @@
                 $user    = $user->all();
                 $data    = array();
 
-                foreach ($library as $id => $elmt)
+                foreach ($library as $elmt)
                     $data[] = $elmt['name'];
 
-                foreach ($user as $idx => $elmtx)
+                foreach ($user as $elmtx)
                     $data[] = '@' . $elmtx['username'];
 
                 echo json_encode($data);
