@@ -3,27 +3,46 @@
     }
     namespace Application\Controller\Admin {
 
-        class Project extends Generic {
+        class Project extends Generic
+        {
 
-            public function ListAction () {
-
-
-                $project                = new \Application\Model\Library();
-                $this->data->unvalidate = $project->getUnValidate();
-                $this->data->validate   = $project->getValidate();
-
-
-                $this->view->addOverlay('hoa://Application/View/Admin/Project/List.xyl');
+            public function ListActivateAction()
+            {
+                $project              = new \Application\Model\Library();
+                $all                  = $project->getValidate();
+                $query                = $this->router->getQuery();
+                $page                 = isset($query['page']) ? $query['page'] : 1;
+                $itemPerPage          = 10;
+                $fistEntry            = ($page - 1) * $itemPerPage;
+                $this->data->number   = ceil(count($all) / $itemPerPage);
+                $this->data->current  = $page;
+                $this->data->validate = $project->getValidateLimit($fistEntry, $itemPerPage);
+                $this->view->addOverlay('hoa://Application/View/Admin/Project/Activate.xyl');
                 $this->view->render();
             }
 
-            public function ActivateAction ($id) {
+            public function ListUnactivateAction()
+            {
+
+                $project                = new \Application\Model\Library();
+                $all                    = $project->getUnValidate();
+                $query                  = $this->router->getQuery();
+                $page                   = isset($query['page']) ? $query['page'] : 1;
+                $itemPerPage            = 10;
+                $fistEntry              = ($page - 1) * $itemPerPage;
+                $this->data->number     = ceil(count($all) / $itemPerPage);
+                $this->data->current    = $page;
+                $this->data->unvalidate = $project->getUnValidateLimit($fistEntry, $itemPerPage);
+                $this->view->addOverlay('hoa://Application/View/Admin/Project/UnActivate.xyl');
+                $this->view->render();
+            }
+
+
+            public function ActivateAction($id)
+            {
                 $project = new \Application\Model\Library();
                 $project->setValid($id, '1');
-
-                $u = $project->getInformation($id, true);
-
-
+                $u              = $project->getInformation($id, true);
                 $msg            = new \Hoa\Mail\Message();
                 $msg['From']    = 'Hoa Mail (CLI) <julien.clauzel@hoa-project.net>';
                 $msg['To']      = $u['email'];
@@ -48,7 +67,8 @@
                     ->redirect('admin-project', array('_able' => 'list'));
             }
 
-            public function UnactivateAction ($id) {
+            public function UnactivateAction($id)
+            {
                 $project = new \Application\Model\Library();
                 $project->setValid($id, '0');
 
@@ -77,12 +97,13 @@
                     ->redirect('admin-project', array('_able' => 'list'));
             }
 
-            public function DeleteAction ($id) {
-                if(!empty($_POST)) {
+            public function DeleteAction($id)
+            {
+                if (!empty($_POST)) {
                     $userSession = new \Hoa\Session\Session('user');
                     $user        = new \Application\Model\User();
 
-                    if($user->connect($userSession['username'], $this->check('password', true)) && $this->isAdminAllowed()) {
+                    if ($user->connect($userSession['username'], $this->check('password', true)) && $this->isAdminAllowed()) {
                         $library = new \Application\Model\Library();
                         $u       = $library->getInformation($id, true);
                         $library->delete($id);
@@ -110,15 +131,13 @@
                             ->getKit('Redirector')
                             ->redirect('admin-project', array('_able' => 'list'));
 
-                    }
-                    else {
+                    } else {
                         $this->popup('error', 'your password confirmation is not correct or you don\'t the require credential to proceed this action');
                         $this
                             ->getKit('Redirector')
                             ->redirect('admin-project', array('_able' => 'list'));
                     }
-                }
-                else {
+                } else {
                     $this->view->addOverlay('hoa://Application/View/Admin/Project/Confirm.xyl');
                     $this->view->render();
                 }

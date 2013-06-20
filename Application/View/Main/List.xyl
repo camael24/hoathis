@@ -7,5 +7,6 @@
                 </li>
             </ul>
         </div>
+        <paginator max="(?number)" select="(?current)" />
     </article>
 </overlay>

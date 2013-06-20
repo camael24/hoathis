@@ -46,6 +46,7 @@
                     <p bind="?description"/>
                 </li>
             </ul>
+            <paginator max="(?number)" select="(?current)" />
         </div>
     </article>
 </overlay>

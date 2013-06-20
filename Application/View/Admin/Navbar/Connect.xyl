@@ -22,7 +22,10 @@
                             <a href="@admin-user:_able=list">User</a>
                         </li>
                         <li>
-                            <a href="@admin-project:_able=list">Project</a>
+                            <a href="@admin-project:_able=listactivate">Project Activate</a>
+                        </li>
+                        <li>
+                            <a href="@admin-project:_able=listunactivate">Project UnActivate</a>
                         </li>
                         <!--<li>-->
                             <!--<a href="#">Configuration</a>-->

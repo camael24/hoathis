@@ -29,6 +29,7 @@
 
 
         from('Hoathis')
+            ->import('Xyl.Interpreter.Html.~')
             ->import('Context.~')
             ->import('Flash.Popup')
             ->import('Kit.Aggregator');
@@ -82,7 +83,7 @@
             ->get('home', '/', 'main', 'index');
 
 
-        $view = new \Hoa\Xyl\Xyl(new Hoa\File\Read('hoa://Application/View/Main.xyl'), new Hoa\Http\Response\Response(), new Hoa\Xyl\Interpreter\Html\Html(), $router);
+        $view = new \Hoa\Xyl\Xyl(new Hoa\File\Read('hoa://Application/View/Main.xyl'), new Hoa\Http\Response\Response(), new Hoathis\Xyl\Interpreter\Html\Html(), $router);
 
 
         $dispatcher->dispatch($router, $view

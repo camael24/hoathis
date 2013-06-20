@@ -22,25 +22,7 @@
                     <p bind="?description"/>
                 </li>
             </ul>
-            <p class="lead">Validate</p>
-            <ul>
-                <li bind="?validate">
-
-                    <div class="row">
-                        <h2 class="span6"><value bind="?username"/>/
-                            <span class="emphase" bind="?name"/>
-                        </h2>
-                        <a href="@project-home:project=(?name)" class="btn btn-primary">
-                            <i class="icon-white icon-chevron-right"/>
-                        </a>
-                        <a href="@admin-project-id:_able=unactivate&amp;id=(?idLibrary)" class="btn btn-warning"
-                           title="Unvalidate it">
-                            <i class="icon-white icon-chevron-down"/>
-                        </a>
-                    </div>
-                    <p bind="?description"/>
-                </li>
-            </ul>
+            <paginator max="(?number)" select="(?current)" />
         </div>
     </article>
 </overlay>
