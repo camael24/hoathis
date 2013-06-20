@@ -94,27 +94,28 @@
                 $max      = max(0, intval($this->computeAttributeValue($this->abstract->readAttribute('max'))));
                 $selected = max(0, intval($this->computeAttributeValue($this->abstract->readAttribute('select'))));
                 $handle   = null;
-                if ($selected === 1)
-                    $handle .= '<li class="disabled"><a href="#">&laquo;</a></li>';
-                else
-                    $handle .= '<li><a href="?page=' . ($selected - 1) . '">&laquo;</a></li>';
-
-
-                for ($i = 1; $i <= $max; ++$i)
-                    if ($i === $selected)
-                        $handle .= '<li class="active"><a href="#">' . $i . '</a></li>';
+                if ($max > 1) {
+                    if ($selected === 1)
+                        $handle .= '<li class="disabled"><a href="#">&laquo;</a></li>';
                     else
-                        $handle .= '<li><a href="?page=' . $i . '">' . $i . '</a></li>';
+                        $handle .= '<li><a href="?page=' . ($selected - 1) . '">&laquo;</a></li>';
 
 
-                if ($selected === $max)
-                    $handle .= '<li class="disabled"><a href="#">&raquo;</a></li>';
-                else
-                    $handle .= '<li><a href="?page=' . ($selected + 1) . '">&raquo;</a></li>';
+                    for ($i = 1; $i <= $max; ++$i)
+                        if ($i === $selected)
+                            $handle .= '<li class="active"><a href="#">' . $i . '</a></li>';
+                        else
+                            $handle .= '<li><a href="?page=' . $i . '">' . $i . '</a></li>';
 
 
-                $out->writeAll('<div class="pagination"><ul' . $this->readAttributesAsString() . '>' . $handle . '</ul></div>');
+                    if ($selected === $max)
+                        $handle .= '<li class="disabled"><a href="#">&raquo;</a></li>';
+                    else
+                        $handle .= '<li><a href="?page=' . ($selected + 1) . '">&raquo;</a></li>';
 
+
+                    $out->writeAll('<div class="pagination"><ul' . $this->readAttributesAsString() . '>' . $handle . '</ul></div>');
+                }
                 return;
             }
         }
