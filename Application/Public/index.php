@@ -30,7 +30,6 @@
 
         from('Hoathis')
             ->import('Xyl.Interpreter.Html.~')
-            ->import('Context.~')
             ->import('Flash.Popup')
             ->import('Kit.Aggregator');
 
