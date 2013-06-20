@@ -46,7 +46,7 @@
                                                )
         );
 
-        Hoa\Mail\Message::setDefaultTransport(new Hoa\Mail\Transport\Smtp(new Hoa\Socket\Client('tcp://mail.hoa-project.net:587'), 'julien.clauzel@hoa-project.net', 'thehawk!hoa'));
+        Hoa\Mail\Message::setDefaultTransport(new Hoa\Mail\Transport\Smtp(new Hoa\Socket\Client('tcp://mail.hoa-project.net:587'), 'julien.clauzel@hoa-project.net', '***'));
         /*
         * Controlleur, , Action , Variable
         * http://sample.hoathis.hoa/ => Project , List , $project = sample
