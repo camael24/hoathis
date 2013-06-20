@@ -33,7 +33,7 @@
                 $this->data->number     = ceil(count($all) / $itemPerPage);
                 $this->data->current    = $page;
                 $this->data->unvalidate = $project->getUnValidateLimit($fistEntry, $itemPerPage);
-                $this->view->addOverlay('hoa://Application/View/Admin/Project/UnActivate.xyl');
+                $this->view->addOverlay('hoa://Application/View/Admin/Project/Unactivate.xyl');
                 $this->view->render();
             }
 
