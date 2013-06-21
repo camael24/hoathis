@@ -123,7 +123,7 @@
 
             public function search($data)
             {
-                $select = 'SELECT *  FROM library AS l, user AS u WHERE l.name LIKE :data AND l.valid = :valid AND l.refUser = u.idUser LIMIT 20;';
+                $select = 'SELECT *  FROM library AS l, user AS u WHERE l.name LIKE :data AND l.valid = :valid AND l.refUser = u.idUser ORDER BY l.time DESC LIMIT 20;';
                 $select = $this
                     ->getMappingLayer()
                     ->prepare($select)
@@ -189,7 +189,7 @@
             {
                 $map = array(
                     'refUser'       => $user,
-                    'name'          => strtolower(preg_replace('#[^[:alnum:]]#', '', $name)),
+                    'name'          => strtolower(preg_replace('#[^[:alnum:]/]#', '', $name)),
                     'description'   => $description,
                     'home'          => $homepage,
                     'release'       => $release,
@@ -226,7 +226,7 @@
             public function getAll()
             {
                 // SELECT *  FROM library AS l, user AS u WHERE l.valid = ? AND l.refUser = u.idUser
-                $select = 'SELECT * FROM library INNER JOIN user ON library.refUser = user.idUser';
+                $select = 'SELECT * FROM library INNER JOIN user ON library.refUser = user.idUser AND library.valid > 0';
                 $select = $this
                     ->getMappingLayer()
                     ->prepare($select)
@@ -239,7 +239,7 @@
 
             public function getList($start, $nb)
             {
-                $select = 'SELECT * FROM library INNER JOIN user ON library.refUser = user.idUser LIMIT :start, :nb';
+                $select = 'SELECT * FROM library INNER JOIN user ON library.refUser = user.idUser AND library.valid > 0 ORDER BY library.time DESC  LIMIT :start, :nb';
                 $select = $this
                     ->getMappingLayer()
                     ->prepare($select)
@@ -282,7 +282,7 @@
 
             public function getFromAuthorNameLimit($name, $start, $nb)
             {
-                $select = 'SELECT *  FROM library AS l, user AS u WHERE l.valid = 1 AND u.username = ? AND l.refuser = u.idUser LIMIT ?, ?';
+                $select = 'SELECT *  FROM library AS l, user AS u WHERE l.valid = 1 AND u.username = ? AND l.refuser = u.idUser ORDER BY l.time DESC LIMIT ?, ?';
                 $select = $this
                     ->getMappingLayer()
                     ->prepare($select)
@@ -325,7 +325,7 @@
             }
             public function getValidateLimit($start , $nb)
             {
-                $select = 'SELECT * FROM library INNER JOIN user ON library.refUser = user.idUser AND library.valid = 1 LIMIT ?,?';
+                $select = 'SELECT * FROM library, user WHERE library.refUser = user.idUser AND library.valid = 1 ORDER BY library.time DESC LIMIT ?,?';
 
                 return $this
                     ->getMappingLayer()
@@ -336,7 +336,7 @@
 
             public function getUnValidateLimit($start , $nb)
             {
-                $select = 'SELECT * FROM library INNER JOIN user ON library.refUser = user.idUser AND library.valid = 0 LIMIT ?,?';
+                $select = 'SELECT * FROM library INNER JOIN user ON library.refUser = user.idUser AND library.valid = 0 ORDER BY library.time DESC  LIMIT ?,?';
 
                 return $this
                     ->getMappingLayer()

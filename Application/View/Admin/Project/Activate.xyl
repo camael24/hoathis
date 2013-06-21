@@ -6,7 +6,9 @@
                 <li bind="?validate">
 
                     <div class="row">
-                        <h2 class="span6"><value bind="?username"/>/
+                        <h2 class="span6">
+                            <value bind="?username"/>
+                            -
                             <span class="emphase" bind="?name"/>
                         </h2>
                         <a href="@project-home:project=(?name)" class="btn btn-primary">
@@ -20,7 +22,7 @@
                     <p bind="?description"/>
                 </li>
             </ul>
-            <paginator max="(?number)" select="(?current)" />
+            <paginator max="(?number)" select="(?current)"/>
         </div>
     </article>
 </overlay>

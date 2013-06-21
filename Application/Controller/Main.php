@@ -30,7 +30,7 @@
                 $model               = new \Application\Model\Library();
                 $query               = $this->router->getQuery();
                 $page                = isset($query['page']) ? $query['page'] : 1;
-                $itemPerPage         = 10;
+                $itemPerPage         = 8;
                 $fistEntry           = ($page - 1) * $itemPerPage;
                 $all                 = $model->getList($fistEntry, $itemPerPage);
                 $this->data->number  = ceil(count($model->getAll()) / $itemPerPage);

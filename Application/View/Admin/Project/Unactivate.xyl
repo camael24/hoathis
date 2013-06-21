@@ -6,23 +6,27 @@
                 <li bind="?unvalidate">
 
                     <div class="row">
-                        <h2 class="span6"><value bind="?username"/>/
+                        <h2 class="span6">
+                            <value bind="?username"/>
+                            -
                             <span class="emphase" bind="?name"/>
                         </h2>
                         <a href="@project-home:project=(?name)" class="btn btn-primary">
                             <i class="icon-white icon-chevron-right"/>
                         </a>
-                        <a href="@admin-project-id:_able=activate&amp;id=(?idLibrary)" class="btn btn-success" title="validate it">
+                        <a href="@admin-project-id:_able=activate&amp;id=(?idLibrary)" class="btn btn-success"
+                           title="validate it">
                             <i class="icon-white icon-ok"/>
                         </a>
-                        <a href="@admin-project-id:_able=delete&amp;id=(?idLibrary)" class="btn btn-danger" title="remove it">
+                        <a href="@admin-project-id:_able=delete&amp;id=(?idLibrary)" class="btn btn-danger"
+                           title="remove it">
                             <i class="icon-white icon-remove"/>
                         </a>
                     </div>
                     <p bind="?description"/>
                 </li>
             </ul>
-            <paginator max="(?number)" select="(?current)" />
+            <paginator max="(?number)" select="(?current)"/>
         </div>
     </article>
 </overlay>

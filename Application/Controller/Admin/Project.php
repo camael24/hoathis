@@ -12,7 +12,7 @@
                 $all                  = $project->getValidate();
                 $query                = $this->router->getQuery();
                 $page                 = isset($query['page']) ? $query['page'] : 1;
-                $itemPerPage          = 10;
+                $itemPerPage          = 5;
                 $fistEntry            = ($page - 1) * $itemPerPage;
                 $this->data->number   = ceil(count($all) / $itemPerPage);
                 $this->data->current  = $page;
