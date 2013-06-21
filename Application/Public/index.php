@@ -29,6 +29,7 @@
 
 
         from('Hoathis')
+            ->import('Mail.~')
             ->import('Xyl.Interpreter.Html.~')
             ->import('Flash.Popup')
             ->import('Kit.Aggregator');
@@ -40,10 +41,10 @@
         $dispatcher->setKitName('Hoathis\Kit\Aggregator');
 
         Hoa\Database\Dal::initializeParameters(array(
-                                                    'connection.list.default.dal' => Hoa\Database\Dal::PDO,
-                                                    'connection.list.default.dsn' => 'sqlite:hoa://Data/Variable/Database/Hoathis.sqlite',
-                                                    'connection.autoload'         => 'default'
-                                               )
+                'connection.list.default.dal' => Hoa\Database\Dal::PDO,
+                'connection.list.default.dsn' => 'sqlite:hoa://Data/Variable/Database/Hoathis.sqlite',
+                'connection.autoload'         => 'default'
+            )
         );
 
         Hoa\Mail\Message::setDefaultTransport(new Hoa\Mail\Transport\Smtp(new Hoa\Socket\Client('tcp://mail.hoa-project.net:587'), 'julien.clauzel@hoa-project.net', '***'));
@@ -88,31 +89,29 @@
         $dispatcher->dispatch($router, $view
 
         );
-    }
-    catch (\Hoa\Core\Exception\Exception $e) {
-        if($e instanceof \Hoa\Session\Exception\Expired) {
+    } catch (\Hoa\Core\Exception\Exception $e) {
+        if ($e instanceof \Hoa\Session\Exception\Expired) {
 
-            if(array_key_exists('QUERY_STRING', $_SERVER))
+            if (array_key_exists('QUERY_STRING', $_SERVER))
                 $hash = urlencode($_SERVER['QUERY_STRING']);
 
             $flash = \Hoathis\Flash\Popup::getInstance();
             $flash->info('You have been disconnect, because you don`t use your session since long time ...');
             header('Location:/connect.html?redirect=' . $hash);
             exit();
-        }
-        else {
+        } else {
 
             $complement = '';
-            if(array_key_exists('QUERY_STRING', $_SERVER))
+            if (array_key_exists('QUERY_STRING', $_SERVER))
                 $complement = $_SERVER['QUERY_STRING'];
 
             $read = new \Hoa\File\ReadWrite('hoa://Data/Variable/Log/Exception.log');
             $read->writeAll('[' . date('d/m/Y H:i:s') . '] ' . $complement . ' ' . str_replace(array(
-                                                                                                    "\n",
-                                                                                                    "\t",
-                                                                                                    "\r"
-                                                                                               ), '', $e->raise(true)
-                            ) . "\n"
+                        "\n",
+                        "\t",
+                        "\r"
+                    ), '', $e->raise(true)
+                ) . "\n"
             );
 
             $flash = \Hoathis\Flash\Popup::getInstance();

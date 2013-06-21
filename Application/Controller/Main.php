@@ -25,7 +25,6 @@
                 $this->view->render();
             }
 
-
             public function AllAction()
             {
                 $model               = new \Application\Model\Library();
@@ -106,12 +105,6 @@
 
                         $userModel->insert($login, $password, $mail);
 
-                        $msg            = new \Hoa\Mail\Message();
-                        $msg['From']    = 'Hoa Mail (CLI) <julien.clauzel@hoa-project.net>';
-                        $msg['To']      = $login . ' <' . $mail . '>';
-                        $msg['Subject'] = 'Register on Hoathis.net';
-
-
                         $text = 'Welcome on Hoathis :' . "\n";
                         $text .= '----------------------------' . "\n";
                         $text .= '  Your login          : ' . $login . "\n";
@@ -119,10 +112,12 @@
                         $text .= '----------------------------' . "\n";
                         $text .= 'This email come from a bot , not reply to this mail' . "\n";
 
-                        $msg->addContent(new \Hoa\Mail\Content\Text($text));
 
-                        $msg->send();
-
+                        $mail = new \Hoathis\Mail\Mail();
+                        $mail->setTo($login . ' <' . $mail . '>');
+                        $mail->setSubject('Register on Hoathis.net');
+                        $mail->setContent(new \Hoa\Mail\Content\Text($text));
+                        $mail->send();
 
                         $this->popup('success', 'you successfully registered! Welcome here you can connect');
                         $this
@@ -231,25 +226,23 @@
                     } else {
                         $author = $user->getByEmail($email);
 
-                        $msg            = new \Hoa\Mail\Message();
-                        $msg['From']    = 'Hoa Mail (CLI) <julien.clauzel@hoa-project.net>';
-                        $msg['To']      = $author['username'] . ' < ' . $author['email'] . ' >';
-                        $msg['Subject'] = 'Recovery password';
-
 
                         $text = 'Recovery password process :' . "\n";
                         $text .= '----------------------------------------------------------------------------------------------------------------' . "\n";
-                        $text .= '  Email address                                                            : ' . $email . "\n";
-                        $text .= '  Recovery token                                                           : ' . $token . "\n";
-                        $text .= '  Recovery link                                                            : http://hoathis.net' . $this->router->unroute('home-caller', array('_able' => 'recovery')) . '?token=' . $token . '&email=' . $email . "\n";
+                        $text .= '  Email address    : ' . $email . "\n";
+                        $text .= '  Recovery token   : ' . $token . "\n";
+                        $text .= '  Recovery link    : http://hoathis.net' . $this->router->unroute('home-caller', array('_able' => 'recovery')) . '?token=' . $token . '&email=' . $email . "\n";
                         $text .= '----------------------------------------------------------------------------------------------------------------' . "\n";
-                        $text .= '  If the previous link doesn\'t work well , please go manually to          : http://hoathis.net' . $this->router->unroute('home-caller', array('_able' => 'recovery')) . "\n";
+                        $text .= '  If the previous link doesn\'t work well , please go manually to  : http://hoathis.net' . $this->router->unroute('home-caller', array('_able' => 'recovery')) . "\n";
                         $text .= '----------------------------------------------------------------------------------------------------------------' . "\n";
                         $text .= 'This email come from a bot , not reply to this mail' . "\n";
 
-                        $msg->addContent(new \Hoa\Mail\Content\Text($text));
 
-                        $msg->send();
+                        $mail = new \Hoathis\Mail\Mail();
+                        $mail->setTo($author['username'] . ' < ' . $author['email'] . ' >');
+                        $mail->setSubject('Recovery password');
+                        $mail->setContent(new \Hoa\Mail\Content\Text($text));
+                        $mail->send();
 
 
                         $this->popup('success', 'An email has been sent with the procedure');
@@ -391,16 +384,8 @@
                         foreach ($mail as $admin)
                             $list[] = $admin['username'] . ' < ' . $admin['email'] . ' >';
 
-                        $msg            = new \Hoa\Mail\Message();
-                        $msg['From']    = 'Hoa Mail (CLI) <julien.clauzel@hoa-project.net>';
-                        $msg['To']      = array_shift($list);
-                        $msg['Subject'] = 'New Libray';
-                        if (count($list) > 0)
-                            $msg['Cc'] = implode(',', $list);
-
 
                         $name = strtolower(preg_replace('#[^[:alnum:]]#', '', $name));
-
                         $text = 'An new library is available on hoathis.net :' . "\n";
                         $text .= '----------------------------' . "\n";
                         $text .= '  Library name            : ' . $name . "\n";
@@ -410,10 +395,14 @@
                         $text .= '----------------------------' . "\n";
                         $text .= 'This email come from a bot , not reply to this mail' . "\n";
 
-                        $msg->addContent(new \Hoa\Mail\Content\Text($text));
 
-                        $msg->send();
-
+                        $mail = new \Hoathis\Mail\Mail();
+                        $mail->setTo(array_shift($list));
+                        $mail->setSubject('New Library');
+                        $mail->setContent(new \Hoa\Mail\Content\Text($text));
+                        if (count($list) > 0)
+                            $mail->setCc(implode(',', $list));
+                        $mail->send();
 
                         $this->popup('success', 'Your projet has been create, you might wait his acception by the staff');
                         $this

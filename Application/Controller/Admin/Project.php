@@ -42,11 +42,7 @@
             {
                 $project = new \Application\Model\Library();
                 $project->setValid($id, '1');
-                $u              = $project->getInformation($id, true);
-                $msg            = new \Hoa\Mail\Message();
-                $msg['From']    = 'Hoa Mail (CLI) <julien.clauzel@hoa-project.net>';
-                $msg['To']      = $u['email'];
-                $msg['Subject'] = 'Activation of libray ' . $u['name'];
+                $u = $project->getInformation($id, true);
 
 
                 $text = 'Your library ' . $u['name'] . 'are available on hoathis.net :' . "\n";
@@ -56,10 +52,11 @@
                 $text .= '----------------------------' . "\n";
                 $text .= 'This email come from a bot , not reply to this mail' . "\n";
 
-                $msg->addContent(new \Hoa\Mail\Content\Text($text));
-
-                $msg->send();
-
+                $mail = new \Hoathis\Mail\Mail();
+                $mail->setTo($u['email']);
+                $mail->setSubject('Activation of libray ' . $u['name']);
+                $mail->setContent(new \Hoa\Mail\Content\Text($text));
+                $mail->send();
 
                 $this->popup('success', 'the project has been accepted and publish');
                 $this
@@ -74,12 +71,6 @@
 
                 $u = $project->getInformation($id, true);
 
-                $msg            = new \Hoa\Mail\Message();
-                $msg['From']    = 'Hoa Mail (CLI) <julien.clauzel@hoa-project.net>';
-                $msg['To']      = $u['email'];
-                $msg['Subject'] = 'Unactivation of libray ' . $u['name'];
-
-
                 $text = 'Your library ' . $u['name'] . 'are unvalidate on hoathis.net :' . "\n";
                 $text .= '----------------------------' . "\n";
                 $text .= '  Library name            : ' . $u['name'] . "\n";
@@ -87,9 +78,11 @@
                 $text .= '----------------------------' . "\n";
                 $text .= 'This email come from a bot , not reply to this mail' . "\n";
 
-                $msg->addContent(new \Hoa\Mail\Content\Text($text));
-
-                $msg->send();
+                $mail = new \Hoathis\Mail\Mail();
+                $mail->setTo($u['email']);
+                $mail->setSubject('Unactivation of libray ' . $u['name']);
+                $mail->setContent(new \Hoa\Mail\Content\Text($text));
+                $mail->send();
 
                 $this->popup('error', 'the project has been unvalidate or banned');
                 $this
@@ -109,12 +102,6 @@
                         $library->delete($id);
 
 
-                        $msg            = new \Hoa\Mail\Message();
-                        $msg['From']    = 'Hoa Mail (CLI) <julien.clauzel@hoa-project.net>';
-                        $msg['To']      = $u['email'];
-                        $msg['Subject'] = 'Delete of libray ' . $u['name'];
-
-
                         $text = 'Your library ' . $u['name'] . 'are delete on hoathis.net :' . "\n";
                         $text .= '----------------------------' . "\n";
                         $text .= '  Library name            : ' . $u['name'] . "\n";
@@ -122,9 +109,11 @@
                         $text .= '----------------------------' . "\n";
                         $text .= 'This email come from a bot , not reply to this mail' . "\n";
 
-                        $msg->addContent(new \Hoa\Mail\Content\Text($text));
-
-                        $msg->send();
+                        $mail = new \Hoathis\Mail\Mail();
+                        $mail->setTo($u['email']);
+                        $mail->setSubject('Delete of libray ' . $u['name']);
+                        $mail->setContent(new \Hoa\Mail\Content\Text($text));
+                        $mail->send();
 
                         $this->popup('success', 'the project has been delete');
                         $this
