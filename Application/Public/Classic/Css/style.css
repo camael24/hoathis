@@ -1,84 +1,85 @@
 footer {
-    position         : fixed;
-    padding-left     : 10px;
-    bottom           : 0px;
-    width            : 100%;
-    background-color : #ffffff;
-    border           : 0;
-    border-top       : 1px solid #e5e5e5;
+    position: fixed;
+    padding-left: 10px;
+    bottom: 0px;
+    width: 100%;
+    background-color: #ffffff;
+    border: 0;
+    border-top: 1px solid #e5e5e5;
 }
 
 #b {
-    padding-bottom : 50px;
+    padding-bottom: 50px;
 }
 
 #result > ul > li >h2:first-letter {
-    text-transform : uppercase;
+    text-transform: uppercase;
 }
 
 #result > ul > li {
-    list-style            : none;
-    display               : block;
-    background-color      : #eeeeee;
-    padding               : 4px;
-    margin                : 5px;
-    line-height           : 1;
-    border                : 1px solid #ddd;
-    -webkit-border-radius : 4px;
-    -moz-border-radius    : 4px;
-    border-radius         : 4px;
-    -webkit-box-shadow    : 0 1px 1px rgba(0, 0, 0, 0.075);
-    -moz-box-shadow       : 0 1px 1px rgba(0, 0, 0, 0.075);
-    box-shadow            : 0 1px 1px rgba(0, 0, 0, 0.075);
+    list-style: none;
+    display: block;
+    background-color: #eeeeee;
+    padding: 4px;
+    margin: 5px;
+    line-height: 1;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 
 #searchBar {
-    width     : 100%;
-    max-width : 940px;
+    width: 100%;
+    max-width: 940px;
 }
 
 .searchForm {
-    max-height : 180px;
+    max-height: 180px;
 }
 
 .wrap {
-    word-wrap : break-word;
+    word-wrap: break-word;
 }
 
 .inline {
-    display        : inline;
-    padding-left   : 50px;
-    vertical-align : middle;
+    display: inline;
+    padding-left: 50px;
+    vertical-align: middle;
 }
 
 .description {
-    padding-top  : 10px;
-    padding-left : 5px;
+    padding-top: 10px;
+    padding-left: 5px;
 }
 
 .listDescription {
-    padding-top  : 10px;
-    padding-left : 20px;
+    padding-top: 10px;
+    padding-left: 20px;
 }
 
 #holder {
-    border : 10px dashed #ccc;
-    width  : 250px;
-    height : 50px;
-    margin : 20px auto;
+    border: 10px dashed #ccc;
+    width: 250px;
+    height: 50px;
+    margin: 20px auto;
 }
 
 #holder.hover {
-    border : 10px dashed #333;
+    border: 10px dashed #333;
 }
 
 #show {
-    display : block;
+    display: block;
 }
 
 #hide {
-    display : none;
+    display: none;
 }
+
 a.noHover:hover {
-    text-decoration : none;
+    text-decoration: none;
 }

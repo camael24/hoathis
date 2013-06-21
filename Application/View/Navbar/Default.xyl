@@ -17,35 +17,34 @@
 
                     <ul class="nav">
                         <li>
-                            <div class="btn-group">
-                                <a href="@home-caller:_able=create" class="btn btn-success">
-                                    <i class="icon-share"></i>
-                                    Share your Hoathis
-                                </a>
-                            </div>
+                            <a href="@home-caller:_able=create" class="">
+                                <i class="icon-white icon-share"></i>
+                                Share your Hoathis
+                            </a>
                         </li>
-                        <li class="divider-vertical"></li>
                         <li>
-                            <div class="btn-group">
-                                <a href="@home-caller:_able=all" class="btn">
-                                    <i class="icon-th-list"></i>
-                                    Show all hoathis
-                                </a>
-                            </div>
+                            <a href="#">
+                                <i class="icon-white icon-th-list"></i>
+                                Show all hoathis
+                            </a>
                         </li>
 
                         <li class="divider-vertical"></li>
-                        <li>
-                            <div class="btn-group">
-                                <a href="@home-caller:_able=connect" class="btn">
-                                    Login
-                                </a>
-                                <a href="@home-caller:_able=register" class="btn">
-                                    Register
-                                </a>
 
-                            </div>
+                        <li>
+                            <a href="@home-caller:_able=connect">
+                                <i class="icon-white icon-user"></i>
+                                Login
+                            </a>
                         </li>
+                        <li class="divider-vertical"></li>
+                        <li>
+                            <a href="@home-caller:_able=register">
+                                <i class="icon-white icon-edit"></i>
+                                Register
+                            </a>
+                        </li>
+                        <li class="divider-vertical"></li>
                     </ul>
                 </div>
             </div>

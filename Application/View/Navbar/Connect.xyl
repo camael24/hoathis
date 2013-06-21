@@ -18,31 +18,23 @@
 
                     <ul class="nav">
                         <li>
-                            <div class="btn-group">
-                                <a href="@home-caller:_able=create" class="btn btn-success">
-                                    <i class="icon-share"></i>
-                                    Share your Hoathis
-                                </a>
-                            </div>
+                            <a href="@home-caller:_able=create" class="">
+                                <i class="icon-white icon-share"></i>
+                                Share your Hoathis
+                            </a>
                         </li>
-                        <li class="divider-vertical"></li>
                         <li>
-                            <div class="btn-group">
-                                <a href="@home-caller:_able=all" class="btn">
-                                    <i class="icon-th-list"></i>
-                                    Show all hoathis
-                                </a>
-                            </div>
+                            <a href="#">
+                                <i class="icon-white icon-th-list"></i>
+                                Show all hoathis
+                            </a>
                         </li>
-                        <li class="divider-vertical"></li>
                         <li>
-                            <div class="btn-group ">
-                                <div class="btn">
-                                    <i class="icon-user"></i>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="icon-white icon-user"></i>
                                     You
-                                </div>
-                                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <span class="caret"></span>
+                                    <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
@@ -59,8 +51,9 @@
                                         </a>
                                     </li>
                                 </ul>
-                            </div>
+                            </li>
                         </li>
+
                     </ul>
                 </div>
                 <searchNavbar/>
